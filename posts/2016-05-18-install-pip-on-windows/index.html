@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.59.1" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Lirian Su" />
+  <meta property="og:url" content="https://liriansu.com/posts/2016-05-18-install-pip-on-windows/" />
+  <link rel="canonical" href="https://liriansu.com/posts/2016-05-18-install-pip-on-windows/" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/liriansu.com\/"
+      },
+      "articleSection" : "posts",
+      "name" : "在Windows上安装pip",
+      "headline" : "在Windows上安装pip",
+      "description" : "pip是python的包管理工具，在Linux上安装比较简单， 但是在Windows上安装就稍微麻烦些。\n 安装Python 首先我们到Python的官网下载Python。\n值得注意的是Python2和Python3非常不同， 里面的差别可能有半个Java和JavaScript的差别之大。 我习惯使用的版本是Python2.7。\n下载安装完以后，打开 我的电脑右键菜单\x26gt;属性\x26gt;高级系统设置\x26gt;环境变量 设置好Path：\n然后我们打开命令提示符，就可以进python的shell啦：\n\x26gt; python Python 2.7.11 on win32 Type \x26quot;help\x26quot;, \x26quot;copyright\x26quot;, \x26quot;credits\x26quot; or \x26quot;license\x26quot; for more information. \x26gt;\x26gt;\x26gt; exit()  安装pip 我们使用get-pip.py一键安装pip， 先把它右键另存为下载到某个地方。\n然后我们以管理员身份打开命令提示符， 直接用python运行该文件就可以安装pip了：\npython get-pip.py  Windows上运行pip的方式是：\npython -m pip Usage: C:\\CodeEn\\Python27\\python.exe -m pip \x26lt;command\x26gt; [options] Commands: install Install packages. download Download packages. uninstall Uninstall packages. freeze Output installed packages in requirements format. list List installed packages. show Show information about installed packages.",
+      "inLanguage" : "en-US",
+      "author" : "Lirian Su",
+      "creator" : "Lirian Su",
+      "publisher": "Lirian Su",
+      "accountablePerson" : "Lirian Su",
+      "copyrightHolder" : "Lirian Su",
+      "copyrightYear" : "2016",
+      "datePublished": "2016-05-18 21:39:29 \x2b0000 UTC",
+      "dateModified" : "2016-05-18 21:39:29 \x2b0000 UTC",
+      "url" : "https:\/\/liriansu.com\/posts\/2016-05-18-install-pip-on-windows\/",
+      "keywords" : [  ]
+  }
+</script>
+<title>在Windows上安装pip - 浮云计算</title>
+  <meta property="og:title" content="在Windows上安装pip - 浮云计算" />
+  <meta property="og:type" content="article" />
+  <meta name="description" content="pip是python的包管理工具，在Linux上安装比较简单， 但是在Windows上安装就稍微麻烦些。
+ 安装Python 首先我们到Python的官网下载Python。
+值得注意的是Python2和Python3非常不同， 里面的差别可能有半个Java和JavaScript的差别之大。 我习惯使用的版本是Python2.7。
+下载安装完以后，打开 我的电脑右键菜单&gt;属性&gt;高级系统设置&gt;环境变量 设置好Path：
+然后我们打开命令提示符，就可以进python的shell啦：
+&gt; python Python 2.7.11 on win32 Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information. &gt;&gt;&gt; exit()  安装pip 我们使用get-pip.py一键安装pip， 先把它右键另存为下载到某个地方。
+然后我们以管理员身份打开命令提示符， 直接用python运行该文件就可以安装pip了：
+python get-pip.py  Windows上运行pip的方式是：
+python -m pip Usage: C:\CodeEn\Python27\python.exe -m pip &lt;command&gt; [options] Commands: install Install packages. download Download packages. uninstall Uninstall packages. freeze Output installed packages in requirements format. list List installed packages. show Show information about installed packages." />
+
+  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet"
+    href="/css/github-markdown.min.css" />
+  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+  <link rel="stylesheet" href="/css/index.css">
+  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="浮云计算">
+  
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker" rel="stylesheet">
+  
+  
+
+  
+</head>
+
+
+<body>
+  <article class="post 中文" id="article">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <div class="site-header">
+          
+<header>
+  <div class="signatures site-title">
+    <a href="/">Lirian Su</a>
+  </div>
+</header>
+<div class="row end-xs">
+  
+  
+  <div class="lang-switch col-xs-3 col-xs-offset-9">
+    <a href="/en/">English</a>
+  </div>
+  
+  
+</div>
+<div class="header-line"></div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">在Windows上安装pip</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2016-05-18 21:39:29 UTC">
+                18 May 2016
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="">@Lirian Su</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          
+
+<p>pip是python的包管理工具，在Linux上安装比较简单，
+但是在Windows上安装就稍微麻烦些。</p>
+
+<!--MORE-->
+
+<h2 id="安装python">安装Python</h2>
+
+<p>首先我们到Python的官网<a href="https://www.python.org/downloads/">下载Python</a>。</p>
+
+<p>值得注意的是Python2和Python3非常不同，
+里面的差别可能有半个Java和JavaScript的差别之大。
+我习惯使用的版本是Python2.7。</p>
+
+<p>下载安装完以后，打开
+<code>我的电脑右键菜单&gt;属性&gt;高级系统设置&gt;环境变量</code>
+设置好Path：</p>
+
+<p><img src="/assets/python_path.jpg" alt="Python Path" /></p>
+
+<p>然后我们打开命令提示符，就可以进python的shell啦：</p>
+
+<pre><code>&gt; python
+Python 2.7.11 on win32
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt; exit()
+</code></pre>
+
+<h2 id="安装pip">安装pip</h2>
+
+<p>我们使用<a href="https://bootstrap.pypa.io/get-pip.py">get-pip.py</a>一键安装pip，
+先把它右键另存为下载到某个地方。</p>
+
+<p>然后我们以管理员身份打开命令提示符，
+直接用python运行该文件就可以安装pip了：</p>
+
+<pre><code>python get-pip.py
+</code></pre>
+
+<p>Windows上运行pip的方式是：</p>
+
+<pre><code>python -m pip
+
+Usage:
+  C:\CodeEn\Python27\python.exe -m pip &lt;command&gt; [options]
+
+Commands:
+  install                     Install packages.
+  download                    Download packages.
+  uninstall                   Uninstall packages.
+  freeze                      Output installed packages in requirements format.
+  list                        List installed packages.
+  show                        Show information about installed packages.
+  search                      Search PyPI for packages.
+  wheel                       Build wheels from your requirements.
+  hash                        Compute hashes of package archives.
+  completion                  A helper command used for command completion
+  help                        Show help for commands.
+</code></pre>
+
+<h2 id="安装c-for-python">安装C++ for Python</h2>
+
+<p>Windows上很多Python库都依赖于C++ 9.0，
+点击下面链接下载并安装：</p>
+
+<p><a href="https://www.microsoft.com/en-us/download/details.aspx?id=44266">Microsoft Visual C++ Compiler for Python 2.7</a></p>
+
+<p>最后我们就可以使用<code>python -m pip install</code>来安装新的module啦</p>
+
+<h2 id="参考">参考</h2>
+
+<ol>
+<li><p><a href="https://pip.pypa.io/en/stable/installing/">PyPA网站的Python安装指引</a></p></li>
+
+<li><p><a href="http://stackoverflow.com/questions/4750806/how-do-i-install-pip-on-windows">StackOverflow - How do I install pip on windows</a></p></li>
+</ol>
+
+        </div>
+        
+
+        
+
+
+        
+        
+        <div style="height: 50px;"></div>
+        
+        
+
+        <div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="/about" target="_blank">about</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="https://github.com/LKI/LKI" target="_blank">github</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="/index.xml" target="_blank">rss</a>
+  </div>
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.pack.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+
+  
+  
+    
+    
+  
+</script>
+
+  
+
+</body>
+
+</html>

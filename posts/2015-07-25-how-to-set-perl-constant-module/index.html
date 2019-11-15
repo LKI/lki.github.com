@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.59.1" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Lirian Su" />
+  <meta property="og:url" content="https://liriansu.com/posts/2015-07-25-how-to-set-perl-constant-module/" />
+  <link rel="canonical" href="https://liriansu.com/posts/2015-07-25-how-to-set-perl-constant-module/" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/liriansu.com\/"
+      },
+      "articleSection" : "posts",
+      "name" : "如何优雅地使用Perl的常量模块",
+      "headline" : "如何优雅地使用Perl的常量模块",
+      "description" : "最近的Perl Coding遇到了一个问题：需要对一系列常量进行合法性检测。\n在Research\x26amp;Develop后，有一些心得。\n本文从Perl的常量定义上，给出一个_自认为_优雅的解决方案。\n Perl中一般的常量定义 在写项目的时候为了避免Magic Number的情况，我们经常需要定义常量。\n当然了，根据如何写出无法维护的代码的指导我们不应当定义常量，Number越Magic越好。\n一般来说，Perl中的常量如下：\nuse constant CONST_PI =\x26gt; 3.1416;  在模块化的编码过程中，随着常量的增多，我们会需要把这些常量放到一个常量模块(Perl Module)里面：\n这样的做法也符合DRY(Don\x26rsquo;t Repeat Yourself)的原则。#DRYBestPractice?\n比如说在哼哧哼哧地写了一阵子以后，我们有下面这个常量模块。\npackage Lirian::Constants; use strict; use warnings; #Math Const use constant CONST_PI =\x26gt; 3.1416; use constant CONST_E =\x26gt; 2.718; #Default Config Parm Name use constant PARM_DB_NAME =\x26gt; \x27dbName\x27; use constant PARM_DB_HOST =\x26gt; \x27dbHost\x27; use constant PARM_GIT_USER =\x26gt; \x27gitUser\x27; require Exporter; our @ISA = qw(Exporter); our @EXPORT_OK = qw( CONST_PI CONST_E PARM_DB_NAME PARM_DB_HOST PARM_GIT_USER ); our %EXPORT_TAGS = ( all =\x26gt; \\@EXPORT_OK, math =\x26gt; [qw( CONST_PI CONST_E )], parm =\x26gt; [qw( PARM_DB_NAME PARM_DB_HOST PARM_GIT_USER )], );  上面这段代码简单粗暴地展示了Perl中的常量模块。",
+      "inLanguage" : "en-US",
+      "author" : "Lirian Su",
+      "creator" : "Lirian Su",
+      "publisher": "Lirian Su",
+      "accountablePerson" : "Lirian Su",
+      "copyrightHolder" : "Lirian Su",
+      "copyrightYear" : "2015",
+      "datePublished": "2015-07-25 20:56:06 \x2b0000 UTC",
+      "dateModified" : "2015-07-25 20:56:06 \x2b0000 UTC",
+      "url" : "https:\/\/liriansu.com\/posts\/2015-07-25-how-to-set-perl-constant-module\/",
+      "keywords" : [  ]
+  }
+</script>
+<title>如何优雅地使用Perl的常量模块 - 浮云计算</title>
+  <meta property="og:title" content="如何优雅地使用Perl的常量模块 - 浮云计算" />
+  <meta property="og:type" content="article" />
+  <meta name="description" content="最近的Perl Coding遇到了一个问题：需要对一系列常量进行合法性检测。
+在Research&amp;Develop后，有一些心得。
+本文从Perl的常量定义上，给出一个_自认为_优雅的解决方案。
+ Perl中一般的常量定义 在写项目的时候为了避免Magic Number的情况，我们经常需要定义常量。
+当然了，根据如何写出无法维护的代码的指导我们不应当定义常量，Number越Magic越好。
+一般来说，Perl中的常量如下：
+use constant CONST_PI =&gt; 3.1416;  在模块化的编码过程中，随着常量的增多，我们会需要把这些常量放到一个常量模块(Perl Module)里面：
+这样的做法也符合DRY(Don&rsquo;t Repeat Yourself)的原则。#DRYBestPractice?
+比如说在哼哧哼哧地写了一阵子以后，我们有下面这个常量模块。
+package Lirian::Constants; use strict; use warnings; #Math Const use constant CONST_PI =&gt; 3.1416; use constant CONST_E =&gt; 2.718; #Default Config Parm Name use constant PARM_DB_NAME =&gt; &#39;dbName&#39;; use constant PARM_DB_HOST =&gt; &#39;dbHost&#39;; use constant PARM_GIT_USER =&gt; &#39;gitUser&#39;; require Exporter; our @ISA = qw(Exporter); our @EXPORT_OK = qw( CONST_PI CONST_E PARM_DB_NAME PARM_DB_HOST PARM_GIT_USER ); our %EXPORT_TAGS = ( all =&gt; \@EXPORT_OK, math =&gt; [qw( CONST_PI CONST_E )], parm =&gt; [qw( PARM_DB_NAME PARM_DB_HOST PARM_GIT_USER )], );  上面这段代码简单粗暴地展示了Perl中的常量模块。" />
+
+  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet"
+    href="/css/github-markdown.min.css" />
+  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+  <link rel="stylesheet" href="/css/index.css">
+  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="浮云计算">
+  
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker" rel="stylesheet">
+  
+  
+
+  
+</head>
+
+
+<body>
+  <article class="post 中文" id="article">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <div class="site-header">
+          
+<header>
+  <div class="signatures site-title">
+    <a href="/">Lirian Su</a>
+  </div>
+</header>
+<div class="row end-xs">
+  
+  
+  <div class="lang-switch col-xs-3 col-xs-offset-9">
+    <a href="/en/">English</a>
+  </div>
+  
+  
+</div>
+<div class="header-line"></div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">如何优雅地使用Perl的常量模块</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2015-07-25 20:56:06 UTC">
+                25 Jul 2015
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="">@Lirian Su</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          
+
+<p>最近的Perl Coding遇到了一个问题：需要对一系列常量进行合法性检测。</p>
+
+<p>在Research&amp;Develop后，有一些心得。</p>
+
+<p>本文从Perl的常量定义上，给出一个_自认为_优雅的解决方案。</p>
+
+<!--MORE-->
+
+<h2 id="perl中一般的常量定义">Perl中一般的常量定义</h2>
+
+<p>在写项目的时候为了避免Magic Number的情况，我们经常需要定义常量。</p>
+
+<p>当然了，根据<a href="http://coolshell.cn/articles/4758.html">如何写出无法维护的代码</a>的指导我们不应当定义常量，Number越Magic越好。</p>
+
+<p>一般来说，Perl中的常量如下：</p>
+
+<pre><code class="language-perl">    use constant CONST_PI =&gt; 3.1416;
+</code></pre>
+
+<p>在模块化的编码过程中，随着常量的增多，我们会需要把这些常量放到一个常量模块(Perl Module)里面：</p>
+
+<p>这样的做法也符合DRY(Don&rsquo;t Repeat Yourself)的原则。#DRYBestPractice?</p>
+
+<p>比如说在哼哧哼哧地写了一阵子以后，我们有下面这个常量模块。</p>
+
+<pre><code class="language-perl">    package Lirian::Constants;
+    use strict;
+    use warnings;
+
+    #Math Const
+    use constant CONST_PI =&gt; 3.1416;
+    use constant CONST_E  =&gt; 2.718;
+
+    #Default Config Parm Name
+    use constant PARM_DB_NAME  =&gt; 'dbName';
+    use constant PARM_DB_HOST  =&gt; 'dbHost';
+    use constant PARM_GIT_USER =&gt; 'gitUser';
+
+    require Exporter;
+    our @ISA = qw(Exporter);
+
+    our @EXPORT_OK = qw(
+        CONST_PI
+        CONST_E
+        PARM_DB_NAME
+        PARM_DB_HOST
+        PARM_GIT_USER
+    );
+
+    our %EXPORT_TAGS = (
+        all  =&gt; \@EXPORT_OK,
+        math =&gt; [qw(
+            CONST_PI
+            CONST_E
+        )],
+        parm =&gt; [qw(
+            PARM_DB_NAME
+            PARM_DB_HOST
+            PARM_GIT_USER
+        )],
+    );
+</code></pre>
+
+<p>上面这段代码简单粗暴地展示了Perl中的常量模块。</p>
+
+<p>其中的<code>our @ISA = qw(Exporter);</code>是表示本模块继承了<a href="http://perldoc.perl.org/Exporter.html">Exporter</a>这个模块。</p>
+
+<p>通过这样的定义，我们便有了一个常量的“中心仓库”了。</p>
+
+<p>至于怎么使用，我们就来看下一节。</p>
+
+<h2 id="使用常量模块">使用常量模块</h2>
+
+<p>在上一节中，通过对Exporter的继承，我们有了一个Lirian::Constants模块。</p>
+
+<p>而一般地，我们会这么使用：</p>
+
+<pre><code class="language-perl">    package Lirian::Math;
+
+    use Lirian::Constants qw(:all);
+    use strict;
+    use warnings;
+
+    sub get_circum {
+        my ($r) = @_;
+
+        return 2 * CONST_PI * $r;
+    }
+
+    1;
+</code></pre>
+
+<p>在正常的情况下，常量的使用方法比较简单，但假如需求有些绕：</p>
+
+<p>在程序的开始时，我们需要检验用户的配置文件，确保每个条目用户都是有效的。</p>
+
+<p>比如说需求文件如下：</p>
+
+<pre><code class="language-config">    dbName=github
+    dbHost=localhost
+    gitUser=LKI
+</code></pre>
+
+<p>显然地，一种简单但稍微蠢了点的方法是这么做：</p>
+
+<pre><code class="language-perl">    sub validate_config_dumb {
+        my ($conf) = @_;
+
+        validate_parm($conf, PARM_DB_NAME);
+        validate_parm($conf, PARM_DB_HOST);
+        validate_parm($conf, PARM_GIT_USER);
+    }
+</code></pre>
+
+<p>这样做有几个问题：</p>
+
+<p>1.config parameter一多，代码就很长，丑
+2.增加config constant时，不仅要改常量模块，这里也要加，累
+3.这样的代码提交上去感觉好丢脸，蠢
+4.以上三点在<a href="http://coolshell.cn/articles/2058.html">撞大运编程</a>里都不是问题</p>
+
+<p>那怎么样做才算是优雅的做法呢？</p>
+
+<h2 id="利用perl的export机制">利用Perl的Export机制</h2>
+
+<p>在Exporter中，定义在%EXPORT_TAGS中的文件可以直接引用：</p>
+
+<pre><code class="language-perl">    my $tags      = \$Lirian::Constants::EXPORT_TAGS;
+    my $math_tags = $tags-&gt;{math}; # ['CONST_PI', 'CONST_E'];
+    my $parm_tags = $tags-&gt;{parm}; # ['PARM_DB_NAME', 'PARM_DB_HOST', 'PARM_GIT_USER'];
+</code></pre>
+
+<p>这样就可以拿到常量的名字了，此时我们便需要<a href="http://stackoverflow.com/questions/2187682/how-do-i-access-a-constant-in-perl-whose-name-is-contained-in-a-variable">在Perl中根据变量名获取变量值</a></p>
+
+<pre><code class="language-perl">    my $name  = 'CONST_PI';
+    my $value = Lirian::Constants-&gt;$name; # 3.1416
+</code></pre>
+
+<p>所以在上一小节的问题中，我们可以得出一个更优雅的解决方案啦~</p>
+
+<pre><code class="language-perl">    sub validate_config {
+        my ($conf) = @_;
+
+        my $tags      = \$Lirian::Constants::EXPORT_TAGS;
+        my $parm_tags = $tags-&gt;{parm};
+        foreach my $parm_name (@$parm_tags) {
+            my $parm_value = Lirian::Constants-&gt;$parm_name;
+            validate_parm($conf, $parm_value);
+        }
+    }
+</code></pre>
+
+<p>大功告成！从此以后在加常量的同时，validate_config会自动地检验新增的配置选项啦~</p>
+
+<p>此时便可以使用<a href="http://whatthecommit.com/">一个酷炫的Git Commit Message</a>来提交工作啦！</p>
+
+        </div>
+        
+
+        
+
+
+        
+        
+        <div style="height: 50px;"></div>
+        
+        
+
+        <div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="/about" target="_blank">about</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="https://github.com/LKI/LKI" target="_blank">github</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="/index.xml" target="_blank">rss</a>
+  </div>
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.pack.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+
+  
+  
+    
+    
+  
+</script>
+
+  
+
+</body>
+
+</html>

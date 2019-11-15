@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.59.1" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Lirian Su" />
+  <meta property="og:url" content="https://liriansu.com/posts/2015-12-21-learning-javascript/" />
+  <link rel="canonical" href="https://liriansu.com/posts/2015-12-21-learning-javascript/" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/liriansu.com\/"
+      },
+      "articleSection" : "posts",
+      "name" : "Javascript之路",
+      "headline" : "Javascript之路",
+      "description" : "上大学的时候，有一门课是教各种Java的。 到了布置期末大作业的时候，老师大手一挥：“你们写个电商交易网站就可以了。” 我们满怀期待地问：“只要写后端？” 老师说道：“没有前端怎么叫网站？HTML, CSS, JS是每个程序员的基本素养。”\n 痛苦的自学之路 相对于美术，大部分程序员都更擅长数学。 我也一样。\n老师布下作业以后，班里大部分人（包括我）都是看W3School自学的。 于是我们在屏幕上数格子画\x26lt;div\x26gt;。\n很快我们意识到，假如每个人都这么折腾的话，作业就完成不了了。 于是我们组成了小团队，一部分人专门研究前端，一部分人先把逻辑给实现了。\n最终在简陋的Ajax \x2b jQuery下做完了那个项目\nBootstrap 虽然一直是网页苦手，但是由于网页其实是最简单而且最方便的展示手段（比PPT要强） 于是我默默地写些小东西练手。\n对于库的利用使我_暂时_脱离了画\x26lt;div\x26gt;的束缚， 可以专注于内容了。 （于是我又了解了Lorem ipsum）\nFree Code Camp 最近偶然发现了这个JS入门网站 不禁感慨当时为什么遇上合适的入门指南。\n不过男人四十尚少年嘛， 就好像关谷说的\n 活到老 学到老\n 就是这么个道理。",
+      "inLanguage" : "en-US",
+      "author" : "Lirian Su",
+      "creator" : "Lirian Su",
+      "publisher": "Lirian Su",
+      "accountablePerson" : "Lirian Su",
+      "copyrightHolder" : "Lirian Su",
+      "copyrightYear" : "2015",
+      "datePublished": "2015-12-21 17:26:52 \x2b0000 UTC",
+      "dateModified" : "2015-12-21 17:26:52 \x2b0000 UTC",
+      "url" : "https:\/\/liriansu.com\/posts\/2015-12-21-learning-javascript\/",
+      "keywords" : [  ]
+  }
+</script>
+<title>Javascript之路 - 浮云计算</title>
+  <meta property="og:title" content="Javascript之路 - 浮云计算" />
+  <meta property="og:type" content="article" />
+  <meta name="description" content="上大学的时候，有一门课是教各种Java的。 到了布置期末大作业的时候，老师大手一挥：“你们写个电商交易网站就可以了。” 我们满怀期待地问：“只要写后端？” 老师说道：“没有前端怎么叫网站？HTML, CSS, JS是每个程序员的基本素养。”
+ 痛苦的自学之路 相对于美术，大部分程序员都更擅长数学。 我也一样。
+老师布下作业以后，班里大部分人（包括我）都是看W3School自学的。 于是我们在屏幕上数格子画&lt;div&gt;。
+很快我们意识到，假如每个人都这么折腾的话，作业就完成不了了。 于是我们组成了小团队，一部分人专门研究前端，一部分人先把逻辑给实现了。
+最终在简陋的Ajax &#43; jQuery下做完了那个项目
+Bootstrap 虽然一直是网页苦手，但是由于网页其实是最简单而且最方便的展示手段（比PPT要强） 于是我默默地写些小东西练手。
+对于库的利用使我_暂时_脱离了画&lt;div&gt;的束缚， 可以专注于内容了。 （于是我又了解了Lorem ipsum）
+Free Code Camp 最近偶然发现了这个JS入门网站 不禁感慨当时为什么遇上合适的入门指南。
+不过男人四十尚少年嘛， 就好像关谷说的
+ 活到老 学到老
+ 就是这么个道理。" />
+
+  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet"
+    href="/css/github-markdown.min.css" />
+  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+  <link rel="stylesheet" href="/css/index.css">
+  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="浮云计算">
+  
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker" rel="stylesheet">
+  
+  
+
+  
+</head>
+
+
+<body>
+  <article class="post 中文" id="article">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <div class="site-header">
+          
+<header>
+  <div class="signatures site-title">
+    <a href="/">Lirian Su</a>
+  </div>
+</header>
+<div class="row end-xs">
+  
+  
+  <div class="lang-switch col-xs-3 col-xs-offset-9">
+    <a href="/en/">English</a>
+  </div>
+  
+  
+</div>
+<div class="header-line"></div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">Javascript之路</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2015-12-21 17:26:52 UTC">
+                21 Dec 2015
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="">@Lirian Su</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          
+
+<p>上大学的时候，有一门课是教各种Java的。
+到了布置期末大作业的时候，老师大手一挥：“你们写个电商交易网站就可以了。”
+我们满怀期待地问：“只要写后端？”
+老师说道：“没有前端怎么叫网站？HTML, CSS, JS是每个程序员的基本素养。”</p>
+
+<!--MORE-->
+
+<h2 id="痛苦的自学之路">痛苦的自学之路</h2>
+
+<p>相对于美术，大部分程序员都更擅长数学。
+我也一样。</p>
+
+<p>老师布下作业以后，班里大部分人（包括我）都是看W3School自学的。
+于是我们在屏幕上数格子画<code>&lt;div&gt;</code>。</p>
+
+<p>很快我们意识到，假如每个人都这么折腾的话，作业就完成不了了。
+于是我们组成了小团队，一部分人专门研究前端，一部分人先把逻辑给实现了。</p>
+
+<p>最终在简陋的Ajax + jQuery下做完了<a href="https://github.com/Water-Drop/iprs">那个项目</a></p>
+
+<h2 id="bootstrap">Bootstrap</h2>
+
+<p>虽然一直是网页苦手，但是由于网页其实是最简单而且最方便的展示手段（比PPT要强）
+于是我默默地<a href="/teampicker">写些小东西练手</a>。</p>
+
+<p>对于库的利用使我_暂时_脱离了画<code>&lt;div&gt;</code>的束缚，
+可以专注于内容了。
+（于是我又了解了<a href="https://en.wikipedia.org/wiki/Lorem_ipsum">Lorem ipsum</a>）</p>
+
+<h2 id="free-code-camp">Free Code Camp</h2>
+
+<p>最近偶然发现了<a href="http://www.freecodecamp.com/">这个JS入门网站</a>
+不禁感慨当时为什么遇上合适的入门指南。</p>
+
+<p>不过男人四十尚少年嘛，
+就好像关谷说的</p>
+
+<blockquote>
+<p>活到老 学到老</p>
+</blockquote>
+
+<p>就是这么个道理。</p>
+
+        </div>
+        
+
+        
+
+
+        
+        
+        <div style="height: 50px;"></div>
+        
+        
+
+        <div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="/about" target="_blank">about</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="https://github.com/LKI/LKI" target="_blank">github</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="/index.xml" target="_blank">rss</a>
+  </div>
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.pack.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+
+  
+  
+    
+    
+  
+</script>
+
+  
+
+</body>
+
+</html>

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>浮云计算</title>
-    <link>https://liriansu.com/</link>
-    <description>Recent content on 浮云计算</description>
+    <title>Posts on 浮云计算</title>
+    <link>https://liriansu.com/posts/</link>
+    <description>Recent content in Posts on 浮云计算</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 30 Oct 2019 22:32:20 +0000</lastBuildDate>
     
-	<atom:link href="https://liriansu.com/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://liriansu.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -1942,24 +1942,6 @@ ED觉得非常蛋疼， 问我：“你说为什么会这样子捏”
 我们知道，越底层的函数调用越频繁，假如把底层函数优化做好了，效率自然就上去了，3D引擎归根到底还是数学运算。在最底层的运算函数中（game/code/q_math.c中），有许多有趣的函数，有些更是令人惊叹这究竟是如何编写的。
 神奇的0x5f3759df 在运算函数文件中可以找到这么一个函数，它的作用是将一个数开方并取倒数，功能上跟系统函数(float)(1.0/sqrt(x))一样，但是效率上快了四倍：
 float Q_rsqrt( float number ) { long i; float x2, y; const float threehalfs = 1.5F; x2 = number * 0.5F; y = number; i = * ( long * ) &amp;amp;y; // evil floating point bit level hacking i = 0x5f3759df - ( i &amp;gt;&amp;gt; 1 ); // WHAT THE FUCK? y = * ( float * ) &amp;amp;i; y = y * ( threehalfs - ( x2 * y * y ) ); // 1st iteration // y = y * ( threehalfs - ( x2 * y * y ) ); // 2nd iteration, this can be removed #ifndef Q3_VM #ifdef __linux__ assert( !</description>
-    </item>
-    
-    <item>
-      <title>关于我</title>
-      <link>https://liriansu.com/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://liriansu.com/about/</guid>
-      <description>你好。
-我叫苏子岳，出生在湖南岳阳。 名字的由来也跟出生地相关， 父母希望我像诸子百家一样才华横溢， 像山岳一样坚实可靠。
-Lirian Su 是我的英文名。 Lirian 是我高中写的小说的主角之一， 他的人设就像我期望的那样： 文可静心作解，武能以一敌百。
-出生在湖南，在广东求学长大。 高中的时候参加 NOIP 得了省一等奖， 保送到上海交通大学，读软件工程。
-2014 年 7 月大四以后， 我在QAD China实习工作， 在一个跨国团队里学到了教科书般标准的软件开发流程。 当时主语言是Perl，做的是基于 Git 的定制化代码版本控制工具， 后来我把整个项目用Java重写了一遍。
-2016 年 10 月的时候， 被百姓网HR邀请去面试， 因为好友周丞以前实习工作也在百姓，于是就约了一顿饭。 结果被他以一碗重庆小面拉到了现在的公司。 现在的公司叫再惠， 刚来的时候整个公司的技术加在一起只有12个人，每个人都很强， 我感觉自己是里面最菜的 :)
-工作上我主要做的是 Web 后端的活， 主要工作包括了大后端会涉及的三个部分： 实现业务逻辑、设计管理数据库、搭建服务器部署环境。 这里每一块都有很多东西可以讲， 所以我就不讲了 :)
-2018 年 1 月开始， 我作为部门的技术负责人开始带着团队向前冲， 不少人直接跟我说过： “你是我最喜欢的 Leader.” 这样的话也勉励着我， 不仅要让努力的同事获得事业上的奖赏， 还会想尽办法让大家一起走在技术的最前线。
-工程上，我平常喜欢使用各种工具来偷懒增加生产力。 语言上，我主要写 Python, 对 Go/JavaScript/Perl/Java/Lisp 有点了解（排名分先后）。
-在 GitHub 上主要的项目主要分为两部分： 一部分是我自己的生活项目，比如我的个人主页或者是我的环境配置； 另一部分是各种工具项目，比如这个节假日判定的库就挺受欢迎的。</description>
     </item>
     
   </channel>

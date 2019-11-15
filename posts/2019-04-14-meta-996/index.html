@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.59.1" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Lirian Su" />
+  <meta property="og:url" content="https://liriansu.com/posts/2019-04-14-meta-996/" />
+  <link rel="canonical" href="https://liriansu.com/posts/2019-04-14-meta-996/" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/liriansu.com\/"
+      },
+      "articleSection" : "posts",
+      "name" : "谈谈《谈 996》",
+      "headline" : "谈谈《谈 996》",
+      "description" : "很多人会喜欢 Lisp 里的宏 (Macro)。 语言里的宏提供了一种元编程 (Meta-Progamming) 的能力。 假如你用过魔兽世界里的宏， 你也可以想象这里的“元游戏”是什么意思： 它注重的不是游戏本身， 而是对游戏求导所得出的“游戏的本质”。\n 今天这篇《谈谈\x26lt;谈 996\x26gt;》其实是我想写的一篇方法论的文章， 或者我更喜欢称之为: Meta 文章。\n历史的进程 最近因为 github\/996icu 项目引出了一系列的事件， 在我看来基本上是像人血馒头一样是可以吃的津津有味的。\n一次大型的社会性事件中， 最好玩的是看人类社会的不同角色对事件本身发表的看法。 而且基本上“屁股决定脑袋”或者说“你会成为你喜欢的人”这种道理都是不变的。\n每当这时候我就会想起筱敏写的那句话：\n 1789年7月14日巴黎人民攻克巴士底狱的当夜， 当路易十六听闻消息时惊慌地问： “这是一场叛乱吗？”\n他的廷利昂古尔公爵当即回答道：\n“不，陛下，这是一场革命。”\n 社会是由人类组成的， 所以这个整体有的时候会表现出奇特的单人所不具有的特性， 进而进行组织性的进化与修复。 最终回过头看， 不禁就会发出江学长那样的感慨： 个人的奋斗是很重要， 但也要兼顾历史的进程啊。\n言论管理 我其实蛮喜欢看一些八卦文章的。 （比如推荐一个博主叫“萝严肃”， 他写的长文都会查不少背景知识） 石原里美在文章里经常被表扬“表情管理”做得很好。 同样地，“言论管理”也是资本家会被重点关注的一处特质。\n带着这点去看各个资本家的行动， 就很有意思了。\n有一部分资本家的言论管理就是少说话， 外界对他们的评价就是“比较技术”。 而很大一部分资本家的发言就很精妙， 他们会为了心中更美好的世界而发言。\n但可惜的是， 人类的悲喜并不相通。\n涉及公益、教育这种大家都认可的话题还好， 但工作这个话题本身就涉及社会性分工， 不同的人会因为不同的事情有不同的感受。 假如资本家在“996工作制度”这个话题上直白的表达“我非常享受工作本身”及其类似的观点， 很自然地会收到无区别的批判， 因为这个时候他的原罪是他的身份。\n当一个人的符号属性重于社会属性时， 他发表的所有言论都应当有明确的导向性目的。 这就是“言论管理”。\n自我认知 以前上学考试结束以后， 总有人会哀嚎“哎呀考试考砸了完了完了。” 结果最后他成绩非常好。 虽然也有个说法叫“本质是因为怕被认为无能”， 但不论如何， 假如你的行为轻信了他人的言论， 就很容易被误导进坑里。 最终导致“其它人都是嘴上喊着成绩差，结果你是真的成绩差。”",
+      "inLanguage" : "en-US",
+      "author" : "Lirian Su",
+      "creator" : "Lirian Su",
+      "publisher": "Lirian Su",
+      "accountablePerson" : "Lirian Su",
+      "copyrightHolder" : "Lirian Su",
+      "copyrightYear" : "2019",
+      "datePublished": "2019-04-14 15:16:24 \x2b0000 UTC",
+      "dateModified" : "2019-04-14 15:16:24 \x2b0000 UTC",
+      "url" : "https:\/\/liriansu.com\/posts\/2019-04-14-meta-996\/",
+      "keywords" : [  ]
+  }
+</script>
+<title>谈谈《谈 996》 - 浮云计算</title>
+  <meta property="og:title" content="谈谈《谈 996》 - 浮云计算" />
+  <meta property="og:type" content="article" />
+  <meta name="description" content="很多人会喜欢 Lisp 里的宏 (Macro)。 语言里的宏提供了一种元编程 (Meta-Progamming) 的能力。 假如你用过魔兽世界里的宏， 你也可以想象这里的“元游戏”是什么意思： 它注重的不是游戏本身， 而是对游戏求导所得出的“游戏的本质”。
+ 今天这篇《谈谈&lt;谈 996&gt;》其实是我想写的一篇方法论的文章， 或者我更喜欢称之为: Meta 文章。
+历史的进程 最近因为 github/996icu 项目引出了一系列的事件， 在我看来基本上是像人血馒头一样是可以吃的津津有味的。
+一次大型的社会性事件中， 最好玩的是看人类社会的不同角色对事件本身发表的看法。 而且基本上“屁股决定脑袋”或者说“你会成为你喜欢的人”这种道理都是不变的。
+每当这时候我就会想起筱敏写的那句话：
+ 1789年7月14日巴黎人民攻克巴士底狱的当夜， 当路易十六听闻消息时惊慌地问： “这是一场叛乱吗？”
+他的廷利昂古尔公爵当即回答道：
+“不，陛下，这是一场革命。”
+ 社会是由人类组成的， 所以这个整体有的时候会表现出奇特的单人所不具有的特性， 进而进行组织性的进化与修复。 最终回过头看， 不禁就会发出江学长那样的感慨： 个人的奋斗是很重要， 但也要兼顾历史的进程啊。
+言论管理 我其实蛮喜欢看一些八卦文章的。 （比如推荐一个博主叫“萝严肃”， 他写的长文都会查不少背景知识） 石原里美在文章里经常被表扬“表情管理”做得很好。 同样地，“言论管理”也是资本家会被重点关注的一处特质。
+带着这点去看各个资本家的行动， 就很有意思了。
+有一部分资本家的言论管理就是少说话， 外界对他们的评价就是“比较技术”。 而很大一部分资本家的发言就很精妙， 他们会为了心中更美好的世界而发言。
+但可惜的是， 人类的悲喜并不相通。
+涉及公益、教育这种大家都认可的话题还好， 但工作这个话题本身就涉及社会性分工， 不同的人会因为不同的事情有不同的感受。 假如资本家在“996工作制度”这个话题上直白的表达“我非常享受工作本身”及其类似的观点， 很自然地会收到无区别的批判， 因为这个时候他的原罪是他的身份。
+当一个人的符号属性重于社会属性时， 他发表的所有言论都应当有明确的导向性目的。 这就是“言论管理”。
+自我认知 以前上学考试结束以后， 总有人会哀嚎“哎呀考试考砸了完了完了。” 结果最后他成绩非常好。 虽然也有个说法叫“本质是因为怕被认为无能”， 但不论如何， 假如你的行为轻信了他人的言论， 就很容易被误导进坑里。 最终导致“其它人都是嘴上喊着成绩差，结果你是真的成绩差。”" />
+
+  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet"
+    href="/css/github-markdown.min.css" />
+  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+  <link rel="stylesheet" href="/css/index.css">
+  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="浮云计算">
+  
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker" rel="stylesheet">
+  
+  
+
+  
+</head>
+
+
+<body>
+  <article class="post 中文" id="article">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <div class="site-header">
+          
+<header>
+  <div class="signatures site-title">
+    <a href="/">Lirian Su</a>
+  </div>
+</header>
+<div class="row end-xs">
+  
+  
+  <div class="lang-switch col-xs-3 col-xs-offset-9">
+    <a href="/en/">English</a>
+  </div>
+  
+  
+</div>
+<div class="header-line"></div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">谈谈《谈 996》</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2019-04-14 15:16:24 UTC">
+                14 Apr 2019
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="">@Lirian Su</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          
+
+<p>很多人会喜欢 Lisp 里的宏 (Macro)。
+语言里的宏提供了一种元编程 (Meta-Progamming) 的能力。
+假如你用过魔兽世界里的宏，
+你也可以想象这里的“元游戏”是什么意思：
+它注重的不是游戏本身，
+而是对游戏求导所得出的“游戏的本质”。</p>
+
+<!--MORE-->
+
+<p>今天这篇《谈谈&lt;谈 996&gt;》其实是我想写的一篇方法论的文章，
+或者我更喜欢称之为: Meta 文章。</p>
+
+<h2 id="历史的进程">历史的进程</h2>
+
+<p>最近因为 <a href="https://github.com/996icu/996.ICU">github/996icu</a> 项目引出了一系列的事件，
+在我看来基本上是像人血馒头一样是可以吃的津津有味的。</p>
+
+<p>一次大型的社会性事件中，
+最好玩的是看人类社会的不同角色对事件本身发表的看法。
+而且基本上“屁股决定脑袋”或者说“你会成为你喜欢的人”这种道理都是不变的。</p>
+
+<p>每当这时候我就会想起筱敏写的那句话：</p>
+
+<blockquote>
+<p>1789年7月14日巴黎人民攻克巴士底狱的当夜，
+当路易十六听闻消息时惊慌地问：
+“这是一场叛乱吗？”</p>
+
+<p>他的廷利昂古尔公爵当即回答道：</p>
+
+<p>“不，陛下，这是一场革命。”</p>
+</blockquote>
+
+<p>社会是由人类组成的，
+所以这个整体有的时候会表现出奇特的单人所不具有的特性，
+进而进行组织性的进化与修复。
+最终回过头看，
+不禁就会发出江学长那样的感慨：
+个人的奋斗是很重要，
+但也要兼顾历史的进程啊。</p>
+
+<h2 id="言论管理">言论管理</h2>
+
+<p>我其实蛮喜欢看一些八卦文章的。
+（比如推荐一个博主叫“萝严肃”，
+他写的长文都会查不少背景知识）
+石原里美在文章里经常被表扬“表情管理”做得很好。
+同样地，“言论管理”也是资本家会被重点关注的一处特质。</p>
+
+<p>带着这点去看各个资本家的行动，
+就很有意思了。</p>
+
+<p>有一部分资本家的言论管理就是少说话，
+外界对他们的评价就是“比较技术”。
+而很大一部分资本家的发言就很精妙，
+他们会为了心中更美好的世界而发言。</p>
+
+<p>但可惜的是，
+人类的悲喜并不相通。</p>
+
+<p>涉及公益、教育这种大家都认可的话题还好，
+但工作这个话题本身就涉及社会性分工，
+不同的人会因为不同的事情有不同的感受。
+假如资本家在“996工作制度”这个话题上直白的表达“我非常享受工作本身”及其类似的观点，
+很自然地会收到无区别的批判，
+因为这个时候他的原罪是他的身份。</p>
+
+<p>当一个人的符号属性重于社会属性时，
+他发表的所有言论都应当有明确的导向性目的。
+这就是“言论管理”。</p>
+
+<h2 id="自我认知">自我认知</h2>
+
+<p>以前上学考试结束以后，
+总有人会哀嚎“哎呀考试考砸了完了完了。”
+结果最后他成绩非常好。
+虽然也<a href="https://www.zhihu.com/question/285977219/answer/574675736">有个说法叫“本质是因为怕被认为无能”</a>，
+但不论如何，
+假如你的行为轻信了他人的言论，
+就很容易被误导进坑里。
+最终导致“其它人都是嘴上喊着成绩差，结果你是真的成绩差。”</p>
+
+<p>就跟上面一节说的一样，
+现在的信息流（包括你正在看到的这篇文章）都充斥着言论管理。
+一个信息是否有价值影响个人的行动，
+是需要被识别、筛选并取其精华的。</p>
+
+<p>接下来的这段时间我们会看到更多的关于 996 的言论，
+有些会刺耳，有些会很解气。
+但是哪些里面蕴含了“建设性意见”，
+就需要我们睁大眼睛去辨别了。</p>
+
+<p>当他们在谈论 996 的时候，
+我在思考的是这个谈论本身。</p>
+
+<p>（完）</p>
+
+        </div>
+        
+
+        
+
+
+        
+        
+        <div style="height: 50px;"></div>
+        
+        
+
+        <div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="/about" target="_blank">about</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="https://github.com/LKI/LKI" target="_blank">github</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="/index.xml" target="_blank">rss</a>
+  </div>
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.pack.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+
+  
+  
+    
+    
+  
+</script>
+
+  
+
+</body>
+
+</html>

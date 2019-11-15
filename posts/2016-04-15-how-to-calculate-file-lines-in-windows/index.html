@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.59.1" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Lirian Su" />
+  <meta property="og:url" content="https://liriansu.com/posts/2016-04-15-how-to-calculate-file-lines-in-windows/" />
+  <link rel="canonical" href="https://liriansu.com/posts/2016-04-15-how-to-calculate-file-lines-in-windows/" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/liriansu.com\/"
+      },
+      "articleSection" : "posts",
+      "name" : "如何用Windows命令行统计文件行数",
+      "headline" : "如何用Windows命令行统计文件行数",
+      "description" : "今天要统计文件行数，可是手边恰好没有Linux环境。\n Linux 统计代码行数 在 Linux 下这是一件很简单的事情：\nfind . -name \x26quot;*.py\x26quot; | wc -l  这行语句就可以很简单地统计出当前目录下所有py后缀文件的行数了。\nWindows 统计代码行数 这时我们就不能用cmd而是应当用PowerShell啦。\nPowershell是Windows基于.NET开发的一个自动化配置框架。 （其实就是新版命令行）\n然后我们可以输入：\ndir .\\ -Recurse *.py | Get-Content | Measure-Object  我们就可以看到输出：\nCount : 1253  表示当前目录下py后缀文件一共有1253行。",
+      "inLanguage" : "en-US",
+      "author" : "Lirian Su",
+      "creator" : "Lirian Su",
+      "publisher": "Lirian Su",
+      "accountablePerson" : "Lirian Su",
+      "copyrightHolder" : "Lirian Su",
+      "copyrightYear" : "2016",
+      "datePublished": "2016-04-15 22:13:15 \x2b0000 UTC",
+      "dateModified" : "2016-04-15 22:13:15 \x2b0000 UTC",
+      "url" : "https:\/\/liriansu.com\/posts\/2016-04-15-how-to-calculate-file-lines-in-windows\/",
+      "keywords" : [  ]
+  }
+</script>
+<title>如何用Windows命令行统计文件行数 - 浮云计算</title>
+  <meta property="og:title" content="如何用Windows命令行统计文件行数 - 浮云计算" />
+  <meta property="og:type" content="article" />
+  <meta name="description" content="今天要统计文件行数，可是手边恰好没有Linux环境。
+ Linux 统计代码行数 在 Linux 下这是一件很简单的事情：
+find . -name &quot;*.py&quot; | wc -l  这行语句就可以很简单地统计出当前目录下所有py后缀文件的行数了。
+Windows 统计代码行数 这时我们就不能用cmd而是应当用PowerShell啦。
+Powershell是Windows基于.NET开发的一个自动化配置框架。 （其实就是新版命令行）
+然后我们可以输入：
+dir .\ -Recurse *.py | Get-Content | Measure-Object  我们就可以看到输出：
+Count : 1253  表示当前目录下py后缀文件一共有1253行。" />
+
+  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet"
+    href="/css/github-markdown.min.css" />
+  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+  <link rel="stylesheet" href="/css/index.css">
+  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="浮云计算">
+  
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker" rel="stylesheet">
+  
+  
+
+  
+</head>
+
+
+<body>
+  <article class="post 中文" id="article">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <div class="site-header">
+          
+<header>
+  <div class="signatures site-title">
+    <a href="/">Lirian Su</a>
+  </div>
+</header>
+<div class="row end-xs">
+  
+  
+  <div class="lang-switch col-xs-3 col-xs-offset-9">
+    <a href="/en/">English</a>
+  </div>
+  
+  
+</div>
+<div class="header-line"></div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">如何用Windows命令行统计文件行数</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2016-04-15 22:13:15 UTC">
+                15 Apr 2016
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="">@Lirian Su</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          
+
+<p>今天要统计文件行数，可是手边恰好没有Linux环境。</p>
+
+<!--MORE-->
+
+<h2 id="linux-统计代码行数">Linux 统计代码行数</h2>
+
+<p>在 Linux 下这是一件很简单的事情：</p>
+
+<pre><code class="language-bash">    find . -name &quot;*.py&quot; | wc -l
+</code></pre>
+
+<p>这行语句就可以很简单地统计出当前目录下所有py后缀文件的行数了。</p>
+
+<h2 id="windows-统计代码行数">Windows 统计代码行数</h2>
+
+<p>这时我们就不能用cmd而是应当用PowerShell啦。</p>
+
+<p><a href="https://en.wikipedia.org/wiki/Windows_PowerShell">Powershell</a>是Windows基于.NET开发的一个自动化配置框架。
+（其实就是新版命令行）</p>
+
+<p>然后我们可以输入：</p>
+
+<pre><code class="language-powershell">    dir .\ -Recurse *.py | Get-Content | Measure-Object
+</code></pre>
+
+<p>我们就可以看到输出：</p>
+
+<pre><code>Count : 1253
+</code></pre>
+
+<p>表示当前目录下py后缀文件一共有1253行。</p>
+
+        </div>
+        
+
+        
+
+
+        
+        
+        <div style="height: 50px;"></div>
+        
+        
+
+        <div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="/about" target="_blank">about</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="https://github.com/LKI/LKI" target="_blank">github</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="/index.xml" target="_blank">rss</a>
+  </div>
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.pack.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+
+  
+  
+    
+    
+  
+</script>
+
+  
+
+</body>
+
+</html>

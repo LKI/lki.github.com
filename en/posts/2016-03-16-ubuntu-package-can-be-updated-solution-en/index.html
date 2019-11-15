@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.59.1" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Lirian Su" />
+  <meta property="og:url" content="https://liriansu.com/en/posts/2016-03-16-ubuntu-package-can-be-updated-solution-en/" />
+  <link rel="canonical" href="https://liriansu.com/en/posts/2016-03-16-ubuntu-package-can-be-updated-solution-en/" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/liriansu.com\/"
+      },
+      "articleSection" : "posts",
+      "name" : "Solution to X packages can be updated in Ubuntu",
+      "headline" : "Solution to X packages can be updated in Ubuntu",
+      "description" : "A trick in Ubuntu.\n x package can be updated Recently I get this message when log into the system.\n x packages can be updated. y updates are security updates.  Ummm, the \x26ldquo;You have X app to update\x26rdquo; hint. It should be done with this command I think:\n apt-get update apt-get upgrade  But seems this update\x26amp;\x26amp;upgrade command does nothing:\n x packages can be updated. y updates are security updates.",
+      "inLanguage" : "en-US",
+      "author" : "Lirian Su",
+      "creator" : "Lirian Su",
+      "publisher": "Lirian Su",
+      "accountablePerson" : "Lirian Su",
+      "copyrightHolder" : "Lirian Su",
+      "copyrightYear" : "2016",
+      "datePublished": "2016-03-16 16:40:11 \x2b0000 UTC",
+      "dateModified" : "2016-03-16 16:40:11 \x2b0000 UTC",
+      "url" : "https:\/\/liriansu.com\/en\/posts\/2016-03-16-ubuntu-package-can-be-updated-solution-en\/",
+      "keywords" : [  ]
+  }
+</script>
+<title>Solution to X packages can be updated in Ubuntu - 浮云计算</title>
+  <meta property="og:title" content="Solution to X packages can be updated in Ubuntu - 浮云计算" />
+  <meta property="og:type" content="article" />
+  <meta name="description" content="A trick in Ubuntu.
+ x package can be updated Recently I get this message when log into the system.
+ x packages can be updated. y updates are security updates.  Ummm, the &ldquo;You have X app to update&rdquo; hint. It should be done with this command I think:
+ apt-get update apt-get upgrade  But seems this update&amp;&amp;upgrade command does nothing:
+ x packages can be updated. y updates are security updates." />
+
+  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet"
+    href="/css/github-markdown.min.css" />
+  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+  <link rel="stylesheet" href="/css/index.css">
+  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="浮云计算">
+  
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker" rel="stylesheet">
+  
+  
+
+  
+</head>
+
+
+<body>
+  <article class="post English" id="article">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <div class="site-header">
+          
+<header>
+  <div class="signatures site-title">
+    <a href="/en/">Lirian Su</a>
+  </div>
+</header>
+<div class="row end-xs">
+  
+  <div class="lang-switch col-xs-3 col-xs-offset-9">
+    <a href="/cn/">中文</a>
+  </div>
+  
+  
+  
+</div>
+<div class="header-line"></div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">Solution to X packages can be updated in Ubuntu</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2016-03-16 16:40:11 UTC">
+                16 Mar 2016
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="">@Lirian Su</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          
+
+<p>A trick in Ubuntu.</p>
+
+<!--MORE-->
+
+<h2 id="x-package-can-be-updated">x package can be updated</h2>
+
+<p>Recently I get this message when log into the system.</p>
+
+<pre><code>    x packages can be updated.
+    y updates are security updates.
+</code></pre>
+
+<p>Ummm, the &ldquo;You have X app to update&rdquo; hint.
+It should be done with this command I think:</p>
+
+<pre><code>    apt-get update
+    apt-get upgrade
+</code></pre>
+
+<p>But seems this update&amp;&amp;upgrade command does nothing:</p>
+
+<pre><code>    x packages can be updated.
+    y updates are security updates.
+</code></pre>
+
+<p><a href="http://ubuntuforums.org/showthread.php?t=1222909">After I google</a>,
+I get to know that <code>update</code> + <code>upgrade</code> can&rsquo;t do the whole upgrade.
+We need one more command:</p>
+
+<pre><code>    apt-get dist-upgrade
+</code></pre>
+
+<p>So we can get rid of this little annoying hint.</p>
+
+<h2 id="motd">MOTD</h2>
+
+<p>When log in, this Ubuntu message is named
+<a href="https://en.wikipedia.org/wiki/Motd_(Unix)">MOTD(Message of the day)</a>.
+Many company SA would customize their server&rsquo;s MOTD.</p>
+
+<p>MOTD scripts are put under <code>/etc/update-motd.d</code> by default in Ubuntu.
+The <code>x packages can be updated</code> message was generated by
+the script <code>/etc/update-motd.d/90-updates-available</code>.</p>
+
+<p>So if you want to totally remove the &lsquo;update packages&rsquo; message,
+you can delete the file <code>/etc/update-motd.d/90-updates-available</code>.
+(Not recommended.)</p>
+
+<p>We can also customize our MOTD.
+(By putting shell scripts under <code>/etc/update-motd.d</code>)</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<ol>
+<li><p>Update all packages command in Ubuntu is <code>aptget update &amp;&amp; apt-get upgrade &amp;&amp; apt-get dist-upgrade</code>.</p></li>
+
+<li><p>We have <a href="https://en.wikipedia.org/wiki/Motd_(Unix)">MOTD</a> for displaying message when log in, which is put under <code>/etc/update-motd.d</code>.</p></li>
+</ol>
+
+        </div>
+        
+
+        
+
+
+        
+        
+        <div style="height: 50px;"></div>
+        
+        
+
+        <div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="/about" target="_blank">about</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="https://github.com/LKI/LKI" target="_blank">github</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="/index.xml" target="_blank">rss</a>
+  </div>
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.pack.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+
+  
+  
+    
+    
+  
+</script>
+
+  
+
+</body>
+
+</html>

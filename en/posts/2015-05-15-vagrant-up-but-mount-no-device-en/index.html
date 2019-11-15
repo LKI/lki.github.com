@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.59.1" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Lirian Su" />
+  <meta property="og:url" content="https://liriansu.com/en/posts/2015-05-15-vagrant-up-but-mount-no-device-en/" />
+  <link rel="canonical" href="https://liriansu.com/en/posts/2015-05-15-vagrant-up-but-mount-no-device-en/" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/liriansu.com\/"
+      },
+      "articleSection" : "posts",
+      "name" : "Solution for vagrant-up error: mount no device",
+      "headline" : "Solution for vagrant-up error: mount no device",
+      "description" : "Today I encounter a problem running vagrant up：\n ==\x26gt; cvc-tools: Machine booted and ready! ==\x26gt; cvc-tools: Checking for guest additions in VM... ==\x26gt; cvc-tools: Configuring and enabling network interfaces... ==\x26gt; cvc-tools: Mounting shared folders... cvc-tools: \/work =\x26gt; D:\/work\/ Failed to mount folders in Linux guest. This is usually because the \x26quot;vboxsf\x26quot; file system is not available. Please verify that the guest additions are properly installed in the guest and can work properly.",
+      "inLanguage" : "en-US",
+      "author" : "Lirian Su",
+      "creator" : "Lirian Su",
+      "publisher": "Lirian Su",
+      "accountablePerson" : "Lirian Su",
+      "copyrightHolder" : "Lirian Su",
+      "copyrightYear" : "2015",
+      "datePublished": "2015-05-15 10:29:05 \x2b0000 UTC",
+      "dateModified" : "2015-05-15 10:29:05 \x2b0000 UTC",
+      "url" : "https:\/\/liriansu.com\/en\/posts\/2015-05-15-vagrant-up-but-mount-no-device-en\/",
+      "keywords" : [  ]
+  }
+</script>
+<title>Solution for vagrant-up error: mount no device - 浮云计算</title>
+  <meta property="og:title" content="Solution for vagrant-up error: mount no device - 浮云计算" />
+  <meta property="og:type" content="article" />
+  <meta name="description" content="Today I encounter a problem running vagrant up：
+ ==&gt; cvc-tools: Machine booted and ready! ==&gt; cvc-tools: Checking for guest additions in VM... ==&gt; cvc-tools: Configuring and enabling network interfaces... ==&gt; cvc-tools: Mounting shared folders... cvc-tools: /work =&gt; D:/work/ Failed to mount folders in Linux guest. This is usually because the &quot;vboxsf&quot; file system is not available. Please verify that the guest additions are properly installed in the guest and can work properly." />
+
+  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet"
+    href="/css/github-markdown.min.css" />
+  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+  <link rel="stylesheet" href="/css/index.css">
+  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="浮云计算">
+  
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker" rel="stylesheet">
+  
+  
+
+  
+</head>
+
+
+<body>
+  <article class="post English" id="article">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <div class="site-header">
+          
+<header>
+  <div class="signatures site-title">
+    <a href="/en/">Lirian Su</a>
+  </div>
+</header>
+<div class="row end-xs">
+  
+  <div class="lang-switch col-xs-3 col-xs-offset-9">
+    <a href="/cn/">中文</a>
+  </div>
+  
+  
+  
+</div>
+<div class="header-line"></div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">Solution for vagrant-up error: mount no device</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2015-05-15 10:29:05 UTC">
+                15 May 2015
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="">@Lirian Su</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          <p>Today I encounter a problem running <code>vagrant up</code>：</p>
+
+<!--MORE-->
+
+<pre><code>==&gt; cvc-tools: Machine booted and ready!
+==&gt; cvc-tools: Checking for guest additions in VM...
+==&gt; cvc-tools: Configuring and enabling network interfaces...
+==&gt; cvc-tools: Mounting shared folders...
+    cvc-tools: /work =&gt; D:/work/
+Failed to mount folders in Linux guest. This is usually because
+the &quot;vboxsf&quot; file system is not available. Please verify that
+the guest additions are properly installed in the guest and
+can work properly. The command attempted was:
+
+mount -t vboxsf -o uid=`id -u devel`,gid=`getent group devel | cut -d:
+-f3` work /work
+mount -t vboxsf -o uid=`id -u devel`,gid=`id -g devel` work /work
+
+The error output from the last command was:
+
+/sbin/mount.vboxsf: mounting failed with the error: No such device
+</code></pre>
+
+<p>Refer to <a href="https://github.com/mitchellh/vagrant/issues/1657">https://github.com/mitchellh/vagrant/issues/1657</a></p>
+
+<p>_This is usually a result of the guest’s package manager upgrading the</p>
+
+<p>kernel without rebuilding the VirtualBox Guest Additions_ by lenciel. So
+we run vboxadd accordingly:</p>
+
+<pre><code>    [lirian@localhost ~]$ sudo /etc/init.d/vboxadd setup
+    Removing existing VirtualBox non-DKMS kernel modules       [  OK  ]
+    Building the VirtualBox Guest Additions kernel modules
+    The headers for the current running kernel were not found. If the
+    following
+    module compilation fails then this could be the reason.
+    The missing package can be probably installed with
+    yum install kernel-devel-2.6.18-404.el5
+
+    Building the main Guest Additions module                   [FAILED]
+    (Look at /var/log/vboxadd-install.log to find out what went wrong)
+    Doing non-kernel setup of the Guest Additions              [  OK  ]
+</code></pre>
+
+<p>From the message we can know current running kernel were not found. So
+we run:<code>yum install kernel-devel-2.6.18-404.el5</code></p>
+
+<p>After all, we can run <code>vagrant up</code> or mount the directory manually.</p>
+
+        </div>
+        
+
+        
+
+
+        
+        
+        <div style="height: 50px;"></div>
+        
+        
+
+        <div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="/about" target="_blank">about</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="https://github.com/LKI/LKI" target="_blank">github</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="/index.xml" target="_blank">rss</a>
+  </div>
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.pack.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+
+  
+  
+    
+    
+  
+</script>
+
+  
+
+</body>
+
+</html>
