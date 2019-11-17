@@ -88,7 +88,7 @@ import time import jwt exp = int(time.time()) &#43; 86400 * 7 # 失效时间 use
             <div class="col-xs-6">
               
               <time class="post-date" datetime="2017-12-09 20:07:17 UTC">
-                09 Dec 2017
+                2017-12-09
               </time>
               
             </div>
@@ -306,7 +306,16 @@ JWT使用很广泛，久经考验，大家都在用（表现了我也不懂，�
         
         <div style="height: 50px;"></div>
         
-        
+        <div class="post-comments">
+          <script src="https://utteranc.es/client.js"
+                  repo="LKI/lki.github.io"
+                  issue-term="title"
+                  label="comment"
+                  theme="github-light"
+                  crossorigin="anonymous"
+                  async>
+          </script>
+        </div>
 
         <div class="site-footer">
   
@@ -322,7 +331,12 @@ JWT使用很广泛，久经考验，大家都在用（表现了我也不懂，�
     <a href="/index.xml" target="_blank">rss</a>
   </div>
   
-  
+  <div class="site-footer-item">
+    <span id="busuanzi_container_site_pv"> PV: <span id="busuanzi_value_site_pv"> </span> </span>
+  </div>
+  <div class="site-footer-item">
+    <span id="busuanzi_container_site_uv"> UV: <span id="busuanzi_value_site_uv"/> </span> </span>
+  </div>
 </div>
 
       </div>
@@ -341,6 +355,7 @@ JWT使用很广泛，久经考验，大家都在用（表现了我也不懂，�
     
   
 </script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
 
