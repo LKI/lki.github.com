@@ -19,7 +19,7 @@
       "articleSection" : "posts",
       "name" : "Git的理念",
       "headline" : "Git的理念",
-      "description" : "本文尝试介绍一下Git的过人之处。\n目标读者是想了解Git，\n或者对软件设计有兴趣的人。\n Git作为一个极其灵活的工具，\n从修改单机游戏数据文件的版本管理，\n到多人协作一起堆屎的协作开发，\n使用起来都是十分趁手。\n那么Git灵活的奥秘在哪呢？\n大概是因为Git设计正交、实现扎实吧。\n总览 Git里面的术语\/命令很多，\n但是它们可以归并成几个大类，\n每个大类的概念都是正交的，\n也就是说交叉概念很少，\n不会有模糊的概念定义。\n基于这样的设计，\nGit与之对应地实现了一套扎实的命令系统。\n Git里的概念有些难以准确翻译，\n本文涉及概念词的地方尽量用术语表达 。\n 比如经常用到的概念会有这些：\n Line Diff\n Commit\n Branch\n Repository\n Remote\n  Line Diff Git实现版本控制的方法是根据Line Diff，\n推算出每个Commit具体改了哪些东西，\n然后用多个Commit（实则是多份Line Diff）构建出所有历史。\n这个基于Line Diff的先天设计决定了Git的一些特性：\n 可以存储所有历史。\n我们常听到“Git是一个分布式的版本控制系统”，\n这个指的就是Git不需要中心化的服务器，\n你就可以做完所有操作。\n因为本地存着所有的Line Diff，\n所以“查看昨天被改过的文件名列表”这个操作完全可以离线完成。\n 对二进制文件不友善。\n二进制文件是没法强行比Line Diff的。\n所以假如用Git管理二进制文件，\nGit只会显示一个Binary File Differ。\n再把上面一条“存储所有历史”给叠加上，\n就会出现今天提交了一个200M的文件，\n明天后天我都修改覆盖了这个文件，\n最后整个目录就有600M大了…\n（也就是说一般不用Git来管理二进制大文件）\n 能检测文件重命名。",
+      "description" : "\x3cp\x3e本文尝试介绍一下Git的过人之处。\x3cbr \/\x3e\n目标读者是想了解Git，\x3cbr \/\x3e\n或者对软件设计有兴趣的人。\x3c\/p\x3e",
       "inLanguage" : "en-US",
       "author" : "Lirian Su",
       "creator" : "Lirian Su",
@@ -38,48 +38,7 @@
   <meta property="og:type" content="article" />
   <meta name="description" content="本文尝试介绍一下Git的过人之处。
 目标读者是想了解Git，
-或者对软件设计有兴趣的人。
- Git作为一个极其灵活的工具，
-从修改单机游戏数据文件的版本管理，
-到多人协作一起堆屎的协作开发，
-使用起来都是十分趁手。
-那么Git灵活的奥秘在哪呢？
-大概是因为Git设计正交、实现扎实吧。
-总览 Git里面的术语/命令很多，
-但是它们可以归并成几个大类，
-每个大类的概念都是正交的，
-也就是说交叉概念很少，
-不会有模糊的概念定义。
-基于这样的设计，
-Git与之对应地实现了一套扎实的命令系统。
- Git里的概念有些难以准确翻译，
-本文涉及概念词的地方尽量用术语表达 。
- 比如经常用到的概念会有这些：
- Line Diff
- Commit
- Branch
- Repository
- Remote
-  Line Diff Git实现版本控制的方法是根据Line Diff，
-推算出每个Commit具体改了哪些东西，
-然后用多个Commit（实则是多份Line Diff）构建出所有历史。
-这个基于Line Diff的先天设计决定了Git的一些特性：
- 可以存储所有历史。
-我们常听到“Git是一个分布式的版本控制系统”，
-这个指的就是Git不需要中心化的服务器，
-你就可以做完所有操作。
-因为本地存着所有的Line Diff，
-所以“查看昨天被改过的文件名列表”这个操作完全可以离线完成。
- 对二进制文件不友善。
-二进制文件是没法强行比Line Diff的。
-所以假如用Git管理二进制文件，
-Git只会显示一个Binary File Differ。
-再把上面一条“存储所有历史”给叠加上，
-就会出现今天提交了一个200M的文件，
-明天后天我都修改覆盖了这个文件，
-最后整个目录就有600M大了…
-（也就是说一般不用Git来管理二进制大文件）
- 能检测文件重命名。" />
+或者对软件设计有兴趣的人。" />
 
   <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
   <link rel="stylesheet"
@@ -134,13 +93,9 @@ Git只会显示一个Binary File Differ。
         </header>
 
         <div class="post-content markdown-body">
-          
-
-<p>本文尝试介绍一下Git的过人之处。<br />
+          <p>本文尝试介绍一下Git的过人之处。<br />
 目标读者是想了解Git，<br />
 或者对软件设计有兴趣的人。</p>
-
-<!--MORE-->
 
 <p>Git作为一个极其灵活的工具，<br />
 从修改单机游戏数据文件的版本管理，<br />
@@ -362,7 +317,6 @@ Git优秀的原因在于它：</p>
 </ul>
 
 <p>（完）</p>
-
         </div>
         
 
@@ -414,7 +368,7 @@ Git优秀的原因在于它：</p>
     </div>
   </article>
 
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
 

@@ -19,7 +19,7 @@
       "articleSection" : "posts",
       "name" : "优雅的 Python 接口设计",
       "headline" : "优雅的 Python 接口设计",
-      "description" : "今天跟@hulucc 日常写码吹比，\n讲到了选第三方库的原则说：\n“我其实发现我现在选库不太 care 他源码是怎么实现的，\n但是我非常喜欢那些 api 设计得巨科学的库。”\n 科学的 API API 设计的科学大概是什么样的呢？\n比如举一个有名的例子就是 requests 这个库。\n Requests is one of the most downloaded Python packages of all time,\npulling in over 11,000,000 downloads every month.\n 这个库的 API 用起来大概是这样的：\n\x26gt;\x26gt;\x26gt; response = requests.get(\x27https:\/\/api.github.com\/user\x27, auth=(\x27user\x27, \x27pass\x27)) \x26gt;\x26gt;\x26gt; response.status_code 200 \x26gt;\x26gt;\x26gt; response.headers[\x27content-type\x27] \x27application\/json; charset=utf8\x27 \x26gt;\x26gt;\x26gt; response.encoding \x27utf-8\x27 \x26gt;\x26gt;\x26gt; response.raise_for_status()  这里设计的所有 Python 程序语言都是见文知意的英文人类语言，\nrequests.get 中的 requests 不仅是包名，\n还化身成了代码语义的一部分。\n返回的 response 就是一个典型的 HTTP 协议对象，",
+      "description" : "\x3cp\x3e今天跟\x3ca href=\x22https:\/\/github.com\/hulucc\x22\x3e@hulucc\x3c\/a\x3e 日常写码吹比，\x3cbr \/\x3e\n讲到了选第三方库的原则说：\x3cbr \/\x3e\n“我其实发现我现在选库不太 care 他源码是怎么实现的，\x3cbr \/\x3e\n但是我非常喜欢那些 api 设计得巨科学的库。”\x3c\/p\x3e",
       "inLanguage" : "en-US",
       "author" : "Lirian Su",
       "creator" : "Lirian Su",
@@ -39,16 +39,7 @@
   <meta name="description" content="今天跟@hulucc 日常写码吹比，
 讲到了选第三方库的原则说：
 “我其实发现我现在选库不太 care 他源码是怎么实现的，
-但是我非常喜欢那些 api 设计得巨科学的库。”
- 科学的 API API 设计的科学大概是什么样的呢？
-比如举一个有名的例子就是 requests 这个库。
- Requests is one of the most downloaded Python packages of all time,
-pulling in over 11,000,000 downloads every month.
- 这个库的 API 用起来大概是这样的：
-&gt;&gt;&gt; response = requests.get(&#39;https://api.github.com/user&#39;, auth=(&#39;user&#39;, &#39;pass&#39;)) &gt;&gt;&gt; response.status_code 200 &gt;&gt;&gt; response.headers[&#39;content-type&#39;] &#39;application/json; charset=utf8&#39; &gt;&gt;&gt; response.encoding &#39;utf-8&#39; &gt;&gt;&gt; response.raise_for_status()  这里设计的所有 Python 程序语言都是见文知意的英文人类语言，
-requests.get 中的 requests 不仅是包名，
-还化身成了代码语义的一部分。
-返回的 response 就是一个典型的 HTTP 协议对象，" />
+但是我非常喜欢那些 api 设计得巨科学的库。”" />
 
   <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
   <link rel="stylesheet"
@@ -103,14 +94,10 @@ requests.get 中的 requests 不仅是包名，
         </header>
 
         <div class="post-content markdown-body">
-          
-
-<p>今天跟<a href="https://github.com/hulucc">@hulucc</a> 日常写码吹比，<br />
+          <p>今天跟<a href="https://github.com/hulucc">@hulucc</a> 日常写码吹比，<br />
 讲到了选第三方库的原则说：<br />
 “我其实发现我现在选库不太 care 他源码是怎么实现的，<br />
 但是我非常喜欢那些 api 设计得巨科学的库。”</p>
-
-<!--MORE-->
 
 <h2 id="科学的-api">科学的 API</h2>
 
@@ -312,7 +299,6 @@ def catches(*exceptions, raises: Union[BaseException, Callable[[Exception], Base
 怪不得程序员会头发少呀 :)</p>
 
 <p>（完）</p>
-
         </div>
         
 
@@ -364,7 +350,7 @@ def catches(*exceptions, raises: Union[BaseException, Callable[[Exception], Base
     </div>
   </article>
 
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
 

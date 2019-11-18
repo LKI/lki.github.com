@@ -19,7 +19,7 @@
       "articleSection" : "posts",
       "name" : "一种轻量级的Http加密方式：Hawk",
       "headline" : "一种轻量级的Http加密方式：Hawk",
-      "description" : "这是一篇关于Hawk的简短介绍。\n 什么是Hawk Hawk是一种轻量级的Http加密方式，\n这里的轻量级是针对于OAuth \/ Digest这种加密方式而言。\nHawk主要防范的是中间人攻击，\n它基于服务器和客户端共有的秘钥，\n在时间戳的基础上对请求加密，\n生成互相匹配的特征码。\nHawk的好处是整个加密的过程对计算能力要求不高，\n用到的也是简单的sha256算法。\n而且它可以只针对单个请求加密，\n所以应用场景十分灵活。\n在一个典型的Hawk应用场景中，\n客户端首先通过某种方式跟服务端通信，\n获取秘钥。\n在之后的Http请求中，\n客户端对请求采用Hawk加密，\n并且把基本信息放在Http Header里。\n服务器收到请求以后，\n采用同样的方式进行加密比对，\n假如两边都对上了，\n则是一个合法请求。\n否则返回401 Unauthorized\n加密算法 Hawk协议规定的加密方式如下：\n这是一个样例的HTTP GET请求：\nGET http:\/\/example.com:8000\/resource\/1?b=1\x26amp;a=2  要通过Hawk验证，\n我们会把请求的特征用换行符拼接成如下格式，\n最后再用HMAC sha256进行加密：\nhawk.1.header 1353832234 j4h3g2 GET \/resource\/1?b=1\x26amp;a=2 example.com 8000 some-app-ext-data  其中hawk.1.header是表示用version为1的hawk来加密header，\n1353832234是unix timestamp，\nj4h3g2是客户端生成的随机字符串，\nGET是请求类型，\n\/resource\/1?b=1\x26amp;a=2是请求的query，\nexample.com和8000分别是host和port，\n而some-app-ext-data是约定好要验证的额外内容（可为空）。\n上面这段字符串是大小写敏感，空格敏感且换行敏感的。\n假如说我们的秘钥是werxhqb98rpaxn39848xrunpaw3489ruxnpa98w4rxn，\n则上面的样例请求经过HMAC sha256加密后的特征码会是6R4rV5iE\x2bNPoym\x2bWwjeHzjAGXUtLNIxmo1vpMofpLAE=\n最后我们把基本信息加入Http Header里，\n请求就会变成这样子：\nGET http:\/\/example.com:8000\/resource\/1?b=1\x26amp;a=2 Authorization: Hawk id=\x26quot;dh37fgj492je\x26quot;, ts=\x26quot;1353832234\x26quot;, nonce=\x26quot;j4h3g2\x26quot;, ext=\x26quot;some-app-ext-data\x26quot;, mac=\x26quot;6R4rV5iE\x2bNPoym\x2bWwjeHzjAGXUtLNIxmo1vpMofpLAE=\x26quot;  服务器端拿到HttpHeader.",
+      "description" : "\x3cp\x3e这是一篇关于\x3ca href=\x22https:\/\/github.com\/hueniverse\/hawk1\x22\x3eHawk\x3c\/a\x3e的简短介绍。\x3c\/p\x3e",
       "inLanguage" : "en-US",
       "author" : "Lirian Su",
       "creator" : "Lirian Su",
@@ -36,46 +36,7 @@
 <title>一种轻量级的Http加密方式：Hawk - 浮云计算</title>
   <meta property="og:title" content="一种轻量级的Http加密方式：Hawk - 浮云计算" />
   <meta property="og:type" content="article" />
-  <meta name="description" content="这是一篇关于Hawk的简短介绍。
- 什么是Hawk Hawk是一种轻量级的Http加密方式，
-这里的轻量级是针对于OAuth / Digest这种加密方式而言。
-Hawk主要防范的是中间人攻击，
-它基于服务器和客户端共有的秘钥，
-在时间戳的基础上对请求加密，
-生成互相匹配的特征码。
-Hawk的好处是整个加密的过程对计算能力要求不高，
-用到的也是简单的sha256算法。
-而且它可以只针对单个请求加密，
-所以应用场景十分灵活。
-在一个典型的Hawk应用场景中，
-客户端首先通过某种方式跟服务端通信，
-获取秘钥。
-在之后的Http请求中，
-客户端对请求采用Hawk加密，
-并且把基本信息放在Http Header里。
-服务器收到请求以后，
-采用同样的方式进行加密比对，
-假如两边都对上了，
-则是一个合法请求。
-否则返回401 Unauthorized
-加密算法 Hawk协议规定的加密方式如下：
-这是一个样例的HTTP GET请求：
-GET http://example.com:8000/resource/1?b=1&amp;a=2  要通过Hawk验证，
-我们会把请求的特征用换行符拼接成如下格式，
-最后再用HMAC sha256进行加密：
-hawk.1.header 1353832234 j4h3g2 GET /resource/1?b=1&amp;a=2 example.com 8000 some-app-ext-data  其中hawk.1.header是表示用version为1的hawk来加密header，
-1353832234是unix timestamp，
-j4h3g2是客户端生成的随机字符串，
-GET是请求类型，
-/resource/1?b=1&amp;a=2是请求的query，
-example.com和8000分别是host和port，
-而some-app-ext-data是约定好要验证的额外内容（可为空）。
-上面这段字符串是大小写敏感，空格敏感且换行敏感的。
-假如说我们的秘钥是werxhqb98rpaxn39848xrunpaw3489ruxnpa98w4rxn，
-则上面的样例请求经过HMAC sha256加密后的特征码会是6R4rV5iE&#43;NPoym&#43;WwjeHzjAGXUtLNIxmo1vpMofpLAE=
-最后我们把基本信息加入Http Header里，
-请求就会变成这样子：
-GET http://example.com:8000/resource/1?b=1&amp;a=2 Authorization: Hawk id=&quot;dh37fgj492je&quot;, ts=&quot;1353832234&quot;, nonce=&quot;j4h3g2&quot;, ext=&quot;some-app-ext-data&quot;, mac=&quot;6R4rV5iE&#43;NPoym&#43;WwjeHzjAGXUtLNIxmo1vpMofpLAE=&quot;  服务器端拿到HttpHeader." />
+  <meta name="description" content="这是一篇关于Hawk的简短介绍。" />
 
   <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
   <link rel="stylesheet"
@@ -130,11 +91,7 @@ GET http://example.com:8000/resource/1?b=1&amp;a=2 Authorization: Hawk id=&quot;
         </header>
 
         <div class="post-content markdown-body">
-          
-
-<p>这是一篇关于<a href="https://github.com/hueniverse/hawk1">Hawk</a>的简短介绍。</p>
-
-<!--MORE-->
+          <p>这是一篇关于<a href="https://github.com/hueniverse/hawk1">Hawk</a>的简短介绍。</p>
 
 <h2 id="什么是hawk">什么是Hawk</h2>
 
@@ -217,7 +174,6 @@ Authorization: Hawk id=&quot;dh37fgj492je&quot;, ts=&quot;1353832234&quot;, nonc
 <br />
 <br /></li>
 </ul>
-
         </div>
         
 
@@ -269,7 +225,7 @@ Authorization: Hawk id=&quot;dh37fgj492je&quot;, ts=&quot;1353832234&quot;, nonc
     </div>
   </article>
 
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
 

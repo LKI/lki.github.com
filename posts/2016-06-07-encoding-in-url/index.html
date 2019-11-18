@@ -19,7 +19,7 @@
       "articleSection" : "posts",
       "name" : "URL中参数编码不正确的解决方案",
       "headline" : "URL中参数编码不正确的解决方案",
-      "description" : "说是说解决方案，其实并没有解决这个问题 :wink:\n URL中参数编码不正确 最近在做Python-Scrapy的爬虫，用Tornado写了一个服务器程序，\n但是遇到的问题是\nTornado无法解析URL的中文\n比如说样例小程序如下：\nfrom tornado.ioloop import IOLoop import tornado.web as tw class SampleHandler(tw.RequestHandler): def get(self, path): self.write(path) app = tw.Application([(ur\x27\/(.*)\x27, SampleHandler)]) app.listen(8080) IOLoop.current().start()  但是访问http:\/\/localhost:8080\/浮云计算却只能得到æµ®äº�è®¡ç®�这样一坨东西\x26hellip;\n解决方案 长话短说，这是因为URL中文解码不正确的原因导致的。\n所以我们利用站长工具url编码手动替换中文访问即可：\n访问http:\/\/localhost:8080\/%e6%b5%ae%e4%ba%91%e8%ae%a1%e7%ae%97就可以得到浮云计算啦。\n详细原因 一开始我怀疑是因为字符串没用utf8编码，\n于是尝试了不同的转换方式：\nself.write(str(path)) self.write(unicode(path)) self.write(path.encode(\x27utf8\x27))  这些常识不是报错，就是根本没变化。\n最终我找到了一个前人的经验，里面是这么讲的：\n 看来你是不知道在浏览器地址栏手动输入中文和在页面上一个的链接的编码处理方式是不同的。。。。\n打个比方，在windows系统上，你在FF地址栏输入\x26rdquo;http:\/\/localhost\/中文.html?m=汉语\x26quot;，这里的“中文”两字的编码是utf8（这一点应该是跟浏览器设置相关），而“汉语”则是gbk，跟操作系统相关（大部分中国人的windows应该都是cp936，也就是gbk）。\n如果你是通过某个页面访问这个链接的，则所有字符的编码都是跟页面的编码相关。\n在IE上也是一样。\n所以，我觉得还是打消在浏览器地址栏输入中文这个想法吧，要不然你要解码两次，而且还要保证页面上的编码跟系统一样，不然无法保证手动输入和页面点击的兼容性。。。。\n 喔，原来是因为URL解码方式完全取决于浏览器和操作系统，也就是说中文有可能以GBK来编码\n怪不得Python\/Tornado认不出来了！\n所以解决方案就是我们手动去解码一次啦~\n（或者Python3 XD）",
+      "description" : "\x3cp\x3e说是说解决方案，其实并没有解决这个问题 :wink:\x3c\/p\x3e",
       "inLanguage" : "en-US",
       "author" : "Lirian Su",
       "creator" : "Lirian Su",
@@ -36,28 +36,7 @@
 <title>URL中参数编码不正确的解决方案 - 浮云计算</title>
   <meta property="og:title" content="URL中参数编码不正确的解决方案 - 浮云计算" />
   <meta property="og:type" content="article" />
-  <meta name="description" content="说是说解决方案，其实并没有解决这个问题 :wink:
- URL中参数编码不正确 最近在做Python-Scrapy的爬虫，用Tornado写了一个服务器程序，
-但是遇到的问题是
-Tornado无法解析URL的中文
-比如说样例小程序如下：
-from tornado.ioloop import IOLoop import tornado.web as tw class SampleHandler(tw.RequestHandler): def get(self, path): self.write(path) app = tw.Application([(ur&#39;/(.*)&#39;, SampleHandler)]) app.listen(8080) IOLoop.current().start()  但是访问http://localhost:8080/浮云计算却只能得到æµ®äº�è®¡ç®�这样一坨东西&hellip;
-解决方案 长话短说，这是因为URL中文解码不正确的原因导致的。
-所以我们利用站长工具url编码手动替换中文访问即可：
-访问http://localhost:8080/%e6%b5%ae%e4%ba%91%e8%ae%a1%e7%ae%97就可以得到浮云计算啦。
-详细原因 一开始我怀疑是因为字符串没用utf8编码，
-于是尝试了不同的转换方式：
-self.write(str(path)) self.write(unicode(path)) self.write(path.encode(&#39;utf8&#39;))  这些常识不是报错，就是根本没变化。
-最终我找到了一个前人的经验，里面是这么讲的：
- 看来你是不知道在浏览器地址栏手动输入中文和在页面上一个的链接的编码处理方式是不同的。。。。
-打个比方，在windows系统上，你在FF地址栏输入&rdquo;http://localhost/中文.html?m=汉语&quot;，这里的“中文”两字的编码是utf8（这一点应该是跟浏览器设置相关），而“汉语”则是gbk，跟操作系统相关（大部分中国人的windows应该都是cp936，也就是gbk）。
-如果你是通过某个页面访问这个链接的，则所有字符的编码都是跟页面的编码相关。
-在IE上也是一样。
-所以，我觉得还是打消在浏览器地址栏输入中文这个想法吧，要不然你要解码两次，而且还要保证页面上的编码跟系统一样，不然无法保证手动输入和页面点击的兼容性。。。。
- 喔，原来是因为URL解码方式完全取决于浏览器和操作系统，也就是说中文有可能以GBK来编码
-怪不得Python/Tornado认不出来了！
-所以解决方案就是我们手动去解码一次啦~
-（或者Python3 XD）" />
+  <meta name="description" content="说是说解决方案，其实并没有解决这个问题 :wink:" />
 
   <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
   <link rel="stylesheet"
@@ -112,11 +91,7 @@ self.write(str(path)) self.write(unicode(path)) self.write(path.encode(&#39;utf8
         </header>
 
         <div class="post-content markdown-body">
-          
-
-<p>说是说解决方案，其实并没有解决这个问题 :wink:</p>
-
-<!--MORE-->
+          <p>说是说解决方案，其实并没有解决这个问题 :wink:</p>
 
 <h2 id="url中参数编码不正确">URL中参数编码不正确</h2>
 
@@ -177,7 +152,6 @@ self.write(path.encode('utf8'))
 <p>所以解决方案就是我们手动去解码一次啦~</p>
 
 <p>（或者Python3 XD）</p>
-
         </div>
         
 
@@ -229,7 +203,7 @@ self.write(path.encode('utf8'))
     </div>
   </article>
 
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
 

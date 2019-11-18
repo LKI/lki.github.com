@@ -19,7 +19,7 @@
       "articleSection" : "posts",
       "name" : "git新手教程",
       "headline" : "git新手教程",
-      "description" : "这是一篇针对技术小白们的Git科普文章。\n本文主要介绍版本控制工具Git的基本概念，\n以及init,status,add,commit,reset,log几个基本命令。\n 什么是Git 在十多年前，有好多程序员一起开发Linux系统。\n这么多人一起写一个软件，他们就需要一个好的软件来\n控制代码的版本\/回滚代码\/并行开发。\n最开始他们是用的一个现成的软件叫*BitKeeper*，\n但是后来BitKeeper居然想收费！于是他们就开发出了Git…\n没错，Git就是一个由程序员自己写的，\n写给程序员自己用的，用来管理写程序的工具。\n本文想做的就是把Git这个*程序员用的*工具\n介绍给不懂写代码，但是要写文档，改文档的同学。\n（所以本文的具体栗子是在Windows系统下进行）\n什么是版本控制 举个栗子：\n今天要写毕业论文，我打开了Microsoft Word， 写完了第一章。\n但我突然有一个更好的想法，我决定重写第一章。\n于是我按下了撤销按钮，Word文档回滚到了最开始的地方。\n我坐了三分钟，我发现其实还是我之前的第一章写的比较好。\n于是我按下了重复按钮，Word文档又回滚到了我写完第一章的时候了。\n上面的栗子，其实就是一个典型的*版本控制*场景。\n而Git作为版本控制的工具，做的就是文件级别的*版本控制*。\n接下来我们直接来试用Git。\n安装Git 首先我们到Git的官方网站（英文）\n去下载最新的windows版本的git：\n（当你用浏览器打开这个网站的时候，就应该有下载框弹出来了）\n下载地址：https:\/\/git-scm.com\/download\/win\n下载完毕以后打开，大部分设定用默认的就行了，\n几个关键选项图示如下：\n安装选项：\n安装命令：\n换行符操作：\n安装完毕后我们在任意菜单右键，\n应该就可以看到“Git Bash Here”的选项。\n并且打开以后我们输入git version\n可以查看到git版本号信息，\n这就说明我们安装成功了。\n$ git version git version 2.9.0.windows.1 （具体版本可能会随时间变化，但这并不重要）  新手上路 打开Git Bash git是一个命令行工具。\n（虽然也有图形界面，但那个太蠢了，\n我们还是学习更好用的敲命令吧）\n首先我们打开一个文件夹，\n比如我打开的是D:\\git-first-lesson\\XML这个文件夹，\n然后右键菜单 -\x26gt; Git Bash Here，\n就打开了一个这样的Git Bash：\n再顺便说一下几个基本的命令：",
+      "description" : "\x3cp\x3e这是一篇针对技术小白们的Git科普文章。\x3cbr \/\x3e\n本文主要介绍版本控制工具Git的基本概念，\x3cbr \/\x3e\n以及init,status,add,commit,reset,log几个基本命令。\x3c\/p\x3e",
       "inLanguage" : "en-US",
       "author" : "Lirian Su",
       "creator" : "Lirian Su",
@@ -38,48 +38,7 @@
   <meta property="og:type" content="article" />
   <meta name="description" content="这是一篇针对技术小白们的Git科普文章。
 本文主要介绍版本控制工具Git的基本概念，
-以及init,status,add,commit,reset,log几个基本命令。
- 什么是Git 在十多年前，有好多程序员一起开发Linux系统。
-这么多人一起写一个软件，他们就需要一个好的软件来
-控制代码的版本/回滚代码/并行开发。
-最开始他们是用的一个现成的软件叫*BitKeeper*，
-但是后来BitKeeper居然想收费！于是他们就开发出了Git…
-没错，Git就是一个由程序员自己写的，
-写给程序员自己用的，用来管理写程序的工具。
-本文想做的就是把Git这个*程序员用的*工具
-介绍给不懂写代码，但是要写文档，改文档的同学。
-（所以本文的具体栗子是在Windows系统下进行）
-什么是版本控制 举个栗子：
-今天要写毕业论文，我打开了Microsoft Word， 写完了第一章。
-但我突然有一个更好的想法，我决定重写第一章。
-于是我按下了撤销按钮，Word文档回滚到了最开始的地方。
-我坐了三分钟，我发现其实还是我之前的第一章写的比较好。
-于是我按下了重复按钮，Word文档又回滚到了我写完第一章的时候了。
-上面的栗子，其实就是一个典型的*版本控制*场景。
-而Git作为版本控制的工具，做的就是文件级别的*版本控制*。
-接下来我们直接来试用Git。
-安装Git 首先我们到Git的官方网站（英文）
-去下载最新的windows版本的git：
-（当你用浏览器打开这个网站的时候，就应该有下载框弹出来了）
-下载地址：https://git-scm.com/download/win
-下载完毕以后打开，大部分设定用默认的就行了，
-几个关键选项图示如下：
-安装选项：
-安装命令：
-换行符操作：
-安装完毕后我们在任意菜单右键，
-应该就可以看到“Git Bash Here”的选项。
-并且打开以后我们输入git version
-可以查看到git版本号信息，
-这就说明我们安装成功了。
-$ git version git version 2.9.0.windows.1 （具体版本可能会随时间变化，但这并不重要）  新手上路 打开Git Bash git是一个命令行工具。
-（虽然也有图形界面，但那个太蠢了，
-我们还是学习更好用的敲命令吧）
-首先我们打开一个文件夹，
-比如我打开的是D:\git-first-lesson\XML这个文件夹，
-然后右键菜单 -&gt; Git Bash Here，
-就打开了一个这样的Git Bash：
-再顺便说一下几个基本的命令：" />
+以及init,status,add,commit,reset,log几个基本命令。" />
 
   <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
   <link rel="stylesheet"
@@ -134,13 +93,9 @@ $ git version git version 2.9.0.windows.1 （具体版本可能会随时间变�
         </header>
 
         <div class="post-content markdown-body">
-          
-
-<p>这是一篇针对技术小白们的Git科普文章。<br />
+          <p>这是一篇针对技术小白们的Git科普文章。<br />
 本文主要介绍版本控制工具Git的基本概念，<br />
 以及init,status,add,commit,reset,log几个基本命令。</p>
-
-<!--MORE-->
 
 <h2 id="什么是git">什么是Git</h2>
 
@@ -410,7 +365,6 @@ Data\
 <p>在之后的教程中，我们会更加深入地接触Git。</p>
 
 <p>（完）</p>
-
         </div>
         
 
@@ -462,7 +416,7 @@ Data\
     </div>
   </article>
 
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
 

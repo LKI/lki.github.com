@@ -19,7 +19,7 @@
       "articleSection" : "posts",
       "name" : "Virtual Machine, Vagrant, Docker的区别",
       "headline" : "Virtual Machine, Vagrant, Docker的区别",
-      "description" : "Virtualization——虚拟化技术一直是计算机世界里面很重要的东西。\n一般程序员听到这个词首先浮现出的就是Windows下面开着装着Linux系统的VMware。\n而这个“装着Linux系统的VMware”就是我们口中的虚拟机（Virtual Machine）\n 虚拟机的主要好处是可以创建一个与主机操作系统不同的开发环境\n（比如说一般的办公室都是Windows系统电脑）\n但是开发的便利也会导致初始化一个这样的环境比较麻烦\n而且当项目进行到一定程度，对环境本身一些变化有依赖的时候\n从零开始创建虚拟机的开发环境会很繁琐\nVagrant就是一种用来解决这种繁琐的工具\nVagrant 根据官方的说法\n Vagrant provides easy to configure, reproducible, and portable work environments built on top of industry-standard technology and controlled by a single consistent workflow to help maximize the productivity and flexibility of you and your team\n Vagrant本身不做虚拟机的工作，而是允许用户用VMware|VirtualBox|AWS来启动虚拟机镜像，他们管这叫Provider\n当然了，镜像在Vagrant这里叫Box，而且很多公司已经做好了初始化的Box在这里可以直接用\nVagrant还提供了对Box的初始化脚本（Provisioning），这些初始化脚本可以用更多的脚本工具来完成对Box的配置\n所以其实相比于传统的虚拟机，Vagrant是站在巨人的肩膀上，完成了自动化。\nDocker Docker项目的目标是实现轻量级的虚拟化方案，它和Virtual Machine最大的不同是Docker容器共享操作系统的内核\n所以Docker和传统虚拟机的对比是明显的：\n   特性 Docker Virtual Machine     启动 秒级 分钟级   大小 一般为MB 一般为GB   性能 近原生 弱于原生   单机支持量 上千个 一般几十个   内核 共享 独立    Vagrant vs Docker 讲道理的话，这两个不应该放在一起比较， 这两者的虚拟化级别并不是一个量级上的",
+      "description" : "\x3cp\x3eVirtualization——虚拟化技术一直是计算机世界里面很重要的东西。\x3cbr \/\x3e\n一般程序员听到这个词首先浮现出的就是Windows下面开着装着Linux系统的VMware。\x3cbr \/\x3e\n而这个“装着Linux系统的VMware”就是我们口中的虚拟机（Virtual Machine）\x3c\/p\x3e",
       "inLanguage" : "en-US",
       "author" : "Lirian Su",
       "creator" : "Lirian Su",
@@ -38,22 +38,7 @@
   <meta property="og:type" content="article" />
   <meta name="description" content="Virtualization——虚拟化技术一直是计算机世界里面很重要的东西。
 一般程序员听到这个词首先浮现出的就是Windows下面开着装着Linux系统的VMware。
-而这个“装着Linux系统的VMware”就是我们口中的虚拟机（Virtual Machine）
- 虚拟机的主要好处是可以创建一个与主机操作系统不同的开发环境
-（比如说一般的办公室都是Windows系统电脑）
-但是开发的便利也会导致初始化一个这样的环境比较麻烦
-而且当项目进行到一定程度，对环境本身一些变化有依赖的时候
-从零开始创建虚拟机的开发环境会很繁琐
-Vagrant就是一种用来解决这种繁琐的工具
-Vagrant 根据官方的说法
- Vagrant provides easy to configure, reproducible, and portable work environments built on top of industry-standard technology and controlled by a single consistent workflow to help maximize the productivity and flexibility of you and your team
- Vagrant本身不做虚拟机的工作，而是允许用户用VMware|VirtualBox|AWS来启动虚拟机镜像，他们管这叫Provider
-当然了，镜像在Vagrant这里叫Box，而且很多公司已经做好了初始化的Box在这里可以直接用
-Vagrant还提供了对Box的初始化脚本（Provisioning），这些初始化脚本可以用更多的脚本工具来完成对Box的配置
-所以其实相比于传统的虚拟机，Vagrant是站在巨人的肩膀上，完成了自动化。
-Docker Docker项目的目标是实现轻量级的虚拟化方案，它和Virtual Machine最大的不同是Docker容器共享操作系统的内核
-所以Docker和传统虚拟机的对比是明显的：
-   特性 Docker Virtual Machine     启动 秒级 分钟级   大小 一般为MB 一般为GB   性能 近原生 弱于原生   单机支持量 上千个 一般几十个   内核 共享 独立    Vagrant vs Docker 讲道理的话，这两个不应该放在一起比较， 这两者的虚拟化级别并不是一个量级上的" />
+而这个“装着Linux系统的VMware”就是我们口中的虚拟机（Virtual Machine）" />
 
   <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
   <link rel="stylesheet"
@@ -108,13 +93,9 @@ Docker Docker项目的目标是实现轻量级的虚拟化方案，它和Virtual
         </header>
 
         <div class="post-content markdown-body">
-          
-
-<p>Virtualization——虚拟化技术一直是计算机世界里面很重要的东西。<br />
+          <p>Virtualization——虚拟化技术一直是计算机世界里面很重要的东西。<br />
 一般程序员听到这个词首先浮现出的就是Windows下面开着装着Linux系统的VMware。<br />
 而这个“装着Linux系统的VMware”就是我们口中的虚拟机（Virtual Machine）</p>
-
-<!--MORE-->
 
 <p>虚拟机的主要好处是可以创建一个与主机操作系统不同的开发环境<br />
 （比如说一般的办公室都是Windows系统电脑）</p>
@@ -254,7 +235,6 @@ Vagrant还提供了对Box的初始化脚本（Provisioning），这些初始化�
 <br />
 <br /></li>
 </ol>
-
         </div>
         
 
@@ -306,7 +286,7 @@ Vagrant还提供了对Box的初始化脚本（Provisioning），这些初始化�
     </div>
   </article>
 
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
 

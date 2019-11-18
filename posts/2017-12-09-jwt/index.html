@@ -19,7 +19,7 @@
       "articleSection" : "posts",
       "name" : "一种简单的鉴权方式：JWT",
       "headline" : "一种简单的鉴权方式：JWT",
-      "description" : "这是一篇关于 JWT(JSON Web Token) 的简短介绍。\n 什么是JWT JWT, 全称是JSON Web Token，\n是一种易于使用、无状态的鉴权(Authorization)方式。\n简单的来说，就是\nServer端把JSON数据经过加密做成token，以授权给Client端。\n多说无益，上代码，举个栗子。\n当Client端登录完成以后，\nServer端要返回一个7天有效的token，\n那么对应的Python的样例代码会是这样的：\n（使用了PyJWT包：pip install pyjwt）\nimport time import jwt exp = int(time.time()) \x2b 86400 * 7 # 失效时间 user = \x27liriansu\x27 # 用户表示 key = \x27hunter2\x27 # 密钥 payload = {\x27exp\x27: exp, \x27user\x27: user} # JSON 数据 token = jwt.encode(payload, key) print(token) # token可能会长这样子 # eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.e30.EoKoMCjq_zGqUg5HDfqw4EN7EiG6gMjkUZle0uGJDGU   关于hunter2也有个梗：弱密码hunter2\n 然后Client端每次在authorization header或者是query string里带上token。",
+      "description" : "\x3cp\x3e这是一篇关于 \x3ca href=\x22https:\/\/jwt.io\/\x22\x3eJWT(JSON Web Token)\x3c\/a\x3e 的简短介绍。\x3c\/p\x3e",
       "inLanguage" : "en-US",
       "author" : "Lirian Su",
       "creator" : "Lirian Su",
@@ -36,18 +36,7 @@
 <title>一种简单的鉴权方式：JWT - 浮云计算</title>
   <meta property="og:title" content="一种简单的鉴权方式：JWT - 浮云计算" />
   <meta property="og:type" content="article" />
-  <meta name="description" content="这是一篇关于 JWT(JSON Web Token) 的简短介绍。
- 什么是JWT JWT, 全称是JSON Web Token，
-是一种易于使用、无状态的鉴权(Authorization)方式。
-简单的来说，就是
-Server端把JSON数据经过加密做成token，以授权给Client端。
-多说无益，上代码，举个栗子。
-当Client端登录完成以后，
-Server端要返回一个7天有效的token，
-那么对应的Python的样例代码会是这样的：
-（使用了PyJWT包：pip install pyjwt）
-import time import jwt exp = int(time.time()) &#43; 86400 * 7 # 失效时间 user = &#39;liriansu&#39; # 用户表示 key = &#39;hunter2&#39; # 密钥 payload = {&#39;exp&#39;: exp, &#39;user&#39;: user} # JSON 数据 token = jwt.encode(payload, key) print(token) # token可能会长这样子 # eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.e30.EoKoMCjq_zGqUg5HDfqw4EN7EiG6gMjkUZle0uGJDGU   关于hunter2也有个梗：弱密码hunter2
- 然后Client端每次在authorization header或者是query string里带上token。" />
+  <meta name="description" content="这是一篇关于 JWT(JSON Web Token) 的简短介绍。" />
 
   <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
   <link rel="stylesheet"
@@ -102,11 +91,7 @@ import time import jwt exp = int(time.time()) &#43; 86400 * 7 # 失效时间 use
         </header>
 
         <div class="post-content markdown-body">
-          
-
-<p>这是一篇关于 <a href="https://jwt.io/">JWT(JSON Web Token)</a> 的简短介绍。</p>
-
-<!--MORE-->
+          <p>这是一篇关于 <a href="https://jwt.io/">JWT(JSON Web Token)</a> 的简短介绍。</p>
 
 <h2 id="什么是jwt">什么是JWT</h2>
 
@@ -295,7 +280,6 @@ JWT使用很广泛，久经考验，大家都在用（表现了我也不懂，�
 还是要多学习一个啊。<br />
 所谓<code>苟日新，日日新，又日新</code>是也。</p></li>
 </ul>
-
         </div>
         
 
@@ -347,7 +331,7 @@ JWT使用很广泛，久经考验，大家都在用（表现了我也不懂，�
     </div>
   </article>
 
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
 

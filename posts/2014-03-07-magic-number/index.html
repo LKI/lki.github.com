@@ -19,7 +19,7 @@
       "articleSection" : "posts",
       "name" : "0x5f3759df 一个神奇的数字",
       "headline" : "0x5f3759df 一个神奇的数字",
-      "description" : "今天在看各种算法介绍的时候看到了这么一句话“神奇数字0x5f3759df并不是约翰·卡马克发明的。之所以一开始被误解，主要是许多对卡神光环膜拜已久的游戏程序员在读Quake3源码时吓尿了……”一下子引起了我的好奇心，在查阅了一些资料以后整理整个故事如下。\n 雷神之锤3 雷神之锤3（Quake3）是90年代的经典FPS游戏，不仅画面精美，而且整个程序优化得很好，在配置一般的电脑上也能流畅地运行。这主要归功于其3D引擎id Tech3，而此引擎是由约翰·卡马克（John Carmack）领导开发的。\n卡马克是一个美国码农，id Software的创始人之一，他因在3D技术上的杰出成就而文明。卡马克还是一个开源软件的倡导者，1996年他放出了雷神之锤的源代码，而一个程序员将其改写成了Linux的版本并发给了卡马克。卡马克没有认为这是侵权，反而是要求他的员工们以这个补丁为基础开发雷神之锤的Linux版本。后来的日子id Software也一样公布了雷神之锤2的源代码，在2005年，雷神之锤3的源代码也被放出来了。\n（这是官方下载地址ftp:\/\/ftp.idsoftware.com\/idstuff\/source\/quake3-1.32b-source.zip）\n我们知道，越底层的函数调用越频繁，假如把底层函数优化做好了，效率自然就上去了，3D引擎归根到底还是数学运算。在最底层的运算函数中（game\/code\/q_math.c中），有许多有趣的函数，有些更是令人惊叹这究竟是如何编写的。\n神奇的0x5f3759df 在运算函数文件中可以找到这么一个函数，它的作用是将一个数开方并取倒数，功能上跟系统函数(float)(1.0\/sqrt(x))一样，但是效率上快了四倍：\nfloat Q_rsqrt( float number ) { long i; float x2, y; const float threehalfs = 1.5F; x2 = number * 0.5F; y = number; i = * ( long * ) \x26amp;y; \/\/ evil floating point bit level hacking i = 0x5f3759df - ( i \x26gt;\x26gt; 1 ); \/\/ WHAT THE FUCK? y = * ( float * ) \x26amp;i; y = y * ( threehalfs - ( x2 * y * y ) ); \/\/ 1st iteration \/\/ y = y * ( threehalfs - ( x2 * y * y ) ); \/\/ 2nd iteration, this can be removed #ifndef Q3_VM #ifdef __linux__ assert( !",
+      "description" : "\x3cp\x3e今天在看各种算法介绍的时候看到了这么一句话“神奇数字0x5f3759df并不是约翰·卡马克发明的。之所以一开始被误解，主要是许多对卡神光环膜拜已久的游戏程序员在读Quake3源码时吓尿了……”一下子引起了我的好奇心，在查阅了一些资料以后整理整个故事如下。\x3c\/p\x3e",
       "inLanguage" : "en-US",
       "author" : "Lirian Su",
       "creator" : "Lirian Su",
@@ -36,13 +36,7 @@
 <title>0x5f3759df 一个神奇的数字 - 浮云计算</title>
   <meta property="og:title" content="0x5f3759df 一个神奇的数字 - 浮云计算" />
   <meta property="og:type" content="article" />
-  <meta name="description" content="今天在看各种算法介绍的时候看到了这么一句话“神奇数字0x5f3759df并不是约翰·卡马克发明的。之所以一开始被误解，主要是许多对卡神光环膜拜已久的游戏程序员在读Quake3源码时吓尿了……”一下子引起了我的好奇心，在查阅了一些资料以后整理整个故事如下。
- 雷神之锤3 雷神之锤3（Quake3）是90年代的经典FPS游戏，不仅画面精美，而且整个程序优化得很好，在配置一般的电脑上也能流畅地运行。这主要归功于其3D引擎id Tech3，而此引擎是由约翰·卡马克（John Carmack）领导开发的。
-卡马克是一个美国码农，id Software的创始人之一，他因在3D技术上的杰出成就而文明。卡马克还是一个开源软件的倡导者，1996年他放出了雷神之锤的源代码，而一个程序员将其改写成了Linux的版本并发给了卡马克。卡马克没有认为这是侵权，反而是要求他的员工们以这个补丁为基础开发雷神之锤的Linux版本。后来的日子id Software也一样公布了雷神之锤2的源代码，在2005年，雷神之锤3的源代码也被放出来了。
-（这是官方下载地址ftp://ftp.idsoftware.com/idstuff/source/quake3-1.32b-source.zip）
-我们知道，越底层的函数调用越频繁，假如把底层函数优化做好了，效率自然就上去了，3D引擎归根到底还是数学运算。在最底层的运算函数中（game/code/q_math.c中），有许多有趣的函数，有些更是令人惊叹这究竟是如何编写的。
-神奇的0x5f3759df 在运算函数文件中可以找到这么一个函数，它的作用是将一个数开方并取倒数，功能上跟系统函数(float)(1.0/sqrt(x))一样，但是效率上快了四倍：
-float Q_rsqrt( float number ) { long i; float x2, y; const float threehalfs = 1.5F; x2 = number * 0.5F; y = number; i = * ( long * ) &amp;y; // evil floating point bit level hacking i = 0x5f3759df - ( i &gt;&gt; 1 ); // WHAT THE FUCK? y = * ( float * ) &amp;i; y = y * ( threehalfs - ( x2 * y * y ) ); // 1st iteration // y = y * ( threehalfs - ( x2 * y * y ) ); // 2nd iteration, this can be removed #ifndef Q3_VM #ifdef __linux__ assert( !" />
+  <meta name="description" content="今天在看各种算法介绍的时候看到了这么一句话“神奇数字0x5f3759df并不是约翰·卡马克发明的。之所以一开始被误解，主要是许多对卡神光环膜拜已久的游戏程序员在读Quake3源码时吓尿了……”一下子引起了我的好奇心，在查阅了一些资料以后整理整个故事如下。" />
 
   <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
   <link rel="stylesheet"
@@ -97,11 +91,7 @@ float Q_rsqrt( float number ) { long i; float x2, y; const float threehalfs = 1.
         </header>
 
         <div class="post-content markdown-body">
-          
-
-<p>今天在看各种算法介绍的时候看到了这么一句话“神奇数字0x5f3759df并不是约翰·卡马克发明的。之所以一开始被误解，主要是许多对卡神光环膜拜已久的游戏程序员在读Quake3源码时吓尿了……”一下子引起了我的好奇心，在查阅了一些资料以后整理整个故事如下。</p>
-
-<!--MORE-->
+          <p>今天在看各种算法介绍的时候看到了这么一句话“神奇数字0x5f3759df并不是约翰·卡马克发明的。之所以一开始被误解，主要是许多对卡神光环膜拜已久的游戏程序员在读Quake3源码时吓尿了……”一下子引起了我的好奇心，在查阅了一些资料以后整理整个故事如下。</p>
 
 <h2 id="雷神之锤3">雷神之锤3</h2>
 
@@ -169,7 +159,6 @@ float Q_rsqrt( float number ) { long i; float x2, y; const float threehalfs = 1.
 <a href="http://en.wikipedia.org/wiki/John_Carmack">http://en.wikipedia.org/wiki/John_Carmack</a><br />
 <a href="http://zh.wikipedia.org/wiki/%E5%B9%B3%E6%96%B9%E6%A0%B9%E5%80%92%E6%95%B0%E9%80%9F%E7%AE%97%E6%B3%95">http://zh.wikipedia.org/wiki/%E5%B9%B3%E6%96%B9%E6%A0%B9%E5%80%92%E6%95%B0%E9%80%9F%E7%AE%97%E6%B3%95</a></p>
 </blockquote>
-
         </div>
         
 
@@ -221,7 +210,7 @@ float Q_rsqrt( float number ) { long i; float x2, y; const float threehalfs = 1.
     </div>
   </article>
 
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
 

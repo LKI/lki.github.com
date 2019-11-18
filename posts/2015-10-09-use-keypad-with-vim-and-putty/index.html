@@ -19,7 +19,7 @@
       "articleSection" : "posts",
       "name" : "VIM中小键盘失灵的解决方案(Putty)",
       "headline" : "VIM中小键盘失灵的解决方案(Putty)",
-      "description" : "我目前的开发环境是用Vagrant起一个虚拟机，然后用Putty连上去，用VIM做日常的开发工作。\n但某一天更新了一些配置以后，我在VIM里用小键盘输入1的时候，VIM就会在前一行加了一个q字符，让我很是困惑。\n后来谷歌了一下这个问题，得知只要把Putty的Application keypad mode给关了就行了。\n 奇怪的错误 当刚开始小键盘的输入和预期有差别的时候，其实我是很困惑的。\n首先我在Bash里面小键盘一切正常，这说明我键盘没问题，应该是VIM哪里不对。\n其次我按的是1，结果出来的是前一行的q，我再按一下2，出来的是前一行的r。\n假如键盘没有问题，要自己在VIM里面实现一个这种“功能”，那也要加一行配置：\ninoremap \x26lt;Num1\x26gt; \x26lt;Esc\x26gt;Oq\n但是这也太奇怪了吧，VIM里面怎么可能把\x26lt;Num1\x26gt;给替换成\x26lt;Esc\x26gt;Oq这么奇怪的东西？\n寻求答案 于是我找到了VIM wiki上的一篇解答\n根据这篇解答，问题是出在Putty上。\nPutty会默认启用“Application Keypad Mode”，这个选项被启用以后\n所有小键盘上的按键（包括）都会输出一串按键序列：\n| 原按键 | 生成序列 |\n|\x26mdash;\x26mdash;\x26mdash;\x26ndash;|\x26mdash;\x26mdash;\x26mdash;\x26ndash;|\n| \x26lt;Num1\x26gt; | \x26lt;Esc\x26gt;Oq |\n| \x26lt;Num2\x26gt; | \x26lt;Esc\x26gt;Or |\n| \x26lt;Num3\x26gt; | \x26lt;Esc\x26gt;Os |\n| \x26lt;Num4\x26gt; | \x26lt;Esc\x26gt;Ot |\n| \x26lt;Num5\x26gt; | \x26lt;Esc\x26gt;Ou |\n| \x26lt;Num6\x26gt; | \x26lt;Esc\x26gt;Ov |\n| \x26lt;Num7\x26gt; | \x26lt;Esc\x26gt;Ow |\n| \x26lt;Num8\x26gt; | \x26lt;Esc\x26gt;Ox |",
+      "description" : "\x3cp\x3e我目前的开发环境是用\x3ca href=\x22https:\/\/www.vagrantup.com\/\x22\x3eVagrant\x3c\/a\x3e起一个虚拟机，然后用\x3ca href=\x22http:\/\/www.putty.org\/\x22\x3ePutty\x3c\/a\x3e连上去，用VIM做日常的开发工作。\x3c\/p\x3e\n\n\x3cp\x3e但某一天更新了一些配置以后，我在VIM里用小键盘输入1的时候，VIM就会在前一行加了一个q字符，让我很是困惑。\x3c\/p\x3e\n\n\x3cp\x3e后来\x3ca href=\x22http:\/\/vim.wikia.com\/wiki\/PuTTY_numeric_keypad_mappings\x22\x3e谷歌了一下这个问题\x3c\/a\x3e，得知只要把Putty的Application keypad mode给关了就行了。\x3c\/p\x3e",
       "inLanguage" : "en-US",
       "author" : "Lirian Su",
       "creator" : "Lirian Su",
@@ -37,28 +37,10 @@
   <meta property="og:title" content="VIM中小键盘失灵的解决方案(Putty) - 浮云计算" />
   <meta property="og:type" content="article" />
   <meta name="description" content="我目前的开发环境是用Vagrant起一个虚拟机，然后用Putty连上去，用VIM做日常的开发工作。
+
 但某一天更新了一些配置以后，我在VIM里用小键盘输入1的时候，VIM就会在前一行加了一个q字符，让我很是困惑。
-后来谷歌了一下这个问题，得知只要把Putty的Application keypad mode给关了就行了。
- 奇怪的错误 当刚开始小键盘的输入和预期有差别的时候，其实我是很困惑的。
-首先我在Bash里面小键盘一切正常，这说明我键盘没问题，应该是VIM哪里不对。
-其次我按的是1，结果出来的是前一行的q，我再按一下2，出来的是前一行的r。
-假如键盘没有问题，要自己在VIM里面实现一个这种“功能”，那也要加一行配置：
-inoremap &lt;Num1&gt; &lt;Esc&gt;Oq
-但是这也太奇怪了吧，VIM里面怎么可能把&lt;Num1&gt;给替换成&lt;Esc&gt;Oq这么奇怪的东西？
-寻求答案 于是我找到了VIM wiki上的一篇解答
-根据这篇解答，问题是出在Putty上。
-Putty会默认启用“Application Keypad Mode”，这个选项被启用以后
-所有小键盘上的按键（包括）都会输出一串按键序列：
-| 原按键 | 生成序列 |
-|&mdash;&mdash;&mdash;&ndash;|&mdash;&mdash;&mdash;&ndash;|
-| &lt;Num1&gt; | &lt;Esc&gt;Oq |
-| &lt;Num2&gt; | &lt;Esc&gt;Or |
-| &lt;Num3&gt; | &lt;Esc&gt;Os |
-| &lt;Num4&gt; | &lt;Esc&gt;Ot |
-| &lt;Num5&gt; | &lt;Esc&gt;Ou |
-| &lt;Num6&gt; | &lt;Esc&gt;Ov |
-| &lt;Num7&gt; | &lt;Esc&gt;Ow |
-| &lt;Num8&gt; | &lt;Esc&gt;Ox |" />
+
+后来谷歌了一下这个问题，得知只要把Putty的Application keypad mode给关了就行了。" />
 
   <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
   <link rel="stylesheet"
@@ -113,15 +95,11 @@ Putty会默认启用“Application Keypad Mode”，这个选项被启用以后
         </header>
 
         <div class="post-content markdown-body">
-          
-
-<p>我目前的开发环境是用<a href="https://www.vagrantup.com/">Vagrant</a>起一个虚拟机，然后用<a href="http://www.putty.org/">Putty</a>连上去，用VIM做日常的开发工作。</p>
+          <p>我目前的开发环境是用<a href="https://www.vagrantup.com/">Vagrant</a>起一个虚拟机，然后用<a href="http://www.putty.org/">Putty</a>连上去，用VIM做日常的开发工作。</p>
 
 <p>但某一天更新了一些配置以后，我在VIM里用小键盘输入1的时候，VIM就会在前一行加了一个q字符，让我很是困惑。</p>
 
 <p>后来<a href="http://vim.wikia.com/wiki/PuTTY_numeric_keypad_mappings">谷歌了一下这个问题</a>，得知只要把Putty的Application keypad mode给关了就行了。</p>
-
-<!--MORE-->
 
 <h2 id="奇怪的错误">奇怪的错误</h2>
 
@@ -220,7 +198,6 @@ Putty会默认启用“Application Keypad Mode”，这个选项被启用以后<
 <p>好吧，至少他找到了解决方案。</p>
 
 <p><img src="http://imgs.xkcd.com/comics/wisdom_of_the_ancients.png" alt="solution" /></p>
-
         </div>
         
 
@@ -272,7 +249,7 @@ Putty会默认启用“Application Keypad Mode”，这个选项被启用以后<
     </div>
   </article>
 
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
 

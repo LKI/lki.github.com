@@ -19,7 +19,7 @@
       "articleSection" : "posts",
       "name" : "没错，DNS TTL 字段就是骗你的",
       "headline" : "没错，DNS TTL 字段就是骗你的",
-      "description" : "By design,\nthe Internet core is stupid,\nand the edge is smart.\n  引子 前几天在网上冲浪的时候，\n看到了一篇讲 DNS 的宝藏文章：\nDNS TTL Violations in the Wild.\n之所以对我来说是宝藏文章，\n因为在读了第一段以后，\n我就发现了一个我习以为常的认知其实在实际是错误✖的：\n业界都会遵守 DNS 的 TTL 超时逻辑。\n然而实际上是：\n业界都知道 DNS 的 TTL 超时逻辑，但不一定这么实现。\n事件 前几周我们出了个 Bug,\n影响了整个开发、测试环境。\n我们有很大一块的业务是跟微信做各类 py 交易，\n微信要求说我们给个回调域名，\n每 10 分钟会推送一个凭证，\n我们要用微信最新的凭证去调他们的接口。\n最早我们给微信配的回调域名背后是个 AWS ELB,\n这是一个亚马逊云上面的旧版负载均衡；\n后来我们打算换成新版负载均衡 AWS ALB。\n这个操作就很简单嘛，\n到 DNS 服务商里看了一下，\n微信回调的域名解析 TTL 是 600 秒，\n又是开发测试环境；",
+      "description" : "\x3cblockquote\x3e\n\x3cp\x3eBy design,\x3cbr \/\x3e\nthe Internet core is stupid,\x3cbr \/\x3e\nand the edge is smart.\x3c\/p\x3e\n\x3c\/blockquote\x3e",
       "inLanguage" : "en-US",
       "author" : "Lirian Su",
       "creator" : "Lirian Su",
@@ -36,31 +36,11 @@
 <title>没错，DNS TTL 字段就是骗你的 - 浮云计算</title>
   <meta property="og:title" content="没错，DNS TTL 字段就是骗你的 - 浮云计算" />
   <meta property="og:type" content="article" />
-  <meta name="description" content="By design,
+  <meta name="description" content="
+By design,
 the Internet core is stupid,
 and the edge is smart.
-  引子 前几天在网上冲浪的时候，
-看到了一篇讲 DNS 的宝藏文章：
-DNS TTL Violations in the Wild.
-之所以对我来说是宝藏文章，
-因为在读了第一段以后，
-我就发现了一个我习以为常的认知其实在实际是错误✖的：
-业界都会遵守 DNS 的 TTL 超时逻辑。
-然而实际上是：
-业界都知道 DNS 的 TTL 超时逻辑，但不一定这么实现。
-事件 前几周我们出了个 Bug,
-影响了整个开发、测试环境。
-我们有很大一块的业务是跟微信做各类 py 交易，
-微信要求说我们给个回调域名，
-每 10 分钟会推送一个凭证，
-我们要用微信最新的凭证去调他们的接口。
-最早我们给微信配的回调域名背后是个 AWS ELB,
-这是一个亚马逊云上面的旧版负载均衡；
-后来我们打算换成新版负载均衡 AWS ALB。
-这个操作就很简单嘛，
-到 DNS 服务商里看了一下，
-微信回调的域名解析 TTL 是 600 秒，
-又是开发测试环境；" />
+" />
 
   <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
   <link rel="stylesheet"
@@ -115,15 +95,11 @@ DNS TTL Violations in the Wild.
         </header>
 
         <div class="post-content markdown-body">
-          
-
-<blockquote>
+          <blockquote>
 <p>By design,<br />
 the Internet core is stupid,<br />
 and the edge is smart.</p>
 </blockquote>
-
-<!--MORE-->
 
 <h2 id="引子">引子</h2>
 
@@ -257,7 +233,6 @@ and the edge is smart.</p>
 </blockquote>
 
 <p>（完）</p>
-
         </div>
         
 
@@ -309,7 +284,7 @@ and the edge is smart.</p>
     </div>
   </article>
 
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
 

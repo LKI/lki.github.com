@@ -19,7 +19,7 @@
       "articleSection" : "posts",
       "name" : "Jekyll build fail的解决办法",
       "headline" : "Jekyll build fail的解决办法",
-      "description" : " 我一直觉得笔记本和台式机jekyll build出来的结果不一样，\n我猜想是Jekyll的版本不一致。\n结果后来gem update以后，\n反而jekyll build还失败了…\n Jekyll build jekyll build的结果不稳定是很难受的，\n尤其每次build完以后git status看到的一大堆红色文件名。\n而其实大部分都是各种HTML tag位置的差别。\n我怀疑这有可能是两台机器上Jekyll的版本不同导致的，\n于是我就跑了gem update以同步到最新版本。\n等这个命令跑完以后，我跑jekyll build遇到的都是\njekyll build fail这样的ruby错误了。\nSolution 搜了一下其实很简单，这是因为机子内同时装了多个版本的jekyll，\n而他们又互相冲突所导致的错误。\n（我不禁想问gem update为什么不会自动卸载旧版本？）\n没错，解决方案就是我们跑一条gem cleanup卸载旧版本就可以了。\n至少这个解决方案对我的问题是起效的。\nGem sources 另：有的时候gem官方源很慢，可以选择用gem sources命令更换淘宝源。\n（不过淘宝源未必更新那么频繁）\n$ gem sources -l *** CURRENT SOURCES *** https:\/\/rubygems.org\/ $ gem sources -r https:\/\/rubygems.org\/ https:\/\/rubygems.org\/ removed from sources $ gem sources -a https:\/\/rubygems.org\/ https:\/\/rubygems.org\/ added to sources  ",
+      "description" : "\x3cp\x3e我一直觉得笔记本和台式机\x3ccode\x3ejekyll build\x3c\/code\x3e出来的结果不一样，\x3cbr \/\x3e\n我猜想是Jekyll的版本不一致。\x3cbr \/\x3e\n结果后来\x3ccode\x3egem update\x3c\/code\x3e以后，\x3cbr \/\x3e\n反而\x3ccode\x3ejekyll build\x3c\/code\x3e还失败了…\x3c\/p\x3e",
       "inLanguage" : "en-US",
       "author" : "Lirian Su",
       "creator" : "Lirian Su",
@@ -36,25 +36,10 @@
 <title>Jekyll build fail的解决办法 - 浮云计算</title>
   <meta property="og:title" content="Jekyll build fail的解决办法 - 浮云计算" />
   <meta property="og:type" content="article" />
-  <meta name="description" content=" 我一直觉得笔记本和台式机jekyll build出来的结果不一样，
+  <meta name="description" content="我一直觉得笔记本和台式机jekyll build出来的结果不一样，
 我猜想是Jekyll的版本不一致。
 结果后来gem update以后，
-反而jekyll build还失败了…
- Jekyll build jekyll build的结果不稳定是很难受的，
-尤其每次build完以后git status看到的一大堆红色文件名。
-而其实大部分都是各种HTML tag位置的差别。
-我怀疑这有可能是两台机器上Jekyll的版本不同导致的，
-于是我就跑了gem update以同步到最新版本。
-等这个命令跑完以后，我跑jekyll build遇到的都是
-jekyll build fail这样的ruby错误了。
-Solution 搜了一下其实很简单，这是因为机子内同时装了多个版本的jekyll，
-而他们又互相冲突所导致的错误。
-（我不禁想问gem update为什么不会自动卸载旧版本？）
-没错，解决方案就是我们跑一条gem cleanup卸载旧版本就可以了。
-至少这个解决方案对我的问题是起效的。
-Gem sources 另：有的时候gem官方源很慢，可以选择用gem sources命令更换淘宝源。
-（不过淘宝源未必更新那么频繁）
-$ gem sources -l *** CURRENT SOURCES *** https://rubygems.org/ $ gem sources -r https://rubygems.org/ https://rubygems.org/ removed from sources $ gem sources -a https://rubygems.org/ https://rubygems.org/ added to sources  " />
+反而jekyll build还失败了…" />
 
   <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
   <link rel="stylesheet"
@@ -109,14 +94,10 @@ $ gem sources -l *** CURRENT SOURCES *** https://rubygems.org/ $ gem sources -r 
         </header>
 
         <div class="post-content markdown-body">
-          
-
-<p>我一直觉得笔记本和台式机<code>jekyll build</code>出来的结果不一样，<br />
+          <p>我一直觉得笔记本和台式机<code>jekyll build</code>出来的结果不一样，<br />
 我猜想是Jekyll的版本不一致。<br />
 结果后来<code>gem update</code>以后，<br />
 反而<code>jekyll build</code>还失败了…</p>
-
-<!--MORE-->
 
 <h2 id="jekyll-build">Jekyll build</h2>
 
@@ -156,7 +137,6 @@ https://rubygems.org/ removed from sources
 $ gem sources -a https://rubygems.org/
 https://rubygems.org/ added to sources
 </code></pre>
-
         </div>
         
 
@@ -208,7 +188,7 @@ https://rubygems.org/ added to sources
     </div>
   </article>
 
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
 

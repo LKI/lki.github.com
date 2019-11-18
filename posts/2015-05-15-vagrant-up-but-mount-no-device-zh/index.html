@@ -19,7 +19,7 @@
       "articleSection" : "posts",
       "name" : "Vagrant-up遇到mount no device的解决方案",
       "headline" : "Vagrant-up遇到mount no device的解决方案",
-      "description" : "今天跑vagrant up的时候遇到了这个问题：\n ==\x26gt; cvc-tools: Machine booted and ready! ==\x26gt; cvc-tools: Checking for guest additions in VM... ==\x26gt; cvc-tools: Configuring and enabling network interfaces... ==\x26gt; cvc-tools: Mounting shared folders... cvc-tools: \/work =\x26gt; D:\/work\/ Failed to mount folders in Linux guest. This is usually because the \x26quot;vboxsf\x26quot; file system is not available. Please verify that the guest additions are properly installed in the guest and can work properly. The command attempted was: mount -t vboxsf -o uid=`id -u devel`,gid=`getent group devel | cut -d: -f3` work \/work mount -t vboxsf -o uid=`id -u devel`,gid=`id -g devel` work \/work The error output from the last command was: \/sbin\/mount.",
+      "description" : "\x3cp\x3e今天跑\x3ccode\x3evagrant up\x3c\/code\x3e的时候遇到了这个问题：\x3c\/p\x3e",
       "inLanguage" : "en-US",
       "author" : "Lirian Su",
       "creator" : "Lirian Su",
@@ -36,8 +36,7 @@
 <title>Vagrant-up遇到mount no device的解决方案 - 浮云计算</title>
   <meta property="og:title" content="Vagrant-up遇到mount no device的解决方案 - 浮云计算" />
   <meta property="og:type" content="article" />
-  <meta name="description" content="今天跑vagrant up的时候遇到了这个问题：
- ==&gt; cvc-tools: Machine booted and ready! ==&gt; cvc-tools: Checking for guest additions in VM... ==&gt; cvc-tools: Configuring and enabling network interfaces... ==&gt; cvc-tools: Mounting shared folders... cvc-tools: /work =&gt; D:/work/ Failed to mount folders in Linux guest. This is usually because the &quot;vboxsf&quot; file system is not available. Please verify that the guest additions are properly installed in the guest and can work properly. The command attempted was: mount -t vboxsf -o uid=`id -u devel`,gid=`getent group devel | cut -d: -f3` work /work mount -t vboxsf -o uid=`id -u devel`,gid=`id -g devel` work /work The error output from the last command was: /sbin/mount." />
+  <meta name="description" content="今天跑vagrant up的时候遇到了这个问题：" />
 
   <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
   <link rel="stylesheet"
@@ -94,8 +93,6 @@
         <div class="post-content markdown-body">
           <p>今天跑<code>vagrant up</code>的时候遇到了这个问题：</p>
 
-<!--MORE-->
-
 <pre><code>==&gt; cvc-tools: Machine booted and ready!
 ==&gt; cvc-tools: Checking for guest additions in VM...
 ==&gt; cvc-tools: Configuring and enabling network interfaces...
@@ -147,7 +144,6 @@ Doing non-kernel setup of the Guest Additions              [  OK  ]
 /etc/init.d/vboxadd setup<br />
 mount -t vboxsf -o uid=<code>id -u devel</code>,gid=<code>id -g devel</code> work /work<br />
 ```</p>
-
         </div>
         
 
@@ -199,7 +195,7 @@ mount -t vboxsf -o uid=<code>id -u devel</code>,gid=<code>id -g devel</code> wor
     </div>
   </article>
 
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
 

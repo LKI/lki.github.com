@@ -19,7 +19,7 @@
       "articleSection" : "posts",
       "name" : "利用AUFS和Docker搭建多个私有开发环境",
       "headline" : "利用AUFS和Docker搭建多个私有开发环境",
-      "description" : "文章的开头先提个问题：\n我们平常的工作中，一般都是怎样让每个人都拿到独立开发环境的呢？\n 八仙过海 比如最常见的做法：每人都有自己的电脑，爱怎么弄怎么弄，同步代码就用Git之类的。\n但是这样初始化的过程很慢，要装各种软件各种配置。\n于是也有的是建一个中心服务器，大家用Putty这类软件SSH上去，每个人都有自己的账号。\n但是这样环境不独立，而且权限控制很麻烦（毕竟每个人都想sudo）\n后来就直接分发虚拟机镜像了，每个人拿到一个10G的镜像文件，\n直接Load一下，环境就起来了。\n但是这样每次修改环境就要更新近10G…\n反正就是八仙过海，各有神通了。\n利用AUFS和Docker也可以做到给每个人独立开发环境。\nAUFS 根据Google:\n AuFS stands for Another Union File System. AuFS started as an implementation of UnionFS Union File System. An union filesystem takes an existing filesystem and transparently overlays it on a newer filesystem. It allows files and directories of separate filesystem to co-exist under a single roof.May 8, 2013\n 假设我们有一个目录如下：\n$ tree . └── public ├── database │ ├── dbfile1 │ └── dbfile2 └── src ├── helloworld.",
+      "description" : "\x3cp\x3e文章的开头先提个问题：\x3cbr \/\x3e\n我们平常的工作中，一般都是怎样让每个人都拿到独立开发环境的呢？\x3c\/p\x3e",
       "inLanguage" : "en-US",
       "author" : "Lirian Su",
       "creator" : "Lirian Su",
@@ -37,20 +37,7 @@
   <meta property="og:title" content="利用AUFS和Docker搭建多个私有开发环境 - 浮云计算" />
   <meta property="og:type" content="article" />
   <meta name="description" content="文章的开头先提个问题：
-我们平常的工作中，一般都是怎样让每个人都拿到独立开发环境的呢？
- 八仙过海 比如最常见的做法：每人都有自己的电脑，爱怎么弄怎么弄，同步代码就用Git之类的。
-但是这样初始化的过程很慢，要装各种软件各种配置。
-于是也有的是建一个中心服务器，大家用Putty这类软件SSH上去，每个人都有自己的账号。
-但是这样环境不独立，而且权限控制很麻烦（毕竟每个人都想sudo）
-后来就直接分发虚拟机镜像了，每个人拿到一个10G的镜像文件，
-直接Load一下，环境就起来了。
-但是这样每次修改环境就要更新近10G…
-反正就是八仙过海，各有神通了。
-利用AUFS和Docker也可以做到给每个人独立开发环境。
-AUFS 根据Google:
- AuFS stands for Another Union File System. AuFS started as an implementation of UnionFS Union File System. An union filesystem takes an existing filesystem and transparently overlays it on a newer filesystem. It allows files and directories of separate filesystem to co-exist under a single roof.May 8, 2013
- 假设我们有一个目录如下：
-$ tree . └── public ├── database │ ├── dbfile1 │ └── dbfile2 └── src ├── helloworld." />
+我们平常的工作中，一般都是怎样让每个人都拿到独立开发环境的呢？" />
 
   <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
   <link rel="stylesheet"
@@ -105,12 +92,8 @@ $ tree . └── public ├── database │ ├── dbfile1 │ └─�
         </header>
 
         <div class="post-content markdown-body">
-          
-
-<p>文章的开头先提个问题：<br />
+          <p>文章的开头先提个问题：<br />
 我们平常的工作中，一般都是怎样让每个人都拿到独立开发环境的呢？</p>
-
-<!--MORE-->
 
 <h2 id="八仙过海">八仙过海</h2>
 
@@ -219,7 +202,6 @@ $ tree
 
 <p>这样就可以把private目录作为volume映射到docker container里面的/work目录了。<br />
 剩下的就是<a href="https://docs.docker.com/userguide/dockerimages/">Get good use of docker images</a>了~</p>
-
         </div>
         
 
@@ -271,7 +253,7 @@ $ tree
     </div>
   </article>
 
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
 
