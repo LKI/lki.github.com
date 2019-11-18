@@ -116,62 +116,7 @@ Git Submodule git submodule其实是一个很蠢的解决方案：
         </header>
 
         <div class="post-content markdown-body">
-          
-
-<p>最近终于偶然了解了怎么给GitHub项目建主页。</p>
-
-<!--MORE-->
-
-<h2 id="github-pages">GitHub Pages</h2>
-
-<p>GitHub Pages是一个让用户很方便托管项目网页在GitHub的服务。
-比如<a href="/how-this-blog-was-built">我这个博客就是GitHub Pages建成的</a>。</p>
-
-<p>但是这样只能托管一个名为
-<a href="https://github.com/LKI/lki.github.io">GitHub用户名 + &ldquo;.github.com&rdquo;的项目(lki.github.io)</a></p>
-
-<p>假如我还有一个项目也想用域名访问怎么办呢？</p>
-
-<p>于是我机智的我<a href="https://github.com/LKI/lki.github.io/commit/86d73353e4b8f93ea7e759fb0d2f47b5d9ad8904">用<code>git submodule</code>来解决了这个问题</a>。</p>
-
-<h2 id="git-submodule">Git Submodule</h2>
-
-<p><code>git submodule</code>其实是一个很蠢的解决方案：</p>
-
-<ol>
-<li><p>为了保证最新的内容，父项目要随着子项目更新而更新。</p></li>
-
-<li><p>这个做法其实是hack了jekyll build，感觉不是特别靠谱。</p></li>
-
-<li><p><a href="http://stackoverflow.com/questions/1260748/how-do-i-remove-a-submodule">remove a git submodule</a>实在是太痛苦了！
-所以没有必要就不要加git submodule啦。</p></li>
-</ol>
-
-<h2 id="更好的解决方案">更好的解决方案</h2>
-
-<p>前几天在逛<a href="http://zhangwenli.com/">羡辙学姐</a>的GitHub的时候发现了<a href="https://github.com/Ovilia/cv/issues/3">这么一条Issue</a></p>
-
-<p>里面这么说道：</p>
-
-<blockquote>
-<p>主页用 CNAME 指向 zhangwenli.com 后，ovilia.github.io 将跳转到 zhangwenli.com
-其他项目 xxx 的 gh-pages 分支将会自动对应到 ovilia.github.io/xxx</p>
-</blockquote>
-
-<p>喔！原来GitHub会默认地把some-repo项目的“gh-pages”分支映射到some-one.github.com/some-repo下面去。</p>
-
-<p>所以我们就可以用新建分支把<a href="https://github.com/LKI/mymenu">菜谱</a>映射到<a href="/mymenu">/mymenu</a>了。</p>
-
-<h2 id="总结">总结</h2>
-
-<ol>
-<li><p>GitHub项目可以建一个<code>gh-pages</code>分支来映射到github.com下面的github.com/repository-name.</p></li>
-
-<li><p>多看多学多试.</p></li>
-
-<li><p>假如不是绝妙的hack就要追求best practice.</p></li>
-</ol>
-
+          <br/><br/><p>最近终于偶然了解了怎么给GitHub项目建主页。</p><br/><br/><!--MORE--><br/><br/><h2 id="github-pages">GitHub Pages</h2><br/><br/><p>GitHub Pages是一个让用户很方便托管项目网页在GitHub的服务。<br/>比如<a href="/how-this-blog-was-built">我这个博客就是GitHub Pages建成的</a>。</p><br/><br/><p>但是这样只能托管一个名为<br/><a href="https://github.com/LKI/lki.github.io">GitHub用户名 + &ldquo;.github.com&rdquo;的项目(lki.github.io)</a></p><br/><br/><p>假如我还有一个项目也想用域名访问怎么办呢？</p><br/><br/><p>于是我机智的我<a href="https://github.com/LKI/lki.github.io/commit/86d73353e4b8f93ea7e759fb0d2f47b5d9ad8904">用<code>git submodule</code>来解决了这个问题</a>。</p><br/><br/><h2 id="git-submodule">Git Submodule</h2><br/><br/><p><code>git submodule</code>其实是一个很蠢的解决方案：</p><br/><br/><ol><br/><li><p>为了保证最新的内容，父项目要随着子项目更新而更新。</p></li><br/><br/><li><p>这个做法其实是hack了jekyll build，感觉不是特别靠谱。</p></li><br/><br/><li><p><a href="http://stackoverflow.com/questions/1260748/how-do-i-remove-a-submodule">remove a git submodule</a>实在是太痛苦了！<br/>所以没有必要就不要加git submodule啦。</p></li><br/></ol><br/><br/><h2 id="更好的解决方案">更好的解决方案</h2><br/><br/><p>前几天在逛<a href="http://zhangwenli.com/">羡辙学姐</a>的GitHub的时候发现了<a href="https://github.com/Ovilia/cv/issues/3">这么一条Issue</a></p><br/><br/><p>里面这么说道：</p><br/><br/><blockquote><br/><p>主页用 CNAME 指向 zhangwenli.com 后，ovilia.github.io 将跳转到 zhangwenli.com<br/>其他项目 xxx 的 gh-pages 分支将会自动对应到 ovilia.github.io/xxx</p><br/></blockquote><br/><br/><p>喔！原来GitHub会默认地把some-repo项目的“gh-pages”分支映射到some-one.github.com/some-repo下面去。</p><br/><br/><p>所以我们就可以用新建分支把<a href="https://github.com/LKI/mymenu">菜谱</a>映射到<a href="/mymenu">/mymenu</a>了。</p><br/><br/><h2 id="总结">总结</h2><br/><br/><ol><br/><li><p>GitHub项目可以建一个<code>gh-pages</code>分支来映射到github.com下面的github.com/repository-name.</p></li><br/><br/><li><p>多看多学多试.</p></li><br/><br/><li><p>假如不是绝妙的hack就要追求best practice.</p></li><br/></ol><br/>
         </div>
         
 
@@ -179,8 +124,7 @@ Git Submodule git submodule其实是一个很蠢的解决方案：
 
 
         
-        
-        <div style="height: 50px;"></div>
+        <div style="height: 20px;"></div>
         
         <div class="post-comments">
           <script src="https://utteranc.es/client.js"

@@ -108,113 +108,7 @@
         </header>
 
         <div class="post-content markdown-body">
-          
-
-<p>我目前的开发环境是用<a href="https://www.vagrantup.com/">Vagrant</a>起一个虚拟机，然后用<a href="http://www.putty.org/">Putty</a>连上去，用VIM做日常的开发工作。</p>
-
-<p>但某一天更新了一些配置以后，我在VIM里用小键盘输入1的时候，VIM就会在前一行加了一个q字符，让我很是困惑。</p>
-
-<p>后来<a href="http://vim.wikia.com/wiki/PuTTY_numeric_keypad_mappings">谷歌了一下这个问题</a>，得知只要把Putty的Application keypad mode给关了就行了。</p>
-
-<!--MORE-->
-
-<h2 id="奇怪的错误">奇怪的错误</h2>
-
-<p>当刚开始小键盘的输入和预期有差别的时候，其实我是很困惑的。</p>
-
-<p>首先我在Bash里面小键盘一切正常，这说明我键盘没问题，应该是VIM哪里不对。</p>
-
-<p>其次我按的是1，结果出来的是前一行的q，我再按一下2，出来的是前一行的r。
-假如键盘没有问题，要自己在VIM里面实现一个这种“功能”，那也要加一行配置：
-<code>inoremap &lt;Num1&gt; &lt;Esc&gt;Oq</code></p>
-
-<p>但是这也太奇怪了吧，VIM里面怎么可能把<code>&lt;Num1&gt;</code>给替换成<code>&lt;Esc&gt;Oq</code>这么奇怪的东西？</p>
-
-<h2 id="寻求答案">寻求答案</h2>
-
-<p>于是我找到了<a href="http://vim.wikia.com/wiki/PuTTY_numeric_keypad_mappings">VIM wiki上的一篇解答</a></p>
-
-<p>根据这篇解答，问题是出在Putty上。
-Putty会默认启用“Application Keypad Mode”，这个选项被启用以后
-所有小键盘上的按键（包括<NumLock>）都会输出一串按键序列：</p>
-
-<p>| 原按键    | 生成序列  |
-|&mdash;&mdash;&mdash;&ndash;|&mdash;&mdash;&mdash;&ndash;|
-| <code>&lt;Num1&gt;</code>  | <code>&lt;Esc&gt;Oq</code> |
-| <code>&lt;Num2&gt;</code>  | <code>&lt;Esc&gt;Or</code> |
-| <code>&lt;Num3&gt;</code>  | <code>&lt;Esc&gt;Os</code> |
-| <code>&lt;Num4&gt;</code>  | <code>&lt;Esc&gt;Ot</code> |
-| <code>&lt;Num5&gt;</code>  | <code>&lt;Esc&gt;Ou</code> |
-| <code>&lt;Num6&gt;</code>  | <code>&lt;Esc&gt;Ov</code> |
-| <code>&lt;Num7&gt;</code>  | <code>&lt;Esc&gt;Ow</code> |
-| <code>&lt;Num8&gt;</code>  | <code>&lt;Esc&gt;Ox</code> |
-| <code>&lt;Num9&gt;</code>  | <code>&lt;Esc&gt;Oy</code> |
-| <code>&lt;Num0&gt;</code>  | <code>&lt;Esc&gt;Op</code> |
-| <code>.</code>       | <code>&lt;Esc&gt;On</code> |
-| <code>/</code>       | <code>&lt;Esc&gt;OQ</code> |
-| <code>*</code>       | <code>&lt;Esc&gt;OR</code> |
-| <code>+</code>       | <code>&lt;Esc&gt;Ol</code> |
-| <code>-</code>       | <code>&lt;Esc&gt;OS</code> |
-| <code>&lt;Enter&gt;</code> | <code>&lt;Esc&gt;OM</code> |</p>
-
-<p>居然<code>&lt;Num1&gt;</code>真的变成了<code>&lt;Esc&gt;Oq</code>！</p>
-
-<p>再去翻<a href="http://the.earth.li/~sgtatham/putty/0.60/htmldoc/Chapter4.html#config-appkeypad">Putty关于Application keypad mode的说明</a>:</p>
-
-<blockquote>
-<p>Application Keypad mode is a way for the server to change the behaviour of the numeric keypad</p>
-</blockquote>
-
-<p>唔，好吧，是服务器端决定的配置。</p>
-
-<p>所以在Putty下简单的解决方案就是关掉这个模式了：</p>
-
-<ul>
-<li>打开Putty配置</li>
-<li>选中左边的Terminal -&gt; Features</li>
-<li>在&rdquo;Disable application keypad mode&rdquo;处打钩</li>
-<li>选中左边的Session</li>
-<li>保存Putty配置</li>
-</ul>
-
-<p><img src="/assets/putty_application_keypad_mode.jpg" alt="关闭application keypad mode" /></p>
-
-<h2 id="更多奇怪的答案">更多奇怪的答案</h2>
-
-<p>在<a href="http://vim.wikia.com/wiki/PuTTY_numeric_keypad_mappings#Comments">VIM wiki页面的讨论板块</a>，有人给出了一个看起来很蠢的解决方案：</p>
-
-<pre><code>:inoremap &lt;Esc&gt;Oq 1
-:inoremap &lt;Esc&gt;Or 2
-:inoremap &lt;Esc&gt;Os 3
-:inoremap &lt;Esc&gt;Ot 4
-:inoremap &lt;Esc&gt;Ou 5
-:inoremap &lt;Esc&gt;Ov 6
-:inoremap &lt;Esc&gt;Ow 7
-:inoremap &lt;Esc&gt;Ox 8
-:inoremap &lt;Esc&gt;Oy 9
-:inoremap &lt;Esc&gt;Op 0
-:inoremap &lt;Esc&gt;On .
-:inoremap &lt;Esc&gt;OQ /
-:inoremap &lt;Esc&gt;OR *
-:inoremap &lt;Esc&gt;Ol +
-:inoremap &lt;Esc&gt;OS -
-:inoremap &lt;Esc&gt;OM &lt;Enter&gt;
-</code></pre>
-
-<p>刚开始看到这个答案我立刻想到了这张XKCD</p>
-
-<p><img src="http://imgs.xkcd.com/comics/workflow.png" alt="workflow" /></p>
-
-<p>我认为mapping不应该是一个合适的解决方案，但是下面又有人讲了他自己苦逼的故事：</p>
-
-<blockquote>
-<p>After a while struggling with this very problem with vnc viewer 4.1.3 under XP with a Debian lenny vnc4server 4.1.1+X4.3.0-31, this vim remapping is the only solution which work.</p>
-</blockquote>
-
-<p>好吧，至少他找到了解决方案。</p>
-
-<p><img src="http://imgs.xkcd.com/comics/wisdom_of_the_ancients.png" alt="solution" /></p>
-
+          <br/><br/><p>我目前的开发环境是用<a href="https://www.vagrantup.com/">Vagrant</a>起一个虚拟机，然后用<a href="http://www.putty.org/">Putty</a>连上去，用VIM做日常的开发工作。</p><br/><br/><p>但某一天更新了一些配置以后，我在VIM里用小键盘输入1的时候，VIM就会在前一行加了一个q字符，让我很是困惑。</p><br/><br/><p>后来<a href="http://vim.wikia.com/wiki/PuTTY_numeric_keypad_mappings">谷歌了一下这个问题</a>，得知只要把Putty的Application keypad mode给关了就行了。</p><br/><br/><!--MORE--><br/><br/><h2 id="奇怪的错误">奇怪的错误</h2><br/><br/><p>当刚开始小键盘的输入和预期有差别的时候，其实我是很困惑的。</p><br/><br/><p>首先我在Bash里面小键盘一切正常，这说明我键盘没问题，应该是VIM哪里不对。</p><br/><br/><p>其次我按的是1，结果出来的是前一行的q，我再按一下2，出来的是前一行的r。<br/>假如键盘没有问题，要自己在VIM里面实现一个这种“功能”，那也要加一行配置：<br/><code>inoremap &lt;Num1&gt; &lt;Esc&gt;Oq</code></p><br/><br/><p>但是这也太奇怪了吧，VIM里面怎么可能把<code>&lt;Num1&gt;</code>给替换成<code>&lt;Esc&gt;Oq</code>这么奇怪的东西？</p><br/><br/><h2 id="寻求答案">寻求答案</h2><br/><br/><p>于是我找到了<a href="http://vim.wikia.com/wiki/PuTTY_numeric_keypad_mappings">VIM wiki上的一篇解答</a></p><br/><br/><p>根据这篇解答，问题是出在Putty上。<br/>Putty会默认启用“Application Keypad Mode”，这个选项被启用以后<br/>所有小键盘上的按键（包括<NumLock>）都会输出一串按键序列：</p><br/><br/><p>| 原按键    | 生成序列  |<br/>|&mdash;&mdash;&mdash;&ndash;|&mdash;&mdash;&mdash;&ndash;|<br/>| <code>&lt;Num1&gt;</code>  | <code>&lt;Esc&gt;Oq</code> |<br/>| <code>&lt;Num2&gt;</code>  | <code>&lt;Esc&gt;Or</code> |<br/>| <code>&lt;Num3&gt;</code>  | <code>&lt;Esc&gt;Os</code> |<br/>| <code>&lt;Num4&gt;</code>  | <code>&lt;Esc&gt;Ot</code> |<br/>| <code>&lt;Num5&gt;</code>  | <code>&lt;Esc&gt;Ou</code> |<br/>| <code>&lt;Num6&gt;</code>  | <code>&lt;Esc&gt;Ov</code> |<br/>| <code>&lt;Num7&gt;</code>  | <code>&lt;Esc&gt;Ow</code> |<br/>| <code>&lt;Num8&gt;</code>  | <code>&lt;Esc&gt;Ox</code> |<br/>| <code>&lt;Num9&gt;</code>  | <code>&lt;Esc&gt;Oy</code> |<br/>| <code>&lt;Num0&gt;</code>  | <code>&lt;Esc&gt;Op</code> |<br/>| <code>.</code>       | <code>&lt;Esc&gt;On</code> |<br/>| <code>/</code>       | <code>&lt;Esc&gt;OQ</code> |<br/>| <code>*</code>       | <code>&lt;Esc&gt;OR</code> |<br/>| <code>+</code>       | <code>&lt;Esc&gt;Ol</code> |<br/>| <code>-</code>       | <code>&lt;Esc&gt;OS</code> |<br/>| <code>&lt;Enter&gt;</code> | <code>&lt;Esc&gt;OM</code> |</p><br/><br/><p>居然<code>&lt;Num1&gt;</code>真的变成了<code>&lt;Esc&gt;Oq</code>！</p><br/><br/><p>再去翻<a href="http://the.earth.li/~sgtatham/putty/0.60/htmldoc/Chapter4.html#config-appkeypad">Putty关于Application keypad mode的说明</a>:</p><br/><br/><blockquote><br/><p>Application Keypad mode is a way for the server to change the behaviour of the numeric keypad</p><br/></blockquote><br/><br/><p>唔，好吧，是服务器端决定的配置。</p><br/><br/><p>所以在Putty下简单的解决方案就是关掉这个模式了：</p><br/><br/><ul><br/><li>打开Putty配置</li><br/><li>选中左边的Terminal -&gt; Features</li><br/><li>在&rdquo;Disable application keypad mode&rdquo;处打钩</li><br/><li>选中左边的Session</li><br/><li>保存Putty配置</li><br/></ul><br/><br/><p><img src="/assets/putty_application_keypad_mode.jpg" alt="关闭application keypad mode" /></p><br/><br/><h2 id="更多奇怪的答案">更多奇怪的答案</h2><br/><br/><p>在<a href="http://vim.wikia.com/wiki/PuTTY_numeric_keypad_mappings#Comments">VIM wiki页面的讨论板块</a>，有人给出了一个看起来很蠢的解决方案：</p><br/><br/><pre><code>:inoremap &lt;Esc&gt;Oq 1<br/>:inoremap &lt;Esc&gt;Or 2<br/>:inoremap &lt;Esc&gt;Os 3<br/>:inoremap &lt;Esc&gt;Ot 4<br/>:inoremap &lt;Esc&gt;Ou 5<br/>:inoremap &lt;Esc&gt;Ov 6<br/>:inoremap &lt;Esc&gt;Ow 7<br/>:inoremap &lt;Esc&gt;Ox 8<br/>:inoremap &lt;Esc&gt;Oy 9<br/>:inoremap &lt;Esc&gt;Op 0<br/>:inoremap &lt;Esc&gt;On .<br/>:inoremap &lt;Esc&gt;OQ /<br/>:inoremap &lt;Esc&gt;OR *<br/>:inoremap &lt;Esc&gt;Ol +<br/>:inoremap &lt;Esc&gt;OS -<br/>:inoremap &lt;Esc&gt;OM &lt;Enter&gt;<br/></code></pre><br/><br/><p>刚开始看到这个答案我立刻想到了这张XKCD</p><br/><br/><p><img src="http://imgs.xkcd.com/comics/workflow.png" alt="workflow" /></p><br/><br/><p>我认为mapping不应该是一个合适的解决方案，但是下面又有人讲了他自己苦逼的故事：</p><br/><br/><blockquote><br/><p>After a while struggling with this very problem with vnc viewer 4.1.3 under XP with a Debian lenny vnc4server 4.1.1+X4.3.0-31, this vim remapping is the only solution which work.</p><br/></blockquote><br/><br/><p>好吧，至少他找到了解决方案。</p><br/><br/><p><img src="http://imgs.xkcd.com/comics/wisdom_of_the_ancients.png" alt="solution" /></p><br/>
         </div>
         
 
@@ -222,8 +116,7 @@ Putty会默认启用“Application Keypad Mode”，这个选项被启用以后
 
 
         
-        
-        <div style="height: 50px;"></div>
+        <div style="height: 20px;"></div>
         
         <div class="post-comments">
           <script src="https://utteranc.es/client.js"

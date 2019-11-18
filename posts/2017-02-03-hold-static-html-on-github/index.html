@@ -105,50 +105,7 @@ $ cd /Users/liriansu/new-repo $ git init # 初始化git目录 $ git checkout -b 
         </header>
 
         <div class="post-content markdown-body">
-          
-
-<p>这是一篇入门级的技术文章，
-教你怎么在GitHub上托管静态的HTML页面。</p>
-
-<!--MORE-->
-
-<h2 id="github项目主页">GitHub项目主页</h2>
-
-<p>GitHub有个设定，
-就是<strong>每个项目的gh-pages分支可以通过<code>user-domain/项目名</code>来访问</strong>。</p>
-
-<p>比如以前我把一些常用的js/css库放到<a href="https://github.com/LKI/static">我的static项目下(LKI/static)</a>，
-该项目下<code>gh-pages</code>分支的index.html就可以直接通过<a href="/static/">lki.github.io/static</a>访问。</p>
-
-<p>GitHub的这个设定本意是<a href="https://pages.github.com/">让每个项目都有自己的主页来展示</a>，
-不过我们也可以借用这个设定来托管静态HTML页面。</p>
-
-<h2 id="托管静态页面">托管静态页面</h2>
-
-<p>托管页面的大概步骤如下：</p>
-
-<ol>
-<li>拥有自己的GitHub账号</li>
-<li>在GitHub上建立一个目录<a href="https://github.com/new">(Create new repository)</a></li>
-<li>用git创造该项目下建立<code>gh-pages</code>分支，提交一个index.html文件</li>
-</ol>
-
-<p>第3步的命令行版本大概如下：</p>
-
-<pre><code>$ cd /Users/liriansu/new-repo
-$ git init                        # 初始化git目录
-$ git checkout -b gh-pages        # 新建gh-pages分支，并切换过去
-# 跑完上一条命令后，把你的index.html文件放到new-repo文件夹里
-$ git add index.html              # 告诉git说index.html要提交了
-$ git commit -m &quot;add index.html&quot;  # 提交index.html
-$ git remote add origin https://github.com/&lt;username&gt;/&lt;repository&gt;
-$ git push -u origin gh-pages     # 推到GitHub服务器上
-</code></pre>
-
-<p>然后我们就可以在<code>http://&lt;username&gt;.github.io/&lt;repository&gt;</code>上看到刚提交上去的index.html了。
-最后假如你希望在GitHub上搭建个人博客，
-可以参照<a href="/how-this-blog-was-built">我的搭建方案</a></p>
-
+          <br/><br/><p>这是一篇入门级的技术文章，<br/>教你怎么在GitHub上托管静态的HTML页面。</p><br/><br/><!--MORE--><br/><br/><h2 id="github项目主页">GitHub项目主页</h2><br/><br/><p>GitHub有个设定，<br/>就是<strong>每个项目的gh-pages分支可以通过<code>user-domain/项目名</code>来访问</strong>。</p><br/><br/><p>比如以前我把一些常用的js/css库放到<a href="https://github.com/LKI/static">我的static项目下(LKI/static)</a>，<br/>该项目下<code>gh-pages</code>分支的index.html就可以直接通过<a href="/static/">lki.github.io/static</a>访问。</p><br/><br/><p>GitHub的这个设定本意是<a href="https://pages.github.com/">让每个项目都有自己的主页来展示</a>，<br/>不过我们也可以借用这个设定来托管静态HTML页面。</p><br/><br/><h2 id="托管静态页面">托管静态页面</h2><br/><br/><p>托管页面的大概步骤如下：</p><br/><br/><ol><br/><li>拥有自己的GitHub账号</li><br/><li>在GitHub上建立一个目录<a href="https://github.com/new">(Create new repository)</a></li><br/><li>用git创造该项目下建立<code>gh-pages</code>分支，提交一个index.html文件</li><br/></ol><br/><br/><p>第3步的命令行版本大概如下：</p><br/><br/><pre><code>$ cd /Users/liriansu/new-repo<br/>$ git init                        # 初始化git目录<br/>$ git checkout -b gh-pages        # 新建gh-pages分支，并切换过去<br/># 跑完上一条命令后，把你的index.html文件放到new-repo文件夹里<br/>$ git add index.html              # 告诉git说index.html要提交了<br/>$ git commit -m &quot;add index.html&quot;  # 提交index.html<br/>$ git remote add origin https://github.com/&lt;username&gt;/&lt;repository&gt;<br/>$ git push -u origin gh-pages     # 推到GitHub服务器上<br/></code></pre><br/><br/><p>然后我们就可以在<code>http://&lt;username&gt;.github.io/&lt;repository&gt;</code>上看到刚提交上去的index.html了。<br/>最后假如你希望在GitHub上搭建个人博客，<br/>可以参照<a href="/how-this-blog-was-built">我的搭建方案</a></p><br/>
         </div>
         
 
@@ -156,8 +113,7 @@ $ git push -u origin gh-pages     # 推到GitHub服务器上
 
 
         
-        
-        <div style="height: 50px;"></div>
+        <div style="height: 20px;"></div>
         
         <div class="post-comments">
           <script src="https://utteranc.es/client.js"

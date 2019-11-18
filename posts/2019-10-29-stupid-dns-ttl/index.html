@@ -106,145 +106,7 @@
         </header>
 
         <div class="post-content markdown-body">
-          
-
-<blockquote>
-<p>By design,
-the Internet core is stupid,
-and the edge is smart.</p>
-</blockquote>
-
-<!--MORE-->
-
-<h2 id="引子">引子</h2>
-
-<p>前几天在网上冲浪的时候，
-看到了一篇讲 DNS 的宝藏文章：
-<a href="https://labs.ripe.net/Members/giovane_moura/dns-ttl-violations-in-the-wild-with-ripe-atlas-2">DNS TTL Violations in the Wild</a>.</p>
-
-<p>之所以对我来说是宝藏文章，
-因为在读了第一段以后，
-我就发现了一个我习以为常的认知其实在实际是错误✖的：
-<em>业界都会遵守 DNS 的 TTL 超时逻辑。</em></p>
-
-<p>然而实际上是：
-<strong>业界都知道 DNS 的 TTL 超时逻辑，但不一定这么实现。</strong></p>
-
-<h2 id="事件">事件</h2>
-
-<p>前几周我们出了个 Bug,
-影响了整个开发、测试环境。</p>
-
-<p>我们有很大一块的业务是跟微信做各类 py 交易，
-<a href="https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/Authorization_Process_Technical_Description.html">微信要求说我们给个回调域名</a>，
-每 10 分钟会推送一个凭证，
-我们要用微信最新的凭证去调他们的接口。</p>
-
-<p>最早我们给微信配的回调域名背后是个 AWS ELB,
-这是一个亚马逊云上面的旧版负载均衡；
-后来我们打算换成新版负载均衡 AWS ALB。</p>
-
-<p>这个操作就很简单嘛，
-到 DNS 服务商里看了一下，
-微信回调的域名解析 TTL 是 600 秒，
-又是开发测试环境；
-于是我们直接把解析改到了新版负载均衡上，
-<del>（出于省钱的想法）</del>顺手还把旧的负载均衡给删了。</p>
-
-<p>哦豁。
-微信一天都没有给我们推授权凭证。
-于是我们开发测试环境的微信功能挂了一天。</p>
-
-<p>有的时候开发测试环境出问题，
-会跟生产环境同样煎熬。
-因为你会发现你身边的同事，
-每隔 10 分钟就会问你：
-“弟啊，微信好了没有？”</p>
-
-<h2 id="疑问">疑问</h2>
-
-<p>在改 DNS 的 86400 秒以后，
-微信的凭证又成功地持续给我们推送了。</p>
-
-<p>根据现象判定是 DNS 的问题以后，
-一边在心里鄙视微信，
-一边也产生了疑问：
-“不科学啊，DNS 这么基础的服务，怎么会出 bug 呢？”</p>
-
-<p>这就回到了本文开头讲的：
-业界都知道 DNS 的 TTL 超时逻辑，但不一定这么实现。</p>
-
-<p>每一条 DNS 记录都由两部分数据组成：
-什么域名应该指向什么目的地？
-我的有效时间是多久？
-而这两部分数据会以互联网特有的树状结构层叠而上，盘织交错。
-在终端进行 DNS 寻址时，
-链路上的任何一个 DNS 服务器都可以实现一套标准或是非标的逻辑。</p>
-
-<p>对于 TTL 这个值，
-只有三种实现的逻辑：</p>
-
-<ol>
-<li>缓存时间等于 DNS TTL 时间。</li>
-<li>缓存时间小于 DNS TTL 时间。</li>
-<li>缓存时间大于 DNS TTL 时间。</li>
-</ol>
-
-<h2 id="世界">世界</h2>
-
-<p>要我来写域名服务器的逻辑的话，
-不出意外我会严格按照定义来实现。
-当然，根据性能、时间、空间的限制，
-最终实现出来会有几秒的误差，
-不过这不关键。</p>
-
-<p>关键的是，<a href="https://mailarchive.ietf.org/arch/msg/dnsop/zRuuXkwmklMHFvl_Qqzn2N0SOGY/?qid=ff8e732c964b76fed3bbf333b89b111f">有不少人觉得 DNS 目前的设计是有缺陷的</a>。
-而作为整个互联网的底层构架，
-不论是要提升还是替换 DNS 目前的逻辑，
-都是一个非常巨大的工程。
-当然，这也更吸引工程师为此献身了。</p>
-
-<p>于是，当今现实世界里的域名解析，
-就不是完全按照“缓存时间等于 DNS TTL 时间”来实现的。</p>
-
-<ul>
-<li>当缓存时间小于 DNS TTL 时间时
-
-<ul>
-<li>主要争议点在与这个会给上游服务器带来更大的解析压力</li>
-<li>高频解析也意味着更多的带宽、网费支出</li>
-<li>但这种情况不会伤害终端用户</li>
-</ul></li>
-<li>当缓存时间大于 DNS TTL 时间时
-
-<ul>
-<li>主要的问题在于，这会让用户访问到错误的服务器</li>
-<li>这不仅会带来逻辑错误，还会有潜在的安全隐患</li>
-<li>在本文最开始出现的问题，其实就是微信的 DNS 链路上出现了缓存过旧的问题</li>
-<li>好处可能就是在解析费上不用交那么多钱了(x</li>
-</ul></li>
-</ul>
-
-<h2 id="总结">总结</h2>
-
-<p>总的来说，DNS TTL 是一个在互联网基础设施中广泛使用的约定。
-但是现实世界中也会有很多非标的实现。
-由于 DNS 的特殊性，每一个非标的域名商都会影响一大片他们能触达的用户。
-所以在我们操作 DNS 时，要优雅的解决问题就也得把他们给考虑进来。</p>
-
-<p>工程上的问题就是这样，
-既有理论的优雅，
-又有凡人的愚蠢，
-也有分布式的智慧。</p>
-
-<blockquote>
-<p>By design,
-the Internet core is stupid,
-and the edge is smart.</p>
-</blockquote>
-
-<p>（完）</p>
-
+          <br/><br/><blockquote><br/><p>By design,<br/>the Internet core is stupid,<br/>and the edge is smart.</p><br/></blockquote><br/><br/><!--MORE--><br/><br/><h2 id="引子">引子</h2><br/><br/><p>前几天在网上冲浪的时候，<br/>看到了一篇讲 DNS 的宝藏文章：<br/><a href="https://labs.ripe.net/Members/giovane_moura/dns-ttl-violations-in-the-wild-with-ripe-atlas-2">DNS TTL Violations in the Wild</a>.</p><br/><br/><p>之所以对我来说是宝藏文章，<br/>因为在读了第一段以后，<br/>我就发现了一个我习以为常的认知其实在实际是错误✖的：<br/><em>业界都会遵守 DNS 的 TTL 超时逻辑。</em></p><br/><br/><p>然而实际上是：<br/><strong>业界都知道 DNS 的 TTL 超时逻辑，但不一定这么实现。</strong></p><br/><br/><h2 id="事件">事件</h2><br/><br/><p>前几周我们出了个 Bug,<br/>影响了整个开发、测试环境。</p><br/><br/><p>我们有很大一块的业务是跟微信做各类 py 交易，<br/><a href="https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/Authorization_Process_Technical_Description.html">微信要求说我们给个回调域名</a>，<br/>每 10 分钟会推送一个凭证，<br/>我们要用微信最新的凭证去调他们的接口。</p><br/><br/><p>最早我们给微信配的回调域名背后是个 AWS ELB,<br/>这是一个亚马逊云上面的旧版负载均衡；<br/>后来我们打算换成新版负载均衡 AWS ALB。</p><br/><br/><p>这个操作就很简单嘛，<br/>到 DNS 服务商里看了一下，<br/>微信回调的域名解析 TTL 是 600 秒，<br/>又是开发测试环境；<br/>于是我们直接把解析改到了新版负载均衡上，<br/><del>（出于省钱的想法）</del>顺手还把旧的负载均衡给删了。</p><br/><br/><p>哦豁。<br/>微信一天都没有给我们推授权凭证。<br/>于是我们开发测试环境的微信功能挂了一天。</p><br/><br/><p>有的时候开发测试环境出问题，<br/>会跟生产环境同样煎熬。<br/>因为你会发现你身边的同事，<br/>每隔 10 分钟就会问你：<br/>“弟啊，微信好了没有？”</p><br/><br/><h2 id="疑问">疑问</h2><br/><br/><p>在改 DNS 的 86400 秒以后，<br/>微信的凭证又成功地持续给我们推送了。</p><br/><br/><p>根据现象判定是 DNS 的问题以后，<br/>一边在心里鄙视微信，<br/>一边也产生了疑问：<br/>“不科学啊，DNS 这么基础的服务，怎么会出 bug 呢？”</p><br/><br/><p>这就回到了本文开头讲的：<br/>业界都知道 DNS 的 TTL 超时逻辑，但不一定这么实现。</p><br/><br/><p>每一条 DNS 记录都由两部分数据组成：<br/>什么域名应该指向什么目的地？<br/>我的有效时间是多久？<br/>而这两部分数据会以互联网特有的树状结构层叠而上，盘织交错。<br/>在终端进行 DNS 寻址时，<br/>链路上的任何一个 DNS 服务器都可以实现一套标准或是非标的逻辑。</p><br/><br/><p>对于 TTL 这个值，<br/>只有三种实现的逻辑：</p><br/><br/><ol><br/><li>缓存时间等于 DNS TTL 时间。</li><br/><li>缓存时间小于 DNS TTL 时间。</li><br/><li>缓存时间大于 DNS TTL 时间。</li><br/></ol><br/><br/><h2 id="世界">世界</h2><br/><br/><p>要我来写域名服务器的逻辑的话，<br/>不出意外我会严格按照定义来实现。<br/>当然，根据性能、时间、空间的限制，<br/>最终实现出来会有几秒的误差，<br/>不过这不关键。</p><br/><br/><p>关键的是，<a href="https://mailarchive.ietf.org/arch/msg/dnsop/zRuuXkwmklMHFvl_Qqzn2N0SOGY/?qid=ff8e732c964b76fed3bbf333b89b111f">有不少人觉得 DNS 目前的设计是有缺陷的</a>。<br/>而作为整个互联网的底层构架，<br/>不论是要提升还是替换 DNS 目前的逻辑，<br/>都是一个非常巨大的工程。<br/>当然，这也更吸引工程师为此献身了。</p><br/><br/><p>于是，当今现实世界里的域名解析，<br/>就不是完全按照“缓存时间等于 DNS TTL 时间”来实现的。</p><br/><br/><ul><br/><li>当缓存时间小于 DNS TTL 时间时<br/><br/><ul><br/><li>主要争议点在与这个会给上游服务器带来更大的解析压力</li><br/><li>高频解析也意味着更多的带宽、网费支出</li><br/><li>但这种情况不会伤害终端用户</li><br/></ul></li><br/><li>当缓存时间大于 DNS TTL 时间时<br/><br/><ul><br/><li>主要的问题在于，这会让用户访问到错误的服务器</li><br/><li>这不仅会带来逻辑错误，还会有潜在的安全隐患</li><br/><li>在本文最开始出现的问题，其实就是微信的 DNS 链路上出现了缓存过旧的问题</li><br/><li>好处可能就是在解析费上不用交那么多钱了(x</li><br/></ul></li><br/></ul><br/><br/><h2 id="总结">总结</h2><br/><br/><p>总的来说，DNS TTL 是一个在互联网基础设施中广泛使用的约定。<br/>但是现实世界中也会有很多非标的实现。<br/>由于 DNS 的特殊性，每一个非标的域名商都会影响一大片他们能触达的用户。<br/>所以在我们操作 DNS 时，要优雅的解决问题就也得把他们给考虑进来。</p><br/><br/><p>工程上的问题就是这样，<br/>既有理论的优雅，<br/>又有凡人的愚蠢，<br/>也有分布式的智慧。</p><br/><br/><blockquote><br/><p>By design,<br/>the Internet core is stupid,<br/>and the edge is smart.</p><br/></blockquote><br/><br/><p>（完）</p><br/>
         </div>
         
 
@@ -252,8 +114,7 @@ and the edge is smart.</p>
 
 
         
-        
-        <div style="height: 50px;"></div>
+        <div style="height: 20px;"></div>
         
         <div class="post-comments">
           <script src="https://utteranc.es/client.js"

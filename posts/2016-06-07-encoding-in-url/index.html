@@ -113,72 +113,7 @@ self.write(str(path)) self.write(unicode(path)) self.write(path.encode(&#39;utf8
         </header>
 
         <div class="post-content markdown-body">
-          
-
-<p>说是说解决方案，其实并没有解决这个问题 :wink:</p>
-
-<!--MORE-->
-
-<h2 id="url中参数编码不正确">URL中参数编码不正确</h2>
-
-<p>最近在做Python-Scrapy的爬虫，用Tornado写了一个服务器程序，
-但是遇到的问题是</p>
-
-<p><strong>Tornado无法解析URL的中文</strong></p>
-
-<p>比如说样例小程序如下：</p>
-
-<pre><code class="language-python">from tornado.ioloop import IOLoop
-import tornado.web as tw
-
-class SampleHandler(tw.RequestHandler):
-    def get(self, path):
-        self.write(path)
-
-app = tw.Application([(ur'/(.*)', SampleHandler)])
-app.listen(8080)
-IOLoop.current().start()
-</code></pre>
-
-<p>但是访问<code>http://localhost:8080/浮云计算</code>却只能得到<code>æµ®äº�è®¡ç®�</code>这样一坨东西&hellip;</p>
-
-<h2 id="解决方案">解决方案</h2>
-
-<p>长话短说，这是因为<code>URL中文解码不正确</code>的原因导致的。
-所以我们利用<a href="http://tool.chinaz.com/tools/urlencode.aspx">站长工具url编码</a>手动替换中文访问即可：</p>
-
-<p>访问<code>http://localhost:8080/%e6%b5%ae%e4%ba%91%e8%ae%a1%e7%ae%97</code>就可以得到<code>浮云计算</code>啦。</p>
-
-<h2 id="详细原因">详细原因</h2>
-
-<p>一开始我怀疑是因为字符串没用utf8编码，
-于是尝试了不同的转换方式：</p>
-
-<pre><code>self.write(str(path))
-self.write(unicode(path))
-self.write(path.encode('utf8'))
-</code></pre>
-
-<p>这些常识不是报错，就是根本没变化。</p>
-
-<p>最终我找到了<a href="http://ju.outofmemory.cn/entry/62161">一个前人的经验</a>，里面是这么讲的：</p>
-
-<blockquote>
-<p>看来你是不知道在浏览器地址栏手动输入中文和在页面上一个的链接的编码处理方式是不同的。。。。
-打个比方，在windows系统上，你在FF地址栏输入&rdquo;<a href="http://localhost/中文.html?m=汉语&quot;，这里的“中文”两字的编码是utf8（这一点应该是跟浏览器设置相关），而“汉语”则是gbk，跟操作系统相关（大部分中国人的windows应该都是cp936，也就是gbk）。">http://localhost/中文.html?m=汉语&quot;，这里的“中文”两字的编码是utf8（这一点应该是跟浏览器设置相关），而“汉语”则是gbk，跟操作系统相关（大部分中国人的windows应该都是cp936，也就是gbk）。</a>
-如果你是通过某个页面访问这个链接的，则所有字符的编码都是跟页面的编码相关。
-在IE上也是一样。
-所以，我觉得还是打消在浏览器地址栏输入中文这个想法吧，要不然你要解码两次，而且还要保证页面上的编码跟系统一样，不然无法保证手动输入和页面点击的兼容性。。。。</p>
-</blockquote>
-
-<p>喔，原来是因为<code>URL解码方式完全取决于浏览器和操作系统</code>，也就是说<code>中文有可能以GBK来编码</code></p>
-
-<p>怪不得Python/Tornado认不出来了！</p>
-
-<p>所以解决方案就是我们手动去解码一次啦~</p>
-
-<p>（或者Python3 XD）</p>
-
+          <br/><br/><p>说是说解决方案，其实并没有解决这个问题 :wink:</p><br/><br/><!--MORE--><br/><br/><h2 id="url中参数编码不正确">URL中参数编码不正确</h2><br/><br/><p>最近在做Python-Scrapy的爬虫，用Tornado写了一个服务器程序，<br/>但是遇到的问题是</p><br/><br/><p><strong>Tornado无法解析URL的中文</strong></p><br/><br/><p>比如说样例小程序如下：</p><br/><br/><pre><code class="language-python">from tornado.ioloop import IOLoop<br/>import tornado.web as tw<br/><br/>class SampleHandler(tw.RequestHandler):<br/>    def get(self, path):<br/>        self.write(path)<br/><br/>app = tw.Application([(ur'/(.*)', SampleHandler)])<br/>app.listen(8080)<br/>IOLoop.current().start()<br/></code></pre><br/><br/><p>但是访问<code>http://localhost:8080/浮云计算</code>却只能得到<code>æµ®äº�è®¡ç®�</code>这样一坨东西&hellip;</p><br/><br/><h2 id="解决方案">解决方案</h2><br/><br/><p>长话短说，这是因为<code>URL中文解码不正确</code>的原因导致的。<br/>所以我们利用<a href="http://tool.chinaz.com/tools/urlencode.aspx">站长工具url编码</a>手动替换中文访问即可：</p><br/><br/><p>访问<code>http://localhost:8080/%e6%b5%ae%e4%ba%91%e8%ae%a1%e7%ae%97</code>就可以得到<code>浮云计算</code>啦。</p><br/><br/><h2 id="详细原因">详细原因</h2><br/><br/><p>一开始我怀疑是因为字符串没用utf8编码，<br/>于是尝试了不同的转换方式：</p><br/><br/><pre><code>self.write(str(path))<br/>self.write(unicode(path))<br/>self.write(path.encode('utf8'))<br/></code></pre><br/><br/><p>这些常识不是报错，就是根本没变化。</p><br/><br/><p>最终我找到了<a href="http://ju.outofmemory.cn/entry/62161">一个前人的经验</a>，里面是这么讲的：</p><br/><br/><blockquote><br/><p>看来你是不知道在浏览器地址栏手动输入中文和在页面上一个的链接的编码处理方式是不同的。。。。<br/>打个比方，在windows系统上，你在FF地址栏输入&rdquo;<a href="http://localhost/中文.html?m=汉语&quot;，这里的“中文”两字的编码是utf8（这一点应该是跟浏览器设置相关），而“汉语”则是gbk，跟操作系统相关（大部分中国人的windows应该都是cp936，也就是gbk）。">http://localhost/中文.html?m=汉语&quot;，这里的“中文”两字的编码是utf8（这一点应该是跟浏览器设置相关），而“汉语”则是gbk，跟操作系统相关（大部分中国人的windows应该都是cp936，也就是gbk）。</a><br/>如果你是通过某个页面访问这个链接的，则所有字符的编码都是跟页面的编码相关。<br/>在IE上也是一样。<br/>所以，我觉得还是打消在浏览器地址栏输入中文这个想法吧，要不然你要解码两次，而且还要保证页面上的编码跟系统一样，不然无法保证手动输入和页面点击的兼容性。。。。</p><br/></blockquote><br/><br/><p>喔，原来是因为<code>URL解码方式完全取决于浏览器和操作系统</code>，也就是说<code>中文有可能以GBK来编码</code></p><br/><br/><p>怪不得Python/Tornado认不出来了！</p><br/><br/><p>所以解决方案就是我们手动去解码一次啦~</p><br/><br/><p>（或者Python3 XD）</p><br/>
         </div>
         
 
@@ -186,8 +121,7 @@ self.write(path.encode('utf8'))
 
 
         
-        
-        <div style="height: 50px;"></div>
+        <div style="height: 20px;"></div>
         
         <div class="post-comments">
           <script src="https://utteranc.es/client.js"
