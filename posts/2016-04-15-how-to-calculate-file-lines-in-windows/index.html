@@ -19,7 +19,7 @@
       "articleSection" : "posts",
       "name" : "如何用Windows命令行统计文件行数",
       "headline" : "如何用Windows命令行统计文件行数",
-      "description" : "今天要统计文件行数，可是手边恰好没有Linux环境。\n Linux 统计代码行数 在 Linux 下这是一件很简单的事情：\nfind . -name \x26quot;*.py\x26quot; | wc -l  这行语句就可以很简单地统计出当前目录下所有py后缀文件的行数了。\nWindows 统计代码行数 这时我们就不能用cmd而是应当用PowerShell啦。\nPowershell是Windows基于.NET开发的一个自动化配置框架。 （其实就是新版命令行）\n然后我们可以输入：\ndir .\\ -Recurse *.py | Get-Content | Measure-Object  我们就可以看到输出：\nCount : 1253  表示当前目录下py后缀文件一共有1253行。",
+      "description" : "今天要统计文件行数，可是手边恰好没有Linux环境。\n Linux 统计代码行数 在 Linux 下这是一件很简单的事情：\nfind . -name \x26quot;*.py\x26quot; | wc -l  这行语句就可以很简单地统计出当前目录下所有py后缀文件的行数了。\nWindows 统计代码行数 这时我们就不能用cmd而是应当用PowerShell啦。\nPowershell是Windows基于.NET开发的一个自动化配置框架。\n（其实就是新版命令行）\n然后我们可以输入：\ndir .\\ -Recurse *.py | Get-Content | Measure-Object  我们就可以看到输出：\nCount : 1253  表示当前目录下py后缀文件一共有1253行。",
       "inLanguage" : "en-US",
       "author" : "Lirian Su",
       "creator" : "Lirian Su",
@@ -40,7 +40,8 @@
  Linux 统计代码行数 在 Linux 下这是一件很简单的事情：
 find . -name &quot;*.py&quot; | wc -l  这行语句就可以很简单地统计出当前目录下所有py后缀文件的行数了。
 Windows 统计代码行数 这时我们就不能用cmd而是应当用PowerShell啦。
-Powershell是Windows基于.NET开发的一个自动化配置框架。 （其实就是新版命令行）
+Powershell是Windows基于.NET开发的一个自动化配置框架。
+（其实就是新版命令行）
 然后我们可以输入：
 dir .\ -Recurse *.py | Get-Content | Measure-Object  我们就可以看到输出：
 Count : 1253  表示当前目录下py后缀文件一共有1253行。" />
@@ -87,26 +88,51 @@ Count : 1253  表示当前目录下py后缀文件一共有1253行。" />
           <h1 class="post-title">如何用Windows命令行统计文件行数</h1>
           
           <div class="row post-desc">
-            <div class="col-xs-6">
-              
-              <time class="post-date" datetime="2016-04-15 22:13:15 UTC">
-                2016-04-15
-              </time>
-              
-            </div>
-            <div class="col-xs-6">
-              
-              <div class="post-author">
-                <a target="_blank" href="">@Lirian Su</a>
-              </div>
-              
-            </div>
+            
+            <time class="post-header-item" datetime="2016-04-15 22:13:15 UTC">
+              Written at 2016-04-15 22:13
+            </time>
+            
+            <span class="post-header-item" id="busuanzi_container_page_pv"> Views <span id="busuanzi_value_page_pv" /> </span>
           </div>
           
         </header>
 
         <div class="post-content markdown-body">
-          <br/><br/><p>今天要统计文件行数，可是手边恰好没有Linux环境。</p><br/><br/><!--MORE--><br/><br/><h2 id="linux-统计代码行数">Linux 统计代码行数</h2><br/><br/><p>在 Linux 下这是一件很简单的事情：</p><br/><br/><pre><code class="language-bash">    find . -name &quot;*.py&quot; | wc -l<br/></code></pre><br/><br/><p>这行语句就可以很简单地统计出当前目录下所有py后缀文件的行数了。</p><br/><br/><h2 id="windows-统计代码行数">Windows 统计代码行数</h2><br/><br/><p>这时我们就不能用cmd而是应当用PowerShell啦。</p><br/><br/><p><a href="https://en.wikipedia.org/wiki/Windows_PowerShell">Powershell</a>是Windows基于.NET开发的一个自动化配置框架。<br/>（其实就是新版命令行）</p><br/><br/><p>然后我们可以输入：</p><br/><br/><pre><code class="language-powershell">    dir .\ -Recurse *.py | Get-Content | Measure-Object<br/></code></pre><br/><br/><p>我们就可以看到输出：</p><br/><br/><pre><code>Count : 1253<br/></code></pre><br/><br/><p>表示当前目录下py后缀文件一共有1253行。</p><br/>
+          
+
+<p>今天要统计文件行数，可是手边恰好没有Linux环境。</p>
+
+<!--MORE-->
+
+<h2 id="linux-统计代码行数">Linux 统计代码行数</h2>
+
+<p>在 Linux 下这是一件很简单的事情：</p>
+
+<pre><code class="language-bash">    find . -name &quot;*.py&quot; | wc -l
+</code></pre>
+
+<p>这行语句就可以很简单地统计出当前目录下所有py后缀文件的行数了。</p>
+
+<h2 id="windows-统计代码行数">Windows 统计代码行数</h2>
+
+<p>这时我们就不能用cmd而是应当用PowerShell啦。</p>
+
+<p><a href="https://en.wikipedia.org/wiki/Windows_PowerShell">Powershell</a>是Windows基于.NET开发的一个自动化配置框架。<br />
+（其实就是新版命令行）</p>
+
+<p>然后我们可以输入：</p>
+
+<pre><code class="language-powershell">    dir .\ -Recurse *.py | Get-Content | Measure-Object
+</code></pre>
+
+<p>我们就可以看到输出：</p>
+
+<pre><code>Count : 1253
+</code></pre>
+
+<p>表示当前目录下py后缀文件一共有1253行。</p>
+
         </div>
         
 
@@ -128,24 +154,29 @@ Count : 1253  表示当前目录下py后缀文件一共有1253行。" />
         </div>
 
         <div class="site-footer">
-  
-  <div class="site-footer-item">
-    <a href="/about" target="_blank">about</a>
+  <div class="site-footer-left">
+    <div class="site-footer-item">
+      <span id="busuanzi_container_site_pv" style="display:none"> PV: <span id="busuanzi_value_site_pv"/> </span>
+    </div>
+    <div class="site-footer-item">
+      <span id="busuanzi_container_site_uv" style="display:none"> UV: <span id="busuanzi_value_site_uv"/> </span>
+    </div>
   </div>
-  
-  <div class="site-footer-item">
-    <a href="https://github.com/LKI/LKI" target="_blank">github</a>
-  </div>
-  
-  <div class="site-footer-item">
-    <a href="/index.xml" target="_blank">rss</a>
-  </div>
-  
-  <div class="site-footer-item">
-    <span id="busuanzi_container_site_pv"> PV: <span id="busuanzi_value_site_pv"> </span> </span>
-  </div>
-  <div class="site-footer-item">
-    <span id="busuanzi_container_site_uv"> UV: <span id="busuanzi_value_site_uv"/> </span> </span>
+
+  <div class="site-footer-right">
+    
+    <div class="site-footer-item">
+      <a href="/about" target="_blank">about</a>
+    </div>
+    
+    <div class="site-footer-item">
+      <a href="https://github.com/LKI/LKI" target="_blank">github</a>
+    </div>
+    
+    <div class="site-footer-item">
+      <a href="/index.xml" target="_blank">rss</a>
+    </div>
+    
   </div>
 </div>
 
@@ -153,19 +184,7 @@ Count : 1253  表示当前目录下py后缀文件一共有1253行。" />
     </div>
   </article>
 
-  <script src="/js/highlight.pack.js"></script>
-
-
-<script>
-  hljs.initHighlightingOnLoad();
-
-  
-  
-    
-    
-  
-</script>
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
 

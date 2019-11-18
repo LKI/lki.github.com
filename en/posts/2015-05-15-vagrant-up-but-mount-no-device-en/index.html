@@ -81,26 +81,66 @@
           <h1 class="post-title">Solution for vagrant-up error: mount no device</h1>
           
           <div class="row post-desc">
-            <div class="col-xs-6">
-              
-              <time class="post-date" datetime="2015-05-15 10:29:05 UTC">
-                2015-05-15
-              </time>
-              
-            </div>
-            <div class="col-xs-6">
-              
-              <div class="post-author">
-                <a target="_blank" href="">@Lirian Su</a>
-              </div>
-              
-            </div>
+            
+            <time class="post-header-item" datetime="2015-05-15 10:29:05 UTC">
+              Written at 2015-05-15 10:29
+            </time>
+            
+            <span class="post-header-item" id="busuanzi_container_page_pv"> Views <span id="busuanzi_value_page_pv" /> </span>
           </div>
           
         </header>
 
         <div class="post-content markdown-body">
-          <p>Today I encounter a problem running <code>vagrant up</code>：</p><br/><br/><!--MORE--><br/><br/><pre><code>==&gt; cvc-tools: Machine booted and ready!<br/>==&gt; cvc-tools: Checking for guest additions in VM...<br/>==&gt; cvc-tools: Configuring and enabling network interfaces...<br/>==&gt; cvc-tools: Mounting shared folders...<br/>    cvc-tools: /work =&gt; D:/work/<br/>Failed to mount folders in Linux guest. This is usually because<br/>the &quot;vboxsf&quot; file system is not available. Please verify that<br/>the guest additions are properly installed in the guest and<br/>can work properly. The command attempted was:<br/><br/>mount -t vboxsf -o uid=`id -u devel`,gid=`getent group devel | cut -d:<br/>-f3` work /work<br/>mount -t vboxsf -o uid=`id -u devel`,gid=`id -g devel` work /work<br/><br/>The error output from the last command was:<br/><br/>/sbin/mount.vboxsf: mounting failed with the error: No such device<br/></code></pre><br/><br/><p>Refer to <a href="https://github.com/mitchellh/vagrant/issues/1657">https://github.com/mitchellh/vagrant/issues/1657</a></p><br/><br/><p>_This is usually a result of the guest’s package manager upgrading the</p><br/><br/><p>kernel without rebuilding the VirtualBox Guest Additions_ by lenciel. So<br/>we run vboxadd accordingly:</p><br/><br/><pre><code>    [lirian@localhost ~]$ sudo /etc/init.d/vboxadd setup<br/>    Removing existing VirtualBox non-DKMS kernel modules       [  OK  ]<br/>    Building the VirtualBox Guest Additions kernel modules<br/>    The headers for the current running kernel were not found. If the<br/>    following<br/>    module compilation fails then this could be the reason.<br/>    The missing package can be probably installed with<br/>    yum install kernel-devel-2.6.18-404.el5<br/><br/>    Building the main Guest Additions module                   [FAILED]<br/>    (Look at /var/log/vboxadd-install.log to find out what went wrong)<br/>    Doing non-kernel setup of the Guest Additions              [  OK  ]<br/></code></pre><br/><br/><p>From the message we can know current running kernel were not found. So<br/>we run:<code>yum install kernel-devel-2.6.18-404.el5</code></p><br/><br/><p>After all, we can run <code>vagrant up</code> or mount the directory manually.</p><br/>
+          <p>Today I encounter a problem running <code>vagrant up</code>：</p>
+
+<!--MORE-->
+
+<pre><code>==&gt; cvc-tools: Machine booted and ready!
+==&gt; cvc-tools: Checking for guest additions in VM...
+==&gt; cvc-tools: Configuring and enabling network interfaces...
+==&gt; cvc-tools: Mounting shared folders...
+    cvc-tools: /work =&gt; D:/work/
+Failed to mount folders in Linux guest. This is usually because
+the &quot;vboxsf&quot; file system is not available. Please verify that
+the guest additions are properly installed in the guest and
+can work properly. The command attempted was:
+
+mount -t vboxsf -o uid=`id -u devel`,gid=`getent group devel | cut -d:
+-f3` work /work
+mount -t vboxsf -o uid=`id -u devel`,gid=`id -g devel` work /work
+
+The error output from the last command was:
+
+/sbin/mount.vboxsf: mounting failed with the error: No such device
+</code></pre>
+
+<p>Refer to <a href="https://github.com/mitchellh/vagrant/issues/1657">https://github.com/mitchellh/vagrant/issues/1657</a></p>
+
+<p>_This is usually a result of the guest’s package manager upgrading the</p>
+
+<p>kernel without rebuilding the VirtualBox Guest Additions_ by lenciel. So<br />
+we run vboxadd accordingly:</p>
+
+<pre><code>    [lirian@localhost ~]$ sudo /etc/init.d/vboxadd setup
+    Removing existing VirtualBox non-DKMS kernel modules       [  OK  ]
+    Building the VirtualBox Guest Additions kernel modules
+    The headers for the current running kernel were not found. If the
+    following
+    module compilation fails then this could be the reason.
+    The missing package can be probably installed with
+    yum install kernel-devel-2.6.18-404.el5
+
+    Building the main Guest Additions module                   [FAILED]
+    (Look at /var/log/vboxadd-install.log to find out what went wrong)
+    Doing non-kernel setup of the Guest Additions              [  OK  ]
+</code></pre>
+
+<p>From the message we can know current running kernel were not found. So<br />
+we run:<code>yum install kernel-devel-2.6.18-404.el5</code></p>
+
+<p>After all, we can run <code>vagrant up</code> or mount the directory manually.</p>
+
         </div>
         
 
@@ -122,24 +162,29 @@
         </div>
 
         <div class="site-footer">
-  
-  <div class="site-footer-item">
-    <a href="/about" target="_blank">about</a>
+  <div class="site-footer-left">
+    <div class="site-footer-item">
+      <span id="busuanzi_container_site_pv" style="display:none"> PV: <span id="busuanzi_value_site_pv"/> </span>
+    </div>
+    <div class="site-footer-item">
+      <span id="busuanzi_container_site_uv" style="display:none"> UV: <span id="busuanzi_value_site_uv"/> </span>
+    </div>
   </div>
-  
-  <div class="site-footer-item">
-    <a href="https://github.com/LKI/LKI" target="_blank">github</a>
-  </div>
-  
-  <div class="site-footer-item">
-    <a href="/index.xml" target="_blank">rss</a>
-  </div>
-  
-  <div class="site-footer-item">
-    <span id="busuanzi_container_site_pv"> PV: <span id="busuanzi_value_site_pv"> </span> </span>
-  </div>
-  <div class="site-footer-item">
-    <span id="busuanzi_container_site_uv"> UV: <span id="busuanzi_value_site_uv"/> </span> </span>
+
+  <div class="site-footer-right">
+    
+    <div class="site-footer-item">
+      <a href="/about" target="_blank">about</a>
+    </div>
+    
+    <div class="site-footer-item">
+      <a href="https://github.com/LKI/LKI" target="_blank">github</a>
+    </div>
+    
+    <div class="site-footer-item">
+      <a href="/index.xml" target="_blank">rss</a>
+    </div>
+    
   </div>
 </div>
 
@@ -147,19 +192,7 @@
     </div>
   </article>
 
-  <script src="/js/highlight.pack.js"></script>
-
-
-<script>
-  hljs.initHighlightingOnLoad();
-
-  
-  
-    
-    
-  
-</script>
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
 

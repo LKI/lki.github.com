@@ -33,7 +33,8 @@ And the lines is as below:
       <guid>https://liriansu.com/en/posts/2016-03-16-ubuntu-package-can-be-updated-solution-en/</guid>
       <description>A trick in Ubuntu.
  x package can be updated Recently I get this message when log into the system.
- x packages can be updated. y updates are security updates.  Ummm, the &amp;ldquo;You have X app to update&amp;rdquo; hint. It should be done with this command I think:
+ x packages can be updated. y updates are security updates.  Ummm, the &amp;ldquo;You have X app to update&amp;rdquo; hint.
+It should be done with this command I think:
  apt-get update apt-get upgrade  But seems this update&amp;amp;&amp;amp;upgrade command does nothing:
  x packages can be updated. y updates are security updates.</description>
     </item>

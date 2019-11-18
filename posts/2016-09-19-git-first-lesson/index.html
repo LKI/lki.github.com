@@ -19,7 +19,7 @@
       "articleSection" : "posts",
       "name" : "git新手教程",
       "headline" : "git新手教程",
-      "description" : "这是一篇针对技术小白们的Git科普文章。 本文主要介绍版本控制工具Git的基本概念， 以及init,status,add,commit,reset,log几个基本命令。\n 什么是Git 在十多年前，有好多程序员一起开发Linux系统。 这么多人一起写一个软件，他们就需要一个好的软件来 控制代码的版本\/回滚代码\/并行开发。 最开始他们是用的一个现成的软件叫*BitKeeper*， 但是后来BitKeeper居然想收费！于是他们就开发出了Git…\n没错，Git就是一个由程序员自己写的， 写给程序员自己用的，用来管理写程序的工具。 本文想做的就是把Git这个*程序员用的*工具 介绍给不懂写代码，但是要写文档，改文档的同学。\n（所以本文的具体栗子是在Windows系统下进行）\n什么是版本控制 举个栗子： 今天要写毕业论文，我打开了Microsoft Word， 写完了第一章。 但我突然有一个更好的想法，我决定重写第一章。 于是我按下了撤销按钮，Word文档回滚到了最开始的地方。 我坐了三分钟，我发现其实还是我之前的第一章写的比较好。 于是我按下了重复按钮，Word文档又回滚到了我写完第一章的时候了。\n上面的栗子，其实就是一个典型的*版本控制*场景。 而Git作为版本控制的工具，做的就是文件级别的*版本控制*。\n接下来我们直接来试用Git。\n安装Git 首先我们到Git的官方网站（英文） 去下载最新的windows版本的git： （当你用浏览器打开这个网站的时候，就应该有下载框弹出来了）\n下载地址：https:\/\/git-scm.com\/download\/win\n下载完毕以后打开，大部分设定用默认的就行了， 几个关键选项图示如下：\n安装选项： 安装命令： 换行符操作： 安装完毕后我们在任意菜单右键， 应该就可以看到“Git Bash Here”的选项。 并且打开以后我们输入git version 可以查看到git版本号信息， 这就说明我们安装成功了。\n$ git version git version 2.9.0.windows.1 （具体版本可能会随时间变化，但这并不重要）  新手上路 打开Git Bash git是一个命令行工具。 （虽然也有图形界面，但那个太蠢了， 我们还是学习更好用的敲命令吧）\n首先我们打开一个文件夹， 比如我打开的是D:\\git-first-lesson\\XML这个文件夹， 然后右键菜单 -\x26gt; Git Bash Here， 就打开了一个这样的Git Bash：\n再顺便说一下几个基本的命令：",
+      "description" : "这是一篇针对技术小白们的Git科普文章。\n本文主要介绍版本控制工具Git的基本概念，\n以及init,status,add,commit,reset,log几个基本命令。\n 什么是Git 在十多年前，有好多程序员一起开发Linux系统。\n这么多人一起写一个软件，他们就需要一个好的软件来\n控制代码的版本\/回滚代码\/并行开发。\n最开始他们是用的一个现成的软件叫*BitKeeper*，\n但是后来BitKeeper居然想收费！于是他们就开发出了Git…\n没错，Git就是一个由程序员自己写的，\n写给程序员自己用的，用来管理写程序的工具。\n本文想做的就是把Git这个*程序员用的*工具\n介绍给不懂写代码，但是要写文档，改文档的同学。\n（所以本文的具体栗子是在Windows系统下进行）\n什么是版本控制 举个栗子：\n今天要写毕业论文，我打开了Microsoft Word， 写完了第一章。\n但我突然有一个更好的想法，我决定重写第一章。\n于是我按下了撤销按钮，Word文档回滚到了最开始的地方。\n我坐了三分钟，我发现其实还是我之前的第一章写的比较好。\n于是我按下了重复按钮，Word文档又回滚到了我写完第一章的时候了。\n上面的栗子，其实就是一个典型的*版本控制*场景。\n而Git作为版本控制的工具，做的就是文件级别的*版本控制*。\n接下来我们直接来试用Git。\n安装Git 首先我们到Git的官方网站（英文）\n去下载最新的windows版本的git：\n（当你用浏览器打开这个网站的时候，就应该有下载框弹出来了）\n下载地址：https:\/\/git-scm.com\/download\/win\n下载完毕以后打开，大部分设定用默认的就行了，\n几个关键选项图示如下：\n安装选项：\n安装命令：\n换行符操作：\n安装完毕后我们在任意菜单右键，\n应该就可以看到“Git Bash Here”的选项。\n并且打开以后我们输入git version\n可以查看到git版本号信息，\n这就说明我们安装成功了。\n$ git version git version 2.9.0.windows.1 （具体版本可能会随时间变化，但这并不重要）  新手上路 打开Git Bash git是一个命令行工具。\n（虽然也有图形界面，但那个太蠢了，\n我们还是学习更好用的敲命令吧）\n首先我们打开一个文件夹，\n比如我打开的是D:\\git-first-lesson\\XML这个文件夹，\n然后右键菜单 -\x26gt; Git Bash Here，\n就打开了一个这样的Git Bash：\n再顺便说一下几个基本的命令：",
       "inLanguage" : "en-US",
       "author" : "Lirian Su",
       "creator" : "Lirian Su",
@@ -36,19 +36,49 @@
 <title>git新手教程 - 浮云计算</title>
   <meta property="og:title" content="git新手教程 - 浮云计算" />
   <meta property="og:type" content="article" />
-  <meta name="description" content="这是一篇针对技术小白们的Git科普文章。 本文主要介绍版本控制工具Git的基本概念， 以及init,status,add,commit,reset,log几个基本命令。
- 什么是Git 在十多年前，有好多程序员一起开发Linux系统。 这么多人一起写一个软件，他们就需要一个好的软件来 控制代码的版本/回滚代码/并行开发。 最开始他们是用的一个现成的软件叫*BitKeeper*， 但是后来BitKeeper居然想收费！于是他们就开发出了Git…
-没错，Git就是一个由程序员自己写的， 写给程序员自己用的，用来管理写程序的工具。 本文想做的就是把Git这个*程序员用的*工具 介绍给不懂写代码，但是要写文档，改文档的同学。
+  <meta name="description" content="这是一篇针对技术小白们的Git科普文章。
+本文主要介绍版本控制工具Git的基本概念，
+以及init,status,add,commit,reset,log几个基本命令。
+ 什么是Git 在十多年前，有好多程序员一起开发Linux系统。
+这么多人一起写一个软件，他们就需要一个好的软件来
+控制代码的版本/回滚代码/并行开发。
+最开始他们是用的一个现成的软件叫*BitKeeper*，
+但是后来BitKeeper居然想收费！于是他们就开发出了Git…
+没错，Git就是一个由程序员自己写的，
+写给程序员自己用的，用来管理写程序的工具。
+本文想做的就是把Git这个*程序员用的*工具
+介绍给不懂写代码，但是要写文档，改文档的同学。
 （所以本文的具体栗子是在Windows系统下进行）
-什么是版本控制 举个栗子： 今天要写毕业论文，我打开了Microsoft Word， 写完了第一章。 但我突然有一个更好的想法，我决定重写第一章。 于是我按下了撤销按钮，Word文档回滚到了最开始的地方。 我坐了三分钟，我发现其实还是我之前的第一章写的比较好。 于是我按下了重复按钮，Word文档又回滚到了我写完第一章的时候了。
-上面的栗子，其实就是一个典型的*版本控制*场景。 而Git作为版本控制的工具，做的就是文件级别的*版本控制*。
+什么是版本控制 举个栗子：
+今天要写毕业论文，我打开了Microsoft Word， 写完了第一章。
+但我突然有一个更好的想法，我决定重写第一章。
+于是我按下了撤销按钮，Word文档回滚到了最开始的地方。
+我坐了三分钟，我发现其实还是我之前的第一章写的比较好。
+于是我按下了重复按钮，Word文档又回滚到了我写完第一章的时候了。
+上面的栗子，其实就是一个典型的*版本控制*场景。
+而Git作为版本控制的工具，做的就是文件级别的*版本控制*。
 接下来我们直接来试用Git。
-安装Git 首先我们到Git的官方网站（英文） 去下载最新的windows版本的git： （当你用浏览器打开这个网站的时候，就应该有下载框弹出来了）
+安装Git 首先我们到Git的官方网站（英文）
+去下载最新的windows版本的git：
+（当你用浏览器打开这个网站的时候，就应该有下载框弹出来了）
 下载地址：https://git-scm.com/download/win
-下载完毕以后打开，大部分设定用默认的就行了， 几个关键选项图示如下：
-安装选项： 安装命令： 换行符操作： 安装完毕后我们在任意菜单右键， 应该就可以看到“Git Bash Here”的选项。 并且打开以后我们输入git version 可以查看到git版本号信息， 这就说明我们安装成功了。
-$ git version git version 2.9.0.windows.1 （具体版本可能会随时间变化，但这并不重要）  新手上路 打开Git Bash git是一个命令行工具。 （虽然也有图形界面，但那个太蠢了， 我们还是学习更好用的敲命令吧）
-首先我们打开一个文件夹， 比如我打开的是D:\git-first-lesson\XML这个文件夹， 然后右键菜单 -&gt; Git Bash Here， 就打开了一个这样的Git Bash：
+下载完毕以后打开，大部分设定用默认的就行了，
+几个关键选项图示如下：
+安装选项：
+安装命令：
+换行符操作：
+安装完毕后我们在任意菜单右键，
+应该就可以看到“Git Bash Here”的选项。
+并且打开以后我们输入git version
+可以查看到git版本号信息，
+这就说明我们安装成功了。
+$ git version git version 2.9.0.windows.1 （具体版本可能会随时间变化，但这并不重要）  新手上路 打开Git Bash git是一个命令行工具。
+（虽然也有图形界面，但那个太蠢了，
+我们还是学习更好用的敲命令吧）
+首先我们打开一个文件夹，
+比如我打开的是D:\git-first-lesson\XML这个文件夹，
+然后右键菜单 -&gt; Git Bash Here，
+就打开了一个这样的Git Bash：
 再顺便说一下几个基本的命令：" />
 
   <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
@@ -93,26 +123,294 @@ $ git version git version 2.9.0.windows.1 （具体版本可能会随时间变�
           <h1 class="post-title">git新手教程</h1>
           
           <div class="row post-desc">
-            <div class="col-xs-6">
-              
-              <time class="post-date" datetime="2016-09-19 16:04:00 UTC">
-                2016-09-19
-              </time>
-              
-            </div>
-            <div class="col-xs-6">
-              
-              <div class="post-author">
-                <a target="_blank" href="">@Lirian Su</a>
-              </div>
-              
-            </div>
+            
+            <time class="post-header-item" datetime="2016-09-19 16:04:00 UTC">
+              Written at 2016-09-19 16:04
+            </time>
+            
+            <span class="post-header-item" id="busuanzi_container_page_pv"> Views <span id="busuanzi_value_page_pv" /> </span>
           </div>
           
         </header>
 
         <div class="post-content markdown-body">
-          <br/><br/><p>这是一篇针对技术小白们的Git科普文章。<br/>本文主要介绍版本控制工具Git的基本概念，<br/>以及init,status,add,commit,reset,log几个基本命令。</p><br/><br/><!--MORE--><br/><br/><h2 id="什么是git">什么是Git</h2><br/><br/><p>在十多年前，有好多程序员一起开发Linux系统。<br/>这么多人一起写一个软件，他们就需要一个好的软件来<br/>控制代码的版本/回滚代码/并行开发。<br/>最开始他们是用的一个现成的软件叫*BitKeeper*，<br/>但是<a href="https://git-scm.com/book/en/v2/Getting-Started-A-Short-History-of-Git">后来BitKeeper居然想收费！于是他们就开发出了Git…</a></p><br/><br/><p>没错，Git就是一个由程序员自己写的，<br/>写给程序员自己用的，用来管理写程序的工具。<br/>本文想做的就是把<a href="https://en.wikipedia.org/wiki/Git">Git</a>这个*程序员用的*工具<br/>介绍给不懂写代码，但是要写文档，改文档的同学。</p><br/><br/><p>（所以本文的具体栗子是在Windows系统下进行）</p><br/><br/><h2 id="什么是版本控制">什么是版本控制</h2><br/><br/><p>举个栗子：<br/>今天要写毕业论文，我打开了Microsoft Word， 写完了第一章。<br/>但我突然有一个更好的想法，我决定重写第一章。<br/>于是我按下了<strong>撤销</strong>按钮，Word文档<strong>回滚</strong>到了最开始的地方。<br/>我坐了三分钟，我发现其实还是我之前的第一章写的比较好。<br/>于是我按下了<strong>重复</strong>按钮，Word文档又<strong>回滚</strong>到了我写完第一章的时候了。</p><br/><br/><p>上面的栗子，其实就是一个典型的*版本控制*场景。<br/>而Git作为版本控制的工具，做的就是文件级别的*版本控制*。</p><br/><br/><p>接下来我们直接来试用Git。</p><br/><br/><h2 id="安装git">安装Git</h2><br/><br/><p>首先我们到<a href="https://git-scm.com/download/win">Git的官方网站（英文）</a><br/>去下载最新的windows版本的git：<br/>（当你用浏览器打开这个网站的时候，就应该有下载框弹出来了）</p><br/><br/><p>下载地址：<a href="https://git-scm.com/download/win">https://git-scm.com/download/win</a></p><br/><br/><p>下载完毕以后打开，大部分设定用默认的就行了，<br/>几个关键选项图示如下：</p><br/><br/><p>安装选项：<br/><img src="/assets/git_first_lesson/inst_opt.jpg" alt="options" /></p><br/><br/><p>安装命令：<br/><img src="/assets/git_first_lesson/inst_cmd.jpg" alt="commands" /></p><br/><br/><p>换行符操作：<br/><img src="/assets/git_first_lesson/inst_le.jpg" alt="line-endings" /></p><br/><br/><p>安装完毕后我们在任意菜单右键，<br/>应该就可以看到“Git Bash Here”的选项。<br/>并且打开以后我们输入<code>git version</code><br/>可以查看到git版本号信息，<br/>这就说明我们安装成功了。</p><br/><br/><pre><code>$ git version<br/>git version 2.9.0.windows.1<br/>（具体版本可能会随时间变化，但这并不重要）<br/></code></pre><br/><br/><h2 id="新手上路">新手上路</h2><br/><br/><h3 id="打开git-bash">打开Git Bash</h3><br/><br/><p>git是一个命令行工具。<br/>（虽然也有图形界面，但那个太蠢了，<br/>我们还是学习更好用的敲命令吧）</p><br/><br/><p>首先我们打开一个文件夹，<br/>比如我打开的是D:\git-first-lesson\XML这个文件夹，<br/>然后<code>右键菜单 -&gt; Git Bash Here</code>，<br/>就打开了一个这样的Git Bash：</p><br/><br/><p><img src="/assets/git_first_lesson/git_version.jpg" alt="hint" /></p><br/><br/><p>再顺便说一下几个基本的命令：</p><br/><br/><ul><br/><li><code>ls</code>: list的简写，可以<strong>查看当前文件夹下有哪些文件（夹）</strong></li><br/><li><code>cd</code>: ChangeDirectory，可以<strong>更换目录</strong>。<code>cd ..</code>就是回到上一层目录</li><br/></ul><br/><br/><h3 id="git目录">Git目录</h3><br/><br/><p><strong>想了解一个目录的状态，就使用<code>git status</code>命令</strong>。<br/>我们可以试着跑一下这个命令，但是Git会报这样的错误：</p><br/><br/><pre><code>$ git status<br/>fatal: Not a git repository (or any of the parent directories): .git<br/></code></pre><br/><br/><p>这个错误的字面意思是“错误：你并没有把当前目录（或者任何父目录纳入git版本控制）”。</p><br/><br/><p>所以<strong>为了将一个文件夹纳入版本控制，我们要使用<code>git init</code>命令</strong>:</p><br/><br/><pre><code>$ git init<br/>Initialized empty Git repository in D:/git-first-lesson/XML/.git/<br/></code></pre><br/><br/><p>提示信息表示git已经初始化完成。<br/>这个过程实际上是git在<strong>当前目录</strong>新建了一个<strong>.git</strong>文件夹：</p><br/><br/><p><img src="/assets/git_first_lesson/dot_git.jpg" alt="dotgit" /></p><br/><br/><p>然后我们再跑<code>git status</code>就可以查看到当前目录状态了：</p><br/><br/><p><img src="/assets/git_first_lesson/git_status.jpg" alt="git-st" /></p><br/><br/><h3 id="控制文件">控制文件</h3><br/><br/><p>在我们初始化完git以后，git默认是把所有文件帮我们找出来的。<br/>但是假如我们并不希望修改.wmv音频文件，.bak备份文件，Data数据文件夹怎么办？<br/>或者假如我们只想版本控制.xml文件该怎么做呢？</p><br/><br/><p>git在这里给我们留了一个控制文件，叫<strong>.gitignore</strong>文件。<br/>我们可以<code>右键 -&gt; 新建文本文件 -&gt; 重命名为.gitignore</code>或者直接在git-bash里面跑<code>touch .gitignore</code>:</p><br/><br/><p><img src="/assets/git_first_lesson/touch.jpg" alt="touch" /></p><br/><br/><p>假如我们想无视wmv文件，bak文件和Data文件夹，我们修改.gitignore内容为：</p><br/><br/><pre><code>*.wmv<br/>*.bak<br/>Data\<br/></code></pre><br/><br/><p>假如我们只想控制xml文件，我们可以修改为：</p><br/><br/><pre><code>*<br/>!*/<br/>!.gitignore<br/>!*.xml<br/></code></pre><br/><br/><p>然后我们可以再跑一次<code>git status</code>查看文件夹状态：<br/>（在本例中我的.gitignore只控制了xml文件）</p><br/><br/><p><img src="/assets/git_first_lesson/git_ignore.jpg" alt="ignore" /></p><br/><br/><h3 id="设置-查看断点">设置/查看断点</h3><br/><br/><p>Git最激动人心的地方到了：<br/>有了前面的准备工作，<br/>我们现在已经可以设置断点，<br/>并且再未来随时回滚到任意断点了！</p><br/><br/><p>我们直接看看怎么设置断点（Commit）：</p><br/><br/><ul><br/><li>使用<code>git add .</code>来记录当前目录的改动。</li><br/><li>使用<code>git commit -m &lt;commit_message&gt;</code>来设置断点。</li><br/></ul><br/><br/><p>比如我们输入<code>git add .</code>和<code>git commit -m &quot;My First Commit&quot;</code>：</p><br/><br/><p><img src="/assets/git_first_lesson/git_commit.jpg" alt="commit" /></p><br/><br/><p>好了！断点设置成功！接下来我们可以查看我们设置的断点：</p><br/><br/><p><strong>我们可以使用<code>git log</code>来查看断点，或者是<code>git log --oneline</code>来查看断点的简略信息。</strong></p><br/><br/><p>比如这样子：</p><br/><br/><p><img src="/assets/git_first_lesson/git_log.jpg" alt="log" /></p><br/><br/><h3 id="查看修改内容与回滚">查看修改内容与回滚</h3><br/><br/><p>到目前为止，我们所做的操作都不会修改当前文件夹。<br/>我们只是将*整个文件夹当前的状态*纳入了版本控制。</p><br/><br/><p>接下来我们要做的就是改动文件了。<br/>比如我们稍微改动了<code>Struture\recurse.xml</code>这个文件。</p><br/><br/><p><strong>使用<code>git diff</code>可以查看当前文本和上一版本的区别。</strong></p><br/><br/><p><img src="/assets/git_first_lesson/git_diff.jpg" alt="diff" /></p><br/><br/><p><strong>使用<code>git reset --hard HEAD</code>可以回到上一个断点。</strong></p><br/><br/><p><img src="/assets/git_first_lesson/git_reset.jpg" alt="reset" /></p><br/><br/><h2 id="总结">总结</h2><br/><br/><p>在本篇新手教程中，我们稍微介绍了版本控制和Git。<br/>在安装完Git以后，我们接触到了以下命令：</p><br/><br/><table><br/><thead><br/><tr><br/><th>命令</th><br/><th>说明</th><br/></tr><br/></thead><br/><br/><tbody><br/><tr><br/><td><code>git version</code></td><br/><td>显示Git版本</td><br/></tr><br/><br/><tr><br/><td><code>ls</code></td><br/><td>列出当前文件夹内文件</td><br/></tr><br/><br/><tr><br/><td><code>cd data</code></td><br/><td>更改目录（进入data目录）</td><br/></tr><br/><br/><tr><br/><td><code>cd ..</code></td><br/><td>回到上一层目录</td><br/></tr><br/><br/><tr><br/><td><code>git status</code></td><br/><td>查看Git状态</td><br/></tr><br/><br/><tr><br/><td><code>git init</code></td><br/><td>初始化（使当前文件夹纳入版本控制）</td><br/></tr><br/><br/><tr><br/><td><code>touch .gitignore</code></td><br/><td>新建.gitignore文件</td><br/></tr><br/><br/><tr><br/><td><code>git add .</code></td><br/><td>使所有未被ignore的文件加入版本控制</td><br/></tr><br/><br/><tr><br/><td><code>git commit -m &quot;My first commit&quot;</code></td><br/><td>设置断点（准确的说是生成一个提交）(commit)</td><br/></tr><br/><br/><tr><br/><td><code>git log</code></td><br/><td>查看历史</td><br/></tr><br/><br/><tr><br/><td><code>git log --oneline</code></td><br/><td>查看简单历史</td><br/></tr><br/><br/><tr><br/><td><code>git diff</code></td><br/><td>查看当前文件夹状态与最近断点的区别</td><br/></tr><br/><br/><tr><br/><td><code>git reset --hard HEAD</code></td><br/><td>回滚至上一断点</td><br/></tr><br/></tbody><br/></table><br/><br/><p>在之后的教程中，我们会更加深入地接触Git。</p><br/><br/><p>（完）</p><br/>
+          
+
+<p>这是一篇针对技术小白们的Git科普文章。<br />
+本文主要介绍版本控制工具Git的基本概念，<br />
+以及init,status,add,commit,reset,log几个基本命令。</p>
+
+<!--MORE-->
+
+<h2 id="什么是git">什么是Git</h2>
+
+<p>在十多年前，有好多程序员一起开发Linux系统。<br />
+这么多人一起写一个软件，他们就需要一个好的软件来<br />
+控制代码的版本/回滚代码/并行开发。<br />
+最开始他们是用的一个现成的软件叫*BitKeeper*，<br />
+但是<a href="https://git-scm.com/book/en/v2/Getting-Started-A-Short-History-of-Git">后来BitKeeper居然想收费！于是他们就开发出了Git…</a></p>
+
+<p>没错，Git就是一个由程序员自己写的，<br />
+写给程序员自己用的，用来管理写程序的工具。<br />
+本文想做的就是把<a href="https://en.wikipedia.org/wiki/Git">Git</a>这个*程序员用的*工具<br />
+介绍给不懂写代码，但是要写文档，改文档的同学。</p>
+
+<p>（所以本文的具体栗子是在Windows系统下进行）</p>
+
+<h2 id="什么是版本控制">什么是版本控制</h2>
+
+<p>举个栗子：<br />
+今天要写毕业论文，我打开了Microsoft Word， 写完了第一章。<br />
+但我突然有一个更好的想法，我决定重写第一章。<br />
+于是我按下了<strong>撤销</strong>按钮，Word文档<strong>回滚</strong>到了最开始的地方。<br />
+我坐了三分钟，我发现其实还是我之前的第一章写的比较好。<br />
+于是我按下了<strong>重复</strong>按钮，Word文档又<strong>回滚</strong>到了我写完第一章的时候了。</p>
+
+<p>上面的栗子，其实就是一个典型的*版本控制*场景。<br />
+而Git作为版本控制的工具，做的就是文件级别的*版本控制*。</p>
+
+<p>接下来我们直接来试用Git。</p>
+
+<h2 id="安装git">安装Git</h2>
+
+<p>首先我们到<a href="https://git-scm.com/download/win">Git的官方网站（英文）</a><br />
+去下载最新的windows版本的git：<br />
+（当你用浏览器打开这个网站的时候，就应该有下载框弹出来了）</p>
+
+<p>下载地址：<a href="https://git-scm.com/download/win">https://git-scm.com/download/win</a></p>
+
+<p>下载完毕以后打开，大部分设定用默认的就行了，<br />
+几个关键选项图示如下：</p>
+
+<p>安装选项：<br />
+<img src="/assets/git_first_lesson/inst_opt.jpg" alt="options" /></p>
+
+<p>安装命令：<br />
+<img src="/assets/git_first_lesson/inst_cmd.jpg" alt="commands" /></p>
+
+<p>换行符操作：<br />
+<img src="/assets/git_first_lesson/inst_le.jpg" alt="line-endings" /></p>
+
+<p>安装完毕后我们在任意菜单右键，<br />
+应该就可以看到“Git Bash Here”的选项。<br />
+并且打开以后我们输入<code>git version</code><br />
+可以查看到git版本号信息，<br />
+这就说明我们安装成功了。</p>
+
+<pre><code>$ git version
+git version 2.9.0.windows.1
+（具体版本可能会随时间变化，但这并不重要）
+</code></pre>
+
+<h2 id="新手上路">新手上路</h2>
+
+<h3 id="打开git-bash">打开Git Bash</h3>
+
+<p>git是一个命令行工具。<br />
+（虽然也有图形界面，但那个太蠢了，<br />
+我们还是学习更好用的敲命令吧）</p>
+
+<p>首先我们打开一个文件夹，<br />
+比如我打开的是D:\git-first-lesson\XML这个文件夹，<br />
+然后<code>右键菜单 -&gt; Git Bash Here</code>，<br />
+就打开了一个这样的Git Bash：</p>
+
+<p><img src="/assets/git_first_lesson/git_version.jpg" alt="hint" /></p>
+
+<p>再顺便说一下几个基本的命令：</p>
+
+<ul>
+<li><code>ls</code>: list的简写，可以<strong>查看当前文件夹下有哪些文件（夹）</strong><br /></li>
+<li><code>cd</code>: ChangeDirectory，可以<strong>更换目录</strong>。<code>cd ..</code>就是回到上一层目录<br />
+<br />
+<br /></li>
+</ul>
+
+<h3 id="git目录">Git目录</h3>
+
+<p><strong>想了解一个目录的状态，就使用<code>git status</code>命令</strong>。<br />
+我们可以试着跑一下这个命令，但是Git会报这样的错误：</p>
+
+<pre><code>$ git status
+fatal: Not a git repository (or any of the parent directories): .git
+</code></pre>
+
+<p>这个错误的字面意思是“错误：你并没有把当前目录（或者任何父目录纳入git版本控制）”。</p>
+
+<p>所以<strong>为了将一个文件夹纳入版本控制，我们要使用<code>git init</code>命令</strong>:</p>
+
+<pre><code>$ git init
+Initialized empty Git repository in D:/git-first-lesson/XML/.git/
+</code></pre>
+
+<p>提示信息表示git已经初始化完成。<br />
+这个过程实际上是git在<strong>当前目录</strong>新建了一个<strong>.git</strong>文件夹：</p>
+
+<p><img src="/assets/git_first_lesson/dot_git.jpg" alt="dotgit" /></p>
+
+<p>然后我们再跑<code>git status</code>就可以查看到当前目录状态了：</p>
+
+<p><img src="/assets/git_first_lesson/git_status.jpg" alt="git-st" /></p>
+
+<h3 id="控制文件">控制文件</h3>
+
+<p>在我们初始化完git以后，git默认是把所有文件帮我们找出来的。<br />
+但是假如我们并不希望修改.wmv音频文件，.bak备份文件，Data数据文件夹怎么办？<br />
+或者假如我们只想版本控制.xml文件该怎么做呢？</p>
+
+<p>git在这里给我们留了一个控制文件，叫<strong>.gitignore</strong>文件。<br />
+我们可以<code>右键 -&gt; 新建文本文件 -&gt; 重命名为.gitignore</code>或者直接在git-bash里面跑<code>touch .gitignore</code>:</p>
+
+<p><img src="/assets/git_first_lesson/touch.jpg" alt="touch" /></p>
+
+<p>假如我们想无视wmv文件，bak文件和Data文件夹，我们修改.gitignore内容为：</p>
+
+<pre><code>*.wmv
+*.bak
+Data\
+</code></pre>
+
+<p>假如我们只想控制xml文件，我们可以修改为：</p>
+
+<pre><code>*
+!*/
+!.gitignore
+!*.xml
+</code></pre>
+
+<p>然后我们可以再跑一次<code>git status</code>查看文件夹状态：<br />
+（在本例中我的.gitignore只控制了xml文件）</p>
+
+<p><img src="/assets/git_first_lesson/git_ignore.jpg" alt="ignore" /></p>
+
+<h3 id="设置-查看断点">设置/查看断点</h3>
+
+<p>Git最激动人心的地方到了：<br />
+有了前面的准备工作，<br />
+我们现在已经可以设置断点，<br />
+并且再未来随时回滚到任意断点了！</p>
+
+<p>我们直接看看怎么设置断点（Commit）：</p>
+
+<ul>
+<li>使用<code>git add .</code>来记录当前目录的改动。<br /></li>
+<li>使用<code>git commit -m &lt;commit_message&gt;</code>来设置断点。<br />
+<br /></li>
+</ul>
+
+<p>比如我们输入<code>git add .</code>和<code>git commit -m &quot;My First Commit&quot;</code>：</p>
+
+<p><img src="/assets/git_first_lesson/git_commit.jpg" alt="commit" /></p>
+
+<p>好了！断点设置成功！接下来我们可以查看我们设置的断点：</p>
+
+<p><strong>我们可以使用<code>git log</code>来查看断点，或者是<code>git log --oneline</code>来查看断点的简略信息。</strong></p>
+
+<p>比如这样子：</p>
+
+<p><img src="/assets/git_first_lesson/git_log.jpg" alt="log" /></p>
+
+<h3 id="查看修改内容与回滚">查看修改内容与回滚</h3>
+
+<p>到目前为止，我们所做的操作都不会修改当前文件夹。<br />
+我们只是将*整个文件夹当前的状态*纳入了版本控制。</p>
+
+<p>接下来我们要做的就是改动文件了。<br />
+比如我们稍微改动了<code>Struture\recurse.xml</code>这个文件。</p>
+
+<p><strong>使用<code>git diff</code>可以查看当前文本和上一版本的区别。</strong></p>
+
+<p><img src="/assets/git_first_lesson/git_diff.jpg" alt="diff" /></p>
+
+<p><strong>使用<code>git reset --hard HEAD</code>可以回到上一个断点。</strong></p>
+
+<p><img src="/assets/git_first_lesson/git_reset.jpg" alt="reset" /></p>
+
+<h2 id="总结">总结</h2>
+
+<p>在本篇新手教程中，我们稍微介绍了版本控制和Git。<br />
+在安装完Git以后，我们接触到了以下命令：</p>
+
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>git version</code></td>
+<td>显示Git版本</td>
+</tr>
+
+<tr>
+<td><code>ls</code></td>
+<td>列出当前文件夹内文件</td>
+</tr>
+
+<tr>
+<td><code>cd data</code></td>
+<td>更改目录（进入data目录）</td>
+</tr>
+
+<tr>
+<td><code>cd ..</code></td>
+<td>回到上一层目录</td>
+</tr>
+
+<tr>
+<td><code>git status</code></td>
+<td>查看Git状态</td>
+</tr>
+
+<tr>
+<td><code>git init</code></td>
+<td>初始化（使当前文件夹纳入版本控制）</td>
+</tr>
+
+<tr>
+<td><code>touch .gitignore</code></td>
+<td>新建.gitignore文件</td>
+</tr>
+
+<tr>
+<td><code>git add .</code></td>
+<td>使所有未被ignore的文件加入版本控制</td>
+</tr>
+
+<tr>
+<td><code>git commit -m &quot;My first commit&quot;</code></td>
+<td>设置断点（准确的说是生成一个提交）(commit)</td>
+</tr>
+
+<tr>
+<td><code>git log</code></td>
+<td>查看历史</td>
+</tr>
+
+<tr>
+<td><code>git log --oneline</code></td>
+<td>查看简单历史</td>
+</tr>
+
+<tr>
+<td><code>git diff</code></td>
+<td>查看当前文件夹状态与最近断点的区别</td>
+</tr>
+
+<tr>
+<td><code>git reset --hard HEAD</code></td>
+<td>回滚至上一断点</td>
+</tr>
+</tbody>
+</table>
+
+<p>在之后的教程中，我们会更加深入地接触Git。</p>
+
+<p>（完）</p>
+
         </div>
         
 
@@ -134,24 +432,29 @@ $ git version git version 2.9.0.windows.1 （具体版本可能会随时间变�
         </div>
 
         <div class="site-footer">
-  
-  <div class="site-footer-item">
-    <a href="/about" target="_blank">about</a>
+  <div class="site-footer-left">
+    <div class="site-footer-item">
+      <span id="busuanzi_container_site_pv" style="display:none"> PV: <span id="busuanzi_value_site_pv"/> </span>
+    </div>
+    <div class="site-footer-item">
+      <span id="busuanzi_container_site_uv" style="display:none"> UV: <span id="busuanzi_value_site_uv"/> </span>
+    </div>
   </div>
-  
-  <div class="site-footer-item">
-    <a href="https://github.com/LKI/LKI" target="_blank">github</a>
-  </div>
-  
-  <div class="site-footer-item">
-    <a href="/index.xml" target="_blank">rss</a>
-  </div>
-  
-  <div class="site-footer-item">
-    <span id="busuanzi_container_site_pv"> PV: <span id="busuanzi_value_site_pv"> </span> </span>
-  </div>
-  <div class="site-footer-item">
-    <span id="busuanzi_container_site_uv"> UV: <span id="busuanzi_value_site_uv"/> </span> </span>
+
+  <div class="site-footer-right">
+    
+    <div class="site-footer-item">
+      <a href="/about" target="_blank">about</a>
+    </div>
+    
+    <div class="site-footer-item">
+      <a href="https://github.com/LKI/LKI" target="_blank">github</a>
+    </div>
+    
+    <div class="site-footer-item">
+      <a href="/index.xml" target="_blank">rss</a>
+    </div>
+    
   </div>
 </div>
 
@@ -159,19 +462,7 @@ $ git version git version 2.9.0.windows.1 （具体版本可能会随时间变�
     </div>
   </article>
 
-  <script src="/js/highlight.pack.js"></script>
-
-
-<script>
-  hljs.initHighlightingOnLoad();
-
-  
-  
-    
-    
-  
-</script>
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
 

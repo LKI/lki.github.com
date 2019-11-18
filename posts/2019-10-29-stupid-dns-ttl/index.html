@@ -19,7 +19,7 @@
       "articleSection" : "posts",
       "name" : "没错，DNS TTL 字段就是骗你的",
       "headline" : "没错，DNS TTL 字段就是骗你的",
-      "description" : "By design, the Internet core is stupid, and the edge is smart.\n  引子 前几天在网上冲浪的时候， 看到了一篇讲 DNS 的宝藏文章： DNS TTL Violations in the Wild.\n之所以对我来说是宝藏文章， 因为在读了第一段以后， 我就发现了一个我习以为常的认知其实在实际是错误✖的： 业界都会遵守 DNS 的 TTL 超时逻辑。\n然而实际上是： 业界都知道 DNS 的 TTL 超时逻辑，但不一定这么实现。\n事件 前几周我们出了个 Bug, 影响了整个开发、测试环境。\n我们有很大一块的业务是跟微信做各类 py 交易， 微信要求说我们给个回调域名， 每 10 分钟会推送一个凭证， 我们要用微信最新的凭证去调他们的接口。\n最早我们给微信配的回调域名背后是个 AWS ELB, 这是一个亚马逊云上面的旧版负载均衡； 后来我们打算换成新版负载均衡 AWS ALB。\n这个操作就很简单嘛， 到 DNS 服务商里看了一下， 微信回调的域名解析 TTL 是 600 秒， 又是开发测试环境； 于是我们直接把解析改到了新版负载均衡上， （出于省钱的想法）顺手还把旧的负载均衡给删了。",
+      "description" : "By design,\nthe Internet core is stupid,\nand the edge is smart.\n  引子 前几天在网上冲浪的时候，\n看到了一篇讲 DNS 的宝藏文章：\nDNS TTL Violations in the Wild.\n之所以对我来说是宝藏文章，\n因为在读了第一段以后，\n我就发现了一个我习以为常的认知其实在实际是错误✖的：\n业界都会遵守 DNS 的 TTL 超时逻辑。\n然而实际上是：\n业界都知道 DNS 的 TTL 超时逻辑，但不一定这么实现。\n事件 前几周我们出了个 Bug,\n影响了整个开发、测试环境。\n我们有很大一块的业务是跟微信做各类 py 交易，\n微信要求说我们给个回调域名，\n每 10 分钟会推送一个凭证，\n我们要用微信最新的凭证去调他们的接口。\n最早我们给微信配的回调域名背后是个 AWS ELB,\n这是一个亚马逊云上面的旧版负载均衡；\n后来我们打算换成新版负载均衡 AWS ALB。\n这个操作就很简单嘛，\n到 DNS 服务商里看了一下，\n微信回调的域名解析 TTL 是 600 秒，\n又是开发测试环境；",
       "inLanguage" : "en-US",
       "author" : "Lirian Su",
       "creator" : "Lirian Su",
@@ -36,14 +36,31 @@
 <title>没错，DNS TTL 字段就是骗你的 - 浮云计算</title>
   <meta property="og:title" content="没错，DNS TTL 字段就是骗你的 - 浮云计算" />
   <meta property="og:type" content="article" />
-  <meta name="description" content="By design, the Internet core is stupid, and the edge is smart.
-  引子 前几天在网上冲浪的时候， 看到了一篇讲 DNS 的宝藏文章： DNS TTL Violations in the Wild.
-之所以对我来说是宝藏文章， 因为在读了第一段以后， 我就发现了一个我习以为常的认知其实在实际是错误✖的： 业界都会遵守 DNS 的 TTL 超时逻辑。
-然而实际上是： 业界都知道 DNS 的 TTL 超时逻辑，但不一定这么实现。
-事件 前几周我们出了个 Bug, 影响了整个开发、测试环境。
-我们有很大一块的业务是跟微信做各类 py 交易， 微信要求说我们给个回调域名， 每 10 分钟会推送一个凭证， 我们要用微信最新的凭证去调他们的接口。
-最早我们给微信配的回调域名背后是个 AWS ELB, 这是一个亚马逊云上面的旧版负载均衡； 后来我们打算换成新版负载均衡 AWS ALB。
-这个操作就很简单嘛， 到 DNS 服务商里看了一下， 微信回调的域名解析 TTL 是 600 秒， 又是开发测试环境； 于是我们直接把解析改到了新版负载均衡上， （出于省钱的想法）顺手还把旧的负载均衡给删了。" />
+  <meta name="description" content="By design,
+the Internet core is stupid,
+and the edge is smart.
+  引子 前几天在网上冲浪的时候，
+看到了一篇讲 DNS 的宝藏文章：
+DNS TTL Violations in the Wild.
+之所以对我来说是宝藏文章，
+因为在读了第一段以后，
+我就发现了一个我习以为常的认知其实在实际是错误✖的：
+业界都会遵守 DNS 的 TTL 超时逻辑。
+然而实际上是：
+业界都知道 DNS 的 TTL 超时逻辑，但不一定这么实现。
+事件 前几周我们出了个 Bug,
+影响了整个开发、测试环境。
+我们有很大一块的业务是跟微信做各类 py 交易，
+微信要求说我们给个回调域名，
+每 10 分钟会推送一个凭证，
+我们要用微信最新的凭证去调他们的接口。
+最早我们给微信配的回调域名背后是个 AWS ELB,
+这是一个亚马逊云上面的旧版负载均衡；
+后来我们打算换成新版负载均衡 AWS ALB。
+这个操作就很简单嘛，
+到 DNS 服务商里看了一下，
+微信回调的域名解析 TTL 是 600 秒，
+又是开发测试环境；" />
 
   <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
   <link rel="stylesheet"
@@ -87,26 +104,160 @@
           <h1 class="post-title">没错，DNS TTL 字段就是骗你的</h1>
           
           <div class="row post-desc">
-            <div class="col-xs-6">
-              
-              <time class="post-date" datetime="2019-10-29 21:49:42 UTC">
-                2019-10-29
-              </time>
-              
-            </div>
-            <div class="col-xs-6">
-              
-              <div class="post-author">
-                <a target="_blank" href="">@Lirian Su</a>
-              </div>
-              
-            </div>
+            
+            <time class="post-header-item" datetime="2019-10-29 21:49:42 UTC">
+              Written at 2019-10-29 21:49
+            </time>
+            
+            <span class="post-header-item" id="busuanzi_container_page_pv"> Views <span id="busuanzi_value_page_pv" /> </span>
           </div>
           
         </header>
 
         <div class="post-content markdown-body">
-          <br/><br/><blockquote><br/><p>By design,<br/>the Internet core is stupid,<br/>and the edge is smart.</p><br/></blockquote><br/><br/><!--MORE--><br/><br/><h2 id="引子">引子</h2><br/><br/><p>前几天在网上冲浪的时候，<br/>看到了一篇讲 DNS 的宝藏文章：<br/><a href="https://labs.ripe.net/Members/giovane_moura/dns-ttl-violations-in-the-wild-with-ripe-atlas-2">DNS TTL Violations in the Wild</a>.</p><br/><br/><p>之所以对我来说是宝藏文章，<br/>因为在读了第一段以后，<br/>我就发现了一个我习以为常的认知其实在实际是错误✖的：<br/><em>业界都会遵守 DNS 的 TTL 超时逻辑。</em></p><br/><br/><p>然而实际上是：<br/><strong>业界都知道 DNS 的 TTL 超时逻辑，但不一定这么实现。</strong></p><br/><br/><h2 id="事件">事件</h2><br/><br/><p>前几周我们出了个 Bug,<br/>影响了整个开发、测试环境。</p><br/><br/><p>我们有很大一块的业务是跟微信做各类 py 交易，<br/><a href="https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/Authorization_Process_Technical_Description.html">微信要求说我们给个回调域名</a>，<br/>每 10 分钟会推送一个凭证，<br/>我们要用微信最新的凭证去调他们的接口。</p><br/><br/><p>最早我们给微信配的回调域名背后是个 AWS ELB,<br/>这是一个亚马逊云上面的旧版负载均衡；<br/>后来我们打算换成新版负载均衡 AWS ALB。</p><br/><br/><p>这个操作就很简单嘛，<br/>到 DNS 服务商里看了一下，<br/>微信回调的域名解析 TTL 是 600 秒，<br/>又是开发测试环境；<br/>于是我们直接把解析改到了新版负载均衡上，<br/><del>（出于省钱的想法）</del>顺手还把旧的负载均衡给删了。</p><br/><br/><p>哦豁。<br/>微信一天都没有给我们推授权凭证。<br/>于是我们开发测试环境的微信功能挂了一天。</p><br/><br/><p>有的时候开发测试环境出问题，<br/>会跟生产环境同样煎熬。<br/>因为你会发现你身边的同事，<br/>每隔 10 分钟就会问你：<br/>“弟啊，微信好了没有？”</p><br/><br/><h2 id="疑问">疑问</h2><br/><br/><p>在改 DNS 的 86400 秒以后，<br/>微信的凭证又成功地持续给我们推送了。</p><br/><br/><p>根据现象判定是 DNS 的问题以后，<br/>一边在心里鄙视微信，<br/>一边也产生了疑问：<br/>“不科学啊，DNS 这么基础的服务，怎么会出 bug 呢？”</p><br/><br/><p>这就回到了本文开头讲的：<br/>业界都知道 DNS 的 TTL 超时逻辑，但不一定这么实现。</p><br/><br/><p>每一条 DNS 记录都由两部分数据组成：<br/>什么域名应该指向什么目的地？<br/>我的有效时间是多久？<br/>而这两部分数据会以互联网特有的树状结构层叠而上，盘织交错。<br/>在终端进行 DNS 寻址时，<br/>链路上的任何一个 DNS 服务器都可以实现一套标准或是非标的逻辑。</p><br/><br/><p>对于 TTL 这个值，<br/>只有三种实现的逻辑：</p><br/><br/><ol><br/><li>缓存时间等于 DNS TTL 时间。</li><br/><li>缓存时间小于 DNS TTL 时间。</li><br/><li>缓存时间大于 DNS TTL 时间。</li><br/></ol><br/><br/><h2 id="世界">世界</h2><br/><br/><p>要我来写域名服务器的逻辑的话，<br/>不出意外我会严格按照定义来实现。<br/>当然，根据性能、时间、空间的限制，<br/>最终实现出来会有几秒的误差，<br/>不过这不关键。</p><br/><br/><p>关键的是，<a href="https://mailarchive.ietf.org/arch/msg/dnsop/zRuuXkwmklMHFvl_Qqzn2N0SOGY/?qid=ff8e732c964b76fed3bbf333b89b111f">有不少人觉得 DNS 目前的设计是有缺陷的</a>。<br/>而作为整个互联网的底层构架，<br/>不论是要提升还是替换 DNS 目前的逻辑，<br/>都是一个非常巨大的工程。<br/>当然，这也更吸引工程师为此献身了。</p><br/><br/><p>于是，当今现实世界里的域名解析，<br/>就不是完全按照“缓存时间等于 DNS TTL 时间”来实现的。</p><br/><br/><ul><br/><li>当缓存时间小于 DNS TTL 时间时<br/><br/><ul><br/><li>主要争议点在与这个会给上游服务器带来更大的解析压力</li><br/><li>高频解析也意味着更多的带宽、网费支出</li><br/><li>但这种情况不会伤害终端用户</li><br/></ul></li><br/><li>当缓存时间大于 DNS TTL 时间时<br/><br/><ul><br/><li>主要的问题在于，这会让用户访问到错误的服务器</li><br/><li>这不仅会带来逻辑错误，还会有潜在的安全隐患</li><br/><li>在本文最开始出现的问题，其实就是微信的 DNS 链路上出现了缓存过旧的问题</li><br/><li>好处可能就是在解析费上不用交那么多钱了(x</li><br/></ul></li><br/></ul><br/><br/><h2 id="总结">总结</h2><br/><br/><p>总的来说，DNS TTL 是一个在互联网基础设施中广泛使用的约定。<br/>但是现实世界中也会有很多非标的实现。<br/>由于 DNS 的特殊性，每一个非标的域名商都会影响一大片他们能触达的用户。<br/>所以在我们操作 DNS 时，要优雅的解决问题就也得把他们给考虑进来。</p><br/><br/><p>工程上的问题就是这样，<br/>既有理论的优雅，<br/>又有凡人的愚蠢，<br/>也有分布式的智慧。</p><br/><br/><blockquote><br/><p>By design,<br/>the Internet core is stupid,<br/>and the edge is smart.</p><br/></blockquote><br/><br/><p>（完）</p><br/>
+          
+
+<blockquote>
+<p>By design,<br />
+the Internet core is stupid,<br />
+and the edge is smart.</p>
+</blockquote>
+
+<!--MORE-->
+
+<h2 id="引子">引子</h2>
+
+<p>前几天在网上冲浪的时候，<br />
+看到了一篇讲 DNS 的宝藏文章：<br />
+<a href="https://labs.ripe.net/Members/giovane_moura/dns-ttl-violations-in-the-wild-with-ripe-atlas-2">DNS TTL Violations in the Wild</a>.</p>
+
+<p>之所以对我来说是宝藏文章，<br />
+因为在读了第一段以后，<br />
+我就发现了一个我习以为常的认知其实在实际是错误✖的：<br />
+<em>业界都会遵守 DNS 的 TTL 超时逻辑。</em></p>
+
+<p>然而实际上是：<br />
+<strong>业界都知道 DNS 的 TTL 超时逻辑，但不一定这么实现。</strong></p>
+
+<h2 id="事件">事件</h2>
+
+<p>前几周我们出了个 Bug,<br />
+影响了整个开发、测试环境。</p>
+
+<p>我们有很大一块的业务是跟微信做各类 py 交易，<br />
+<a href="https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/Authorization_Process_Technical_Description.html">微信要求说我们给个回调域名</a>，<br />
+每 10 分钟会推送一个凭证，<br />
+我们要用微信最新的凭证去调他们的接口。</p>
+
+<p>最早我们给微信配的回调域名背后是个 AWS ELB,<br />
+这是一个亚马逊云上面的旧版负载均衡；<br />
+后来我们打算换成新版负载均衡 AWS ALB。</p>
+
+<p>这个操作就很简单嘛，<br />
+到 DNS 服务商里看了一下，<br />
+微信回调的域名解析 TTL 是 600 秒，<br />
+又是开发测试环境；<br />
+于是我们直接把解析改到了新版负载均衡上，<br />
+<del>（出于省钱的想法）</del>顺手还把旧的负载均衡给删了。</p>
+
+<p>哦豁。<br />
+微信一天都没有给我们推授权凭证。<br />
+于是我们开发测试环境的微信功能挂了一天。</p>
+
+<p>有的时候开发测试环境出问题，<br />
+会跟生产环境同样煎熬。<br />
+因为你会发现你身边的同事，<br />
+每隔 10 分钟就会问你：<br />
+“弟啊，微信好了没有？”</p>
+
+<h2 id="疑问">疑问</h2>
+
+<p>在改 DNS 的 86400 秒以后，<br />
+微信的凭证又成功地持续给我们推送了。</p>
+
+<p>根据现象判定是 DNS 的问题以后，<br />
+一边在心里鄙视微信，<br />
+一边也产生了疑问：<br />
+“不科学啊，DNS 这么基础的服务，怎么会出 bug 呢？”</p>
+
+<p>这就回到了本文开头讲的：<br />
+业界都知道 DNS 的 TTL 超时逻辑，但不一定这么实现。</p>
+
+<p>每一条 DNS 记录都由两部分数据组成：<br />
+什么域名应该指向什么目的地？<br />
+我的有效时间是多久？<br />
+而这两部分数据会以互联网特有的树状结构层叠而上，盘织交错。<br />
+在终端进行 DNS 寻址时，<br />
+链路上的任何一个 DNS 服务器都可以实现一套标准或是非标的逻辑。</p>
+
+<p>对于 TTL 这个值，<br />
+只有三种实现的逻辑：</p>
+
+<ol>
+<li>缓存时间等于 DNS TTL 时间。<br /></li>
+<li>缓存时间小于 DNS TTL 时间。<br /></li>
+<li>缓存时间大于 DNS TTL 时间。<br />
+<br />
+<br /></li>
+</ol>
+
+<h2 id="世界">世界</h2>
+
+<p>要我来写域名服务器的逻辑的话，<br />
+不出意外我会严格按照定义来实现。<br />
+当然，根据性能、时间、空间的限制，<br />
+最终实现出来会有几秒的误差，<br />
+不过这不关键。</p>
+
+<p>关键的是，<a href="https://mailarchive.ietf.org/arch/msg/dnsop/zRuuXkwmklMHFvl_Qqzn2N0SOGY/?qid=ff8e732c964b76fed3bbf333b89b111f">有不少人觉得 DNS 目前的设计是有缺陷的</a>。<br />
+而作为整个互联网的底层构架，<br />
+不论是要提升还是替换 DNS 目前的逻辑，<br />
+都是一个非常巨大的工程。<br />
+当然，这也更吸引工程师为此献身了。</p>
+
+<p>于是，当今现实世界里的域名解析，<br />
+就不是完全按照“缓存时间等于 DNS TTL 时间”来实现的。</p>
+
+<ul>
+<li>当缓存时间小于 DNS TTL 时间时<br />
+
+<ul>
+<li>主要争议点在与这个会给上游服务器带来更大的解析压力<br /></li>
+<li>高频解析也意味着更多的带宽、网费支出<br /></li>
+<li>但这种情况不会伤害终端用户<br /></li>
+</ul></li>
+<li>当缓存时间大于 DNS TTL 时间时<br />
+
+<ul>
+<li>主要的问题在于，这会让用户访问到错误的服务器<br /></li>
+<li>这不仅会带来逻辑错误，还会有潜在的安全隐患<br /></li>
+<li>在本文最开始出现的问题，其实就是微信的 DNS 链路上出现了缓存过旧的问题<br /></li>
+<li>好处可能就是在解析费上不用交那么多钱了(x<br />
+<br />
+<br /></li>
+</ul></li>
+</ul>
+
+<h2 id="总结">总结</h2>
+
+<p>总的来说，DNS TTL 是一个在互联网基础设施中广泛使用的约定。<br />
+但是现实世界中也会有很多非标的实现。<br />
+由于 DNS 的特殊性，每一个非标的域名商都会影响一大片他们能触达的用户。<br />
+所以在我们操作 DNS 时，要优雅的解决问题就也得把他们给考虑进来。</p>
+
+<p>工程上的问题就是这样，<br />
+既有理论的优雅，<br />
+又有凡人的愚蠢，<br />
+也有分布式的智慧。</p>
+
+<blockquote>
+<p>By design,<br />
+the Internet core is stupid,<br />
+and the edge is smart.</p>
+</blockquote>
+
+<p>（完）</p>
+
         </div>
         
 
@@ -128,24 +279,29 @@
         </div>
 
         <div class="site-footer">
-  
-  <div class="site-footer-item">
-    <a href="/about" target="_blank">about</a>
+  <div class="site-footer-left">
+    <div class="site-footer-item">
+      <span id="busuanzi_container_site_pv" style="display:none"> PV: <span id="busuanzi_value_site_pv"/> </span>
+    </div>
+    <div class="site-footer-item">
+      <span id="busuanzi_container_site_uv" style="display:none"> UV: <span id="busuanzi_value_site_uv"/> </span>
+    </div>
   </div>
-  
-  <div class="site-footer-item">
-    <a href="https://github.com/LKI/LKI" target="_blank">github</a>
-  </div>
-  
-  <div class="site-footer-item">
-    <a href="/index.xml" target="_blank">rss</a>
-  </div>
-  
-  <div class="site-footer-item">
-    <span id="busuanzi_container_site_pv"> PV: <span id="busuanzi_value_site_pv"> </span> </span>
-  </div>
-  <div class="site-footer-item">
-    <span id="busuanzi_container_site_uv"> UV: <span id="busuanzi_value_site_uv"/> </span> </span>
+
+  <div class="site-footer-right">
+    
+    <div class="site-footer-item">
+      <a href="/about" target="_blank">about</a>
+    </div>
+    
+    <div class="site-footer-item">
+      <a href="https://github.com/LKI/LKI" target="_blank">github</a>
+    </div>
+    
+    <div class="site-footer-item">
+      <a href="/index.xml" target="_blank">rss</a>
+    </div>
+    
   </div>
 </div>
 
@@ -153,19 +309,7 @@
     </div>
   </article>
 
-  <script src="/js/highlight.pack.js"></script>
-
-
-<script>
-  hljs.initHighlightingOnLoad();
-
-  
-  
-    
-    
-  
-</script>
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
 

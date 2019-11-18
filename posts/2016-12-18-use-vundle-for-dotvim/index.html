@@ -19,7 +19,7 @@
       "articleSection" : "posts",
       "name" : "用vundle来管理vim插件",
       "headline" : "用vundle来管理vim插件",
-      "description" : "今天把vim插件管理器换成了Vundle， 之前我一直用的是pathogen。\n Vim配置 其实我是在实习以后才开始用Vim的， 当时Justin直接把他的vim配置给我clone了一份。 直接用现成的配置大大减缓了Vim的学习曲线， 而且很快就可以上手用起来了。 直到现在，我也觉得上手Vim的正确姿势就是找个大腿的配置。\n后来Vim稍微用的多了一些以后， 我开始尝试自己手动改vimrc来改设置。 改代码的基础就是看代码\/学习代码， 于是我了解到了pathogen， 一个快速添加插件的Vim插件\x26hellip;\npathogen pathogen的优点就是小巧和直白：\n你只需要添加autoload文件夹， 配置pathogen的载入， 就可以自己在预设好的插件目录下任意增删插件了。\n然而实际使用中有几个蛋疼之处：\n 为了方便，我一般会用git submodule来添加插件。 git submodule不仅有着屎一样的用法， 它的commit还是固定的， 于是我经常要手动去更新插件版本。 因为用了git submodule，删除插件也变得麻烦了。 pathogen主要是Tim Pope写的， 而这个项目一年内只有三次更新… 一点也不活跃。  出于灵活度\/便携度\/活跃度的考虑， 我决定换个包管理器。\nVundle 于是我就想到了Vundle， 一个看起来很正式的Vim插件管理器。 它的配置其实也比较简单：\n本地克隆Vundle包（可用git submodule）， 配置vimrc，然后在vimrc内写入插件名。\n不过第一次用命令vim \x2bPluginInstall \x2bqall加载插件的过程可能比较慢。\n现在的配置 于是鼓捣了一下， 成功从pathogen换成了vundle。 dotvim地址在github上。\n题外话： 第一次了解到Vundle的时候， 我总感觉这有种浓浓的Emacs包管理山寨风， 于是当时我根本没考虑Vundle… 所以说技术品味不能充当唯一技术评判标准呀~",
+      "description" : "今天把vim插件管理器换成了Vundle，\n之前我一直用的是pathogen。\n Vim配置 其实我是在实习以后才开始用Vim的，\n当时Justin直接把他的vim配置给我clone了一份。\n直接用现成的配置大大减缓了Vim的学习曲线，\n而且很快就可以上手用起来了。\n直到现在，我也觉得上手Vim的正确姿势就是找个大腿的配置。\n后来Vim稍微用的多了一些以后，\n我开始尝试自己手动改vimrc来改设置。\n改代码的基础就是看代码\/学习代码，\n于是我了解到了pathogen，\n一个快速添加插件的Vim插件\x26hellip;\npathogen pathogen的优点就是小巧和直白：\n你只需要添加autoload文件夹，\n配置pathogen的载入，\n就可以自己在预设好的插件目录下任意增删插件了。\n然而实际使用中有几个蛋疼之处：\n 为了方便，我一般会用git submodule来添加插件。\ngit submodule不仅有着屎一样的用法，\n它的commit还是固定的，\n于是我经常要手动去更新插件版本。\n 因为用了git submodule，删除插件也变得麻烦了。\n pathogen主要是Tim Pope写的，\n而这个项目一年内只有三次更新…\n一点也不活跃。\n  出于灵活度\/便携度\/活跃度的考虑，\n我决定换个包管理器。\nVundle 于是我就想到了Vundle，\n一个看起来很正式的Vim插件管理器。\n它的配置其实也比较简单：\n本地克隆Vundle包（可用git submodule），\n配置vimrc，然后在vimrc内写入插件名。\n不过第一次用命令vim \x2bPluginInstall \x2bqall加载插件的过程可能比较慢。\n现在的配置 于是鼓捣了一下，\n成功从pathogen换成了vundle。\ndotvim地址在github上。\n题外话：\n第一次了解到Vundle的时候，\n我总感觉这有种浓浓的Emacs包管理山寨风，\n于是当时我根本没考虑Vundle…\n所以说技术品味不能充当唯一技术评判标准呀~",
       "inLanguage" : "en-US",
       "author" : "Lirian Su",
       "creator" : "Lirian Su",
@@ -36,18 +36,47 @@
 <title>用vundle来管理vim插件 - 浮云计算</title>
   <meta property="og:title" content="用vundle来管理vim插件 - 浮云计算" />
   <meta property="og:type" content="article" />
-  <meta name="description" content="今天把vim插件管理器换成了Vundle， 之前我一直用的是pathogen。
- Vim配置 其实我是在实习以后才开始用Vim的， 当时Justin直接把他的vim配置给我clone了一份。 直接用现成的配置大大减缓了Vim的学习曲线， 而且很快就可以上手用起来了。 直到现在，我也觉得上手Vim的正确姿势就是找个大腿的配置。
-后来Vim稍微用的多了一些以后， 我开始尝试自己手动改vimrc来改设置。 改代码的基础就是看代码/学习代码， 于是我了解到了pathogen， 一个快速添加插件的Vim插件&hellip;
+  <meta name="description" content="今天把vim插件管理器换成了Vundle，
+之前我一直用的是pathogen。
+ Vim配置 其实我是在实习以后才开始用Vim的，
+当时Justin直接把他的vim配置给我clone了一份。
+直接用现成的配置大大减缓了Vim的学习曲线，
+而且很快就可以上手用起来了。
+直到现在，我也觉得上手Vim的正确姿势就是找个大腿的配置。
+后来Vim稍微用的多了一些以后，
+我开始尝试自己手动改vimrc来改设置。
+改代码的基础就是看代码/学习代码，
+于是我了解到了pathogen，
+一个快速添加插件的Vim插件&hellip;
 pathogen pathogen的优点就是小巧和直白：
-你只需要添加autoload文件夹， 配置pathogen的载入， 就可以自己在预设好的插件目录下任意增删插件了。
+你只需要添加autoload文件夹，
+配置pathogen的载入，
+就可以自己在预设好的插件目录下任意增删插件了。
 然而实际使用中有几个蛋疼之处：
- 为了方便，我一般会用git submodule来添加插件。 git submodule不仅有着屎一样的用法， 它的commit还是固定的， 于是我经常要手动去更新插件版本。 因为用了git submodule，删除插件也变得麻烦了。 pathogen主要是Tim Pope写的， 而这个项目一年内只有三次更新… 一点也不活跃。  出于灵活度/便携度/活跃度的考虑， 我决定换个包管理器。
-Vundle 于是我就想到了Vundle， 一个看起来很正式的Vim插件管理器。 它的配置其实也比较简单：
-本地克隆Vundle包（可用git submodule）， 配置vimrc，然后在vimrc内写入插件名。
+ 为了方便，我一般会用git submodule来添加插件。
+git submodule不仅有着屎一样的用法，
+它的commit还是固定的，
+于是我经常要手动去更新插件版本。
+ 因为用了git submodule，删除插件也变得麻烦了。
+ pathogen主要是Tim Pope写的，
+而这个项目一年内只有三次更新…
+一点也不活跃。
+  出于灵活度/便携度/活跃度的考虑，
+我决定换个包管理器。
+Vundle 于是我就想到了Vundle，
+一个看起来很正式的Vim插件管理器。
+它的配置其实也比较简单：
+本地克隆Vundle包（可用git submodule），
+配置vimrc，然后在vimrc内写入插件名。
 不过第一次用命令vim &#43;PluginInstall &#43;qall加载插件的过程可能比较慢。
-现在的配置 于是鼓捣了一下， 成功从pathogen换成了vundle。 dotvim地址在github上。
-题外话： 第一次了解到Vundle的时候， 我总感觉这有种浓浓的Emacs包管理山寨风， 于是当时我根本没考虑Vundle… 所以说技术品味不能充当唯一技术评判标准呀~" />
+现在的配置 于是鼓捣了一下，
+成功从pathogen换成了vundle。
+dotvim地址在github上。
+题外话：
+第一次了解到Vundle的时候，
+我总感觉这有种浓浓的Emacs包管理山寨风，
+于是当时我根本没考虑Vundle…
+所以说技术品味不能充当唯一技术评判标准呀~" />
 
   <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
   <link rel="stylesheet"
@@ -91,26 +120,86 @@ Vundle 于是我就想到了Vundle， 一个看起来很正式的Vim插件管理
           <h1 class="post-title">用vundle来管理vim插件</h1>
           
           <div class="row post-desc">
-            <div class="col-xs-6">
-              
-              <time class="post-date" datetime="2016-12-18 02:22:16 UTC">
-                2016-12-18
-              </time>
-              
-            </div>
-            <div class="col-xs-6">
-              
-              <div class="post-author">
-                <a target="_blank" href="">@Lirian Su</a>
-              </div>
-              
-            </div>
+            
+            <time class="post-header-item" datetime="2016-12-18 02:22:16 UTC">
+              Written at 2016-12-18 02:22
+            </time>
+            
+            <span class="post-header-item" id="busuanzi_container_page_pv"> Views <span id="busuanzi_value_page_pv" /> </span>
           </div>
           
         </header>
 
         <div class="post-content markdown-body">
-          <br/><br/><p>今天把vim插件管理器换成了<a href="https://github.com/VundleVim/Vundle.vim">Vundle</a>，<br/>之前我一直用的是<a href="https://github.com/tpope/vim-pathogen">pathogen</a>。</p><br/><br/><!--MORE--><br/><br/><h2 id="vim配置">Vim配置</h2><br/><br/><p>其实我是在实习以后才开始用Vim的，<br/>当时Justin直接把<a href="https://github.com/LKI/dotvim">他的vim配置</a>给我clone了一份。<br/>直接用现成的配置大大减缓了Vim的学习曲线，<br/>而且很快就可以上手用起来了。<br/>直到现在，我也觉得上手Vim的正确姿势就是找个大腿的配置。</p><br/><br/><p>后来Vim稍微用的多了一些以后，<br/>我开始尝试自己手动改vimrc来改设置。<br/>改代码的基础就是看代码/学习代码，<br/>于是我了解到了<a href="https://github.com/tpope/vim-pathogen">pathogen</a>，<br/>一个快速添加插件的Vim插件&hellip;</p><br/><br/><h2 id="pathogen">pathogen</h2><br/><br/><p>pathogen的优点就是小巧和直白：</p><br/><br/><p>你只需要添加autoload文件夹，<br/>配置pathogen的载入，<br/>就可以自己在预设好的插件目录下任意增删插件了。</p><br/><br/><p>然而实际使用中有几个蛋疼之处：</p><br/><br/><ul><br/><li>为了方便，我一般会用git submodule来添加插件。<br/>git submodule不仅有着屎一样的用法，<br/>它的commit还是固定的，<br/>于是我经常要手动去更新插件版本。</li><br/><li>因为用了git submodule，删除插件也变得麻烦了。</li><br/><li><a href="https://github.com/tpope/vim-pathogen">pathogen</a>主要是<a href="https://github.com/tpope">Tim Pope</a>写的，<br/>而这个项目一年内只有三次更新…<br/>一点也不活跃。</li><br/></ul><br/><br/><p>出于灵活度/便携度/活跃度的考虑，<br/>我决定换个包管理器。</p><br/><br/><h2 id="vundle">Vundle</h2><br/><br/><p>于是我就想到了<a href="https://github.com/VundleVim/Vundle.vim">Vundle</a>，<br/>一个看起来很正式的Vim插件管理器。<br/>它的配置其实也比较简单：</p><br/><br/><p>本地克隆<a href="https://github.com/VundleVim/Vundle.vim">Vundle</a>包（可用git submodule），<br/>配置vimrc，然后在vimrc内写入插件名。</p><br/><br/><p>不过第一次用命令<code>vim +PluginInstall +qall</code>加载插件的过程可能比较慢。</p><br/><br/><h2 id="现在的配置">现在的配置</h2><br/><br/><p>于是鼓捣了一下，<br/>成功从pathogen换成了vundle。<br/>dotvim地址在<a href="https://github.com/LKI/dotvim">github上</a>。</p><br/><br/><p>题外话：<br/>第一次了解到<a href="https://github.com/VundleVim/Vundle.vim">Vundle</a>的时候，<br/>我总感觉这有种浓浓的Emacs包管理山寨风，<br/>于是当时我根本没考虑<a href="https://github.com/VundleVim/Vundle.vim">Vundle</a>…<br/>所以说<strong>技术品味不能充当唯一技术评判标准呀~</strong></p><br/>
+          
+
+<p>今天把vim插件管理器换成了<a href="https://github.com/VundleVim/Vundle.vim">Vundle</a>，<br />
+之前我一直用的是<a href="https://github.com/tpope/vim-pathogen">pathogen</a>。</p>
+
+<!--MORE-->
+
+<h2 id="vim配置">Vim配置</h2>
+
+<p>其实我是在实习以后才开始用Vim的，<br />
+当时Justin直接把<a href="https://github.com/LKI/dotvim">他的vim配置</a>给我clone了一份。<br />
+直接用现成的配置大大减缓了Vim的学习曲线，<br />
+而且很快就可以上手用起来了。<br />
+直到现在，我也觉得上手Vim的正确姿势就是找个大腿的配置。</p>
+
+<p>后来Vim稍微用的多了一些以后，<br />
+我开始尝试自己手动改vimrc来改设置。<br />
+改代码的基础就是看代码/学习代码，<br />
+于是我了解到了<a href="https://github.com/tpope/vim-pathogen">pathogen</a>，<br />
+一个快速添加插件的Vim插件&hellip;</p>
+
+<h2 id="pathogen">pathogen</h2>
+
+<p>pathogen的优点就是小巧和直白：</p>
+
+<p>你只需要添加autoload文件夹，<br />
+配置pathogen的载入，<br />
+就可以自己在预设好的插件目录下任意增删插件了。</p>
+
+<p>然而实际使用中有几个蛋疼之处：</p>
+
+<ul>
+<li>为了方便，我一般会用git submodule来添加插件。<br />
+git submodule不仅有着屎一样的用法，<br />
+它的commit还是固定的，<br />
+于是我经常要手动去更新插件版本。<br /></li>
+<li>因为用了git submodule，删除插件也变得麻烦了。<br /></li>
+<li><a href="https://github.com/tpope/vim-pathogen">pathogen</a>主要是<a href="https://github.com/tpope">Tim Pope</a>写的，<br />
+而这个项目一年内只有三次更新…<br />
+一点也不活跃。<br />
+<br /></li>
+</ul>
+
+<p>出于灵活度/便携度/活跃度的考虑，<br />
+我决定换个包管理器。</p>
+
+<h2 id="vundle">Vundle</h2>
+
+<p>于是我就想到了<a href="https://github.com/VundleVim/Vundle.vim">Vundle</a>，<br />
+一个看起来很正式的Vim插件管理器。<br />
+它的配置其实也比较简单：</p>
+
+<p>本地克隆<a href="https://github.com/VundleVim/Vundle.vim">Vundle</a>包（可用git submodule），<br />
+配置vimrc，然后在vimrc内写入插件名。</p>
+
+<p>不过第一次用命令<code>vim +PluginInstall +qall</code>加载插件的过程可能比较慢。</p>
+
+<h2 id="现在的配置">现在的配置</h2>
+
+<p>于是鼓捣了一下，<br />
+成功从pathogen换成了vundle。<br />
+dotvim地址在<a href="https://github.com/LKI/dotvim">github上</a>。</p>
+
+<p>题外话：<br />
+第一次了解到<a href="https://github.com/VundleVim/Vundle.vim">Vundle</a>的时候，<br />
+我总感觉这有种浓浓的Emacs包管理山寨风，<br />
+于是当时我根本没考虑<a href="https://github.com/VundleVim/Vundle.vim">Vundle</a>…<br />
+所以说<strong>技术品味不能充当唯一技术评判标准呀~</strong></p>
+
         </div>
         
 
@@ -132,24 +221,29 @@ Vundle 于是我就想到了Vundle， 一个看起来很正式的Vim插件管理
         </div>
 
         <div class="site-footer">
-  
-  <div class="site-footer-item">
-    <a href="/about" target="_blank">about</a>
+  <div class="site-footer-left">
+    <div class="site-footer-item">
+      <span id="busuanzi_container_site_pv" style="display:none"> PV: <span id="busuanzi_value_site_pv"/> </span>
+    </div>
+    <div class="site-footer-item">
+      <span id="busuanzi_container_site_uv" style="display:none"> UV: <span id="busuanzi_value_site_uv"/> </span>
+    </div>
   </div>
-  
-  <div class="site-footer-item">
-    <a href="https://github.com/LKI/LKI" target="_blank">github</a>
-  </div>
-  
-  <div class="site-footer-item">
-    <a href="/index.xml" target="_blank">rss</a>
-  </div>
-  
-  <div class="site-footer-item">
-    <span id="busuanzi_container_site_pv"> PV: <span id="busuanzi_value_site_pv"> </span> </span>
-  </div>
-  <div class="site-footer-item">
-    <span id="busuanzi_container_site_uv"> UV: <span id="busuanzi_value_site_uv"/> </span> </span>
+
+  <div class="site-footer-right">
+    
+    <div class="site-footer-item">
+      <a href="/about" target="_blank">about</a>
+    </div>
+    
+    <div class="site-footer-item">
+      <a href="https://github.com/LKI/LKI" target="_blank">github</a>
+    </div>
+    
+    <div class="site-footer-item">
+      <a href="/index.xml" target="_blank">rss</a>
+    </div>
+    
   </div>
 </div>
 
@@ -157,19 +251,7 @@ Vundle 于是我就想到了Vundle， 一个看起来很正式的Vim插件管理
     </div>
   </article>
 
-  <script src="/js/highlight.pack.js"></script>
-
-
-<script>
-  hljs.initHighlightingOnLoad();
-
-  
-  
-    
-    
-  
-</script>
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
 

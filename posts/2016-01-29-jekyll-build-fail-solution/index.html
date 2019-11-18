@@ -19,7 +19,7 @@
       "articleSection" : "posts",
       "name" : "Jekyll build fail的解决办法",
       "headline" : "Jekyll build fail的解决办法",
-      "description" : " 我一直觉得笔记本和台式机jekyll build出来的结果不一样， 我猜想是Jekyll的版本不一致。 结果后来gem update以后， 反而jekyll build还失败了…\n Jekyll build jekyll build的结果不稳定是很难受的， 尤其每次build完以后git status看到的一大堆红色文件名。 而其实大部分都是各种HTML tag位置的差别。\n我怀疑这有可能是两台机器上Jekyll的版本不同导致的， 于是我就跑了gem update以同步到最新版本。\n等这个命令跑完以后，我跑jekyll build遇到的都是 jekyll build fail这样的ruby错误了。\nSolution 搜了一下其实很简单，这是因为机子内同时装了多个版本的jekyll， 而他们又互相冲突所导致的错误。\n（我不禁想问gem update为什么不会自动卸载旧版本？）\n没错，解决方案就是我们跑一条gem cleanup卸载旧版本就可以了。 至少这个解决方案对我的问题是起效的。\nGem sources 另：有的时候gem官方源很慢，可以选择用gem sources命令更换淘宝源。 （不过淘宝源未必更新那么频繁）\n$ gem sources -l *** CURRENT SOURCES *** https:\/\/rubygems.org\/ $ gem sources -r https:\/\/rubygems.org\/ https:\/\/rubygems.org\/ removed from sources $ gem sources -a https:\/\/rubygems.org\/ https:\/\/rubygems.org\/ added to sources  ",
+      "description" : " 我一直觉得笔记本和台式机jekyll build出来的结果不一样，\n我猜想是Jekyll的版本不一致。\n结果后来gem update以后，\n反而jekyll build还失败了…\n Jekyll build jekyll build的结果不稳定是很难受的，\n尤其每次build完以后git status看到的一大堆红色文件名。\n而其实大部分都是各种HTML tag位置的差别。\n我怀疑这有可能是两台机器上Jekyll的版本不同导致的，\n于是我就跑了gem update以同步到最新版本。\n等这个命令跑完以后，我跑jekyll build遇到的都是\njekyll build fail这样的ruby错误了。\nSolution 搜了一下其实很简单，这是因为机子内同时装了多个版本的jekyll，\n而他们又互相冲突所导致的错误。\n（我不禁想问gem update为什么不会自动卸载旧版本？）\n没错，解决方案就是我们跑一条gem cleanup卸载旧版本就可以了。\n至少这个解决方案对我的问题是起效的。\nGem sources 另：有的时候gem官方源很慢，可以选择用gem sources命令更换淘宝源。\n（不过淘宝源未必更新那么频繁）\n$ gem sources -l *** CURRENT SOURCES *** https:\/\/rubygems.org\/ $ gem sources -r https:\/\/rubygems.org\/ https:\/\/rubygems.org\/ removed from sources $ gem sources -a https:\/\/rubygems.org\/ https:\/\/rubygems.org\/ added to sources  ",
       "inLanguage" : "en-US",
       "author" : "Lirian Su",
       "creator" : "Lirian Su",
@@ -36,14 +36,24 @@
 <title>Jekyll build fail的解决办法 - 浮云计算</title>
   <meta property="og:title" content="Jekyll build fail的解决办法 - 浮云计算" />
   <meta property="og:type" content="article" />
-  <meta name="description" content=" 我一直觉得笔记本和台式机jekyll build出来的结果不一样， 我猜想是Jekyll的版本不一致。 结果后来gem update以后， 反而jekyll build还失败了…
- Jekyll build jekyll build的结果不稳定是很难受的， 尤其每次build完以后git status看到的一大堆红色文件名。 而其实大部分都是各种HTML tag位置的差别。
-我怀疑这有可能是两台机器上Jekyll的版本不同导致的， 于是我就跑了gem update以同步到最新版本。
-等这个命令跑完以后，我跑jekyll build遇到的都是 jekyll build fail这样的ruby错误了。
-Solution 搜了一下其实很简单，这是因为机子内同时装了多个版本的jekyll， 而他们又互相冲突所导致的错误。
+  <meta name="description" content=" 我一直觉得笔记本和台式机jekyll build出来的结果不一样，
+我猜想是Jekyll的版本不一致。
+结果后来gem update以后，
+反而jekyll build还失败了…
+ Jekyll build jekyll build的结果不稳定是很难受的，
+尤其每次build完以后git status看到的一大堆红色文件名。
+而其实大部分都是各种HTML tag位置的差别。
+我怀疑这有可能是两台机器上Jekyll的版本不同导致的，
+于是我就跑了gem update以同步到最新版本。
+等这个命令跑完以后，我跑jekyll build遇到的都是
+jekyll build fail这样的ruby错误了。
+Solution 搜了一下其实很简单，这是因为机子内同时装了多个版本的jekyll，
+而他们又互相冲突所导致的错误。
 （我不禁想问gem update为什么不会自动卸载旧版本？）
-没错，解决方案就是我们跑一条gem cleanup卸载旧版本就可以了。 至少这个解决方案对我的问题是起效的。
-Gem sources 另：有的时候gem官方源很慢，可以选择用gem sources命令更换淘宝源。 （不过淘宝源未必更新那么频繁）
+没错，解决方案就是我们跑一条gem cleanup卸载旧版本就可以了。
+至少这个解决方案对我的问题是起效的。
+Gem sources 另：有的时候gem官方源很慢，可以选择用gem sources命令更换淘宝源。
+（不过淘宝源未必更新那么频繁）
 $ gem sources -l *** CURRENT SOURCES *** https://rubygems.org/ $ gem sources -r https://rubygems.org/ https://rubygems.org/ removed from sources $ gem sources -a https://rubygems.org/ https://rubygems.org/ added to sources  " />
 
   <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
@@ -88,26 +98,65 @@ $ gem sources -l *** CURRENT SOURCES *** https://rubygems.org/ $ gem sources -r 
           <h1 class="post-title">Jekyll build fail的解决办法</h1>
           
           <div class="row post-desc">
-            <div class="col-xs-6">
-              
-              <time class="post-date" datetime="2016-01-29 23:24:45 UTC">
-                2016-01-29
-              </time>
-              
-            </div>
-            <div class="col-xs-6">
-              
-              <div class="post-author">
-                <a target="_blank" href="">@Lirian Su</a>
-              </div>
-              
-            </div>
+            
+            <time class="post-header-item" datetime="2016-01-29 23:24:45 UTC">
+              Written at 2016-01-29 23:24
+            </time>
+            
+            <span class="post-header-item" id="busuanzi_container_page_pv"> Views <span id="busuanzi_value_page_pv" /> </span>
           </div>
           
         </header>
 
         <div class="post-content markdown-body">
-          <br/><br/><p>我一直觉得笔记本和台式机<code>jekyll build</code>出来的结果不一样，<br/>我猜想是Jekyll的版本不一致。<br/>结果后来<code>gem update</code>以后，<br/>反而<code>jekyll build</code>还失败了…</p><br/><br/><!--MORE--><br/><br/><h2 id="jekyll-build">Jekyll build</h2><br/><br/><p><code>jekyll build</code>的结果不稳定是很难受的，<br/>尤其每次build完以后<code>git status</code>看到的一大堆红色文件名。<br/>而其实大部分都是各种HTML tag位置的差别。</p><br/><br/><p>我怀疑这有可能是两台机器上Jekyll的版本不同导致的，<br/>于是我就跑了<code>gem update</code>以同步到最新版本。</p><br/><br/><p>等这个命令跑完以后，我跑<code>jekyll build</code>遇到的都是<br/><code>jekyll build fail</code>这样的ruby错误了。</p><br/><br/><h2 id="solution">Solution</h2><br/><br/><p>搜了一下其实很简单，这是因为机子内同时装了多个版本的jekyll，<br/>而他们又互相冲突所导致的错误。</p><br/><br/><p>（我不禁想问<code>gem update</code>为什么不会自动卸载旧版本？）</p><br/><br/><p>没错，解决方案就是我们跑一条<code>gem cleanup</code>卸载旧版本就可以了。<br/>至少这个解决方案对我的问题是起效的。</p><br/><br/><h2 id="gem-sources">Gem sources</h2><br/><br/><p>另：有的时候gem官方源很慢，可以选择用<code>gem sources</code>命令更换淘宝源。<br/>（不过淘宝源未必更新那么频繁）</p><br/><br/><pre><code>$ gem sources -l<br/>*** CURRENT SOURCES ***<br/><br/>https://rubygems.org/<br/><br/>$ gem sources -r https://rubygems.org/<br/>https://rubygems.org/ removed from sources<br/><br/>$ gem sources -a https://rubygems.org/<br/>https://rubygems.org/ added to sources<br/></code></pre><br/>
+          
+
+<p>我一直觉得笔记本和台式机<code>jekyll build</code>出来的结果不一样，<br />
+我猜想是Jekyll的版本不一致。<br />
+结果后来<code>gem update</code>以后，<br />
+反而<code>jekyll build</code>还失败了…</p>
+
+<!--MORE-->
+
+<h2 id="jekyll-build">Jekyll build</h2>
+
+<p><code>jekyll build</code>的结果不稳定是很难受的，<br />
+尤其每次build完以后<code>git status</code>看到的一大堆红色文件名。<br />
+而其实大部分都是各种HTML tag位置的差别。</p>
+
+<p>我怀疑这有可能是两台机器上Jekyll的版本不同导致的，<br />
+于是我就跑了<code>gem update</code>以同步到最新版本。</p>
+
+<p>等这个命令跑完以后，我跑<code>jekyll build</code>遇到的都是<br />
+<code>jekyll build fail</code>这样的ruby错误了。</p>
+
+<h2 id="solution">Solution</h2>
+
+<p>搜了一下其实很简单，这是因为机子内同时装了多个版本的jekyll，<br />
+而他们又互相冲突所导致的错误。</p>
+
+<p>（我不禁想问<code>gem update</code>为什么不会自动卸载旧版本？）</p>
+
+<p>没错，解决方案就是我们跑一条<code>gem cleanup</code>卸载旧版本就可以了。<br />
+至少这个解决方案对我的问题是起效的。</p>
+
+<h2 id="gem-sources">Gem sources</h2>
+
+<p>另：有的时候gem官方源很慢，可以选择用<code>gem sources</code>命令更换淘宝源。<br />
+（不过淘宝源未必更新那么频繁）</p>
+
+<pre><code>$ gem sources -l
+*** CURRENT SOURCES ***
+
+https://rubygems.org/
+
+$ gem sources -r https://rubygems.org/
+https://rubygems.org/ removed from sources
+
+$ gem sources -a https://rubygems.org/
+https://rubygems.org/ added to sources
+</code></pre>
+
         </div>
         
 
@@ -129,24 +178,29 @@ $ gem sources -l *** CURRENT SOURCES *** https://rubygems.org/ $ gem sources -r 
         </div>
 
         <div class="site-footer">
-  
-  <div class="site-footer-item">
-    <a href="/about" target="_blank">about</a>
+  <div class="site-footer-left">
+    <div class="site-footer-item">
+      <span id="busuanzi_container_site_pv" style="display:none"> PV: <span id="busuanzi_value_site_pv"/> </span>
+    </div>
+    <div class="site-footer-item">
+      <span id="busuanzi_container_site_uv" style="display:none"> UV: <span id="busuanzi_value_site_uv"/> </span>
+    </div>
   </div>
-  
-  <div class="site-footer-item">
-    <a href="https://github.com/LKI/LKI" target="_blank">github</a>
-  </div>
-  
-  <div class="site-footer-item">
-    <a href="/index.xml" target="_blank">rss</a>
-  </div>
-  
-  <div class="site-footer-item">
-    <span id="busuanzi_container_site_pv"> PV: <span id="busuanzi_value_site_pv"> </span> </span>
-  </div>
-  <div class="site-footer-item">
-    <span id="busuanzi_container_site_uv"> UV: <span id="busuanzi_value_site_uv"/> </span> </span>
+
+  <div class="site-footer-right">
+    
+    <div class="site-footer-item">
+      <a href="/about" target="_blank">about</a>
+    </div>
+    
+    <div class="site-footer-item">
+      <a href="https://github.com/LKI/LKI" target="_blank">github</a>
+    </div>
+    
+    <div class="site-footer-item">
+      <a href="/index.xml" target="_blank">rss</a>
+    </div>
+    
   </div>
 </div>
 
@@ -154,19 +208,7 @@ $ gem sources -l *** CURRENT SOURCES *** https://rubygems.org/ $ gem sources -r 
     </div>
   </article>
 
-  <script src="/js/highlight.pack.js"></script>
-
-
-<script>
-  hljs.initHighlightingOnLoad();
-
-  
-  
-    
-    
-  
-</script>
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
 

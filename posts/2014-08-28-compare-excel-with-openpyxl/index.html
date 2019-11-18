@@ -19,7 +19,7 @@
       "articleSection" : "posts",
       "name" : "用Openpyxl做两个Excel文件的比对",
       "headline" : "用Openpyxl做两个Excel文件的比对",
-      "description" : "起因 最近老是要做比对Excel报表的工作，于是想写一个Python的小脚本来做这个工作。 关于Python的Excel处理，以前只用过xlrd库，处理的是Office03的.xls文件。 这次写小工具的同时也是学习一下新的东西。\n 准备工作 由于本次要比对的报表是Office07的.xlsx文件，上网查了一下Python怎么做比较合适。 看了几篇心得以后，敲定用Openpyxl（参考如下链接：）\n Python处理Excel的四个工具\n 于是接下来是装Openpyxl，到官网上按照流程装了一发：\n A Python Library: Openpyxl\n 由于源码是到BitBucket上拖下来的，所以顺便还装了SourceTree。 据说SourceTree还有Git的相关功能，下次可以体验一下。\n使用Openpyxl Openpyxl装好以后直接import就能用啦：\nfrom openpyxl import *  Openpyxl还提供了一个非常棒的教程（有点过于简单\n Openpyxl Tutorial\n Openpyxl还有个弊端就是文档不怎么详细，只能去翻源码。\n最终代码 可以到我写的PythonScripts里找到我写的版本：\nPythonScripts - ExcelComparer",
+      "description" : "起因 最近老是要做比对Excel报表的工作，于是想写一个Python的小脚本来做这个工作。\n关于Python的Excel处理，以前只用过xlrd库，处理的是Office03的.xls文件。\n这次写小工具的同时也是学习一下新的东西。\n 准备工作 由于本次要比对的报表是Office07的.xlsx文件，上网查了一下Python怎么做比较合适。\n看了几篇心得以后，敲定用Openpyxl（参考如下链接：）\n Python处理Excel的四个工具\n 于是接下来是装Openpyxl，到官网上按照流程装了一发：\n A Python Library: Openpyxl\n 由于源码是到BitBucket上拖下来的，所以顺便还装了SourceTree。\n据说SourceTree还有Git的相关功能，下次可以体验一下。\n使用Openpyxl Openpyxl装好以后直接import就能用啦：\nfrom openpyxl import *  Openpyxl还提供了一个非常棒的教程（有点过于简单\n Openpyxl Tutorial\n Openpyxl还有个弊端就是文档不怎么详细，只能去翻源码。\n最终代码 可以到我写的PythonScripts里找到我写的版本：\nPythonScripts - ExcelComparer",
       "inLanguage" : "en-US",
       "author" : "Lirian Su",
       "creator" : "Lirian Su",
@@ -36,12 +36,16 @@
 <title>用Openpyxl做两个Excel文件的比对 - 浮云计算</title>
   <meta property="og:title" content="用Openpyxl做两个Excel文件的比对 - 浮云计算" />
   <meta property="og:type" content="article" />
-  <meta name="description" content="起因 最近老是要做比对Excel报表的工作，于是想写一个Python的小脚本来做这个工作。 关于Python的Excel处理，以前只用过xlrd库，处理的是Office03的.xls文件。 这次写小工具的同时也是学习一下新的东西。
- 准备工作 由于本次要比对的报表是Office07的.xlsx文件，上网查了一下Python怎么做比较合适。 看了几篇心得以后，敲定用Openpyxl（参考如下链接：）
+  <meta name="description" content="起因 最近老是要做比对Excel报表的工作，于是想写一个Python的小脚本来做这个工作。
+关于Python的Excel处理，以前只用过xlrd库，处理的是Office03的.xls文件。
+这次写小工具的同时也是学习一下新的东西。
+ 准备工作 由于本次要比对的报表是Office07的.xlsx文件，上网查了一下Python怎么做比较合适。
+看了几篇心得以后，敲定用Openpyxl（参考如下链接：）
  Python处理Excel的四个工具
  于是接下来是装Openpyxl，到官网上按照流程装了一发：
  A Python Library: Openpyxl
- 由于源码是到BitBucket上拖下来的，所以顺便还装了SourceTree。 据说SourceTree还有Git的相关功能，下次可以体验一下。
+ 由于源码是到BitBucket上拖下来的，所以顺便还装了SourceTree。
+据说SourceTree还有Git的相关功能，下次可以体验一下。
 使用Openpyxl Openpyxl装好以后直接import就能用啦：
 from openpyxl import *  Openpyxl还提供了一个非常棒的教程（有点过于简单
  Openpyxl Tutorial
@@ -91,26 +95,66 @@ PythonScripts - ExcelComparer" />
           <h1 class="post-title">用Openpyxl做两个Excel文件的比对</h1>
           
           <div class="row post-desc">
-            <div class="col-xs-6">
-              
-              <time class="post-date" datetime="2014-08-28 10:31:08 UTC">
-                2014-08-28
-              </time>
-              
-            </div>
-            <div class="col-xs-6">
-              
-              <div class="post-author">
-                <a target="_blank" href="">@Lirian Su</a>
-              </div>
-              
-            </div>
+            
+            <time class="post-header-item" datetime="2014-08-28 10:31:08 UTC">
+              Written at 2014-08-28 10:31
+            </time>
+            
+            <span class="post-header-item" id="busuanzi_container_page_pv"> Views <span id="busuanzi_value_page_pv" /> </span>
           </div>
           
         </header>
 
         <div class="post-content markdown-body">
-          <br/><br/><h2 id="起因">起因</h2><br/><br/><p>最近老是要做比对Excel报表的工作，于是想写一个Python的小脚本来做这个工作。<br/>关于Python的Excel处理，以前只用过xlrd库，处理的是Office03的.xls文件。<br/>这次写小工具的同时也是学习一下新的东西。</p><br/><br/><!--MORE--><br/><br/><h2 id="准备工作">准备工作</h2><br/><br/><p>由于本次要比对的报表是Office07的.xlsx文件，上网查了一下Python怎么做比较合适。<br/>看了几篇心得以后，敲定用Openpyxl（参考如下链接：）</p><br/><br/><blockquote><br/><p><a href="http://www.gocalf.com/blog/python-read-write-excel.html">Python处理Excel的四个工具</a></p><br/></blockquote><br/><br/><p>于是接下来是装Openpyxl，到官网上按照流程装了一发：</p><br/><br/><blockquote><br/><p><a href="https://pythonhosted.org/openpyxl/">A Python Library: Openpyxl</a></p><br/></blockquote><br/><br/><p>由于源码是到BitBucket上拖下来的，所以顺便还装了SourceTree。<br/>据说SourceTree还有Git的相关功能，下次可以体验一下。</p><br/><br/><h2 id="使用openpyxl">使用Openpyxl</h2><br/><br/><p>Openpyxl装好以后直接import就能用啦：</p><br/><br/><pre><code class="language-python">from openpyxl import *<br/></code></pre><br/><br/><p>Openpyxl还提供了一个非常棒的教程<del>（有点过于简单</del></p><br/><br/><blockquote><br/><p><a href="https://pythonhosted.org/openpyxl/tutorial.html">Openpyxl Tutorial</a></p><br/></blockquote><br/><br/><p>Openpyxl还有个弊端就是文档不怎么详细，只能去翻源码。</p><br/><br/><h2 id="最终代码">最终代码</h2><br/><br/><p>可以到我写的PythonScripts里找到我写的版本：</p><br/><br/><p><a href="https://github.com/LKI/PythonScripts/tree/master/ExcelComparer">PythonScripts - ExcelComparer</a></p><br/>
+          
+
+<h2 id="起因">起因</h2>
+
+<p>最近老是要做比对Excel报表的工作，于是想写一个Python的小脚本来做这个工作。<br />
+关于Python的Excel处理，以前只用过xlrd库，处理的是Office03的.xls文件。<br />
+这次写小工具的同时也是学习一下新的东西。</p>
+
+<!--MORE-->
+
+<h2 id="准备工作">准备工作</h2>
+
+<p>由于本次要比对的报表是Office07的.xlsx文件，上网查了一下Python怎么做比较合适。<br />
+看了几篇心得以后，敲定用Openpyxl（参考如下链接：）</p>
+
+<blockquote>
+<p><a href="http://www.gocalf.com/blog/python-read-write-excel.html">Python处理Excel的四个工具</a></p>
+</blockquote>
+
+<p>于是接下来是装Openpyxl，到官网上按照流程装了一发：</p>
+
+<blockquote>
+<p><a href="https://pythonhosted.org/openpyxl/">A Python Library: Openpyxl</a></p>
+</blockquote>
+
+<p>由于源码是到BitBucket上拖下来的，所以顺便还装了SourceTree。<br />
+据说SourceTree还有Git的相关功能，下次可以体验一下。</p>
+
+<h2 id="使用openpyxl">使用Openpyxl</h2>
+
+<p>Openpyxl装好以后直接import就能用啦：</p>
+
+<pre><code class="language-python">from openpyxl import *
+</code></pre>
+
+<p>Openpyxl还提供了一个非常棒的教程<del>（有点过于简单</del></p>
+
+<blockquote>
+<p><a href="https://pythonhosted.org/openpyxl/tutorial.html">Openpyxl Tutorial</a></p>
+</blockquote>
+
+<p>Openpyxl还有个弊端就是文档不怎么详细，只能去翻源码。</p>
+
+<h2 id="最终代码">最终代码</h2>
+
+<p>可以到我写的PythonScripts里找到我写的版本：</p>
+
+<p><a href="https://github.com/LKI/PythonScripts/tree/master/ExcelComparer">PythonScripts - ExcelComparer</a></p>
+
         </div>
         
 
@@ -132,24 +176,29 @@ PythonScripts - ExcelComparer" />
         </div>
 
         <div class="site-footer">
-  
-  <div class="site-footer-item">
-    <a href="/about" target="_blank">about</a>
+  <div class="site-footer-left">
+    <div class="site-footer-item">
+      <span id="busuanzi_container_site_pv" style="display:none"> PV: <span id="busuanzi_value_site_pv"/> </span>
+    </div>
+    <div class="site-footer-item">
+      <span id="busuanzi_container_site_uv" style="display:none"> UV: <span id="busuanzi_value_site_uv"/> </span>
+    </div>
   </div>
-  
-  <div class="site-footer-item">
-    <a href="https://github.com/LKI/LKI" target="_blank">github</a>
-  </div>
-  
-  <div class="site-footer-item">
-    <a href="/index.xml" target="_blank">rss</a>
-  </div>
-  
-  <div class="site-footer-item">
-    <span id="busuanzi_container_site_pv"> PV: <span id="busuanzi_value_site_pv"> </span> </span>
-  </div>
-  <div class="site-footer-item">
-    <span id="busuanzi_container_site_uv"> UV: <span id="busuanzi_value_site_uv"/> </span> </span>
+
+  <div class="site-footer-right">
+    
+    <div class="site-footer-item">
+      <a href="/about" target="_blank">about</a>
+    </div>
+    
+    <div class="site-footer-item">
+      <a href="https://github.com/LKI/LKI" target="_blank">github</a>
+    </div>
+    
+    <div class="site-footer-item">
+      <a href="/index.xml" target="_blank">rss</a>
+    </div>
+    
   </div>
 </div>
 
@@ -157,19 +206,7 @@ PythonScripts - ExcelComparer" />
     </div>
   </article>
 
-  <script src="/js/highlight.pack.js"></script>
-
-
-<script>
-  hljs.initHighlightingOnLoad();
-
-  
-  
-    
-    
-  
-</script>
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
 

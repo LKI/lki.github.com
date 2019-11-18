@@ -19,7 +19,7 @@
       "articleSection" : "posts",
       "name" : "用GitHub托管静态HTML页面",
       "headline" : "用GitHub托管静态HTML页面",
-      "description" : "这是一篇入门级的技术文章， 教你怎么在GitHub上托管静态的HTML页面。\n GitHub项目主页 GitHub有个设定， 就是每个项目的gh-pages分支可以通过user-domain\/项目名来访问。\n比如以前我把一些常用的js\/css库放到我的static项目下(LKI\/static)， 该项目下gh-pages分支的index.html就可以直接通过lki.github.io\/static访问。\nGitHub的这个设定本意是让每个项目都有自己的主页来展示， 不过我们也可以借用这个设定来托管静态HTML页面。\n托管静态页面 托管页面的大概步骤如下：\n 拥有自己的GitHub账号 在GitHub上建立一个目录(Create new repository) 用git创造该项目下建立gh-pages分支，提交一个index.html文件  第3步的命令行版本大概如下：\n$ cd \/Users\/liriansu\/new-repo $ git init # 初始化git目录 $ git checkout -b gh-pages # 新建gh-pages分支，并切换过去 # 跑完上一条命令后，把你的index.html文件放到new-repo文件夹里 $ git add index.html # 告诉git说index.html要提交了 $ git commit -m \x26quot;add index.html\x26quot; # 提交index.html $ git remote add origin https:\/\/github.com\/\x26lt;username\x26gt;\/\x26lt;repository\x26gt; $ git push -u origin gh-pages # 推到GitHub服务器上  然后我们就可以在http:\/\/\x26lt;username\x26gt;.github.io\/\x26lt;repository\x26gt;上看到刚提交上去的index.html了。 最后假如你希望在GitHub上搭建个人博客， 可以参照我的搭建方案",
+      "description" : "这是一篇入门级的技术文章，\n教你怎么在GitHub上托管静态的HTML页面。\n GitHub项目主页 GitHub有个设定，\n就是每个项目的gh-pages分支可以通过user-domain\/项目名来访问。\n比如以前我把一些常用的js\/css库放到我的static项目下(LKI\/static)，\n该项目下gh-pages分支的index.html就可以直接通过lki.github.io\/static访问。\nGitHub的这个设定本意是让每个项目都有自己的主页来展示，\n不过我们也可以借用这个设定来托管静态HTML页面。\n托管静态页面 托管页面的大概步骤如下：\n 拥有自己的GitHub账号\n 在GitHub上建立一个目录(Create new repository)\n 用git创造该项目下建立gh-pages分支，提交一个index.html文件\n  第3步的命令行版本大概如下：\n$ cd \/Users\/liriansu\/new-repo $ git init # 初始化git目录 $ git checkout -b gh-pages # 新建gh-pages分支，并切换过去 # 跑完上一条命令后，把你的index.html文件放到new-repo文件夹里 $ git add index.html # 告诉git说index.html要提交了 $ git commit -m \x26quot;add index.html\x26quot; # 提交index.html $ git remote add origin https:\/\/github.com\/\x26lt;username\x26gt;\/\x26lt;repository\x26gt; $ git push -u origin gh-pages # 推到GitHub服务器上  然后我们就可以在http:\/\/\x26lt;username\x26gt;.",
       "inLanguage" : "en-US",
       "author" : "Lirian Su",
       "creator" : "Lirian Su",
@@ -36,13 +36,20 @@
 <title>用GitHub托管静态HTML页面 - 浮云计算</title>
   <meta property="og:title" content="用GitHub托管静态HTML页面 - 浮云计算" />
   <meta property="og:type" content="article" />
-  <meta name="description" content="这是一篇入门级的技术文章， 教你怎么在GitHub上托管静态的HTML页面。
- GitHub项目主页 GitHub有个设定， 就是每个项目的gh-pages分支可以通过user-domain/项目名来访问。
-比如以前我把一些常用的js/css库放到我的static项目下(LKI/static)， 该项目下gh-pages分支的index.html就可以直接通过lki.github.io/static访问。
-GitHub的这个设定本意是让每个项目都有自己的主页来展示， 不过我们也可以借用这个设定来托管静态HTML页面。
+  <meta name="description" content="这是一篇入门级的技术文章，
+教你怎么在GitHub上托管静态的HTML页面。
+ GitHub项目主页 GitHub有个设定，
+就是每个项目的gh-pages分支可以通过user-domain/项目名来访问。
+比如以前我把一些常用的js/css库放到我的static项目下(LKI/static)，
+该项目下gh-pages分支的index.html就可以直接通过lki.github.io/static访问。
+GitHub的这个设定本意是让每个项目都有自己的主页来展示，
+不过我们也可以借用这个设定来托管静态HTML页面。
 托管静态页面 托管页面的大概步骤如下：
- 拥有自己的GitHub账号 在GitHub上建立一个目录(Create new repository) 用git创造该项目下建立gh-pages分支，提交一个index.html文件  第3步的命令行版本大概如下：
-$ cd /Users/liriansu/new-repo $ git init # 初始化git目录 $ git checkout -b gh-pages # 新建gh-pages分支，并切换过去 # 跑完上一条命令后，把你的index.html文件放到new-repo文件夹里 $ git add index.html # 告诉git说index.html要提交了 $ git commit -m &quot;add index.html&quot; # 提交index.html $ git remote add origin https://github.com/&lt;username&gt;/&lt;repository&gt; $ git push -u origin gh-pages # 推到GitHub服务器上  然后我们就可以在http://&lt;username&gt;.github.io/&lt;repository&gt;上看到刚提交上去的index.html了。 最后假如你希望在GitHub上搭建个人博客， 可以参照我的搭建方案" />
+ 拥有自己的GitHub账号
+ 在GitHub上建立一个目录(Create new repository)
+ 用git创造该项目下建立gh-pages分支，提交一个index.html文件
+  第3步的命令行版本大概如下：
+$ cd /Users/liriansu/new-repo $ git init # 初始化git目录 $ git checkout -b gh-pages # 新建gh-pages分支，并切换过去 # 跑完上一条命令后，把你的index.html文件放到new-repo文件夹里 $ git add index.html # 告诉git说index.html要提交了 $ git commit -m &quot;add index.html&quot; # 提交index.html $ git remote add origin https://github.com/&lt;username&gt;/&lt;repository&gt; $ git push -u origin gh-pages # 推到GitHub服务器上  然后我们就可以在http://&lt;username&gt;." />
 
   <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
   <link rel="stylesheet"
@@ -86,26 +93,62 @@ $ cd /Users/liriansu/new-repo $ git init # 初始化git目录 $ git checkout -b 
           <h1 class="post-title">用GitHub托管静态HTML页面</h1>
           
           <div class="row post-desc">
-            <div class="col-xs-6">
-              
-              <time class="post-date" datetime="2017-02-03 21:59:54 UTC">
-                2017-02-03
-              </time>
-              
-            </div>
-            <div class="col-xs-6">
-              
-              <div class="post-author">
-                <a target="_blank" href="">@Lirian Su</a>
-              </div>
-              
-            </div>
+            
+            <time class="post-header-item" datetime="2017-02-03 21:59:54 UTC">
+              Written at 2017-02-03 21:59
+            </time>
+            
+            <span class="post-header-item" id="busuanzi_container_page_pv"> Views <span id="busuanzi_value_page_pv" /> </span>
           </div>
           
         </header>
 
         <div class="post-content markdown-body">
-          <br/><br/><p>这是一篇入门级的技术文章，<br/>教你怎么在GitHub上托管静态的HTML页面。</p><br/><br/><!--MORE--><br/><br/><h2 id="github项目主页">GitHub项目主页</h2><br/><br/><p>GitHub有个设定，<br/>就是<strong>每个项目的gh-pages分支可以通过<code>user-domain/项目名</code>来访问</strong>。</p><br/><br/><p>比如以前我把一些常用的js/css库放到<a href="https://github.com/LKI/static">我的static项目下(LKI/static)</a>，<br/>该项目下<code>gh-pages</code>分支的index.html就可以直接通过<a href="/static/">lki.github.io/static</a>访问。</p><br/><br/><p>GitHub的这个设定本意是<a href="https://pages.github.com/">让每个项目都有自己的主页来展示</a>，<br/>不过我们也可以借用这个设定来托管静态HTML页面。</p><br/><br/><h2 id="托管静态页面">托管静态页面</h2><br/><br/><p>托管页面的大概步骤如下：</p><br/><br/><ol><br/><li>拥有自己的GitHub账号</li><br/><li>在GitHub上建立一个目录<a href="https://github.com/new">(Create new repository)</a></li><br/><li>用git创造该项目下建立<code>gh-pages</code>分支，提交一个index.html文件</li><br/></ol><br/><br/><p>第3步的命令行版本大概如下：</p><br/><br/><pre><code>$ cd /Users/liriansu/new-repo<br/>$ git init                        # 初始化git目录<br/>$ git checkout -b gh-pages        # 新建gh-pages分支，并切换过去<br/># 跑完上一条命令后，把你的index.html文件放到new-repo文件夹里<br/>$ git add index.html              # 告诉git说index.html要提交了<br/>$ git commit -m &quot;add index.html&quot;  # 提交index.html<br/>$ git remote add origin https://github.com/&lt;username&gt;/&lt;repository&gt;<br/>$ git push -u origin gh-pages     # 推到GitHub服务器上<br/></code></pre><br/><br/><p>然后我们就可以在<code>http://&lt;username&gt;.github.io/&lt;repository&gt;</code>上看到刚提交上去的index.html了。<br/>最后假如你希望在GitHub上搭建个人博客，<br/>可以参照<a href="/how-this-blog-was-built">我的搭建方案</a></p><br/>
+          
+
+<p>这是一篇入门级的技术文章，<br />
+教你怎么在GitHub上托管静态的HTML页面。</p>
+
+<!--MORE-->
+
+<h2 id="github项目主页">GitHub项目主页</h2>
+
+<p>GitHub有个设定，<br />
+就是<strong>每个项目的gh-pages分支可以通过<code>user-domain/项目名</code>来访问</strong>。</p>
+
+<p>比如以前我把一些常用的js/css库放到<a href="https://github.com/LKI/static">我的static项目下(LKI/static)</a>，<br />
+该项目下<code>gh-pages</code>分支的index.html就可以直接通过<a href="/static/">lki.github.io/static</a>访问。</p>
+
+<p>GitHub的这个设定本意是<a href="https://pages.github.com/">让每个项目都有自己的主页来展示</a>，<br />
+不过我们也可以借用这个设定来托管静态HTML页面。</p>
+
+<h2 id="托管静态页面">托管静态页面</h2>
+
+<p>托管页面的大概步骤如下：</p>
+
+<ol>
+<li>拥有自己的GitHub账号<br /></li>
+<li>在GitHub上建立一个目录<a href="https://github.com/new">(Create new repository)</a><br /></li>
+<li>用git创造该项目下建立<code>gh-pages</code>分支，提交一个index.html文件<br />
+<br /></li>
+</ol>
+
+<p>第3步的命令行版本大概如下：</p>
+
+<pre><code>$ cd /Users/liriansu/new-repo
+$ git init                        # 初始化git目录
+$ git checkout -b gh-pages        # 新建gh-pages分支，并切换过去
+# 跑完上一条命令后，把你的index.html文件放到new-repo文件夹里
+$ git add index.html              # 告诉git说index.html要提交了
+$ git commit -m &quot;add index.html&quot;  # 提交index.html
+$ git remote add origin https://github.com/&lt;username&gt;/&lt;repository&gt;
+$ git push -u origin gh-pages     # 推到GitHub服务器上
+</code></pre>
+
+<p>然后我们就可以在<code>http://&lt;username&gt;.github.io/&lt;repository&gt;</code>上看到刚提交上去的index.html了。<br />
+最后假如你希望在GitHub上搭建个人博客，<br />
+可以参照<a href="/how-this-blog-was-built">我的搭建方案</a></p>
+
         </div>
         
 
@@ -127,24 +170,29 @@ $ cd /Users/liriansu/new-repo $ git init # 初始化git目录 $ git checkout -b 
         </div>
 
         <div class="site-footer">
-  
-  <div class="site-footer-item">
-    <a href="/about" target="_blank">about</a>
+  <div class="site-footer-left">
+    <div class="site-footer-item">
+      <span id="busuanzi_container_site_pv" style="display:none"> PV: <span id="busuanzi_value_site_pv"/> </span>
+    </div>
+    <div class="site-footer-item">
+      <span id="busuanzi_container_site_uv" style="display:none"> UV: <span id="busuanzi_value_site_uv"/> </span>
+    </div>
   </div>
-  
-  <div class="site-footer-item">
-    <a href="https://github.com/LKI/LKI" target="_blank">github</a>
-  </div>
-  
-  <div class="site-footer-item">
-    <a href="/index.xml" target="_blank">rss</a>
-  </div>
-  
-  <div class="site-footer-item">
-    <span id="busuanzi_container_site_pv"> PV: <span id="busuanzi_value_site_pv"> </span> </span>
-  </div>
-  <div class="site-footer-item">
-    <span id="busuanzi_container_site_uv"> UV: <span id="busuanzi_value_site_uv"/> </span> </span>
+
+  <div class="site-footer-right">
+    
+    <div class="site-footer-item">
+      <a href="/about" target="_blank">about</a>
+    </div>
+    
+    <div class="site-footer-item">
+      <a href="https://github.com/LKI/LKI" target="_blank">github</a>
+    </div>
+    
+    <div class="site-footer-item">
+      <a href="/index.xml" target="_blank">rss</a>
+    </div>
+    
   </div>
 </div>
 
@@ -152,19 +200,7 @@ $ cd /Users/liriansu/new-repo $ git init # 初始化git目录 $ git checkout -b 
     </div>
   </article>
 
-  <script src="/js/highlight.pack.js"></script>
-
-
-<script>
-  hljs.initHighlightingOnLoad();
-
-  
-  
-    
-    
-  
-</script>
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
 

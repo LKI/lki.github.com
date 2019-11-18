@@ -19,7 +19,7 @@
       "articleSection" : "posts",
       "name" : "Ubuntu系统X packages can be updated的解决方案",
       "headline" : "Ubuntu系统X packages can be updated的解决方案",
-      "description" : "一个关于Ubuntu系统的小技巧。\n x package can be updated 最近登录系统的时候， 系统老是提示\n x packages can be updated. y updates are security updates.  噢，就像AppStore上面的小红点一样， 更新一下就好了， 于是敲下命令：\n apt-get update apt-get upgrade  但是更新完以后，系统还是提示\n x packages can be updated. y updates are security updates.  在查阅了资料以后才知道， update \x2b upgrade不能更新完所有的软件包， 还要跑一条命令：\n apt-get dist-upgrade  这个有一点点小烦人的提示就不见了。\nMOTD ubuntu开机时显示的这个Message叫 MOTD(Message of the day)， 很多公司会让系统管理员定制自己服务器的MOTD。\nUbuntu系统里，MOTD的脚本默认放在\/etc\/update-motd.d下， 我们所看到的x packages can be updated就是由 \/etc\/update-motd.d\/90-updates-available这个脚本提示的。\n所以我们想彻底去掉这个提示的话， 可以把\/etc\/update-motd.d\/90-updates-available这个文件删掉（不推荐）。",
+      "description" : "一个关于Ubuntu系统的小技巧。\n x package can be updated 最近登录系统的时候，\n系统老是提示\n x packages can be updated. y updates are security updates.  噢，就像AppStore上面的小红点一样，\n更新一下就好了，\n于是敲下命令：\n apt-get update apt-get upgrade  但是更新完以后，系统还是提示\n x packages can be updated. y updates are security updates.  在查阅了资料以后才知道，\nupdate \x2b upgrade不能更新完所有的软件包，\n还要跑一条命令：\n apt-get dist-upgrade  这个有一点点小烦人的提示就不见了。\nMOTD ubuntu开机时显示的这个Message叫\nMOTD(Message of the day)，\n很多公司会让系统管理员定制自己服务器的MOTD。\nUbuntu系统里，MOTD的脚本默认放在\/etc\/update-motd.d下，\n我们所看到的x packages can be updated就是由\n\/etc\/update-motd.d\/90-updates-available这个脚本提示的。\n所以我们想彻底去掉这个提示的话，\n可以把\/etc\/update-motd.d\/90-updates-available这个文件删掉（不推荐）。",
       "inLanguage" : "en-US",
       "author" : "Lirian Su",
       "creator" : "Lirian Su",
@@ -37,14 +37,24 @@
   <meta property="og:title" content="Ubuntu系统X packages can be updated的解决方案 - 浮云计算" />
   <meta property="og:type" content="article" />
   <meta name="description" content="一个关于Ubuntu系统的小技巧。
- x package can be updated 最近登录系统的时候， 系统老是提示
- x packages can be updated. y updates are security updates.  噢，就像AppStore上面的小红点一样， 更新一下就好了， 于是敲下命令：
+ x package can be updated 最近登录系统的时候，
+系统老是提示
+ x packages can be updated. y updates are security updates.  噢，就像AppStore上面的小红点一样，
+更新一下就好了，
+于是敲下命令：
  apt-get update apt-get upgrade  但是更新完以后，系统还是提示
- x packages can be updated. y updates are security updates.  在查阅了资料以后才知道， update &#43; upgrade不能更新完所有的软件包， 还要跑一条命令：
+ x packages can be updated. y updates are security updates.  在查阅了资料以后才知道，
+update &#43; upgrade不能更新完所有的软件包，
+还要跑一条命令：
  apt-get dist-upgrade  这个有一点点小烦人的提示就不见了。
-MOTD ubuntu开机时显示的这个Message叫 MOTD(Message of the day)， 很多公司会让系统管理员定制自己服务器的MOTD。
-Ubuntu系统里，MOTD的脚本默认放在/etc/update-motd.d下， 我们所看到的x packages can be updated就是由 /etc/update-motd.d/90-updates-available这个脚本提示的。
-所以我们想彻底去掉这个提示的话， 可以把/etc/update-motd.d/90-updates-available这个文件删掉（不推荐）。" />
+MOTD ubuntu开机时显示的这个Message叫
+MOTD(Message of the day)，
+很多公司会让系统管理员定制自己服务器的MOTD。
+Ubuntu系统里，MOTD的脚本默认放在/etc/update-motd.d下，
+我们所看到的x packages can be updated就是由
+/etc/update-motd.d/90-updates-available这个脚本提示的。
+所以我们想彻底去掉这个提示的话，
+可以把/etc/update-motd.d/90-updates-available这个文件删掉（不推荐）。" />
 
   <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
   <link rel="stylesheet"
@@ -88,26 +98,78 @@ Ubuntu系统里，MOTD的脚本默认放在/etc/update-motd.d下， 我们所看
           <h1 class="post-title">Ubuntu系统X packages can be updated的解决方案</h1>
           
           <div class="row post-desc">
-            <div class="col-xs-6">
-              
-              <time class="post-date" datetime="2016-03-16 16:14:19 UTC">
-                2016-03-16
-              </time>
-              
-            </div>
-            <div class="col-xs-6">
-              
-              <div class="post-author">
-                <a target="_blank" href="">@Lirian Su</a>
-              </div>
-              
-            </div>
+            
+            <time class="post-header-item" datetime="2016-03-16 16:14:19 UTC">
+              Written at 2016-03-16 16:14
+            </time>
+            
+            <span class="post-header-item" id="busuanzi_container_page_pv"> Views <span id="busuanzi_value_page_pv" /> </span>
           </div>
           
         </header>
 
         <div class="post-content markdown-body">
-          <br/><br/><p>一个关于Ubuntu系统的小技巧。</p><br/><br/><!--MORE--><br/><br/><h2 id="x-package-can-be-updated">x package can be updated</h2><br/><br/><p>最近登录系统的时候，<br/>系统老是提示</p><br/><br/><pre><code>    x packages can be updated.<br/>    y updates are security updates.<br/></code></pre><br/><br/><p>噢，就像AppStore上面的小红点一样，<br/>更新一下就好了，<br/>于是敲下命令：</p><br/><br/><pre><code>    apt-get update<br/>    apt-get upgrade<br/></code></pre><br/><br/><p>但是更新完以后，系统还是提示</p><br/><br/><pre><code>    x packages can be updated.<br/>    y updates are security updates.<br/></code></pre><br/><br/><p><a href="http://ubuntuforums.org/showthread.php?t=1222909">在查阅了资料以后</a>才知道，<br/><code>update</code> + <code>upgrade</code>不能更新完所有的软件包，<br/>还要跑一条命令：</p><br/><br/><pre><code>    apt-get dist-upgrade<br/></code></pre><br/><br/><p>这个有一点点小烦人的提示就不见了。</p><br/><br/><h2 id="motd">MOTD</h2><br/><br/><p>ubuntu开机时显示的这个Message叫<br/><a href="https://en.wikipedia.org/wiki/Motd_(Unix)">MOTD(Message of the day)</a>，<br/>很多公司会让系统管理员定制自己服务器的MOTD。</p><br/><br/><p>Ubuntu系统里，MOTD的脚本默认放在<code>/etc/update-motd.d</code>下，<br/>我们所看到的<code>x packages can be updated</code>就是由<br/><code>/etc/update-motd.d/90-updates-available</code>这个脚本提示的。</p><br/><br/><p>所以我们想彻底去掉这个提示的话，<br/>可以把<code>/etc/update-motd.d/90-updates-available</code>这个文件删掉（不推荐）。</p><br/><br/><p>同理，我们也可以定制一下自己的MOTD。</p><br/><br/><h2 id="总结">总结</h2><br/><br/><ol><br/><li><p>Ubuntu下更新全部包命令为<code>aptget update &amp;&amp; apt-get upgrade &amp;&amp; apt-get dist-upgrade</code>.</p></li><br/><br/><li><p>系统一开始显示的Message叫<a href="https://en.wikipedia.org/wiki/Motd_(Unix)">MOTD</a>，默认放在<code>/etc/update-motd.d</code>下。</p></li><br/></ol><br/>
+          
+
+<p>一个关于Ubuntu系统的小技巧。</p>
+
+<!--MORE-->
+
+<h2 id="x-package-can-be-updated">x package can be updated</h2>
+
+<p>最近登录系统的时候，<br />
+系统老是提示</p>
+
+<pre><code>    x packages can be updated.
+    y updates are security updates.
+</code></pre>
+
+<p>噢，就像AppStore上面的小红点一样，<br />
+更新一下就好了，<br />
+于是敲下命令：</p>
+
+<pre><code>    apt-get update
+    apt-get upgrade
+</code></pre>
+
+<p>但是更新完以后，系统还是提示</p>
+
+<pre><code>    x packages can be updated.
+    y updates are security updates.
+</code></pre>
+
+<p><a href="http://ubuntuforums.org/showthread.php?t=1222909">在查阅了资料以后</a>才知道，<br />
+<code>update</code> + <code>upgrade</code>不能更新完所有的软件包，<br />
+还要跑一条命令：</p>
+
+<pre><code>    apt-get dist-upgrade
+</code></pre>
+
+<p>这个有一点点小烦人的提示就不见了。</p>
+
+<h2 id="motd">MOTD</h2>
+
+<p>ubuntu开机时显示的这个Message叫<br />
+<a href="https://en.wikipedia.org/wiki/Motd_(Unix)">MOTD(Message of the day)</a>，<br />
+很多公司会让系统管理员定制自己服务器的MOTD。</p>
+
+<p>Ubuntu系统里，MOTD的脚本默认放在<code>/etc/update-motd.d</code>下，<br />
+我们所看到的<code>x packages can be updated</code>就是由<br />
+<code>/etc/update-motd.d/90-updates-available</code>这个脚本提示的。</p>
+
+<p>所以我们想彻底去掉这个提示的话，<br />
+可以把<code>/etc/update-motd.d/90-updates-available</code>这个文件删掉（不推荐）。</p>
+
+<p>同理，我们也可以定制一下自己的MOTD。</p>
+
+<h2 id="总结">总结</h2>
+
+<ol>
+<li><p>Ubuntu下更新全部包命令为<code>aptget update &amp;&amp; apt-get upgrade &amp;&amp; apt-get dist-upgrade</code>.</p></li>
+
+<li><p>系统一开始显示的Message叫<a href="https://en.wikipedia.org/wiki/Motd_(Unix)">MOTD</a>，默认放在<code>/etc/update-motd.d</code>下。</p></li>
+</ol>
+
         </div>
         
 
@@ -129,24 +191,29 @@ Ubuntu系统里，MOTD的脚本默认放在/etc/update-motd.d下， 我们所看
         </div>
 
         <div class="site-footer">
-  
-  <div class="site-footer-item">
-    <a href="/about" target="_blank">about</a>
+  <div class="site-footer-left">
+    <div class="site-footer-item">
+      <span id="busuanzi_container_site_pv" style="display:none"> PV: <span id="busuanzi_value_site_pv"/> </span>
+    </div>
+    <div class="site-footer-item">
+      <span id="busuanzi_container_site_uv" style="display:none"> UV: <span id="busuanzi_value_site_uv"/> </span>
+    </div>
   </div>
-  
-  <div class="site-footer-item">
-    <a href="https://github.com/LKI/LKI" target="_blank">github</a>
-  </div>
-  
-  <div class="site-footer-item">
-    <a href="/index.xml" target="_blank">rss</a>
-  </div>
-  
-  <div class="site-footer-item">
-    <span id="busuanzi_container_site_pv"> PV: <span id="busuanzi_value_site_pv"> </span> </span>
-  </div>
-  <div class="site-footer-item">
-    <span id="busuanzi_container_site_uv"> UV: <span id="busuanzi_value_site_uv"/> </span> </span>
+
+  <div class="site-footer-right">
+    
+    <div class="site-footer-item">
+      <a href="/about" target="_blank">about</a>
+    </div>
+    
+    <div class="site-footer-item">
+      <a href="https://github.com/LKI/LKI" target="_blank">github</a>
+    </div>
+    
+    <div class="site-footer-item">
+      <a href="/index.xml" target="_blank">rss</a>
+    </div>
+    
   </div>
 </div>
 
@@ -154,19 +221,7 @@ Ubuntu系统里，MOTD的脚本默认放在/etc/update-motd.d下， 我们所看
     </div>
   </article>
 
-  <script src="/js/highlight.pack.js"></script>
-
-
-<script>
-  hljs.initHighlightingOnLoad();
-
-  
-  
-    
-    
-  
-</script>
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
 

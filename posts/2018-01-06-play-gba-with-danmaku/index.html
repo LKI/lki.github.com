@@ -19,7 +19,7 @@
       "articleSection" : "posts",
       "name" : "我是怎么实现《用弹幕玩GBA游戏》的",
       "headline" : "我是怎么实现《用弹幕玩GBA游戏》的",
-      "description" : "大概是大二的时候， 我在TwitchTV上看到了一个极其精彩的Idea。\n 背景 TwitchTV是外国的一个主要做游戏直播网站， 观众可以打开网页观看游戏直播， 每个人都能随时发弹幕表达自己的想法。 弹幕是啥？\n依赖于发弹幕万人同屏的这个设定， TwitchTV做了一个很好玩的功能， 就是“几千人玩操纵同一个角色，玩同一个游戏。” 详情可以参见Twitch Plays Pokemon这个维基词条\n当时看到这个消息， 我也去玩了一下， 感受是：特别好玩！！！\n几千个人同屏玩游戏的话， 最大的感受就是混乱， 这也是最棒的体验。 大部分玩家是冲着通关的目标去玩的， 所以总体看来，角色的行为是有目标性的。 但是也会有一部分玩家以捣乱为乐， 在一些精细操作的时候（比如收服Pokemon的时候） 就会额外混乱。\n最终整个游戏（或者说社会实验）在混乱中前行， 经过了16个日夜， 最终打过了四大天王， 完成了通关壮举。\nOK，前面都是背景介绍， 那么看到这么好玩的一个东西， 我的心痒了很久： 我也想实现一个类似的功能！\n实现 就像把大象塞冰箱里需要拆解步骤， 为了实现“用弹幕玩同屏GBA游戏”这一点， 我们主要要做的事情有如下几点：\n 申请一个直播间 获取直播间的弹幕 实现从弹幕到键位的映射 用程序操纵GBA模拟器  当然，我们这个拆分非常的粗略， 而且会有很多具体的问题， 我们一个一个地来看。\n申请一个直播间 我要没记错的话（_懒得去查资料验证了_） TwitchTV的同屏玩游戏功能应该是官方实现的， 不是某一个主播或者是我这样的第三方程序员实现的。 平台自己实现的话会有非常多的自主权， 而且可以给到游戏本身的推广， 一波活动推出去不论是效果还是效果都会更好。\n但是毕竟人微言轻， 我们普通人类还是要从头开始， 从申请直播间开始。\n申请直播间的话主要是涉及到直播平台的选择， 因为我一直都是A\/B站用户， 所以直播平台基本上就是斗鱼（A站生放送）和B站直播之间选一个。\n最终我两年前注册了一个斗鱼直播间 （打个广告，从来不播的直播间：douyu.com\/lisp）\n第一步算是做完了。\n获取直播间的弹幕 这个是个非常interesting的问题。 首先他受前置问题的影响， 带来的现实问题是每个直播平台获取弹幕的难度是不一样的。\n斗鱼和B站直播相比， 看斗鱼的人肯定是更多的， 但是受氛围和观众群体的影响， 会为B站写插件的程序员更多_CITATION NEEDED_。",
+      "description" : "大概是大二的时候，\n我在TwitchTV上看到了一个极其精彩的Idea。\n 背景 TwitchTV是外国的一个主要做游戏直播网站，\n观众可以打开网页观看游戏直播，\n每个人都能随时发弹幕表达自己的想法。\n弹幕是啥？\n依赖于发弹幕万人同屏的这个设定，\nTwitchTV做了一个很好玩的功能，\n就是“几千人玩操纵同一个角色，玩同一个游戏。”\n详情可以参见Twitch Plays Pokemon这个维基词条\n当时看到这个消息，\n我也去玩了一下，\n感受是：特别好玩！！！\n几千个人同屏玩游戏的话，\n最大的感受就是混乱，\n这也是最棒的体验。\n大部分玩家是冲着通关的目标去玩的，\n所以总体看来，角色的行为是有目标性的。\n但是也会有一部分玩家以捣乱为乐，\n在一些精细操作的时候（比如收服Pokemon的时候）\n就会额外混乱。\n最终整个游戏（或者说社会实验）在混乱中前行，\n经过了16个日夜，\n最终打过了四大天王，\n完成了通关壮举。\nOK，前面都是背景介绍，\n那么看到这么好玩的一个东西，\n我的心痒了很久：\n我也想实现一个类似的功能！\n实现 就像把大象塞冰箱里需要拆解步骤，\n为了实现“用弹幕玩同屏GBA游戏”这一点，\n我们主要要做的事情有如下几点：\n 申请一个直播间\n 获取直播间的弹幕\n 实现从弹幕到键位的映射\n 用程序操纵GBA模拟器\n  当然，我们这个拆分非常的粗略，\n而且会有很多具体的问题，\n我们一个一个地来看。\n申请一个直播间 我要没记错的话（_懒得去查资料验证了_）\nTwitchTV的同屏玩游戏功能应该是官方实现的，\n不是某一个主播或者是我这样的第三方程序员实现的。\n平台自己实现的话会有非常多的自主权，\n而且可以给到游戏本身的推广，\n一波活动推出去不论是效果还是效果都会更好。\n但是毕竟人微言轻，\n我们普通人类还是要从头开始，\n从申请直播间开始。\n申请直播间的话主要是涉及到直播平台的选择，\n因为我一直都是A\/B站用户，\n所以直播平台基本上就是斗鱼（A站生放送）和B站直播之间选一个。\n最终我两年前注册了一个斗鱼直播间\n（打个广告，从来不播的直播间：douyu.com\/lisp）\n第一步算是做完了。\n获取直播间的弹幕 这个是个非常interesting的问题。\n首先他受前置问题的影响，",
       "inLanguage" : "en-US",
       "author" : "Lirian Su",
       "creator" : "Lirian Su",
@@ -36,22 +36,62 @@
 <title>我是怎么实现《用弹幕玩GBA游戏》的 - 浮云计算</title>
   <meta property="og:title" content="我是怎么实现《用弹幕玩GBA游戏》的 - 浮云计算" />
   <meta property="og:type" content="article" />
-  <meta name="description" content="大概是大二的时候， 我在TwitchTV上看到了一个极其精彩的Idea。
- 背景 TwitchTV是外国的一个主要做游戏直播网站， 观众可以打开网页观看游戏直播， 每个人都能随时发弹幕表达自己的想法。 弹幕是啥？
-依赖于发弹幕万人同屏的这个设定， TwitchTV做了一个很好玩的功能， 就是“几千人玩操纵同一个角色，玩同一个游戏。” 详情可以参见Twitch Plays Pokemon这个维基词条
-当时看到这个消息， 我也去玩了一下， 感受是：特别好玩！！！
-几千个人同屏玩游戏的话， 最大的感受就是混乱， 这也是最棒的体验。 大部分玩家是冲着通关的目标去玩的， 所以总体看来，角色的行为是有目标性的。 但是也会有一部分玩家以捣乱为乐， 在一些精细操作的时候（比如收服Pokemon的时候） 就会额外混乱。
-最终整个游戏（或者说社会实验）在混乱中前行， 经过了16个日夜， 最终打过了四大天王， 完成了通关壮举。
-OK，前面都是背景介绍， 那么看到这么好玩的一个东西， 我的心痒了很久： 我也想实现一个类似的功能！
-实现 就像把大象塞冰箱里需要拆解步骤， 为了实现“用弹幕玩同屏GBA游戏”这一点， 我们主要要做的事情有如下几点：
- 申请一个直播间 获取直播间的弹幕 实现从弹幕到键位的映射 用程序操纵GBA模拟器  当然，我们这个拆分非常的粗略， 而且会有很多具体的问题， 我们一个一个地来看。
-申请一个直播间 我要没记错的话（_懒得去查资料验证了_） TwitchTV的同屏玩游戏功能应该是官方实现的， 不是某一个主播或者是我这样的第三方程序员实现的。 平台自己实现的话会有非常多的自主权， 而且可以给到游戏本身的推广， 一波活动推出去不论是效果还是效果都会更好。
-但是毕竟人微言轻， 我们普通人类还是要从头开始， 从申请直播间开始。
-申请直播间的话主要是涉及到直播平台的选择， 因为我一直都是A/B站用户， 所以直播平台基本上就是斗鱼（A站生放送）和B站直播之间选一个。
-最终我两年前注册了一个斗鱼直播间 （打个广告，从来不播的直播间：douyu.com/lisp）
+  <meta name="description" content="大概是大二的时候，
+我在TwitchTV上看到了一个极其精彩的Idea。
+ 背景 TwitchTV是外国的一个主要做游戏直播网站，
+观众可以打开网页观看游戏直播，
+每个人都能随时发弹幕表达自己的想法。
+弹幕是啥？
+依赖于发弹幕万人同屏的这个设定，
+TwitchTV做了一个很好玩的功能，
+就是“几千人玩操纵同一个角色，玩同一个游戏。”
+详情可以参见Twitch Plays Pokemon这个维基词条
+当时看到这个消息，
+我也去玩了一下，
+感受是：特别好玩！！！
+几千个人同屏玩游戏的话，
+最大的感受就是混乱，
+这也是最棒的体验。
+大部分玩家是冲着通关的目标去玩的，
+所以总体看来，角色的行为是有目标性的。
+但是也会有一部分玩家以捣乱为乐，
+在一些精细操作的时候（比如收服Pokemon的时候）
+就会额外混乱。
+最终整个游戏（或者说社会实验）在混乱中前行，
+经过了16个日夜，
+最终打过了四大天王，
+完成了通关壮举。
+OK，前面都是背景介绍，
+那么看到这么好玩的一个东西，
+我的心痒了很久：
+我也想实现一个类似的功能！
+实现 就像把大象塞冰箱里需要拆解步骤，
+为了实现“用弹幕玩同屏GBA游戏”这一点，
+我们主要要做的事情有如下几点：
+ 申请一个直播间
+ 获取直播间的弹幕
+ 实现从弹幕到键位的映射
+ 用程序操纵GBA模拟器
+  当然，我们这个拆分非常的粗略，
+而且会有很多具体的问题，
+我们一个一个地来看。
+申请一个直播间 我要没记错的话（_懒得去查资料验证了_）
+TwitchTV的同屏玩游戏功能应该是官方实现的，
+不是某一个主播或者是我这样的第三方程序员实现的。
+平台自己实现的话会有非常多的自主权，
+而且可以给到游戏本身的推广，
+一波活动推出去不论是效果还是效果都会更好。
+但是毕竟人微言轻，
+我们普通人类还是要从头开始，
+从申请直播间开始。
+申请直播间的话主要是涉及到直播平台的选择，
+因为我一直都是A/B站用户，
+所以直播平台基本上就是斗鱼（A站生放送）和B站直播之间选一个。
+最终我两年前注册了一个斗鱼直播间
+（打个广告，从来不播的直播间：douyu.com/lisp）
 第一步算是做完了。
-获取直播间的弹幕 这个是个非常interesting的问题。 首先他受前置问题的影响， 带来的现实问题是每个直播平台获取弹幕的难度是不一样的。
-斗鱼和B站直播相比， 看斗鱼的人肯定是更多的， 但是受氛围和观众群体的影响， 会为B站写插件的程序员更多_CITATION NEEDED_。" />
+获取直播间的弹幕 这个是个非常interesting的问题。
+首先他受前置问题的影响，" />
 
   <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
   <link rel="stylesheet"
@@ -95,26 +135,297 @@ OK，前面都是背景介绍， 那么看到这么好玩的一个东西， 我�
           <h1 class="post-title">我是怎么实现《用弹幕玩GBA游戏》的</h1>
           
           <div class="row post-desc">
-            <div class="col-xs-6">
-              
-              <time class="post-date" datetime="2018-01-06 18:58:33 UTC">
-                2018-01-06
-              </time>
-              
-            </div>
-            <div class="col-xs-6">
-              
-              <div class="post-author">
-                <a target="_blank" href="">@Lirian Su</a>
-              </div>
-              
-            </div>
+            
+            <time class="post-header-item" datetime="2018-01-06 18:58:33 UTC">
+              Written at 2018-01-06 18:58
+            </time>
+            
+            <span class="post-header-item" id="busuanzi_container_page_pv"> Views <span id="busuanzi_value_page_pv" /> </span>
           </div>
           
         </header>
 
         <div class="post-content markdown-body">
-          <br/><br/><p>大概是大二的时候，<br/>我在TwitchTV上看到了一个极其精彩的Idea。</p><br/><br/><!--MORE--><br/><br/><h2 id="背景">背景</h2><br/><br/><p><a href="https://www.twitch.tv/">TwitchTV</a>是外国的一个主要做游戏直播网站，<br/>观众可以打开网页观看游戏直播，<br/>每个人都能随时发弹幕表达自己的想法。<br/><a href="https://zh.moegirl.org/zh-hans/%E5%BC%B9%E5%B9%95"><em>弹幕是啥？</em></a></p><br/><br/><p>依赖于发弹幕万人同屏的这个设定，<br/>TwitchTV做了一个很好玩的功能，<br/>就是“几千人玩操纵同一个角色，玩同一个游戏。”<br/><a href="https://en.wikipedia.org/wiki/Twitch_Plays_Pok%C3%A9mon"><em>详情可以参见Twitch Plays Pokemon这个维基词条</em></a></p><br/><br/><p>当时看到这个消息，<br/>我也去玩了一下，<br/>感受是：特别好玩！！！</p><br/><br/><p>几千个人同屏玩游戏的话，<br/>最大的感受就是<strong>混乱</strong>，<br/>这也是最棒的体验。<br/>大部分玩家是冲着通关的目标去玩的，<br/>所以总体看来，角色的行为是有目标性的。<br/>但是也会有一部分玩家以捣乱为乐，<br/>在一些精细操作的时候（比如收服Pokemon的时候）<br/>就会额外混乱。</p><br/><br/><p>最终整个游戏（或者说社会实验）在混乱中前行，<br/>经过了16个日夜，<br/>最终打过了四大天王，<br/>完成了通关壮举。</p><br/><br/><p>OK，前面都是背景介绍，<br/>那么看到这么好玩的一个东西，<br/>我的心痒了很久：<br/>我也想实现一个类似的功能！</p><br/><br/><h2 id="实现">实现</h2><br/><br/><p>就像把大象塞冰箱里需要拆解步骤，<br/>为了实现“用弹幕玩同屏GBA游戏”这一点，<br/>我们主要要做的事情有如下几点：</p><br/><br/><ol><br/><li>申请一个直播间</li><br/><li>获取直播间的弹幕</li><br/><li>实现从弹幕到键位的映射</li><br/><li>用程序操纵GBA模拟器</li><br/></ol><br/><br/><p>当然，我们这个拆分非常的粗略，<br/>而且会有很多具体的问题，<br/>我们一个一个地来看。</p><br/><br/><h3 id="申请一个直播间">申请一个直播间</h3><br/><br/><p>我要没记错的话（_懒得去查资料验证了_）<br/>TwitchTV的同屏玩游戏功能应该是官方实现的，<br/>不是某一个主播或者是我这样的第三方程序员实现的。<br/>平台自己实现的话会有非常多的自主权，<br/>而且可以给到游戏本身的推广，<br/>一波活动推出去不论是效果还是效果都会更好。</p><br/><br/><p>但是毕竟人微言轻，<br/>我们普通人类还是要从头开始，<br/>从申请直播间开始。</p><br/><br/><p>申请直播间的话主要是涉及到直播平台的选择，<br/>因为我一直都是A/B站用户，<br/>所以直播平台基本上就是斗鱼<a href="https://www.zhihu.com/question/27088840">（A站生放送）</a>和B站直播之间选一个。</p><br/><br/><p>最终我两年前注册了一个斗鱼直播间<br/>（打个广告，从来不播的直播间：<a href="https://www.douyu.com/lisp">douyu.com/lisp</a>）</p><br/><br/><p>第一步算是做完了。</p><br/><br/><h3 id="获取直播间的弹幕">获取直播间的弹幕</h3><br/><br/><p>这个是个非常interesting的问题。<br/>首先他受前置问题的影响，<br/>带来的现实问题是<strong>每个直播平台获取弹幕的难度是不一样的</strong>。</p><br/><br/><p>斗鱼和B站直播相比，<br/>看斗鱼的人肯定是更多的，<br/>但是受氛围和观众群体的影响，<br/><a href="https://github.com/feisuzhu/vim-bilibili-live">会为B站写插件的程序员</a>更多_CITATION NEEDED_。</p><br/><br/><p>但毕竟我们在上一个步骤选择了斗鱼，<br/>还是得从一而终。<br/>于是两年前我就在知乎关注了<a href="https://www.zhihu.com/question/29027665">《如何获取斗鱼直播间的弹幕信息？》</a>这个问题，<br/>顺便学习了一波socket相关知识（对，这句话反映了我的真实水平&hellip;）</p><br/><br/><p>当时没有一套好用的库，<br/>我又懒得自己钻研，<br/>所以就卡在这里了。</p><br/><br/><p>后来我<a href="/how-i-use-github">在GitHub闲逛的时候</a>，<br/>发现itchat的作者写了一个包，<br/>支持获取各大直播平台的弹幕，<br/>感觉就是我要的轮子！<br/><a href="https://github.com/littlecodersh/danmu">于是我点了一个star先马克着</a>。</p><br/><br/><p>今天是2018年1月，<br/>这个库最近的更新是2017年5月，<br/>有大半年没更新代码了。<br/>正式采用之前我试了一下，<br/>斗鱼的弹幕是没问题的，<br/>不过B站的弹幕因为是直接<a href="https://github.com/littlecodersh/danmu/blob/master/danmu/Bilibili.py">解析网页原文拿ROOMID</a>的，<br/>已经失效了。<br/>又因为这个库（或者说littlecoder这个人）不是很Pythonic，<br/>于是我心中又暗立一个flag，<br/>fork了这个项目，<br/>想着啥时候摸鱼摸够了就去改进一波。</p><br/><br/><p>于是最终我采用了danmu这个库，<br/>几行代码就成功地获取了斗鱼弹幕，<br/>大概代码（伪）如下：</p><br/><br/><pre><code>import danmu<br/><br/>client = danmu.DanMuClient('http://www.douyu.com/lisp')<br/><br/>@client.danmu<br/>def receive(message):<br/>    print('[{}] {}'.format(message['NickName'], message['Content']))<br/><br/>client.start()<br/></code></pre><br/><br/><h3 id="实现从弹幕到键位的映射">实现从弹幕到键位的映射</h3><br/><br/><p>这个没什么可以说的，<br/>就是业务逻辑/苦力活。<br/>简单。跳过。</p><br/><br/><h3 id="用程序操纵gba模拟器">用程序操纵GBA模拟器</h3><br/><br/><p>好，这里首先有个坑。<br/>我们回忆一下，<br/>最开始我们的目标其实是“实现用弹幕玩GBA游戏”，<br/>现在的这个小步骤被回归成了“用程序操纵GBA<strong>模拟器</strong>”。<br/>这模拟器的需求是哪冒出来的？</p><br/><br/><p>嗨呀，这个是有苦衷的。</p><br/><br/><p>首先，我对GBA的回忆除了实体机，<br/>有一半都是<a href="https://en.wikipedia.org/wiki/VisualBoyAdvance"><code>VisualBoyAdvance.exe</code></a>这个模拟器给的。<br/>还有就是理论上我们也可以实现Web版的，<br/>或者自己撸一个GBA模拟器，<br/>但那样又相当于额外的工作量了。<br/>所以基于“把我不会的目标拆成我能做到的小步骤”<br/>和“鲁迅说过，不要重复造轮子”这两个设定，<br/>我就把“用程序玩GBA游戏”拆分成了“用程序操纵GBA模拟器”+“用GBA模拟器玩GBA游戏”（现成的）这两个任务了。</p><br/><br/><p>OK，我们来现实地看第一点：<br/>“怎么用程序操纵GBA模拟器”。</p><br/><br/><p>在我的脑海中，<br/>假如用Python来实现，<br/>基本上这个就是Python调用windows库 + windows库给程序传递信号 + 程序接收信号达成效果，<br/>这样一套combo下来就行了。</p><br/><br/><p>虽然我平常开发环境是windows，<br/>但其实我对windows的接口是一窍不通（暴露水平 x2）<br/>不过不懂可以问啊！<br/>于是前几天我问了一下身边的windows大拿hulucc，<br/>他表示<a href="https://msdn.microsoft.com/en-us/library/system.windows.forms.sendkeys(v=vs.110).aspx">windows有个叫sendkey的API</a>可以做这个，<br/>不过只能操纵active window。<br/>后来他又查了一下，<br/>跟我说Python里有个<code>pywin32</code>的库可以调用windows接口，<br/>又发了一篇文章 <a href="https://code.tutsplus.com/tutorials/how-to-build-a-python-bot-that-can-play-web-games--active-11117">How to Build a Python Bot That Can Play Web Games</a><br/>给我参考。</p><br/><br/><p>学习了这么一大段以后，<br/>我十分感动，<br/>然后自己找了个另外的库<a href="https://github.com/boppreh/keyboard">keyboard</a>（雾）</p><br/><br/><p>事实是后来我回来研究了一下，<br/>用windows接口肯定能达到我的目的，<br/>但是问题是<a href="https://stackoverflow.com/questions/4863056/how-to-install-pywin32-module-in-windows-7">pywin32或者是类似的pypiwin32这俩包没有合适的pip release要手动安装</a>，<br/>这让我很不舒服。<br/>刚好google的同时，<br/>我搜到了另外一个python库<a href="https://github.com/boppreh/keyboard"><code>keyboard</code></a>，<br/>它的主页长得还蛮好看的，<br/>也能达到我的需求，<br/>不错，就这个了。</p><br/><br/><p>于是实现了接收弹幕+发送按键的代码（伪）就大概长这样子：</p><br/><br/><pre><code>import danmu<br/>import keyboard<br/>import constants<br/><br/>client = danmu.DanMuClient('http://www.douyu.com/lisp')<br/><br/>@client.danmu<br/>def receive(message):<br/>    print('[{}] {}'.format(message['NickName'], message['Content']))<br/>    content = message['Content']  # 主要是新增了这行和下面的if<br/>    if content in constants.valid_keystrokes:<br/>        keyboard.send(content)<br/><br/>client.start()<br/></code></pre><br/><br/><h3 id="一个小坑">一个小坑</h3><br/><br/><p>这里还遇到了一个小坑，<br/>简单来说就是VisualBoyAdvance这款GBA模拟器（以下简称VBA）<br/>它应该是通过监控键盘事件来转化键位的。<br/>（此句描述不够专业）</p><br/><br/><p>转化成代码语言就是<code>keyboard.send(content)</code>这行代码对VBA不起作用。<br/>经过思考加尝试以后，<br/>最终使用了<code>keyboard.press(content)</code> + <code>time.sleep(0.02)</code> + <code>keyboard.release(content)</code>三个combo达成了效果。</p><br/><br/><p>最终不禁要感慨一下：<br/>上面这段描述里的<strong>经过思考加尝试</strong>，<br/>就是写程序这件事情最痛苦也是最美好的所在了。</p><br/><br/><h2 id="总结">总结</h2><br/><br/><p>上面讲的比较零碎，<br/>总结下来：</p><br/><br/><p>为了做到 “用弹幕玩GBA游戏” 这个事情，<br/>被拆分细化完成的任务有这些：</p><br/><br/><ul><br/><li>注册直播间，选了斗鱼。</li><br/><li>获取直播间弹幕，平常关注一波信息，最终用了danmu这个库。</li><br/><li>实现业务逻辑。</li><br/><li>用程序操纵GBA模拟器来玩GBA游戏，使用了keyboard库发送键位信息。</li><br/></ul><br/><br/><p>最终的成品在我的GitHub上：<a href="https://github.com/LKI/danmaboy">LKI/danmaboy</a>这个项目，<br/>有效代码就100行，就在<a href="https://github.com/LKI/danmaboy/blob/master/danmaboy/__init__.py">danmaboy/__init__.py</a>一个文件内。</p><br/><br/><p>一下午就写完了，<br/>不过中途摸鱼思考的时间用了几年（惭愧）</p><br/><br/><p>下午写代码的时候我还做了一个尝试，<br/>就是开着直播写代码，<br/>不过因为没人看（现实的原因），<br/>所以总体感受跟小黄鸭编程差不多，<br/>写一会儿，就紧张地想一下思路，<br/>效果意外的不错。</p><br/><br/><p>最终成品出来以后，<br/>试着在直播间里跑了一下，<br/><del>创业失败</del>遇到了一个基石上的失误：</p><br/><br/><p><strong>因为是游戏，所以普通的弹幕延迟在这个项目上会放大到极度影响游戏体验</strong></p><br/><br/><p>基本上就是发一条弹幕，<br/>15秒以后才会有对应的游戏变动，<br/>别说TwitchTV那样的效果了，<br/>就是基本的自己玩玩都玩不动…</p><br/><br/><p>叹气。</p><br/><br/><p>不过好歹是我心里很多idea之一了，<br/>这篇文章也算是给这个项目画个句号吧。</p><br/><br/><p>我的心中还有很多未竟的事业，<br/>有兴趣的话，<br/>欢迎和我交流噢~</p><br/><br/><p>下次见。</p><br/><br/><p><img src="/assets/pics/screen.png" alt="screen" /><br/><em>直播时的画面截图</em></p><br/>
+          
+
+<p>大概是大二的时候，<br />
+我在TwitchTV上看到了一个极其精彩的Idea。</p>
+
+<!--MORE-->
+
+<h2 id="背景">背景</h2>
+
+<p><a href="https://www.twitch.tv/">TwitchTV</a>是外国的一个主要做游戏直播网站，<br />
+观众可以打开网页观看游戏直播，<br />
+每个人都能随时发弹幕表达自己的想法。<br />
+<a href="https://zh.moegirl.org/zh-hans/%E5%BC%B9%E5%B9%95"><em>弹幕是啥？</em></a></p>
+
+<p>依赖于发弹幕万人同屏的这个设定，<br />
+TwitchTV做了一个很好玩的功能，<br />
+就是“几千人玩操纵同一个角色，玩同一个游戏。”<br />
+<a href="https://en.wikipedia.org/wiki/Twitch_Plays_Pok%C3%A9mon"><em>详情可以参见Twitch Plays Pokemon这个维基词条</em></a></p>
+
+<p>当时看到这个消息，<br />
+我也去玩了一下，<br />
+感受是：特别好玩！！！</p>
+
+<p>几千个人同屏玩游戏的话，<br />
+最大的感受就是<strong>混乱</strong>，<br />
+这也是最棒的体验。<br />
+大部分玩家是冲着通关的目标去玩的，<br />
+所以总体看来，角色的行为是有目标性的。<br />
+但是也会有一部分玩家以捣乱为乐，<br />
+在一些精细操作的时候（比如收服Pokemon的时候）<br />
+就会额外混乱。</p>
+
+<p>最终整个游戏（或者说社会实验）在混乱中前行，<br />
+经过了16个日夜，<br />
+最终打过了四大天王，<br />
+完成了通关壮举。</p>
+
+<p>OK，前面都是背景介绍，<br />
+那么看到这么好玩的一个东西，<br />
+我的心痒了很久：<br />
+我也想实现一个类似的功能！</p>
+
+<h2 id="实现">实现</h2>
+
+<p>就像把大象塞冰箱里需要拆解步骤，<br />
+为了实现“用弹幕玩同屏GBA游戏”这一点，<br />
+我们主要要做的事情有如下几点：</p>
+
+<ol>
+<li>申请一个直播间<br /></li>
+<li>获取直播间的弹幕<br /></li>
+<li>实现从弹幕到键位的映射<br /></li>
+<li>用程序操纵GBA模拟器<br />
+<br /></li>
+</ol>
+
+<p>当然，我们这个拆分非常的粗略，<br />
+而且会有很多具体的问题，<br />
+我们一个一个地来看。</p>
+
+<h3 id="申请一个直播间">申请一个直播间</h3>
+
+<p>我要没记错的话（_懒得去查资料验证了_）<br />
+TwitchTV的同屏玩游戏功能应该是官方实现的，<br />
+不是某一个主播或者是我这样的第三方程序员实现的。<br />
+平台自己实现的话会有非常多的自主权，<br />
+而且可以给到游戏本身的推广，<br />
+一波活动推出去不论是效果还是效果都会更好。</p>
+
+<p>但是毕竟人微言轻，<br />
+我们普通人类还是要从头开始，<br />
+从申请直播间开始。</p>
+
+<p>申请直播间的话主要是涉及到直播平台的选择，<br />
+因为我一直都是A/B站用户，<br />
+所以直播平台基本上就是斗鱼<a href="https://www.zhihu.com/question/27088840">（A站生放送）</a>和B站直播之间选一个。</p>
+
+<p>最终我两年前注册了一个斗鱼直播间<br />
+（打个广告，从来不播的直播间：<a href="https://www.douyu.com/lisp">douyu.com/lisp</a>）</p>
+
+<p>第一步算是做完了。</p>
+
+<h3 id="获取直播间的弹幕">获取直播间的弹幕</h3>
+
+<p>这个是个非常interesting的问题。<br />
+首先他受前置问题的影响，<br />
+带来的现实问题是<strong>每个直播平台获取弹幕的难度是不一样的</strong>。</p>
+
+<p>斗鱼和B站直播相比，<br />
+看斗鱼的人肯定是更多的，<br />
+但是受氛围和观众群体的影响，<br />
+<a href="https://github.com/feisuzhu/vim-bilibili-live">会为B站写插件的程序员</a>更多_CITATION NEEDED_。</p>
+
+<p>但毕竟我们在上一个步骤选择了斗鱼，<br />
+还是得从一而终。<br />
+于是两年前我就在知乎关注了<a href="https://www.zhihu.com/question/29027665">《如何获取斗鱼直播间的弹幕信息？》</a>这个问题，<br />
+顺便学习了一波socket相关知识（对，这句话反映了我的真实水平&hellip;）</p>
+
+<p>当时没有一套好用的库，<br />
+我又懒得自己钻研，<br />
+所以就卡在这里了。</p>
+
+<p>后来我<a href="/how-i-use-github">在GitHub闲逛的时候</a>，<br />
+发现itchat的作者写了一个包，<br />
+支持获取各大直播平台的弹幕，<br />
+感觉就是我要的轮子！<br />
+<a href="https://github.com/littlecodersh/danmu">于是我点了一个star先马克着</a>。</p>
+
+<p>今天是2018年1月，<br />
+这个库最近的更新是2017年5月，<br />
+有大半年没更新代码了。<br />
+正式采用之前我试了一下，<br />
+斗鱼的弹幕是没问题的，<br />
+不过B站的弹幕因为是直接<a href="https://github.com/littlecodersh/danmu/blob/master/danmu/Bilibili.py">解析网页原文拿ROOMID</a>的，<br />
+已经失效了。<br />
+又因为这个库（或者说littlecoder这个人）不是很Pythonic，<br />
+于是我心中又暗立一个flag，<br />
+fork了这个项目，<br />
+想着啥时候摸鱼摸够了就去改进一波。</p>
+
+<p>于是最终我采用了danmu这个库，<br />
+几行代码就成功地获取了斗鱼弹幕，<br />
+大概代码（伪）如下：</p>
+
+<pre><code>import danmu
+
+client = danmu.DanMuClient('http://www.douyu.com/lisp')
+
+@client.danmu
+def receive(message):
+    print('[{}] {}'.format(message['NickName'], message['Content']))
+
+client.start()
+</code></pre>
+
+<h3 id="实现从弹幕到键位的映射">实现从弹幕到键位的映射</h3>
+
+<p>这个没什么可以说的，<br />
+就是业务逻辑/苦力活。<br />
+简单。跳过。</p>
+
+<h3 id="用程序操纵gba模拟器">用程序操纵GBA模拟器</h3>
+
+<p>好，这里首先有个坑。<br />
+我们回忆一下，<br />
+最开始我们的目标其实是“实现用弹幕玩GBA游戏”，<br />
+现在的这个小步骤被回归成了“用程序操纵GBA<strong>模拟器</strong>”。<br />
+这模拟器的需求是哪冒出来的？</p>
+
+<p>嗨呀，这个是有苦衷的。</p>
+
+<p>首先，我对GBA的回忆除了实体机，<br />
+有一半都是<a href="https://en.wikipedia.org/wiki/VisualBoyAdvance"><code>VisualBoyAdvance.exe</code></a>这个模拟器给的。<br />
+还有就是理论上我们也可以实现Web版的，<br />
+或者自己撸一个GBA模拟器，<br />
+但那样又相当于额外的工作量了。<br />
+所以基于“把我不会的目标拆成我能做到的小步骤”<br />
+和“鲁迅说过，不要重复造轮子”这两个设定，<br />
+我就把“用程序玩GBA游戏”拆分成了“用程序操纵GBA模拟器”+“用GBA模拟器玩GBA游戏”（现成的）这两个任务了。</p>
+
+<p>OK，我们来现实地看第一点：<br />
+“怎么用程序操纵GBA模拟器”。</p>
+
+<p>在我的脑海中，<br />
+假如用Python来实现，<br />
+基本上这个就是Python调用windows库 + windows库给程序传递信号 + 程序接收信号达成效果，<br />
+这样一套combo下来就行了。</p>
+
+<p>虽然我平常开发环境是windows，<br />
+但其实我对windows的接口是一窍不通（暴露水平 x2）<br />
+不过不懂可以问啊！<br />
+于是前几天我问了一下身边的windows大拿hulucc，<br />
+他表示<a href="https://msdn.microsoft.com/en-us/library/system.windows.forms.sendkeys(v=vs.110).aspx">windows有个叫sendkey的API</a>可以做这个，<br />
+不过只能操纵active window。<br />
+后来他又查了一下，<br />
+跟我说Python里有个<code>pywin32</code>的库可以调用windows接口，<br />
+又发了一篇文章 <a href="https://code.tutsplus.com/tutorials/how-to-build-a-python-bot-that-can-play-web-games--active-11117">How to Build a Python Bot That Can Play Web Games</a><br />
+给我参考。</p>
+
+<p>学习了这么一大段以后，<br />
+我十分感动，<br />
+然后自己找了个另外的库<a href="https://github.com/boppreh/keyboard">keyboard</a>（雾）</p>
+
+<p>事实是后来我回来研究了一下，<br />
+用windows接口肯定能达到我的目的，<br />
+但是问题是<a href="https://stackoverflow.com/questions/4863056/how-to-install-pywin32-module-in-windows-7">pywin32或者是类似的pypiwin32这俩包没有合适的pip release要手动安装</a>，<br />
+这让我很不舒服。<br />
+刚好google的同时，<br />
+我搜到了另外一个python库<a href="https://github.com/boppreh/keyboard"><code>keyboard</code></a>，<br />
+它的主页长得还蛮好看的，<br />
+也能达到我的需求，<br />
+不错，就这个了。</p>
+
+<p>于是实现了接收弹幕+发送按键的代码（伪）就大概长这样子：</p>
+
+<pre><code>import danmu
+import keyboard
+import constants
+
+client = danmu.DanMuClient('http://www.douyu.com/lisp')
+
+@client.danmu
+def receive(message):
+    print('[{}] {}'.format(message['NickName'], message['Content']))
+    content = message['Content']  # 主要是新增了这行和下面的if
+    if content in constants.valid_keystrokes:
+        keyboard.send(content)
+
+client.start()
+</code></pre>
+
+<h3 id="一个小坑">一个小坑</h3>
+
+<p>这里还遇到了一个小坑，<br />
+简单来说就是VisualBoyAdvance这款GBA模拟器（以下简称VBA）<br />
+它应该是通过监控键盘事件来转化键位的。<br />
+（此句描述不够专业）</p>
+
+<p>转化成代码语言就是<code>keyboard.send(content)</code>这行代码对VBA不起作用。<br />
+经过思考加尝试以后，<br />
+最终使用了<code>keyboard.press(content)</code> + <code>time.sleep(0.02)</code> + <code>keyboard.release(content)</code>三个combo达成了效果。</p>
+
+<p>最终不禁要感慨一下：<br />
+上面这段描述里的<strong>经过思考加尝试</strong>，<br />
+就是写程序这件事情最痛苦也是最美好的所在了。</p>
+
+<h2 id="总结">总结</h2>
+
+<p>上面讲的比较零碎，<br />
+总结下来：</p>
+
+<p>为了做到 “用弹幕玩GBA游戏” 这个事情，<br />
+被拆分细化完成的任务有这些：</p>
+
+<ul>
+<li>注册直播间，选了斗鱼。<br /></li>
+<li>获取直播间弹幕，平常关注一波信息，最终用了danmu这个库。<br /></li>
+<li>实现业务逻辑。<br /></li>
+<li>用程序操纵GBA模拟器来玩GBA游戏，使用了keyboard库发送键位信息。<br />
+<br /></li>
+</ul>
+
+<p>最终的成品在我的GitHub上：<a href="https://github.com/LKI/danmaboy">LKI/danmaboy</a>这个项目，<br />
+有效代码就100行，就在<a href="https://github.com/LKI/danmaboy/blob/master/danmaboy/__init__.py">danmaboy/__init__.py</a>一个文件内。</p>
+
+<p>一下午就写完了，<br />
+不过中途摸鱼思考的时间用了几年（惭愧）</p>
+
+<p>下午写代码的时候我还做了一个尝试，<br />
+就是开着直播写代码，<br />
+不过因为没人看（现实的原因），<br />
+所以总体感受跟小黄鸭编程差不多，<br />
+写一会儿，就紧张地想一下思路，<br />
+效果意外的不错。</p>
+
+<p>最终成品出来以后，<br />
+试着在直播间里跑了一下，<br />
+<del>创业失败</del>遇到了一个基石上的失误：</p>
+
+<p><strong>因为是游戏，所以普通的弹幕延迟在这个项目上会放大到极度影响游戏体验</strong></p>
+
+<p>基本上就是发一条弹幕，<br />
+15秒以后才会有对应的游戏变动，<br />
+别说TwitchTV那样的效果了，<br />
+就是基本的自己玩玩都玩不动…</p>
+
+<p>叹气。</p>
+
+<p>不过好歹是我心里很多idea之一了，<br />
+这篇文章也算是给这个项目画个句号吧。</p>
+
+<p>我的心中还有很多未竟的事业，<br />
+有兴趣的话，<br />
+欢迎和我交流噢~</p>
+
+<p>下次见。</p>
+
+<p><img src="/assets/pics/screen.png" alt="screen" /><br />
+<em>直播时的画面截图</em></p>
+
         </div>
         
 
@@ -136,24 +447,29 @@ OK，前面都是背景介绍， 那么看到这么好玩的一个东西， 我�
         </div>
 
         <div class="site-footer">
-  
-  <div class="site-footer-item">
-    <a href="/about" target="_blank">about</a>
+  <div class="site-footer-left">
+    <div class="site-footer-item">
+      <span id="busuanzi_container_site_pv" style="display:none"> PV: <span id="busuanzi_value_site_pv"/> </span>
+    </div>
+    <div class="site-footer-item">
+      <span id="busuanzi_container_site_uv" style="display:none"> UV: <span id="busuanzi_value_site_uv"/> </span>
+    </div>
   </div>
-  
-  <div class="site-footer-item">
-    <a href="https://github.com/LKI/LKI" target="_blank">github</a>
-  </div>
-  
-  <div class="site-footer-item">
-    <a href="/index.xml" target="_blank">rss</a>
-  </div>
-  
-  <div class="site-footer-item">
-    <span id="busuanzi_container_site_pv"> PV: <span id="busuanzi_value_site_pv"> </span> </span>
-  </div>
-  <div class="site-footer-item">
-    <span id="busuanzi_container_site_uv"> UV: <span id="busuanzi_value_site_uv"/> </span> </span>
+
+  <div class="site-footer-right">
+    
+    <div class="site-footer-item">
+      <a href="/about" target="_blank">about</a>
+    </div>
+    
+    <div class="site-footer-item">
+      <a href="https://github.com/LKI/LKI" target="_blank">github</a>
+    </div>
+    
+    <div class="site-footer-item">
+      <a href="/index.xml" target="_blank">rss</a>
+    </div>
+    
   </div>
 </div>
 
@@ -161,19 +477,7 @@ OK，前面都是背景介绍， 那么看到这么好玩的一个东西， 我�
     </div>
   </article>
 
-  <script src="/js/highlight.pack.js"></script>
-
-
-<script>
-  hljs.initHighlightingOnLoad();
-
-  
-  
-    
-    
-  
-</script>
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
 

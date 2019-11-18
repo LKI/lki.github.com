@@ -19,7 +19,7 @@
       "articleSection" : "posts",
       "name" : "URL中参数编码不正确的解决方案",
       "headline" : "URL中参数编码不正确的解决方案",
-      "description" : "说是说解决方案，其实并没有解决这个问题 :wink:\n URL中参数编码不正确 最近在做Python-Scrapy的爬虫，用Tornado写了一个服务器程序， 但是遇到的问题是\nTornado无法解析URL的中文\n比如说样例小程序如下：\nfrom tornado.ioloop import IOLoop import tornado.web as tw class SampleHandler(tw.RequestHandler): def get(self, path): self.write(path) app = tw.Application([(ur\x27\/(.*)\x27, SampleHandler)]) app.listen(8080) IOLoop.current().start()  但是访问http:\/\/localhost:8080\/浮云计算却只能得到æµ®äº�è®¡ç®�这样一坨东西\x26hellip;\n解决方案 长话短说，这是因为URL中文解码不正确的原因导致的。 所以我们利用站长工具url编码手动替换中文访问即可：\n访问http:\/\/localhost:8080\/%e6%b5%ae%e4%ba%91%e8%ae%a1%e7%ae%97就可以得到浮云计算啦。\n详细原因 一开始我怀疑是因为字符串没用utf8编码， 于是尝试了不同的转换方式：\nself.write(str(path)) self.write(unicode(path)) self.write(path.encode(\x27utf8\x27))  这些常识不是报错，就是根本没变化。\n最终我找到了一个前人的经验，里面是这么讲的：\n 看来你是不知道在浏览器地址栏手动输入中文和在页面上一个的链接的编码处理方式是不同的。。。。 打个比方，在windows系统上，你在FF地址栏输入\x26rdquo;http:\/\/localhost\/中文.html?m=汉语\x26quot;，这里的“中文”两字的编码是utf8（这一点应该是跟浏览器设置相关），而“汉语”则是gbk，跟操作系统相关（大部分中国人的windows应该都是cp936，也就是gbk）。 如果你是通过某个页面访问这个链接的，则所有字符的编码都是跟页面的编码相关。 在IE上也是一样。 所以，我觉得还是打消在浏览器地址栏输入中文这个想法吧，要不然你要解码两次，而且还要保证页面上的编码跟系统一样，不然无法保证手动输入和页面点击的兼容性。。。。\n 喔，原来是因为URL解码方式完全取决于浏览器和操作系统，也就是说中文有可能以GBK来编码\n怪不得Python\/Tornado认不出来了！\n所以解决方案就是我们手动去解码一次啦~\n（或者Python3 XD）",
+      "description" : "说是说解决方案，其实并没有解决这个问题 :wink:\n URL中参数编码不正确 最近在做Python-Scrapy的爬虫，用Tornado写了一个服务器程序，\n但是遇到的问题是\nTornado无法解析URL的中文\n比如说样例小程序如下：\nfrom tornado.ioloop import IOLoop import tornado.web as tw class SampleHandler(tw.RequestHandler): def get(self, path): self.write(path) app = tw.Application([(ur\x27\/(.*)\x27, SampleHandler)]) app.listen(8080) IOLoop.current().start()  但是访问http:\/\/localhost:8080\/浮云计算却只能得到æµ®äº�è®¡ç®�这样一坨东西\x26hellip;\n解决方案 长话短说，这是因为URL中文解码不正确的原因导致的。\n所以我们利用站长工具url编码手动替换中文访问即可：\n访问http:\/\/localhost:8080\/%e6%b5%ae%e4%ba%91%e8%ae%a1%e7%ae%97就可以得到浮云计算啦。\n详细原因 一开始我怀疑是因为字符串没用utf8编码，\n于是尝试了不同的转换方式：\nself.write(str(path)) self.write(unicode(path)) self.write(path.encode(\x27utf8\x27))  这些常识不是报错，就是根本没变化。\n最终我找到了一个前人的经验，里面是这么讲的：\n 看来你是不知道在浏览器地址栏手动输入中文和在页面上一个的链接的编码处理方式是不同的。。。。\n打个比方，在windows系统上，你在FF地址栏输入\x26rdquo;http:\/\/localhost\/中文.html?m=汉语\x26quot;，这里的“中文”两字的编码是utf8（这一点应该是跟浏览器设置相关），而“汉语”则是gbk，跟操作系统相关（大部分中国人的windows应该都是cp936，也就是gbk）。\n如果你是通过某个页面访问这个链接的，则所有字符的编码都是跟页面的编码相关。\n在IE上也是一样。\n所以，我觉得还是打消在浏览器地址栏输入中文这个想法吧，要不然你要解码两次，而且还要保证页面上的编码跟系统一样，不然无法保证手动输入和页面点击的兼容性。。。。\n 喔，原来是因为URL解码方式完全取决于浏览器和操作系统，也就是说中文有可能以GBK来编码\n怪不得Python\/Tornado认不出来了！\n所以解决方案就是我们手动去解码一次啦~\n（或者Python3 XD）",
       "inLanguage" : "en-US",
       "author" : "Lirian Su",
       "creator" : "Lirian Su",
@@ -37,16 +37,23 @@
   <meta property="og:title" content="URL中参数编码不正确的解决方案 - 浮云计算" />
   <meta property="og:type" content="article" />
   <meta name="description" content="说是说解决方案，其实并没有解决这个问题 :wink:
- URL中参数编码不正确 最近在做Python-Scrapy的爬虫，用Tornado写了一个服务器程序， 但是遇到的问题是
+ URL中参数编码不正确 最近在做Python-Scrapy的爬虫，用Tornado写了一个服务器程序，
+但是遇到的问题是
 Tornado无法解析URL的中文
 比如说样例小程序如下：
 from tornado.ioloop import IOLoop import tornado.web as tw class SampleHandler(tw.RequestHandler): def get(self, path): self.write(path) app = tw.Application([(ur&#39;/(.*)&#39;, SampleHandler)]) app.listen(8080) IOLoop.current().start()  但是访问http://localhost:8080/浮云计算却只能得到æµ®äº�è®¡ç®�这样一坨东西&hellip;
-解决方案 长话短说，这是因为URL中文解码不正确的原因导致的。 所以我们利用站长工具url编码手动替换中文访问即可：
+解决方案 长话短说，这是因为URL中文解码不正确的原因导致的。
+所以我们利用站长工具url编码手动替换中文访问即可：
 访问http://localhost:8080/%e6%b5%ae%e4%ba%91%e8%ae%a1%e7%ae%97就可以得到浮云计算啦。
-详细原因 一开始我怀疑是因为字符串没用utf8编码， 于是尝试了不同的转换方式：
+详细原因 一开始我怀疑是因为字符串没用utf8编码，
+于是尝试了不同的转换方式：
 self.write(str(path)) self.write(unicode(path)) self.write(path.encode(&#39;utf8&#39;))  这些常识不是报错，就是根本没变化。
 最终我找到了一个前人的经验，里面是这么讲的：
- 看来你是不知道在浏览器地址栏手动输入中文和在页面上一个的链接的编码处理方式是不同的。。。。 打个比方，在windows系统上，你在FF地址栏输入&rdquo;http://localhost/中文.html?m=汉语&quot;，这里的“中文”两字的编码是utf8（这一点应该是跟浏览器设置相关），而“汉语”则是gbk，跟操作系统相关（大部分中国人的windows应该都是cp936，也就是gbk）。 如果你是通过某个页面访问这个链接的，则所有字符的编码都是跟页面的编码相关。 在IE上也是一样。 所以，我觉得还是打消在浏览器地址栏输入中文这个想法吧，要不然你要解码两次，而且还要保证页面上的编码跟系统一样，不然无法保证手动输入和页面点击的兼容性。。。。
+ 看来你是不知道在浏览器地址栏手动输入中文和在页面上一个的链接的编码处理方式是不同的。。。。
+打个比方，在windows系统上，你在FF地址栏输入&rdquo;http://localhost/中文.html?m=汉语&quot;，这里的“中文”两字的编码是utf8（这一点应该是跟浏览器设置相关），而“汉语”则是gbk，跟操作系统相关（大部分中国人的windows应该都是cp936，也就是gbk）。
+如果你是通过某个页面访问这个链接的，则所有字符的编码都是跟页面的编码相关。
+在IE上也是一样。
+所以，我觉得还是打消在浏览器地址栏输入中文这个想法吧，要不然你要解码两次，而且还要保证页面上的编码跟系统一样，不然无法保证手动输入和页面点击的兼容性。。。。
  喔，原来是因为URL解码方式完全取决于浏览器和操作系统，也就是说中文有可能以GBK来编码
 怪不得Python/Tornado认不出来了！
 所以解决方案就是我们手动去解码一次啦~
@@ -94,26 +101,83 @@ self.write(str(path)) self.write(unicode(path)) self.write(path.encode(&#39;utf8
           <h1 class="post-title">URL中参数编码不正确的解决方案</h1>
           
           <div class="row post-desc">
-            <div class="col-xs-6">
-              
-              <time class="post-date" datetime="2016-06-07 21:29:39 UTC">
-                2016-06-07
-              </time>
-              
-            </div>
-            <div class="col-xs-6">
-              
-              <div class="post-author">
-                <a target="_blank" href="">@Lirian Su</a>
-              </div>
-              
-            </div>
+            
+            <time class="post-header-item" datetime="2016-06-07 21:29:39 UTC">
+              Written at 2016-06-07 21:29
+            </time>
+            
+            <span class="post-header-item" id="busuanzi_container_page_pv"> Views <span id="busuanzi_value_page_pv" /> </span>
           </div>
           
         </header>
 
         <div class="post-content markdown-body">
-          <br/><br/><p>说是说解决方案，其实并没有解决这个问题 :wink:</p><br/><br/><!--MORE--><br/><br/><h2 id="url中参数编码不正确">URL中参数编码不正确</h2><br/><br/><p>最近在做Python-Scrapy的爬虫，用Tornado写了一个服务器程序，<br/>但是遇到的问题是</p><br/><br/><p><strong>Tornado无法解析URL的中文</strong></p><br/><br/><p>比如说样例小程序如下：</p><br/><br/><pre><code class="language-python">from tornado.ioloop import IOLoop<br/>import tornado.web as tw<br/><br/>class SampleHandler(tw.RequestHandler):<br/>    def get(self, path):<br/>        self.write(path)<br/><br/>app = tw.Application([(ur'/(.*)', SampleHandler)])<br/>app.listen(8080)<br/>IOLoop.current().start()<br/></code></pre><br/><br/><p>但是访问<code>http://localhost:8080/浮云计算</code>却只能得到<code>æµ®äº�è®¡ç®�</code>这样一坨东西&hellip;</p><br/><br/><h2 id="解决方案">解决方案</h2><br/><br/><p>长话短说，这是因为<code>URL中文解码不正确</code>的原因导致的。<br/>所以我们利用<a href="http://tool.chinaz.com/tools/urlencode.aspx">站长工具url编码</a>手动替换中文访问即可：</p><br/><br/><p>访问<code>http://localhost:8080/%e6%b5%ae%e4%ba%91%e8%ae%a1%e7%ae%97</code>就可以得到<code>浮云计算</code>啦。</p><br/><br/><h2 id="详细原因">详细原因</h2><br/><br/><p>一开始我怀疑是因为字符串没用utf8编码，<br/>于是尝试了不同的转换方式：</p><br/><br/><pre><code>self.write(str(path))<br/>self.write(unicode(path))<br/>self.write(path.encode('utf8'))<br/></code></pre><br/><br/><p>这些常识不是报错，就是根本没变化。</p><br/><br/><p>最终我找到了<a href="http://ju.outofmemory.cn/entry/62161">一个前人的经验</a>，里面是这么讲的：</p><br/><br/><blockquote><br/><p>看来你是不知道在浏览器地址栏手动输入中文和在页面上一个的链接的编码处理方式是不同的。。。。<br/>打个比方，在windows系统上，你在FF地址栏输入&rdquo;<a href="http://localhost/中文.html?m=汉语&quot;，这里的“中文”两字的编码是utf8（这一点应该是跟浏览器设置相关），而“汉语”则是gbk，跟操作系统相关（大部分中国人的windows应该都是cp936，也就是gbk）。">http://localhost/中文.html?m=汉语&quot;，这里的“中文”两字的编码是utf8（这一点应该是跟浏览器设置相关），而“汉语”则是gbk，跟操作系统相关（大部分中国人的windows应该都是cp936，也就是gbk）。</a><br/>如果你是通过某个页面访问这个链接的，则所有字符的编码都是跟页面的编码相关。<br/>在IE上也是一样。<br/>所以，我觉得还是打消在浏览器地址栏输入中文这个想法吧，要不然你要解码两次，而且还要保证页面上的编码跟系统一样，不然无法保证手动输入和页面点击的兼容性。。。。</p><br/></blockquote><br/><br/><p>喔，原来是因为<code>URL解码方式完全取决于浏览器和操作系统</code>，也就是说<code>中文有可能以GBK来编码</code></p><br/><br/><p>怪不得Python/Tornado认不出来了！</p><br/><br/><p>所以解决方案就是我们手动去解码一次啦~</p><br/><br/><p>（或者Python3 XD）</p><br/>
+          
+
+<p>说是说解决方案，其实并没有解决这个问题 :wink:</p>
+
+<!--MORE-->
+
+<h2 id="url中参数编码不正确">URL中参数编码不正确</h2>
+
+<p>最近在做Python-Scrapy的爬虫，用Tornado写了一个服务器程序，<br />
+但是遇到的问题是</p>
+
+<p><strong>Tornado无法解析URL的中文</strong></p>
+
+<p>比如说样例小程序如下：</p>
+
+<pre><code class="language-python">from tornado.ioloop import IOLoop
+import tornado.web as tw
+
+class SampleHandler(tw.RequestHandler):
+    def get(self, path):
+        self.write(path)
+
+app = tw.Application([(ur'/(.*)', SampleHandler)])
+app.listen(8080)
+IOLoop.current().start()
+</code></pre>
+
+<p>但是访问<code>http://localhost:8080/浮云计算</code>却只能得到<code>æµ®äº�è®¡ç®�</code>这样一坨东西&hellip;</p>
+
+<h2 id="解决方案">解决方案</h2>
+
+<p>长话短说，这是因为<code>URL中文解码不正确</code>的原因导致的。<br />
+所以我们利用<a href="http://tool.chinaz.com/tools/urlencode.aspx">站长工具url编码</a>手动替换中文访问即可：</p>
+
+<p>访问<code>http://localhost:8080/%e6%b5%ae%e4%ba%91%e8%ae%a1%e7%ae%97</code>就可以得到<code>浮云计算</code>啦。</p>
+
+<h2 id="详细原因">详细原因</h2>
+
+<p>一开始我怀疑是因为字符串没用utf8编码，<br />
+于是尝试了不同的转换方式：</p>
+
+<pre><code>self.write(str(path))
+self.write(unicode(path))
+self.write(path.encode('utf8'))
+</code></pre>
+
+<p>这些常识不是报错，就是根本没变化。</p>
+
+<p>最终我找到了<a href="http://ju.outofmemory.cn/entry/62161">一个前人的经验</a>，里面是这么讲的：</p>
+
+<blockquote>
+<p>看来你是不知道在浏览器地址栏手动输入中文和在页面上一个的链接的编码处理方式是不同的。。。。<br />
+打个比方，在windows系统上，你在FF地址栏输入&rdquo;<a href="http://localhost/中文.html?m=汉语&quot;，这里的“中文”两字的编码是utf8（这一点应该是跟浏览器设置相关），而“汉语”则是gbk，跟操作系统相关（大部分中国人的windows应该都是cp936，也就是gbk）。">http://localhost/中文.html?m=汉语&quot;，这里的“中文”两字的编码是utf8（这一点应该是跟浏览器设置相关），而“汉语”则是gbk，跟操作系统相关（大部分中国人的windows应该都是cp936，也就是gbk）。</a><br />
+如果你是通过某个页面访问这个链接的，则所有字符的编码都是跟页面的编码相关。<br />
+在IE上也是一样。<br />
+所以，我觉得还是打消在浏览器地址栏输入中文这个想法吧，要不然你要解码两次，而且还要保证页面上的编码跟系统一样，不然无法保证手动输入和页面点击的兼容性。。。。</p>
+</blockquote>
+
+<p>喔，原来是因为<code>URL解码方式完全取决于浏览器和操作系统</code>，也就是说<code>中文有可能以GBK来编码</code></p>
+
+<p>怪不得Python/Tornado认不出来了！</p>
+
+<p>所以解决方案就是我们手动去解码一次啦~</p>
+
+<p>（或者Python3 XD）</p>
+
         </div>
         
 
@@ -135,24 +199,29 @@ self.write(str(path)) self.write(unicode(path)) self.write(path.encode(&#39;utf8
         </div>
 
         <div class="site-footer">
-  
-  <div class="site-footer-item">
-    <a href="/about" target="_blank">about</a>
+  <div class="site-footer-left">
+    <div class="site-footer-item">
+      <span id="busuanzi_container_site_pv" style="display:none"> PV: <span id="busuanzi_value_site_pv"/> </span>
+    </div>
+    <div class="site-footer-item">
+      <span id="busuanzi_container_site_uv" style="display:none"> UV: <span id="busuanzi_value_site_uv"/> </span>
+    </div>
   </div>
-  
-  <div class="site-footer-item">
-    <a href="https://github.com/LKI/LKI" target="_blank">github</a>
-  </div>
-  
-  <div class="site-footer-item">
-    <a href="/index.xml" target="_blank">rss</a>
-  </div>
-  
-  <div class="site-footer-item">
-    <span id="busuanzi_container_site_pv"> PV: <span id="busuanzi_value_site_pv"> </span> </span>
-  </div>
-  <div class="site-footer-item">
-    <span id="busuanzi_container_site_uv"> UV: <span id="busuanzi_value_site_uv"/> </span> </span>
+
+  <div class="site-footer-right">
+    
+    <div class="site-footer-item">
+      <a href="/about" target="_blank">about</a>
+    </div>
+    
+    <div class="site-footer-item">
+      <a href="https://github.com/LKI/LKI" target="_blank">github</a>
+    </div>
+    
+    <div class="site-footer-item">
+      <a href="/index.xml" target="_blank">rss</a>
+    </div>
+    
   </div>
 </div>
 
@@ -160,19 +229,7 @@ self.write(str(path)) self.write(unicode(path)) self.write(path.encode(&#39;utf8
     </div>
   </article>
 
-  <script src="/js/highlight.pack.js"></script>
-
-
-<script>
-  hljs.initHighlightingOnLoad();
-
-  
-  
-    
-    
-  
-</script>
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
 

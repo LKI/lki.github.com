@@ -19,7 +19,7 @@
       "articleSection" : "posts",
       "name" : "VIM中小键盘失灵的解决方案(Putty)",
       "headline" : "VIM中小键盘失灵的解决方案(Putty)",
-      "description" : "我目前的开发环境是用Vagrant起一个虚拟机，然后用Putty连上去，用VIM做日常的开发工作。\n但某一天更新了一些配置以后，我在VIM里用小键盘输入1的时候，VIM就会在前一行加了一个q字符，让我很是困惑。\n后来谷歌了一下这个问题，得知只要把Putty的Application keypad mode给关了就行了。\n 奇怪的错误 当刚开始小键盘的输入和预期有差别的时候，其实我是很困惑的。\n首先我在Bash里面小键盘一切正常，这说明我键盘没问题，应该是VIM哪里不对。\n其次我按的是1，结果出来的是前一行的q，我再按一下2，出来的是前一行的r。 假如键盘没有问题，要自己在VIM里面实现一个这种“功能”，那也要加一行配置： inoremap \x26lt;Num1\x26gt; \x26lt;Esc\x26gt;Oq\n但是这也太奇怪了吧，VIM里面怎么可能把\x26lt;Num1\x26gt;给替换成\x26lt;Esc\x26gt;Oq这么奇怪的东西？\n寻求答案 于是我找到了VIM wiki上的一篇解答\n根据这篇解答，问题是出在Putty上。 Putty会默认启用“Application Keypad Mode”，这个选项被启用以后 所有小键盘上的按键（包括）都会输出一串按键序列：\n| 原按键 | 生成序列 | |\x26mdash;\x26mdash;\x26mdash;\x26ndash;|\x26mdash;\x26mdash;\x26mdash;\x26ndash;| | \x26lt;Num1\x26gt; | \x26lt;Esc\x26gt;Oq | | \x26lt;Num2\x26gt; | \x26lt;Esc\x26gt;Or | | \x26lt;Num3\x26gt; | \x26lt;Esc\x26gt;Os | | \x26lt;Num4\x26gt; | \x26lt;Esc\x26gt;Ot | | \x26lt;Num5\x26gt; | \x26lt;Esc\x26gt;Ou | | \x26lt;Num6\x26gt; | \x26lt;Esc\x26gt;Ov | | \x26lt;Num7\x26gt; | \x26lt;Esc\x26gt;Ow | | \x26lt;Num8\x26gt; | \x26lt;Esc\x26gt;Ox | | \x26lt;Num9\x26gt; | \x26lt;Esc\x26gt;Oy | | \x26lt;Num0\x26gt; | \x26lt;Esc\x26gt;Op | | .",
+      "description" : "我目前的开发环境是用Vagrant起一个虚拟机，然后用Putty连上去，用VIM做日常的开发工作。\n但某一天更新了一些配置以后，我在VIM里用小键盘输入1的时候，VIM就会在前一行加了一个q字符，让我很是困惑。\n后来谷歌了一下这个问题，得知只要把Putty的Application keypad mode给关了就行了。\n 奇怪的错误 当刚开始小键盘的输入和预期有差别的时候，其实我是很困惑的。\n首先我在Bash里面小键盘一切正常，这说明我键盘没问题，应该是VIM哪里不对。\n其次我按的是1，结果出来的是前一行的q，我再按一下2，出来的是前一行的r。\n假如键盘没有问题，要自己在VIM里面实现一个这种“功能”，那也要加一行配置：\ninoremap \x26lt;Num1\x26gt; \x26lt;Esc\x26gt;Oq\n但是这也太奇怪了吧，VIM里面怎么可能把\x26lt;Num1\x26gt;给替换成\x26lt;Esc\x26gt;Oq这么奇怪的东西？\n寻求答案 于是我找到了VIM wiki上的一篇解答\n根据这篇解答，问题是出在Putty上。\nPutty会默认启用“Application Keypad Mode”，这个选项被启用以后\n所有小键盘上的按键（包括）都会输出一串按键序列：\n| 原按键 | 生成序列 |\n|\x26mdash;\x26mdash;\x26mdash;\x26ndash;|\x26mdash;\x26mdash;\x26mdash;\x26ndash;|\n| \x26lt;Num1\x26gt; | \x26lt;Esc\x26gt;Oq |\n| \x26lt;Num2\x26gt; | \x26lt;Esc\x26gt;Or |\n| \x26lt;Num3\x26gt; | \x26lt;Esc\x26gt;Os |\n| \x26lt;Num4\x26gt; | \x26lt;Esc\x26gt;Ot |\n| \x26lt;Num5\x26gt; | \x26lt;Esc\x26gt;Ou |\n| \x26lt;Num6\x26gt; | \x26lt;Esc\x26gt;Ov |\n| \x26lt;Num7\x26gt; | \x26lt;Esc\x26gt;Ow |\n| \x26lt;Num8\x26gt; | \x26lt;Esc\x26gt;Ox |",
       "inLanguage" : "en-US",
       "author" : "Lirian Su",
       "creator" : "Lirian Su",
@@ -41,11 +41,24 @@
 后来谷歌了一下这个问题，得知只要把Putty的Application keypad mode给关了就行了。
  奇怪的错误 当刚开始小键盘的输入和预期有差别的时候，其实我是很困惑的。
 首先我在Bash里面小键盘一切正常，这说明我键盘没问题，应该是VIM哪里不对。
-其次我按的是1，结果出来的是前一行的q，我再按一下2，出来的是前一行的r。 假如键盘没有问题，要自己在VIM里面实现一个这种“功能”，那也要加一行配置： inoremap &lt;Num1&gt; &lt;Esc&gt;Oq
+其次我按的是1，结果出来的是前一行的q，我再按一下2，出来的是前一行的r。
+假如键盘没有问题，要自己在VIM里面实现一个这种“功能”，那也要加一行配置：
+inoremap &lt;Num1&gt; &lt;Esc&gt;Oq
 但是这也太奇怪了吧，VIM里面怎么可能把&lt;Num1&gt;给替换成&lt;Esc&gt;Oq这么奇怪的东西？
 寻求答案 于是我找到了VIM wiki上的一篇解答
-根据这篇解答，问题是出在Putty上。 Putty会默认启用“Application Keypad Mode”，这个选项被启用以后 所有小键盘上的按键（包括）都会输出一串按键序列：
-| 原按键 | 生成序列 | |&mdash;&mdash;&mdash;&ndash;|&mdash;&mdash;&mdash;&ndash;| | &lt;Num1&gt; | &lt;Esc&gt;Oq | | &lt;Num2&gt; | &lt;Esc&gt;Or | | &lt;Num3&gt; | &lt;Esc&gt;Os | | &lt;Num4&gt; | &lt;Esc&gt;Ot | | &lt;Num5&gt; | &lt;Esc&gt;Ou | | &lt;Num6&gt; | &lt;Esc&gt;Ov | | &lt;Num7&gt; | &lt;Esc&gt;Ow | | &lt;Num8&gt; | &lt;Esc&gt;Ox | | &lt;Num9&gt; | &lt;Esc&gt;Oy | | &lt;Num0&gt; | &lt;Esc&gt;Op | | ." />
+根据这篇解答，问题是出在Putty上。
+Putty会默认启用“Application Keypad Mode”，这个选项被启用以后
+所有小键盘上的按键（包括）都会输出一串按键序列：
+| 原按键 | 生成序列 |
+|&mdash;&mdash;&mdash;&ndash;|&mdash;&mdash;&mdash;&ndash;|
+| &lt;Num1&gt; | &lt;Esc&gt;Oq |
+| &lt;Num2&gt; | &lt;Esc&gt;Or |
+| &lt;Num3&gt; | &lt;Esc&gt;Os |
+| &lt;Num4&gt; | &lt;Esc&gt;Ot |
+| &lt;Num5&gt; | &lt;Esc&gt;Ou |
+| &lt;Num6&gt; | &lt;Esc&gt;Ov |
+| &lt;Num7&gt; | &lt;Esc&gt;Ow |
+| &lt;Num8&gt; | &lt;Esc&gt;Ox |" />
 
   <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
   <link rel="stylesheet"
@@ -89,26 +102,125 @@
           <h1 class="post-title">VIM中小键盘失灵的解决方案(Putty)</h1>
           
           <div class="row post-desc">
-            <div class="col-xs-6">
-              
-              <time class="post-date" datetime="2015-10-09 15:34:16 UTC">
-                2015-10-09
-              </time>
-              
-            </div>
-            <div class="col-xs-6">
-              
-              <div class="post-author">
-                <a target="_blank" href="">@Lirian Su</a>
-              </div>
-              
-            </div>
+            
+            <time class="post-header-item" datetime="2015-10-09 15:34:16 UTC">
+              Written at 2015-10-09 15:34
+            </time>
+            
+            <span class="post-header-item" id="busuanzi_container_page_pv"> Views <span id="busuanzi_value_page_pv" /> </span>
           </div>
           
         </header>
 
         <div class="post-content markdown-body">
-          <br/><br/><p>我目前的开发环境是用<a href="https://www.vagrantup.com/">Vagrant</a>起一个虚拟机，然后用<a href="http://www.putty.org/">Putty</a>连上去，用VIM做日常的开发工作。</p><br/><br/><p>但某一天更新了一些配置以后，我在VIM里用小键盘输入1的时候，VIM就会在前一行加了一个q字符，让我很是困惑。</p><br/><br/><p>后来<a href="http://vim.wikia.com/wiki/PuTTY_numeric_keypad_mappings">谷歌了一下这个问题</a>，得知只要把Putty的Application keypad mode给关了就行了。</p><br/><br/><!--MORE--><br/><br/><h2 id="奇怪的错误">奇怪的错误</h2><br/><br/><p>当刚开始小键盘的输入和预期有差别的时候，其实我是很困惑的。</p><br/><br/><p>首先我在Bash里面小键盘一切正常，这说明我键盘没问题，应该是VIM哪里不对。</p><br/><br/><p>其次我按的是1，结果出来的是前一行的q，我再按一下2，出来的是前一行的r。<br/>假如键盘没有问题，要自己在VIM里面实现一个这种“功能”，那也要加一行配置：<br/><code>inoremap &lt;Num1&gt; &lt;Esc&gt;Oq</code></p><br/><br/><p>但是这也太奇怪了吧，VIM里面怎么可能把<code>&lt;Num1&gt;</code>给替换成<code>&lt;Esc&gt;Oq</code>这么奇怪的东西？</p><br/><br/><h2 id="寻求答案">寻求答案</h2><br/><br/><p>于是我找到了<a href="http://vim.wikia.com/wiki/PuTTY_numeric_keypad_mappings">VIM wiki上的一篇解答</a></p><br/><br/><p>根据这篇解答，问题是出在Putty上。<br/>Putty会默认启用“Application Keypad Mode”，这个选项被启用以后<br/>所有小键盘上的按键（包括<NumLock>）都会输出一串按键序列：</p><br/><br/><p>| 原按键    | 生成序列  |<br/>|&mdash;&mdash;&mdash;&ndash;|&mdash;&mdash;&mdash;&ndash;|<br/>| <code>&lt;Num1&gt;</code>  | <code>&lt;Esc&gt;Oq</code> |<br/>| <code>&lt;Num2&gt;</code>  | <code>&lt;Esc&gt;Or</code> |<br/>| <code>&lt;Num3&gt;</code>  | <code>&lt;Esc&gt;Os</code> |<br/>| <code>&lt;Num4&gt;</code>  | <code>&lt;Esc&gt;Ot</code> |<br/>| <code>&lt;Num5&gt;</code>  | <code>&lt;Esc&gt;Ou</code> |<br/>| <code>&lt;Num6&gt;</code>  | <code>&lt;Esc&gt;Ov</code> |<br/>| <code>&lt;Num7&gt;</code>  | <code>&lt;Esc&gt;Ow</code> |<br/>| <code>&lt;Num8&gt;</code>  | <code>&lt;Esc&gt;Ox</code> |<br/>| <code>&lt;Num9&gt;</code>  | <code>&lt;Esc&gt;Oy</code> |<br/>| <code>&lt;Num0&gt;</code>  | <code>&lt;Esc&gt;Op</code> |<br/>| <code>.</code>       | <code>&lt;Esc&gt;On</code> |<br/>| <code>/</code>       | <code>&lt;Esc&gt;OQ</code> |<br/>| <code>*</code>       | <code>&lt;Esc&gt;OR</code> |<br/>| <code>+</code>       | <code>&lt;Esc&gt;Ol</code> |<br/>| <code>-</code>       | <code>&lt;Esc&gt;OS</code> |<br/>| <code>&lt;Enter&gt;</code> | <code>&lt;Esc&gt;OM</code> |</p><br/><br/><p>居然<code>&lt;Num1&gt;</code>真的变成了<code>&lt;Esc&gt;Oq</code>！</p><br/><br/><p>再去翻<a href="http://the.earth.li/~sgtatham/putty/0.60/htmldoc/Chapter4.html#config-appkeypad">Putty关于Application keypad mode的说明</a>:</p><br/><br/><blockquote><br/><p>Application Keypad mode is a way for the server to change the behaviour of the numeric keypad</p><br/></blockquote><br/><br/><p>唔，好吧，是服务器端决定的配置。</p><br/><br/><p>所以在Putty下简单的解决方案就是关掉这个模式了：</p><br/><br/><ul><br/><li>打开Putty配置</li><br/><li>选中左边的Terminal -&gt; Features</li><br/><li>在&rdquo;Disable application keypad mode&rdquo;处打钩</li><br/><li>选中左边的Session</li><br/><li>保存Putty配置</li><br/></ul><br/><br/><p><img src="/assets/putty_application_keypad_mode.jpg" alt="关闭application keypad mode" /></p><br/><br/><h2 id="更多奇怪的答案">更多奇怪的答案</h2><br/><br/><p>在<a href="http://vim.wikia.com/wiki/PuTTY_numeric_keypad_mappings#Comments">VIM wiki页面的讨论板块</a>，有人给出了一个看起来很蠢的解决方案：</p><br/><br/><pre><code>:inoremap &lt;Esc&gt;Oq 1<br/>:inoremap &lt;Esc&gt;Or 2<br/>:inoremap &lt;Esc&gt;Os 3<br/>:inoremap &lt;Esc&gt;Ot 4<br/>:inoremap &lt;Esc&gt;Ou 5<br/>:inoremap &lt;Esc&gt;Ov 6<br/>:inoremap &lt;Esc&gt;Ow 7<br/>:inoremap &lt;Esc&gt;Ox 8<br/>:inoremap &lt;Esc&gt;Oy 9<br/>:inoremap &lt;Esc&gt;Op 0<br/>:inoremap &lt;Esc&gt;On .<br/>:inoremap &lt;Esc&gt;OQ /<br/>:inoremap &lt;Esc&gt;OR *<br/>:inoremap &lt;Esc&gt;Ol +<br/>:inoremap &lt;Esc&gt;OS -<br/>:inoremap &lt;Esc&gt;OM &lt;Enter&gt;<br/></code></pre><br/><br/><p>刚开始看到这个答案我立刻想到了这张XKCD</p><br/><br/><p><img src="http://imgs.xkcd.com/comics/workflow.png" alt="workflow" /></p><br/><br/><p>我认为mapping不应该是一个合适的解决方案，但是下面又有人讲了他自己苦逼的故事：</p><br/><br/><blockquote><br/><p>After a while struggling with this very problem with vnc viewer 4.1.3 under XP with a Debian lenny vnc4server 4.1.1+X4.3.0-31, this vim remapping is the only solution which work.</p><br/></blockquote><br/><br/><p>好吧，至少他找到了解决方案。</p><br/><br/><p><img src="http://imgs.xkcd.com/comics/wisdom_of_the_ancients.png" alt="solution" /></p><br/>
+          
+
+<p>我目前的开发环境是用<a href="https://www.vagrantup.com/">Vagrant</a>起一个虚拟机，然后用<a href="http://www.putty.org/">Putty</a>连上去，用VIM做日常的开发工作。</p>
+
+<p>但某一天更新了一些配置以后，我在VIM里用小键盘输入1的时候，VIM就会在前一行加了一个q字符，让我很是困惑。</p>
+
+<p>后来<a href="http://vim.wikia.com/wiki/PuTTY_numeric_keypad_mappings">谷歌了一下这个问题</a>，得知只要把Putty的Application keypad mode给关了就行了。</p>
+
+<!--MORE-->
+
+<h2 id="奇怪的错误">奇怪的错误</h2>
+
+<p>当刚开始小键盘的输入和预期有差别的时候，其实我是很困惑的。</p>
+
+<p>首先我在Bash里面小键盘一切正常，这说明我键盘没问题，应该是VIM哪里不对。</p>
+
+<p>其次我按的是1，结果出来的是前一行的q，我再按一下2，出来的是前一行的r。<br />
+假如键盘没有问题，要自己在VIM里面实现一个这种“功能”，那也要加一行配置：<br />
+<code>inoremap &lt;Num1&gt; &lt;Esc&gt;Oq</code></p>
+
+<p>但是这也太奇怪了吧，VIM里面怎么可能把<code>&lt;Num1&gt;</code>给替换成<code>&lt;Esc&gt;Oq</code>这么奇怪的东西？</p>
+
+<h2 id="寻求答案">寻求答案</h2>
+
+<p>于是我找到了<a href="http://vim.wikia.com/wiki/PuTTY_numeric_keypad_mappings">VIM wiki上的一篇解答</a></p>
+
+<p>根据这篇解答，问题是出在Putty上。<br />
+Putty会默认启用“Application Keypad Mode”，这个选项被启用以后<br />
+所有小键盘上的按键（包括<NumLock>）都会输出一串按键序列：</p>
+
+<p>| 原按键    | 生成序列  |<br />
+|&mdash;&mdash;&mdash;&ndash;|&mdash;&mdash;&mdash;&ndash;|<br />
+| <code>&lt;Num1&gt;</code>  | <code>&lt;Esc&gt;Oq</code> |<br />
+| <code>&lt;Num2&gt;</code>  | <code>&lt;Esc&gt;Or</code> |<br />
+| <code>&lt;Num3&gt;</code>  | <code>&lt;Esc&gt;Os</code> |<br />
+| <code>&lt;Num4&gt;</code>  | <code>&lt;Esc&gt;Ot</code> |<br />
+| <code>&lt;Num5&gt;</code>  | <code>&lt;Esc&gt;Ou</code> |<br />
+| <code>&lt;Num6&gt;</code>  | <code>&lt;Esc&gt;Ov</code> |<br />
+| <code>&lt;Num7&gt;</code>  | <code>&lt;Esc&gt;Ow</code> |<br />
+| <code>&lt;Num8&gt;</code>  | <code>&lt;Esc&gt;Ox</code> |<br />
+| <code>&lt;Num9&gt;</code>  | <code>&lt;Esc&gt;Oy</code> |<br />
+| <code>&lt;Num0&gt;</code>  | <code>&lt;Esc&gt;Op</code> |<br />
+| <code>.</code>       | <code>&lt;Esc&gt;On</code> |<br />
+| <code>/</code>       | <code>&lt;Esc&gt;OQ</code> |<br />
+| <code>*</code>       | <code>&lt;Esc&gt;OR</code> |<br />
+| <code>+</code>       | <code>&lt;Esc&gt;Ol</code> |<br />
+| <code>-</code>       | <code>&lt;Esc&gt;OS</code> |<br />
+| <code>&lt;Enter&gt;</code> | <code>&lt;Esc&gt;OM</code> |</p>
+
+<p>居然<code>&lt;Num1&gt;</code>真的变成了<code>&lt;Esc&gt;Oq</code>！</p>
+
+<p>再去翻<a href="http://the.earth.li/~sgtatham/putty/0.60/htmldoc/Chapter4.html#config-appkeypad">Putty关于Application keypad mode的说明</a>:</p>
+
+<blockquote>
+<p>Application Keypad mode is a way for the server to change the behaviour of the numeric keypad</p>
+</blockquote>
+
+<p>唔，好吧，是服务器端决定的配置。</p>
+
+<p>所以在Putty下简单的解决方案就是关掉这个模式了：</p>
+
+<ul>
+<li>打开Putty配置<br /></li>
+<li>选中左边的Terminal -&gt; Features<br /></li>
+<li>在&rdquo;Disable application keypad mode&rdquo;处打钩<br /></li>
+<li>选中左边的Session<br /></li>
+<li>保存Putty配置<br />
+<br /></li>
+</ul>
+
+<p><img src="/assets/putty_application_keypad_mode.jpg" alt="关闭application keypad mode" /></p>
+
+<h2 id="更多奇怪的答案">更多奇怪的答案</h2>
+
+<p>在<a href="http://vim.wikia.com/wiki/PuTTY_numeric_keypad_mappings#Comments">VIM wiki页面的讨论板块</a>，有人给出了一个看起来很蠢的解决方案：</p>
+
+<pre><code>:inoremap &lt;Esc&gt;Oq 1
+:inoremap &lt;Esc&gt;Or 2
+:inoremap &lt;Esc&gt;Os 3
+:inoremap &lt;Esc&gt;Ot 4
+:inoremap &lt;Esc&gt;Ou 5
+:inoremap &lt;Esc&gt;Ov 6
+:inoremap &lt;Esc&gt;Ow 7
+:inoremap &lt;Esc&gt;Ox 8
+:inoremap &lt;Esc&gt;Oy 9
+:inoremap &lt;Esc&gt;Op 0
+:inoremap &lt;Esc&gt;On .
+:inoremap &lt;Esc&gt;OQ /
+:inoremap &lt;Esc&gt;OR *
+:inoremap &lt;Esc&gt;Ol +
+:inoremap &lt;Esc&gt;OS -
+:inoremap &lt;Esc&gt;OM &lt;Enter&gt;
+</code></pre>
+
+<p>刚开始看到这个答案我立刻想到了这张XKCD</p>
+
+<p><img src="http://imgs.xkcd.com/comics/workflow.png" alt="workflow" /></p>
+
+<p>我认为mapping不应该是一个合适的解决方案，但是下面又有人讲了他自己苦逼的故事：</p>
+
+<blockquote>
+<p>After a while struggling with this very problem with vnc viewer 4.1.3 under XP with a Debian lenny vnc4server 4.1.1+X4.3.0-31, this vim remapping is the only solution which work.</p>
+</blockquote>
+
+<p>好吧，至少他找到了解决方案。</p>
+
+<p><img src="http://imgs.xkcd.com/comics/wisdom_of_the_ancients.png" alt="solution" /></p>
+
         </div>
         
 
@@ -130,24 +242,29 @@
         </div>
 
         <div class="site-footer">
-  
-  <div class="site-footer-item">
-    <a href="/about" target="_blank">about</a>
+  <div class="site-footer-left">
+    <div class="site-footer-item">
+      <span id="busuanzi_container_site_pv" style="display:none"> PV: <span id="busuanzi_value_site_pv"/> </span>
+    </div>
+    <div class="site-footer-item">
+      <span id="busuanzi_container_site_uv" style="display:none"> UV: <span id="busuanzi_value_site_uv"/> </span>
+    </div>
   </div>
-  
-  <div class="site-footer-item">
-    <a href="https://github.com/LKI/LKI" target="_blank">github</a>
-  </div>
-  
-  <div class="site-footer-item">
-    <a href="/index.xml" target="_blank">rss</a>
-  </div>
-  
-  <div class="site-footer-item">
-    <span id="busuanzi_container_site_pv"> PV: <span id="busuanzi_value_site_pv"> </span> </span>
-  </div>
-  <div class="site-footer-item">
-    <span id="busuanzi_container_site_uv"> UV: <span id="busuanzi_value_site_uv"/> </span> </span>
+
+  <div class="site-footer-right">
+    
+    <div class="site-footer-item">
+      <a href="/about" target="_blank">about</a>
+    </div>
+    
+    <div class="site-footer-item">
+      <a href="https://github.com/LKI/LKI" target="_blank">github</a>
+    </div>
+    
+    <div class="site-footer-item">
+      <a href="/index.xml" target="_blank">rss</a>
+    </div>
+    
   </div>
 </div>
 
@@ -155,19 +272,7 @@
     </div>
   </article>
 
-  <script src="/js/highlight.pack.js"></script>
-
-
-<script>
-  hljs.initHighlightingOnLoad();
-
-  
-  
-    
-    
-  
-</script>
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
 
