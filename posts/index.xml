@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 浮云计算</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 30 Oct 2019 22:32:20 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 19 Nov 2019 01:00:07 +0800</lastBuildDate>
     
 	<atom:link href="https://liriansu.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>搭建一个不需要自己开服务器的纯静态博客</title>
+      <link>https://liriansu.com/posts/2019-11-19-build-a-staic-blog/</link>
+      <pubDate>Tue, 19 Nov 2019 01:00:07 +0800</pubDate>
+      
+      <guid>https://liriansu.com/posts/2019-11-19-build-a-staic-blog/</guid>
+      <description>&lt;p&gt;又名：我是如何从 jekyll 切到 hugo 的。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>[轶事] 为什么 requests 不是 python 标准库？</title>
