@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.59.1" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Lirian Su" />
+  <meta property="og:url" content="https://liriansu.com/posts/2019-12-09-gracefully-upgrade/" />
+  <link rel="canonical" href="https://liriansu.com/posts/2019-12-09-gracefully-upgrade/" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/liriansu.com\/"
+      },
+      "articleSection" : "posts",
+      "name" : "软件工程实践之平滑发版",
+      "headline" : "软件工程实践之平滑发版",
+      "description" : "\x3cp\x3e软件工程实践系列文章，\x3cbr \/\x3e\n会着重讲述实际的工程项目中是如何协作开发软件的。\x3cbr \/\x3e\n本文主要介绍了如何无中断地发布版本。\x3c\/p\x3e",
+      "inLanguage" : "en-US",
+      "author" : "Lirian Su",
+      "creator" : "Lirian Su",
+      "publisher": "Lirian Su",
+      "accountablePerson" : "Lirian Su",
+      "copyrightHolder" : "Lirian Su",
+      "copyrightYear" : "2019",
+      "datePublished": "2019-12-09 23:39:28 \x2b0800 CST",
+      "dateModified" : "2019-12-09 23:39:28 \x2b0800 CST",
+      "url" : "https:\/\/liriansu.com\/posts\/2019-12-09-gracefully-upgrade\/",
+      "keywords" : [  ]
+  }
+</script>
+<title>软件工程实践之平滑发版 - 浮云计算</title>
+  <meta property="og:title" content="软件工程实践之平滑发版 - 浮云计算" />
+  <meta property="og:type" content="article" />
+  <meta name="description" content="软件工程实践系列文章，
+会着重讲述实际的工程项目中是如何协作开发软件的。
+本文主要介绍了如何无中断地发布版本。" />
+
+  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet"
+    href="/css/github-markdown.min.css" />
+  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+  <link rel="stylesheet" href="/css/index.css">
+  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="浮云计算">
+  
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker" rel="stylesheet">
+  
+  
+
+  
+</head>
+
+
+<body>
+  <article class="post 中文" id="article">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <div class="site-header">
+          
+<header>
+  <div class="signatures site-title">
+    <a href="/">Lirian Su</a>
+  </div>
+</header>
+<div class="row end-xs">
+  
+  
+  <div class="lang-switch col-xs-3 col-xs-offset-9">
+    <a href="/en/">English</a>
+  </div>
+  
+  
+</div>
+<div class="header-line"></div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">软件工程实践之平滑发版</h1>
+          
+          <div class="row post-desc">
+            
+            <time class="post-header-item" datetime="2019-12-09 23:39:28 CST">
+              Written at 2019-12-09 23:39
+            </time>
+            
+            <span class="post-header-item" id="busuanzi_container_page_pv"> Views <span id="busuanzi_value_page_pv" /> </span>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          <p>软件工程实践系列文章，<br />
+会着重讲述实际的工程项目中是如何协作开发软件的。<br />
+本文主要介绍了如何无中断地发布版本。</p>
+
+<h2 id="outline">outline</h2>
+
+<p>本文包括以下内容：</p>
+
+<ul>
+<li>why<br /></li>
+<li>how: 其实平滑发版大体可以分为两部分。<br />
+
+<ul>
+<li>service: 服务层做好切换管理就行。<br /></li>
+<li>database: 数据库层就是标准操作。<br /></li>
+</ul></li>
+<li>example: 举个实际的栗子。<br /></li>
+<li>conclusion<br />
+<br /></li>
+</ul>
+
+<h2 id="why-为什么要平滑发版">why: 为什么要平滑发版？</h2>
+
+<p><a href="https://ldsink.com/">ldsink</a> 说过以前他在百姓网的时候，<br />
+他们一直保持的实践就是“随时都准备好发版”，<br />
+这样不仅能保持功能上线的敏捷度，<br />
+还准备好了应对各种变化。</p>
+
+<p>当时我们的一体化服务每次发版都要停服几秒钟，<br />
+几秒钟对应的就是用户触发的一堆 5XX 网络错误。<br />
+更不用提发版更频繁的开发测试环境，<br />
+前端爸爸们经常惊呼：<br />
+“诶？服务器 502 了！诶，我刷新一下又好了……”</p>
+
+<p>后来在我认真研学了以后发现，<br />
+平滑发版其实是一个非常普世的话题，<br />
+任何涉及网络流量分发、请求逻辑处理的服务都会有这部分功能。</p>
+
+<p>平滑发版的英文是 <code>gracefully upgrade/reload/restart</code>,<br />
+常用的工具都会对平滑发版的流程有完善的支持，<br />
+用工具名直接搜索就行了，比如 <code>nginx gracefully upgrade</code> 或者 <code>k8s gracefully upgrade</code>。</p>
+
+<p>为什么要平滑发版呢？<br />
+其实核心目的就一个：<br />
+防止发版带来的服务中断。</p>
+
+<h2 id="how-如何做到平滑发版">how: 如何做到平滑发版？</h2>
+
+<p>在实际工程中，<br />
+大部分的 web 服务本质都是从外部接受请求，<br />
+从数据库查询、处理数据返回。<br />
+本片中就以这个逻辑，<br />
+按 service/database 的平滑发版来逐个介绍。</p>
+
+<h3 id="service-业务层的平滑发版">service: 业务层的平滑发版</h3>
+
+<p>我们团队后端语言框架用的是 python/django，<br />
+详细情况在前文《软件工程实践之 django/python》中有介绍。<br />
+我们目前的网络链路是<br />
+<em>(云负载均衡) -&gt; (k8s-ingress-controller) -&gt; k8s-pod(nginx+uwsgi)</em></p>
+
+<p>云负载均衡跟 k8s-ingress-controller (目前用的是 kong) 的变动都不会太频繁，<br />
+就不过多赘述。<br />
+每次发版变动的都是业务服务，在前面的链路中指的就是 k8s-pod(nginx/uwsgi)。</p>
+
+<p>不论是 k8s/docker/systemctl/supervisord/pm2,<br />
+他们通用的逻辑是系统信号 (Signals)。</p>
+
+<table>
+<thead>
+<tr>
+<th>Signal</th>
+<th>x86</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>SIGHUP</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>SIGINT</td>
+<td>2</td>
+</tr>
+
+<tr>
+<td>SIGQUIT</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>SIGKILL</td>
+<td>9</td>
+</tr>
+
+<tr>
+<td>SIGTERM</td>
+<td>15</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p>part of unix signal numbers</p>
+</blockquote>
+
+<p>以 k8s 为例，当旧的 pod 被终止时，k8s 执行的具体操作如下：</p>
+
+<ol>
+<li>发送 <code>SIGTERM</code> 信号，然后等待最多 <code>terminationGracePeriodSeconds(default=30)</code> 秒<br /></li>
+<li>假如等待过程中，服务停了，那就做其它终止操作<br /></li>
+<li>假如等待过程中，服务没停，那么就发送一个 <code>SIGKILL</code> 信号<br />
+<br /></li>
+</ol>
+
+<p>一般来说，标准的框架实现都会支持 <code>SIGTERM</code> 与 <code>SIGKILL</code> 的语义，<br />
+但具体的额外自定义逻辑就需要自己去实现把控了。</p>
+
+<p>业务层确保请求不中断，<br />
+需要正确处理信号。</p>
+
+<h3 id="database-数据库层的平滑发版">database: 数据库层的平滑发版</h3>
+
+<p>数据库层会涉及到发版变动，<br />
+主要可以分为数据的变动、结构的变动。<br />
+<strong>核心的处理方法是双写</strong>。</p>
+
+<p>先讲一下关于数据变动的双写。</p>
+
+<p>比如我们以前有个字段A，<br />
+存储的是布尔值 true/false,<br />
+后来含义变丰富了要改成枚举值 0/1/2/3。<br />
+那么整个流程得是：</p>
+
+<ol>
+<li>增加默认为空的枚举值字段B。<br /></li>
+<li>第一次发版引入双写，代码逻辑中涉及字段A的写入逻辑，以同样的逻辑增加对字段B的写入。<br /></li>
+<li>清洗数据，把所有字段A的值以同样逻辑洗到字段B里。<br /></li>
+<li>第二次发版摘除双写，代码逻辑中涉及字段A的读取逻辑，全部以字段B替代。<br /></li>
+<li>确定正常以后，下掉字段A。<br />
+<br /></li>
+</ol>
+
+<p>2~4 的这一步是以双写的方式处理兼容，<br />
+持续时长会因为具体的情况而相差很大：<br />
+可能 10 分钟就双写完了，<br />
+也有可能因为要给清洗大量数据留足时间而持续数天。</p>
+
+<p>再看一下关于结构变动的双写，<br />
+核心逻辑跟上面的 1/2/3/4/5 套路五步是一样的。</p>
+
+<ul>
+<li>增加字段：这个很简单，增加完字段以后再发版即可。<br /></li>
+<li>删除字段：这个也很简单，发版摘除相关逻辑以后再删除即可。<br /></li>
+<li>修改字段：假如是不兼容的改动，应当以增加新字段+双写+删除旧字段的逻辑来处理。<br />
+<br /></li>
+</ul>
+
+<p>数据库层确保请求不中断，<br />
+需要以双写保证兼容。</p>
+
+<h2 id="example-举个实际的栗子">example: 举个实际的栗子</h2>
+
+<p>我们的 django 服务是以 nginx+uwsgi 的方式起来的，<br />
+nginx/uwsgi 本身对 SIGTERM/SIGKILL 语义有着良好的支持。<br />
+但同一个 pod 的情况下经常会出现 race condition，<br />
+nginx 有时会比 uwsgi 终止的更早，<br />
+最终导致请求中断的问题。</p>
+
+<p>网上的老哥们也遇到过类似的问题，<br />
+解决方法也简单地有点滑稽：<br />
+<a href="https://github.com/kubernetes/ingress-nginx/issues/322#issuecomment-298016539">加点 sleep</a></p>
+
+<pre><code>container:
+  name: nginx
+  lifecycle:
+    preStop:
+      exec:
+        command: [&quot;sh&quot;, &quot;-c&quot;, &quot;sleep 10 &amp;&amp; kill -s HUP 1&quot;]
+</code></pre>
+
+<p>除了一般的服务层跟数据库层，<br />
+我们还用到 celery 做了异步 worker。<br />
+celery 对平滑发版的支持不算特别好，<br />
+所以像<a href="https://github.com/celery/celery/issues/2700">社区里提的一样</a>，<br />
+自己在 task 层面处理信号。</p>
+
+<h2 id="conclusion">conclusion</h2>
+
+<p>总的来说，工程上实现平滑发版（无中断发版）核心思想是：</p>
+
+<ul>
+<li>服务层：处理好系统信号。<br /></li>
+<li>数据库：用双写保持兼容性。<br /></li>
+<li>其它：确保链路上的每一点都是无中断的，才能达成真正的平滑。<br />
+<br /></li>
+</ul>
+
+<p>通过这么一系列操作，<br />
+我们就可以轻松地做到用户（包括拼命人肉 DDOS 测试环境的前端爸爸们）感知不到我们在发版，<br />
+最终达成那句“随时都准备好发版”的状态。</p>
+
+<p>当然了，<br />
+随时发版到此时也只是技术层面的可行，<br />
+并不是意味着实际工作中真的会每时每刻都发版 :)</p>
+
+<p>毕竟软件工程不仅牵涉软件技术，还有人的工程呀。</p>
+
+<p>（完）</p>
+        </div>
+        
+
+        
+
+
+        
+        <div style="height: 20px;"></div>
+        
+        <div class="post-comments">
+          <script src="https://utteranc.es/client.js"
+                  repo="LKI/lki.github.io"
+                  issue-term="title"
+                  label="comment"
+                  theme="github-light"
+                  crossorigin="anonymous"
+                  async>
+          </script>
+        </div>
+
+        <div class="site-footer">
+  <div class="site-footer-left">
+    <div class="site-footer-item">
+      <span id="busuanzi_container_site_pv" style="display:none"> PV: <span id="busuanzi_value_site_pv"/> </span>
+    </div>
+    <div class="site-footer-item">
+      <span id="busuanzi_container_site_uv" style="display:none"> UV: <span id="busuanzi_value_site_uv"/> </span>
+    </div>
+  </div>
+
+  <div class="site-footer-right">
+    
+    <div class="site-footer-item">
+      <a href="/about" target="_blank">about</a>
+    </div>
+    
+    <div class="site-footer-item">
+      <a href="https://github.com/LKI/LKI" target="_blank">github</a>
+    </div>
+    
+    <div class="site-footer-item">
+      <a href="/index.xml" target="_blank">rss</a>
+    </div>
+    
+  </div>
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+</body>
+
+</html>

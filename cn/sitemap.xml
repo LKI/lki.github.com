@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://liriansu.com/posts/</loc>
-    <lastmod>2019-11-19T01:00:07+08:00</lastmod>
+    <lastmod>2019-12-09T23:39:28+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -18,13 +18,8 @@
   </url>
   
   <url>
-    <loc>https://liriansu.com/posts/2019-11-19-build-a-staic-blog/</loc>
-    <lastmod>2019-11-19T01:00:07+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://liriansu.com/</loc>
-    <lastmod>2019-11-19T01:00:07+08:00</lastmod>
+    <lastmod>2019-12-09T23:39:28+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -35,6 +30,16 @@
                 hreflang="cn"
                 href="https://liriansu.com/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://liriansu.com/posts/2019-12-09-gracefully-upgrade/</loc>
+    <lastmod>2019-12-09T23:39:28+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://liriansu.com/posts/2019-11-19-build-a-staic-blog/</loc>
+    <lastmod>2019-11-19T01:00:07+08:00</lastmod>
   </url>
   
   <url>
