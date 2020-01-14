@@ -6,10 +6,21 @@
     <description>Recent content on 浮云计算</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 Dec 2019 23:39:28 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 14 Jan 2020 21:39:31 +0800</lastBuildDate>
     
 	<atom:link href="https://liriansu.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>软件工程实践之 Git 开发流</title>
+      <link>https://liriansu.com/posts/2020-01-14-git-workflow/</link>
+      <pubDate>Tue, 14 Jan 2020 21:39:31 +0800</pubDate>
+      
+      <guid>https://liriansu.com/posts/2020-01-14-git-workflow/</guid>
+      <description>&lt;p&gt;软件工程实践系列文章，&lt;br /&gt;
+会着重讲述实际的工程项目中是如何协作开发软件的。&lt;br /&gt;
+本文主要介绍如何使用 Git 来支撑整个开发流。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>软件工程实践之平滑发版</title>
