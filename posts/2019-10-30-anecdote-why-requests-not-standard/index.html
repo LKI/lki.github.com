@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.63.1" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,7 +19,7 @@
       "articleSection" : "posts",
       "name" : "[轶事] 为什么 requests 不是 python 标准库？",
       "headline" : "[轶事] 为什么 requests 不是 python 标准库？",
-      "description" : "\x3cp\x3e前几年一次跟耗子哥聊天，\x3cbr \/\x3e\n他说：“你终有一天会从 stackoverflow 上找 bugfix,\x3cbr \/\x3e\n进化到从 github issue 里找 bugfix.”\x3cbr \/\x3e\n一语成谶。\x3c\/p\x3e",
+      "description" : "\x3cp\x3e前几年一次跟耗子哥聊天，\n他说：“你终有一天会从 stackoverflow 上找 bugfix,\n进化到从 github issue 里找 bugfix.”\n一语成谶。\x3c\/p\x3e",
       "inLanguage" : "en-US",
       "author" : "Lirian Su",
       "creator" : "Lirian Su",
@@ -94,124 +94,100 @@
         </header>
 
         <div class="post-content markdown-body">
-          <p>前几年一次跟耗子哥聊天，<br />
-他说：“你终有一天会从 stackoverflow 上找 bugfix,<br />
-进化到从 github issue 里找 bugfix.”<br />
+          <p>前几年一次跟耗子哥聊天，
+他说：“你终有一天会从 stackoverflow 上找 bugfix,
+进化到从 github issue 里找 bugfix.”
 一语成谶。</p>
-
 <h2 id="头部注释">头部注释</h2>
-
 <p>我非常喜欢<a href="https://www.zhihu.com/question/30137699/answer/476916096">@灵剑 说的这么一段话</a>：</p>
-
 <blockquote>
-<p>软件维护有两种截然不同的思路：<br />
-一种是所有的依赖都追踪最新版，<br />
-一旦出最新版立即开始试用；<br />
-另一种是所有的依赖都选择一个不会变的固定版本，<br />
+<p>软件维护有两种截然不同的思路：
+一种是所有的依赖都追踪最新版，
+一旦出最新版立即开始试用；
+另一种是所有的依赖都选择一个不会变的固定版本，
 能不升级就不升级。</p>
 </blockquote>
-
-<p>看见软件的新陈代谢，给写代码的我带来了无穷的热爱与动力，<br />
+<p>看见软件的新陈代谢，给写代码的我带来了无穷的热爱与动力，
 同时也给我带来了很多 github issues&hellip;</p>
-
-<p>代码是人写的，bug 也是人写的，bugfix 也还是人写的，<br />
-github issue 的文字里也充满了各种各样有血有肉的充满既视感的评论。<br />
-issue 的文字虽然隔着时间空间上的距离，<br />
-但就像 <a href="https://xkcd.com/979/">xkcd 979 - wisdom of the ancients</a> 表达的那样，<br />
+<p>代码是人写的，bug 也是人写的，bugfix 也还是人写的，
+github issue 的文字里也充满了各种各样有血有肉的充满既视感的评论。
+issue 的文字虽然隔着时间空间上的距离，
+但就像 <a href="https://xkcd.com/979/">xkcd 979 - wisdom of the ancients</a> 表达的那样，
 有些情绪就是亘古不变的。</p>
-
-<p><img src="https://imgs.xkcd.com/comics/wisdom_of_the_ancients.png" alt="wisdom-of-the-ancients" /></p>
-
-<p>在工作中 debug 的时候，<br />
-对于具体的 issue,<br />
+<p><img src="https://imgs.xkcd.com/comics/wisdom_of_the_ancients.png" alt="wisdom-of-the-ancients"></p>
+<p>在工作中 debug 的时候，
+对于具体的 issue,
 同事们都留下过很多精彩的讨论。</p>
-
-<p>鉴于这样，<br />
-我决定开辟一个“轶事”的专栏，<br />
+<p>鉴于这样，
+我决定开辟一个“轶事”的专栏，
 专门来讲一讲那些好玩的 issue.</p>
-
 <h2 id="为什么-requests-不是-python-标准库">为什么 requests 不是 python 标准库？</h2>
-
 <blockquote>
-<p>原文地址:<br />
+<p>原文地址:
 <a href="https://github.com/psf/requests/issues/2424">https://github.com/psf/requests/issues/2424</a></p>
 </blockquote>
-
-<p><a href="https://github.com/kennethreitz">Kenneth Reitz</a> 是一个业界知名的程序员，<br />
-很多人了解他可能是因为<a href="https://zhuanlan.zhihu.com/p/20346580">他从两百多斤的胖子变成一个超帅的玩摄影的程序员</a>，<br />
+<p><a href="https://github.com/kennethreitz">Kenneth Reitz</a> 是一个业界知名的程序员，
+很多人了解他可能是因为<a href="https://zhuanlan.zhihu.com/p/20346580">他从两百多斤的胖子变成一个超帅的玩摄影的程序员</a>，
 其实专业过硬的他是写出过 <a href="https://github.com/psf/requests">python-requests</a>, <a href="https://github.com/postmanlabs/httpbin">httpbin</a> 等好用的工具库的。</p>
-
-<p>requests 这个库重要到什么程度呢？<br />
-根据目前可以公开的情报看到，<br />
-GitHub 上的引用数高达 <code>389k</code>，<br />
+<p>requests 这个库重要到什么程度呢？
+根据目前可以公开的情报看到，
+GitHub 上的引用数高达 <code>389k</code>，
 是 python 语言下引用数最高的库。</p>
-
-<p>于是很自然的，我就产生了这样的疑问：<br />
-“为什么 requests 不是 python 标准库呢？”<br />
-作为项目的主开发，<br />
-Kenneth 在 2015 年初，<br />
-还在 python 3.5 的年代就向社区抛了一个问题：<br />
+<p>于是很自然的，我就产生了这样的疑问：
+“为什么 requests 不是 python 标准库呢？”
+作为项目的主开发，
+Kenneth 在 2015 年初，
+还在 python 3.5 的年代就向社区抛了一个问题：
 “假如 requests 要加入 python 3.5 标准库，你们有什么想法吗？”</p>
-
-<p>的确，一个库进标准库是有利有弊，要经过社区讨论的。<br />
-所以其实我的问题应该要改一个字，<br />
-从“为什么 requests 不是 python 标准库？”<br />
+<p>的确，一个库进标准库是有利有弊，要经过社区讨论的。
+所以其实我的问题应该要改一个字，
+从“为什么 requests 不是 python 标准库？”
 改成“为什么 requests 不进 python 标准库？”</p>
-
 <p>整串讨论看下来，基本是有这么几个意见：</p>
-
 <ul>
-<li>优势是<br />
-
+<li>优势是
 <ul>
-<li>降低使用成本：让很多小白也能直接上手用标准库的了。<br /></li>
-<li>扩大使用范围：很多只依赖于标准库的项目，也能用上 requests 了。<br /></li>
-</ul></li>
-<li>劣势是<br />
-
-<ul>
-<li>开发流程问题：标准库的严格流程，跟社区开发的流程完全不一样，最终可能导致开发者流失。<br /></li>
-<li>依赖问题：现有的库依赖了不少证书之类的文件，在进标准库的过程中需要大重构。<br /></li>
-<li>进化速度问题：进了标准库以后，接口跟实现就会固化，很难随着外部世界改变而快速变化到最好的状态。<br /></li>
-<li>其它历史问题：以前的 urllib 库为了兼容其实已经很臃肿了，也是需要重构的。<br />
-<br /></li>
-</ul></li>
+<li>降低使用成本：让很多小白也能直接上手用标准库的了。</li>
+<li>扩大使用范围：很多只依赖于标准库的项目，也能用上 requests 了。</li>
 </ul>
-
-<p>总的来说，<br />
-社区的反对意见跟忧虑会更大一些，<br />
+</li>
+<li>劣势是
+<ul>
+<li>开发流程问题：标准库的严格流程，跟社区开发的流程完全不一样，最终可能导致开发者流失。</li>
+<li>依赖问题：现有的库依赖了不少证书之类的文件，在进标准库的过程中需要大重构。</li>
+<li>进化速度问题：进了标准库以后，接口跟实现就会固化，很难随着外部世界改变而快速变化到最好的状态。</li>
+<li>其它历史问题：以前的 urllib 库为了兼容其实已经很臃肿了，也是需要重构的。</li>
+</ul>
+</li>
+</ul>
+<p>总的来说，
+社区的反对意见跟忧虑会更大一些，
 更原汁原味的评论大家可以看一下原串。</p>
-
 <p>整个讨论中还有几个我感兴趣的点：</p>
-
 <ul>
-<li>@Lukasa 在串首来了个起手式：“先问一下几个大佬，他们的看法是怎么样的。”<br />
-然后 at 了 <code>@shazow @kevinburke @dstufft @alex @sigmavirus24</code> 这五个人。<br />
-里面我只知道 alex 是写 <code>cryptography</code> 的，其它人其实都可以认识一下。<br /></li>
-<li>串讨论到一半的时候 <code>@dcramer</code> 留了些关于“我只用标准库依赖”的评论，<br />
-然后留下一句 <code>not sure what you're all bitching about</code> 就跑了…<br />
-我就不敢这么放肆&hellip;<br /></li>
-<li>Kenneth 在 requests 库的文档中曾写过这么一句话：<br />
-<code>Essentially, the standard library is where a library goes to die.</code><br />
-结果就在讨论过程中多次被揪出来“打脸”质疑了。<br />
-（其实还好，设计哲学是可以设计的嘛）<br /></li>
-<li><a href="https://github.com/psf/requests/issues/5057">今年四月也有个老哥 @4evermaat 抛了这个问题</a>，<br />
-他在看完四年前的讨论以后，留下了这么一句感慨：<br />
-<code>I didn't realize there was so much politics in getting a module included in the stdlib.</code><br />
-<br /></li>
+<li>@Lukasa 在串首来了个起手式：“先问一下几个大佬，他们的看法是怎么样的。”
+然后 at 了 <code>@shazow @kevinburke @dstufft @alex @sigmavirus24</code> 这五个人。
+里面我只知道 alex 是写 <code>cryptography</code> 的，其它人其实都可以认识一下。</li>
+<li>串讨论到一半的时候 <code>@dcramer</code> 留了些关于“我只用标准库依赖”的评论，
+然后留下一句 <code>not sure what you're all bitching about</code> 就跑了…
+我就不敢这么放肆&hellip;</li>
+<li>Kenneth 在 requests 库的文档中曾写过这么一句话：
+<code>Essentially, the standard library is where a library goes to die.</code>
+结果就在讨论过程中多次被揪出来“打脸”质疑了。
+（其实还好，设计哲学是可以设计的嘛）</li>
+<li><a href="https://github.com/psf/requests/issues/5057">今年四月也有个老哥 @4evermaat 抛了这个问题</a>，
+他在看完四年前的讨论以后，留下了这么一句感慨：
+<code>I didn't realize there was so much politics in getting a module included in the stdlib.</code></li>
 </ul>
-
-<p>在讨论结束过后四年的现在，<br />
-<code>requests</code> 库依然以一个独立的社区项目生机勃勃地新陈代谢着，<br />
+<p>在讨论结束过后四年的现在，
+<code>requests</code> 库依然以一个独立的社区项目生机勃勃地新陈代谢着，
 python 3.5 以后也增加了标准库 <code>urllib.request</code> 支持一部分核心功能。</p>
-
-<p>代码既是人设计的，<br />
-也是给人用的。<br />
-它们背后的故事，<br />
-也是程序内在逻辑的一部分。<br />
-这部分逻辑曾经在一个个讨论串里存活着，<br />
+<p>代码既是人设计的，
+也是给人用的。
+它们背后的故事，
+也是程序内在逻辑的一部分。
+这部分逻辑曾经在一个个讨论串里存活着，
 最终也让代码更加鲜活地呼吸着、代谢着、生存了下去。</p>
-
 <p>（完）</p>
         </div>
         

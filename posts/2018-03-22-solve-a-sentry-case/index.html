@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.63.1" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,7 +19,7 @@
       "articleSection" : "posts",
       "name" : "破案·Sentry迷云",
       "headline" : "破案·Sentry迷云",
-      "description" : "\x3cp\x3e作为程序员，\x3cbr \/\x3e\n日常开发中经常会出现一些“不科学”的事情，\x3cbr \/\x3e\n这种时候也是“破案”的好时机：\x3cbr \/\x3e\n让我们来用科学，解释不科学。\x3c\/p\x3e",
+      "description" : "\x3cp\x3e作为程序员，\n日常开发中经常会出现一些“不科学”的事情，\n这种时候也是“破案”的好时机：\n让我们来用科学，解释不科学。\x3c\/p\x3e",
       "inLanguage" : "en-US",
       "author" : "Lirian Su",
       "creator" : "Lirian Su",
@@ -94,252 +94,183 @@
         </header>
 
         <div class="post-content markdown-body">
-          <p>作为程序员，<br />
-日常开发中经常会出现一些“不科学”的事情，<br />
-这种时候也是“破案”的好时机：<br />
+          <p>作为程序员，
+日常开发中经常会出现一些“不科学”的事情，
+这种时候也是“破案”的好时机：
 让我们来用科学，解释不科学。</p>
-
 <h2 id="起">起</h2>
-
-<p>又是平凡的一天，<br />
-坐成一排的程序员们正在噼里啪啦地写代码。<br />
-不知不觉间 deadline 逼近了，<br />
-想到这点，<br />
+<p>又是平凡的一天，
+坐成一排的程序员们正在噼里啪啦地写代码。
+不知不觉间 deadline 逼近了，
+想到这点，
 大家不禁紧张地噼里啪啦地写代码。</p>
-
-<p>突然，<a href="https://github.com/MIA503">旭总</a>眉头一皱，发现事情并不简单：<br />
+<p>突然，<a href="https://github.com/MIA503">旭总</a>眉头一皱，发现事情并不简单：
 “我总感觉这几天 Sentry 的响应速度变慢了。”</p>
-
 <blockquote>
-<p>Sentry, 英文单词直译是哨兵（漫威宇宙里最强者之一）。<br />
-也是一个非常好用的异常监控/收集/管理软件，<br />
+<p>Sentry, 英文单词直译是哨兵（漫威宇宙里最强者之一）。
+也是一个非常好用的异常监控/收集/管理软件，
 官网可以参见 sentry.io</p>
-
-<p>我司用 Sentry 做了各端的错误收集，<br />
+<p>我司用 Sentry 做了各端的错误收集，
 大家养成了一出错先看 Sentry 堆栈分锅的习惯。</p>
 </blockquote>
-
-<p>于是紫月就例行公事地看了一眼 Sentry Stats,<br />
-紫月觉得事情很简单：<br />
+<p>于是紫月就例行公事地看了一眼 Sentry Stats,
+紫月觉得事情很简单：
 “拉总你看看你的推送啊！”</p>
-
 <blockquote>
-<p><a href="http://lxkaka.wang/">拉总</a>，绰号来源于 ID: lxkaka.<br />
+<p><a href="http://lxkaka.wang/">拉总</a>，绰号来源于 ID: lxkaka.
 因为跟我们支付供应商拉卡拉 (lakala) 巨像而得名。</p>
-
-<p>拉总在我司做后端，<br />
+<p>拉总在我司做后端，
 负责过会员数据、平台监控、推送系统的实现。</p>
 </blockquote>
-
-<p><img src="/assets/pics/cases/sentry_stats.jpg" alt="stats" /></p>
-
-<p>跑过来看着紫月屏幕里 Sentry Stats 的数据，<br />
-拉总感到一脸懵逼：<br />
+<p><img src="/assets/pics/cases/sentry_stats.jpg" alt="stats"></p>
+<p>跑过来看着紫月屏幕里 Sentry Stats 的数据，
+拉总感到一脸懵逼：
 “不应该啊，推送系统怎么能报这么多错呢？”</p>
-
 <h2 id="承">承</h2>
-
-<p>回到座位的拉总研究了一会儿，<br />
-惊呼道：<br />
+<p>回到座位的拉总研究了一会儿，
+惊呼道：
 “我们是不是换过测试环境的 MongoDB 地址啊？”</p>
-
-<p>旭总一脸鄙视：<br />
+<p>旭总一脸鄙视：
 “没换，要换也是两个月以前换的。”</p>
-
-<p>紫月笑着调戏拉总：<br />
+<p>紫月笑着调戏拉总：
 “不会你的代码跪了两个月才发现吧？”</p>
-
-<p>拉总赶快说：<br />
+<p>拉总赶快说：
 “不可能不可能，我再看看。”</p>
-
-<p>过了十分钟，<br />
-拉总二脸懵逼地站起来了，<br />
-十分迷惑地 Pub 了一句：<br />
+<p>过了十分钟，
+拉总二脸懵逼地站起来了，
+十分迷惑地 Pub 了一句：
 “这不科学啊，测试环境是好的啊。”</p>
-
-<p>于是大家凑在一起，<br />
+<p>于是大家凑在一起，
 整理出了目前几个已知事实：</p>
-
 <ul>
-<li>Sentry 不停地在接受测试环境的推送系统 (zaihui-push) 的报错。<br /></li>
-<li>报错内容是 MongoDB 访问地址不对。<br /></li>
-<li>两个月以前我们换过测试环境的 MongoDB 。<br /></li>
-<li>但是代码级别上，测试环境用的 MongoDB 配置是正确的。<br />
-<br /></li>
+<li>Sentry 不停地在接受测试环境的推送系统 (zaihui-push) 的报错。</li>
+<li>报错内容是 MongoDB 访问地址不对。</li>
+<li>两个月以前我们换过测试环境的 MongoDB 。</li>
+<li>但是代码级别上，测试环境用的 MongoDB 配置是正确的。</li>
 </ul>
-
-<p>也就是说：<br />
-我们以为我们代码是正确的，<br />
+<p>也就是说：
+我们以为我们代码是正确的，
 但是监控观察到代码一直在报错！</p>
-
 <p>这很 (bu) 神 (ke) 奇 (xue) 。</p>
-
 <p>于是我们决定破案一下。</p>
-
-<p>首先，拉总检查了一下测试环境的正确性。<br />
-拉总把推送系统的 docker 都关了，<br />
-但 Sentry 还是一直收到报错，<br />
+<p>首先，拉总检查了一下测试环境的正确性。
+拉总把推送系统的 docker 都关了，
+但 Sentry 还是一直收到报错，
 这说明<strong>报错源不是测试环境</strong>。</p>
-
-<p><a href="https://github.com/hulucc">俊儒</a>指出 Sentry 说不定可以看到源 IP，<br />
-于是紫月尝试观测了一下，<br />
+<p><a href="https://github.com/hulucc">俊儒</a>指出 Sentry 说不定可以看到源 IP，
+于是紫月尝试观测了一下，
 IP 是没观测到，但是观测到了 Server Name。</p>
-
-<p><img src="/assets/pics/cases/sentry_tags.jpg" alt="tags" /></p>
-
+<p><img src="/assets/pics/cases/sentry_tags.jpg" alt="tags"></p>
 <p><code>ea064a694da5</code> 这个12位的16进制数字是典型的 Docker Container ID ！</p>
-
-<p>所以大家马上想到了暴力的破解方法：<br />
+<p>所以大家马上想到了暴力的破解方法：
 把内网的所有 Docker Container ID 都找出来。</p>
-
 <blockquote>
-<p>我司的测试/生产环境都在内网环境中，<br />
-只能通过入口机器 (gateway) ssh 到机器上。<br />
-为了方便运维，<br />
+<p>我司的测试/生产环境都在内网环境中，
+只能通过入口机器 (gateway) ssh 到机器上。
+为了方便运维，
 内网机器都在 ssh config 里配上了名称。</p>
 </blockquote>
-
-<p>于是紫月在入口机上执行了一段 bash 脚本，<br />
+<p>于是紫月在入口机上执行了一段 bash 脚本，
 把所有内网上的 Docker Container ID 都找了出来：</p>
-
 <pre><code>cat ~/.ssh/config | grep -G '^Host' | cut -d' ' -f2 | xargs -I{} ssh {} &quot;docker ps&quot; &gt;&gt; dockers_container.log
-</code></pre>
-
-<p>命令跑完以后，<br />
-我们打开输出文件，<br />
-激动地发现：<br />
+</code></pre><p>命令跑完以后，
+我们打开输出文件，
+激动地发现：
 <strong>报错源不在内网里</strong>！</p>
-
 <h2 id="转">转</h2>
-
-<p>一下子事情僵住了，<br />
+<p>一下子事情僵住了，
 大家的头绪离散到了好几个方面：</p>
-
 <ul>
-<li>能不能模拟 MongoDB 的地址，然后抓包请求？<br /></li>
-<li>能不能在 Sentry 信息中翻到 IP 地址？<br /></li>
-<li>能不能通过 Docker Container ID 找到对应的机器？<br />
-<br /></li>
+<li>能不能模拟 MongoDB 的地址，然后抓包请求？</li>
+<li>能不能在 Sentry 信息中翻到 IP 地址？</li>
+<li>能不能通过 Docker Container ID 找到对应的机器？</li>
 </ul>
-
-<p>经过思考以后，<br />
-大家总结出破案的关键在于整个网络调用：<br />
-我们只要捋一遍服务器的网络关系、调用路径，<br />
+<p>经过思考以后，
+大家总结出破案的关键在于整个网络调用：
+我们只要捋一遍服务器的网络关系、调用路径，
 就可以找到破案点！</p>
-
 <p>问题一下子就定位到了内部系统的 Load Balancer 上。</p>
-
 <blockquote>
-<p>我司隔离了生产环境和内部系统（比如 GitLab/Sentry 等）<br />
-类似于生产环境的入口机器 (gateway)<br />
+<p>我司隔离了生产环境和内部系统（比如 GitLab/Sentry 等）
+类似于生产环境的入口机器 (gateway)
 我们内部系统的流量入口也是我们用 nginx 自己搭的。</p>
 </blockquote>
-
-<p>于是我们登上了内部系统的 nginx,<br />
-找到了 nginx access log,<br />
+<p>于是我们登上了内部系统的 nginx,
+找到了 nginx access log,
 整个文件大概有10万行。</p>
-
 <pre><code>...
 42141 59.78.3.25 - - [22/Mar/2018:22:09:07 +0800] &quot;POST /api/450/store/ HTTP/1.1&quot; 200 41 &quot;-&quot; &quot;raven-python/6.3.0&quot; &quot;-&quot;
 42142 59.78.3.20 - - [22/Mar/2018:22:09:07 +0800] &quot;POST /api/355/store/?sentry_version=7&amp;sentry_client=raven-js%2F3.22.3&amp; HTTP/1.1&quot; 200 41 &quot;Mozilla/5.0 (Linux; Android 8.0; DUK-AL20 Build/HUAWEIDUK-AL20; wv) Mobile Safari/537.36 MicroMessenger/6.6.5.1280&quot; &quot;-&quot;
 42143 59.78.3.24 - - [22/Mar/2018:09:33:08 +0800] &quot;POST /api/452/store/ HTTP/1.1&quot; 400 62 &quot;-&quot; &quot;SharpRaven/2.2.0.0&quot; &quot;-&quot;
 ...
-</code></pre>
-
-<p>问题又来了：<br />
-要怎么在这数万行形态各异的 log 中，<br />
-找到哪一条是推送系统的报错，<br />
+</code></pre><p>问题又来了：
+要怎么在这数万行形态各异的 log 中，
+找到哪一条是推送系统的报错，
 从而找到报错源的 IP 呢？</p>
-
-<p>可以通过 Sentry Endpoint,<br />
-也可以通过 Raven 的版本。<br />
-比如上述 log 中的三条信息，<br />
+<p>可以通过 Sentry Endpoint,
+也可以通过 Raven 的版本。
+比如上述 log 中的三条信息，
 分别是 Python/JavaScript/C# 向 Sentry 发送的错误信息。</p>
-
-<p>推送系统用的包是 [raven==6.3.0][ravern],<br />
-于是我们就从中晒出来了真正的 IP：<br />
-59.78.3.25 ！<br />
+<p>推送系统用的包是 [raven==6.3.0][ravern],
+于是我们就从中晒出来了真正的 IP：
+59.78.3.25 ！
 （本条 IP 已打码）</p>
-
-<p>大家兴奋地都站了起来。<br />
-因为不是自己推送系统环境没配对之类的锅，<br />
-拉总也如释重负/火上浇油地喊道：<br />
+<p>大家兴奋地都站了起来。
+因为不是自己推送系统环境没配对之类的锅，
+拉总也如释重负/火上浇油地喊道：
 “破案了破案了！快看看这个IP是谁的！”</p>
-
 <h2 id="合">合</h2>
-
-<p>上网定位了一下，<br />
-发现这个 IP 是上海市的，<br />
-俊儒怀疑道：<br />
+<p>上网定位了一下，
+发现这个 IP 是上海市的，
+俊儒怀疑道：
 “这怕不是就是我司办公室的流量出口？”</p>
-
 <p>于是我们查了一下我们现在的出口 IP：</p>
-
 <pre><code>&gt; curl -s httpbin.org/ip
 {
   &quot;origin&quot;: &quot;59.78.3.25&quot;
 }
-</code></pre>
-
-<p>顿时空气有点寂静，<br />
+</code></pre><p>顿时空气有点寂静，
 因为目前的事实是这样的：</p>
-
 <ul>
-<li>拉总确认过他开发的推送系统没有报错。<br /></li>
-<li>大家追溯下来，报错源就在我们办公室。<br /></li>
-<li>报错源藏在某个人电脑的 docker 里面。<br />
-<br /></li>
+<li>拉总确认过他开发的推送系统没有报错。</li>
+<li>大家追溯下来，报错源就在我们办公室。</li>
+<li>报错源藏在某个人电脑的 docker 里面。</li>
 </ul>
-
-<p>那么问题来了：<br />
-究竟哪个人会 clone 推送系统的代码，<br />
-并且在自己的电脑上用 docker 跑起来呢？<br />
+<p>那么问题来了：
+究竟哪个人会 clone 推送系统的代码，
+并且在自己的电脑上用 docker 跑起来呢？
 那就只可能是开发者<strong>拉总本人</strong>。</p>
-
-<p>大家围到了紧张的拉总的身后，<br />
+<p>大家围到了紧张的拉总的身后，
 看着他敲下了 <code>docker ps</code> 命令：</p>
-
 <pre><code>&gt; docker ps
 CONTAINER ID        IMAGE           ...
 ea064a694da5        zaihui-push     ...
-</code></pre>
-
-<p>破案了！</p>
-
-<p>拉总想了想，猜测说：<br />
-他大概是几天前本机调试了一下推送，<br />
+</code></pre><p>破案了！</p>
+<p>拉总想了想，猜测说：
+他大概是几天前本机调试了一下推送，
 忘了关了。</p>
-
-<p>那么真的如他所说是几天前吗？<br />
+<p>那么真的如他所说是几天前吗？
 大家打开了 Sentry：</p>
-
-<p><img src="/assets/pics/cases/sentry_frequency.jpg" alt="frequency" /></p>
-
-<p>数据无情地还原了真相：<br />
-两个月以前就开始报错了，<br />
-也就是按旭总的记忆，<br />
+<p><img src="/assets/pics/cases/sentry_frequency.jpg" alt="frequency"></p>
+<p>数据无情地还原了真相：
+两个月以前就开始报错了，
+也就是按旭总的记忆，
 从我们换了测试环境的 MongoDB 开始。</p>
-
-<p>看着最后原来是拉总自己电脑搞的乌龙，<br />
-大家也是爆笑了一圈，<br />
-旭总顺带还调侃拉总：<br />
+<p>看着最后原来是拉总自己电脑搞的乌龙，
+大家也是爆笑了一圈，
+旭总顺带还调侃拉总：
 “你的 Mac 电脑也是牛逼啊，开着几个 docker 都不卡的。”</p>
-
-<p>后来看着 Sentry 的错误频率图，<br />
-大家又疯狂地笑了一圈拉总：<br />
-“拉总，这个 Sentry 报错早十晚八，做五休二，<br />
+<p>后来看着 Sentry 的错误频率图，
+大家又疯狂地笑了一圈拉总：
+“拉总，这个 Sentry 报错早十晚八，做五休二，
 可真能反映你的上班时间~”</p>
-
-<p><img src="/assets/pics/cases/sentry_hours.jpg" alt="hours" /></p>
-
-<p><img src="/assets/pics/cases/sentry_weeks.jpg" alt="weeks" /></p>
-
-<p>事情的最后，<br />
-紫月从柳总桌子上翻出了门把手的“拉”和“推”两个字，<br />
-放在了拉总的桌子上：<br />
-“拉总，好吧，经此一役，<br />
+<p><img src="/assets/pics/cases/sentry_hours.jpg" alt="hours"></p>
+<p><img src="/assets/pics/cases/sentry_weeks.jpg" alt="weeks"></p>
+<p>事情的最后，
+紫月从柳总桌子上翻出了门把手的“拉”和“推”两个字，
+放在了拉总的桌子上：
+“拉总，好吧，经此一役，
 你也是我们的推总了。”</p>
-
 <p>（完）</p>
         </div>
         

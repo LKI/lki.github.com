@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.63.1" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -92,87 +92,65 @@
 
         <div class="post-content markdown-body">
           <p>这是一篇关于<a href="https://github.com/hueniverse/hawk1">Hawk</a>的简短介绍。</p>
-
 <h2 id="什么是hawk">什么是Hawk</h2>
-
-<p><a href="https://github.com/hueniverse/hawk1">Hawk</a>是一种轻量级的Http加密方式，<br />
-这里的轻量级是针对于OAuth / Digest这种加密方式而言。<br />
-<a href="https://github.com/hueniverse/hawk1">Hawk</a>主要防范的是中间人攻击，<br />
-它基于服务器和客户端共有的秘钥，<br />
-在时间戳的基础上对请求加密，<br />
+<p><a href="https://github.com/hueniverse/hawk1">Hawk</a>是一种轻量级的Http加密方式，
+这里的轻量级是针对于OAuth / Digest这种加密方式而言。
+<a href="https://github.com/hueniverse/hawk1">Hawk</a>主要防范的是中间人攻击，
+它基于服务器和客户端共有的秘钥，
+在时间戳的基础上对请求加密，
 生成互相匹配的特征码。</p>
-
-<p><a href="https://github.com/hueniverse/hawk1">Hawk</a>的好处是整个加密的过程对计算能力要求不高，<br />
-用到的也是简单的sha256算法。<br />
-而且它可以只针对单个请求加密，<br />
+<p><a href="https://github.com/hueniverse/hawk1">Hawk</a>的好处是整个加密的过程对计算能力要求不高，
+用到的也是简单的sha256算法。
+而且它可以只针对单个请求加密，
 所以应用场景十分灵活。</p>
-
-<p>在一个典型的<a href="https://github.com/hueniverse/hawk1">Hawk</a>应用场景中，<br />
-客户端首先通过某种方式跟服务端通信，<br />
-获取秘钥。<br />
-在之后的Http请求中，<br />
-客户端对请求采用Hawk加密，<br />
-并且把基本信息放在Http Header里。<br />
-服务器收到请求以后，<br />
-采用同样的方式进行加密比对，<br />
-假如两边都对上了，<br />
-则是一个合法请求。<br />
+<p>在一个典型的<a href="https://github.com/hueniverse/hawk1">Hawk</a>应用场景中，
+客户端首先通过某种方式跟服务端通信，
+获取秘钥。
+在之后的Http请求中，
+客户端对请求采用Hawk加密，
+并且把基本信息放在Http Header里。
+服务器收到请求以后，
+采用同样的方式进行加密比对，
+假如两边都对上了，
+则是一个合法请求。
 否则返回<code>401 Unauthorized</code></p>
-
 <h2 id="加密算法">加密算法</h2>
-
 <p><a href="https://github.com/hueniverse/hawk1">Hawk</a>协议规定的加密方式如下：</p>
-
 <p>这是一个样例的HTTP GET请求：</p>
-
-<pre><code class="language-http">GET http://example.com:8000/resource/1?b=1&amp;a=2
-</code></pre>
-
-<p>要通过Hawk验证，<br />
-我们会把请求的特征用换行符拼接成如下格式，<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http"><span style="color:#960050;background-color:#1e0010">G</span><span style="color:#960050;background-color:#1e0010">E</span><span style="color:#960050;background-color:#1e0010">T</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#960050;background-color:#1e0010">h</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">:</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">x</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">m</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">m</span><span style="color:#960050;background-color:#1e0010">:</span><span style="color:#960050;background-color:#1e0010">8</span><span style="color:#960050;background-color:#1e0010">0</span><span style="color:#960050;background-color:#1e0010">0</span><span style="color:#960050;background-color:#1e0010">0</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">u</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">1</span><span style="color:#960050;background-color:#1e0010">?</span><span style="color:#960050;background-color:#1e0010">b</span><span style="color:#960050;background-color:#1e0010">=</span><span style="color:#960050;background-color:#1e0010">1</span><span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">=</span><span style="color:#960050;background-color:#1e0010">2</span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p>要通过Hawk验证，
+我们会把请求的特征用换行符拼接成如下格式，
 最后再用<code>HMAC sha256</code>进行加密：</p>
-
-<pre><code class="language-http">hawk.1.header
-1353832234
-j4h3g2
-GET
-/resource/1?b=1&amp;a=2
-example.com
-8000
-
-some-app-ext-data
-
-</code></pre>
-
-<p>其中<code>hawk.1.header</code>是表示用version为1的hawk来加密header，<br />
-<code>1353832234</code>是unix timestamp，<br />
-<code>j4h3g2</code>是客户端生成的随机字符串，<br />
-<code>GET</code>是请求类型，<br />
-<code>/resource/1?b=1&amp;a=2</code>是请求的query，<br />
-<code>example.com</code>和<code>8000</code>分别是host和port，<br />
-而<code>some-app-ext-data</code>是约定好要验证的额外内容（可为空）。<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http"><span style="color:#960050;background-color:#1e0010">h</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">w</span><span style="color:#960050;background-color:#1e0010">k</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">1</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">h</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">d</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#960050;background-color:#1e0010">1</span><span style="color:#960050;background-color:#1e0010">3</span><span style="color:#960050;background-color:#1e0010">5</span><span style="color:#960050;background-color:#1e0010">3</span><span style="color:#960050;background-color:#1e0010">8</span><span style="color:#960050;background-color:#1e0010">3</span><span style="color:#960050;background-color:#1e0010">2</span><span style="color:#960050;background-color:#1e0010">2</span><span style="color:#960050;background-color:#1e0010">3</span><span style="color:#960050;background-color:#1e0010">4</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#960050;background-color:#1e0010">j</span><span style="color:#960050;background-color:#1e0010">4</span><span style="color:#960050;background-color:#1e0010">h</span><span style="color:#960050;background-color:#1e0010">3</span><span style="color:#960050;background-color:#1e0010">g</span><span style="color:#960050;background-color:#1e0010">2</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#960050;background-color:#1e0010">G</span><span style="color:#960050;background-color:#1e0010">E</span><span style="color:#960050;background-color:#1e0010">T</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">u</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">1</span><span style="color:#960050;background-color:#1e0010">?</span><span style="color:#960050;background-color:#1e0010">b</span><span style="color:#960050;background-color:#1e0010">=</span><span style="color:#960050;background-color:#1e0010">1</span><span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">=</span><span style="color:#960050;background-color:#1e0010">2</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">x</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">m</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">m</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#960050;background-color:#1e0010">8</span><span style="color:#960050;background-color:#1e0010">0</span><span style="color:#960050;background-color:#1e0010">0</span><span style="color:#960050;background-color:#1e0010">0</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">m</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">x</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#960050;background-color:#1e0010">d</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p>其中<code>hawk.1.header</code>是表示用version为1的hawk来加密header，
+<code>1353832234</code>是unix timestamp，
+<code>j4h3g2</code>是客户端生成的随机字符串，
+<code>GET</code>是请求类型，
+<code>/resource/1?b=1&amp;a=2</code>是请求的query，
+<code>example.com</code>和<code>8000</code>分别是host和port，
+而<code>some-app-ext-data</code>是约定好要验证的额外内容（可为空）。
 上面这段字符串是大小写敏感，空格敏感且换行敏感的。</p>
-
-<p>假如说我们的秘钥是<code>werxhqb98rpaxn39848xrunpaw3489ruxnpa98w4rxn</code>，<br />
+<p>假如说我们的秘钥是<code>werxhqb98rpaxn39848xrunpaw3489ruxnpa98w4rxn</code>，
 则上面的样例请求经过<code>HMAC sha256</code>加密后的特征码会是<code>6R4rV5iE+NPoym+WwjeHzjAGXUtLNIxmo1vpMofpLAE=</code></p>
-
-<p>最后我们把基本信息加入Http Header里，<br />
+<p>最后我们把基本信息加入Http Header里，
 请求就会变成这样子：</p>
-
-<pre><code class="language-http">GET http://example.com:8000/resource/1?b=1&amp;a=2
-Authorization: Hawk id=&quot;dh37fgj492je&quot;, ts=&quot;1353832234&quot;, nonce=&quot;j4h3g2&quot;, ext=&quot;some-app-ext-data&quot;, mac=&quot;6R4rV5iE+NPoym+WwjeHzjAGXUtLNIxmo1vpMofpLAE=&quot;
-</code></pre>
-
-<p>服务器端拿到<code>HttpHeader.Authorization</code>以后进行加密比对即可。</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http"><span style="color:#960050;background-color:#1e0010">G</span><span style="color:#960050;background-color:#1e0010">E</span><span style="color:#960050;background-color:#1e0010">T</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#960050;background-color:#1e0010">h</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">:</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">x</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">m</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">m</span><span style="color:#960050;background-color:#1e0010">:</span><span style="color:#960050;background-color:#1e0010">8</span><span style="color:#960050;background-color:#1e0010">0</span><span style="color:#960050;background-color:#1e0010">0</span><span style="color:#960050;background-color:#1e0010">0</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">u</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">1</span><span style="color:#960050;background-color:#1e0010">?</span><span style="color:#960050;background-color:#1e0010">b</span><span style="color:#960050;background-color:#1e0010">=</span><span style="color:#960050;background-color:#1e0010">1</span><span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">=</span><span style="color:#960050;background-color:#1e0010">2</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#960050;background-color:#1e0010">A</span><span style="color:#960050;background-color:#1e0010">u</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">h</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">z</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">n</span><span style="color:#960050;background-color:#1e0010">:</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#960050;background-color:#1e0010">H</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">w</span><span style="color:#960050;background-color:#1e0010">k</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">d</span><span style="color:#960050;background-color:#1e0010">=</span><span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#960050;background-color:#1e0010">d</span><span style="color:#960050;background-color:#1e0010">h</span><span style="color:#960050;background-color:#1e0010">3</span><span style="color:#960050;background-color:#1e0010">7</span><span style="color:#960050;background-color:#1e0010">f</span><span style="color:#960050;background-color:#1e0010">g</span><span style="color:#960050;background-color:#1e0010">j</span><span style="color:#960050;background-color:#1e0010">4</span><span style="color:#960050;background-color:#1e0010">9</span><span style="color:#960050;background-color:#1e0010">2</span><span style="color:#960050;background-color:#1e0010">j</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#960050;background-color:#1e0010">,</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">=</span><span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#960050;background-color:#1e0010">1</span><span style="color:#960050;background-color:#1e0010">3</span><span style="color:#960050;background-color:#1e0010">5</span><span style="color:#960050;background-color:#1e0010">3</span><span style="color:#960050;background-color:#1e0010">8</span><span style="color:#960050;background-color:#1e0010">3</span><span style="color:#960050;background-color:#1e0010">2</span><span style="color:#960050;background-color:#1e0010">2</span><span style="color:#960050;background-color:#1e0010">3</span><span style="color:#960050;background-color:#1e0010">4</span><span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#960050;background-color:#1e0010">,</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#960050;background-color:#1e0010">n</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">n</span><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">=</span><span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#960050;background-color:#1e0010">j</span><span style="color:#960050;background-color:#1e0010">4</span><span style="color:#960050;background-color:#1e0010">h</span><span style="color:#960050;background-color:#1e0010">3</span><span style="color:#960050;background-color:#1e0010">g</span><span style="color:#960050;background-color:#1e0010">2</span><span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#960050;background-color:#1e0010">,</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">x</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">=</span><span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">m</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">x</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#960050;background-color:#1e0010">d</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#960050;background-color:#1e0010">,</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#960050;background-color:#1e0010">m</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">=</span><span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#960050;background-color:#1e0010">6</span><span style="color:#960050;background-color:#1e0010">R</span><span style="color:#960050;background-color:#1e0010">4</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">V</span><span style="color:#960050;background-color:#1e0010">5</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">E</span><span style="color:#960050;background-color:#1e0010">+</span><span style="color:#960050;background-color:#1e0010">N</span><span style="color:#960050;background-color:#1e0010">P</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">y</span><span style="color:#960050;background-color:#1e0010">m</span><span style="color:#960050;background-color:#1e0010">+</span><span style="color:#960050;background-color:#1e0010">W</span><span style="color:#960050;background-color:#1e0010">w</span><span style="color:#960050;background-color:#1e0010">j</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">H</span><span style="color:#960050;background-color:#1e0010">z</span><span style="color:#960050;background-color:#1e0010">j</span><span style="color:#960050;background-color:#1e0010">A</span><span style="color:#960050;background-color:#1e0010">G</span><span style="color:#960050;background-color:#1e0010">X</span><span style="color:#960050;background-color:#1e0010">U</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">L</span><span style="color:#960050;background-color:#1e0010">N</span><span style="color:#960050;background-color:#1e0010">I</span><span style="color:#960050;background-color:#1e0010">x</span><span style="color:#960050;background-color:#1e0010">m</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">1</span><span style="color:#960050;background-color:#1e0010">v</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">M</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">f</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">L</span><span style="color:#960050;background-color:#1e0010">A</span><span style="color:#960050;background-color:#1e0010">E</span><span style="color:#960050;background-color:#1e0010">=</span><span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p>服务器端拿到<code>HttpHeader.Authorization</code>以后进行加密比对即可。</p>
 <h2 id="其它事项">其它事项</h2>
-
 <ul>
-<li>Hawk提供Payload Validation，协议中指定的加密方式是<code>sha256</code>，与header的加密方式<code>HMAC sha256</code>不一样。<br /></li>
-<li>假如客户端和服务器的Timestamp不一样，服务器应当返回Timestamp，由客户端计算时间差后再次请求。<br /></li>
-<li>具体使用中可恰当魔改Hawk请求，比如增加对id的验证等。<br />
-<br />
-<br /></li>
+<li>Hawk提供Payload Validation，协议中指定的加密方式是<code>sha256</code>，与header的加密方式<code>HMAC sha256</code>不一样。</li>
+<li>假如客户端和服务器的Timestamp不一样，服务器应当返回Timestamp，由客户端计算时间差后再次请求。</li>
+<li>具体使用中可恰当魔改Hawk请求，比如增加对id的验证等。</li>
 </ul>
         </div>
         

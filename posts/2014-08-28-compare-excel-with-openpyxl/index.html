@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.63.1" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,7 +19,7 @@
       "articleSection" : "posts",
       "name" : "用Openpyxl做两个Excel文件的比对",
       "headline" : "用Openpyxl做两个Excel文件的比对",
-      "description" : "\x3ch2 id=\x22起因\x22\x3e起因\x3c\/h2\x3e\n\n\x3cp\x3e最近老是要做比对Excel报表的工作，于是想写一个Python的小脚本来做这个工作。\x3cbr \/\x3e\n关于Python的Excel处理，以前只用过xlrd库，处理的是Office03的.xls文件。\x3cbr \/\x3e\n这次写小工具的同时也是学习一下新的东西。\x3c\/p\x3e",
+      "description" : "\x3ch2 id=\x22起因\x22\x3e起因\x3c\/h2\x3e\n\x3cp\x3e最近老是要做比对Excel报表的工作，于是想写一个Python的小脚本来做这个工作。\n关于Python的Excel处理，以前只用过xlrd库，处理的是Office03的.xls文件。\n这次写小工具的同时也是学习一下新的东西。\x3c\/p\x3e",
       "inLanguage" : "en-US",
       "author" : "Lirian Su",
       "creator" : "Lirian Su",
@@ -37,7 +37,6 @@
   <meta property="og:title" content="用Openpyxl做两个Excel文件的比对 - 浮云计算" />
   <meta property="og:type" content="article" />
   <meta name="description" content="起因
-
 最近老是要做比对Excel报表的工作，于是想写一个Python的小脚本来做这个工作。
 关于Python的Excel处理，以前只用过xlrd库，处理的是Office03的.xls文件。
 这次写小工具的同时也是学习一下新的东西。" />
@@ -96,48 +95,31 @@
 
         <div class="post-content markdown-body">
           <h2 id="起因">起因</h2>
-
-<p>最近老是要做比对Excel报表的工作，于是想写一个Python的小脚本来做这个工作。<br />
-关于Python的Excel处理，以前只用过xlrd库，处理的是Office03的.xls文件。<br />
+<p>最近老是要做比对Excel报表的工作，于是想写一个Python的小脚本来做这个工作。
+关于Python的Excel处理，以前只用过xlrd库，处理的是Office03的.xls文件。
 这次写小工具的同时也是学习一下新的东西。</p>
-
 <h2 id="准备工作">准备工作</h2>
-
-<p>由于本次要比对的报表是Office07的.xlsx文件，上网查了一下Python怎么做比较合适。<br />
+<p>由于本次要比对的报表是Office07的.xlsx文件，上网查了一下Python怎么做比较合适。
 看了几篇心得以后，敲定用Openpyxl（参考如下链接：）</p>
-
 <blockquote>
 <p><a href="http://www.gocalf.com/blog/python-read-write-excel.html">Python处理Excel的四个工具</a></p>
 </blockquote>
-
 <p>于是接下来是装Openpyxl，到官网上按照流程装了一发：</p>
-
 <blockquote>
 <p><a href="https://pythonhosted.org/openpyxl/">A Python Library: Openpyxl</a></p>
 </blockquote>
-
-<p>由于源码是到BitBucket上拖下来的，所以顺便还装了SourceTree。<br />
+<p>由于源码是到BitBucket上拖下来的，所以顺便还装了SourceTree。
 据说SourceTree还有Git的相关功能，下次可以体验一下。</p>
-
 <h2 id="使用openpyxl">使用Openpyxl</h2>
-
 <p>Openpyxl装好以后直接import就能用啦：</p>
-
-<pre><code class="language-python">from openpyxl import *
-</code></pre>
-
-<p>Openpyxl还提供了一个非常棒的教程<del>（有点过于简单</del></p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> openpyxl <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</code></pre></div><p>Openpyxl还提供了一个非常棒的教程~~（有点过于简单~~</p>
 <blockquote>
 <p><a href="https://pythonhosted.org/openpyxl/tutorial.html">Openpyxl Tutorial</a></p>
 </blockquote>
-
 <p>Openpyxl还有个弊端就是文档不怎么详细，只能去翻源码。</p>
-
 <h2 id="最终代码">最终代码</h2>
-
 <p>可以到我写的PythonScripts里找到我写的版本：</p>
-
 <p><a href="https://github.com/LKI/PythonScripts/tree/master/ExcelComparer">PythonScripts - ExcelComparer</a></p>
         </div>
         
