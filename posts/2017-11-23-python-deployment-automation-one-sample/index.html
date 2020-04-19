@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.63.1" />
+  <meta name="generator" content="Hugo 0.59.1" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,7 +19,7 @@
       "articleSection" : "posts",
       "name" : "Python项目自动化部署之一：举个栗子",
       "headline" : "Python项目自动化部署之一：举个栗子",
-      "description" : "\x3cp\x3e本文主要讲述一下我司\n（\x3ca href=\x22https:\/\/www.zhihu.com\/question\/19596230\/answer\/152193862\x22\x3e一个成长中的创业公司\x3c\/a\x3e）\n目前的代码发布流程用到了哪些工具。\x3c\/p\x3e",
+      "description" : "\x3cp\x3e本文主要讲述一下我司\x3cbr \/\x3e\n（\x3ca href=\x22https:\/\/www.zhihu.com\/question\/19596230\/answer\/152193862\x22\x3e一个成长中的创业公司\x3c\/a\x3e）\x3cbr \/\x3e\n目前的代码发布流程用到了哪些工具。\x3c\/p\x3e",
       "inLanguage" : "en-US",
       "author" : "Lirian Su",
       "creator" : "Lirian Su",
@@ -93,43 +93,50 @@
         </header>
 
         <div class="post-content markdown-body">
-          <p>本文主要讲述一下我司
-（<a href="https://www.zhihu.com/question/19596230/answer/152193862">一个成长中的创业公司</a>）
+          <p>本文主要讲述一下我司<br />
+（<a href="https://www.zhihu.com/question/19596230/answer/152193862">一个成长中的创业公司</a>）<br />
 目前的代码发布流程用到了哪些工具。</p>
-<h2 id="发布工具jenkinsjenkins">发布工具：<a href="https://jenkins.io/">Jenkins</a></h2>
-<p>我们用的发布工具是<a href="https://stackshare.io/jenkins">很多公司都在用</a>的<a href="https://jenkins.io/">Jenkins</a>。
-举个<del>栗子</del>图，
+
+<h2 id="发布工具-jenkins-jenkins">发布工具：<a href="https://jenkins.io/">Jenkins</a></h2>
+
+<p>我们用的发布工具是<a href="https://stackshare.io/jenkins">很多公司都在用</a>的<a href="https://jenkins.io/">Jenkins</a>。<br />
+举个<del>栗子</del>图，<br />
 在Jenkins Server上可以一键发布后端服务器代码：</p>
-<p><img src="/assets/pics/zaihui_jenkins.jpg" alt="jenkins-demo"></p>
-<p>按下 Build按钮 以后，
+
+<p><img src="/assets/pics/zaihui_jenkins.jpg" alt="jenkins-demo" /></p>
+
+<p>按下 Build按钮 以后，<br />
 发生的事情如下：</p>
+
 <ul>
-<li>在 Jenkins服务器 上触发预先配置的 Bash脚本
+<li>在 Jenkins服务器 上触发预先配置的 Bash脚本<br />
+
 <ul>
-<li>git命令获取到最新的代码版本，切换合适的分支</li>
-<li><del>执行代码风格检测和单元测试</del>自从使用了付费版GitLab后，本功能已切换至GitLab CI了</li>
-<li>安全检查通过以后，使用fab命令部署代码</li>
+<li>git命令获取到最新的代码版本，切换合适的分支<br /></li>
+<li><del>执行代码风格检测和单元测试</del>自从使用了付费版GitLab后，本功能已切换至GitLab CI了<br /></li>
+<li>安全检查通过以后，使用fab命令部署代码<br />
+<br />
+<br /></li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h2 id="发布命令fabricfabric">发布命令：<a href="https://github.com/fabric/fabric">Fabric</a></h2>
-<p>这里的fab命令用的就是<a href="https://github.com/fabric/fabric">Python的Fabric库</a>，
-这个库类似<a href="https://github.com/ansible/ansible">ansible</a>，
+
+<h2 id="发布命令-fabric-fabric">发布命令：<a href="https://github.com/fabric/fabric">Fabric</a></h2>
+
+<p>这里的fab命令用的就是<a href="https://github.com/fabric/fabric">Python的Fabric库</a>，<br />
+这个库类似<a href="https://github.com/ansible/ansible">ansible</a>，<br />
 主要包含两套功能：</p>
+
 <ul>
-<li>
-<p><strong>本地命令集成</strong>。
-这点大概跟 Java 的 <a href="http://ant.apache.org/"><code>ant</code></a>, <a href="https://gradle.org/"><code>gradle</code></a>,
-或者是 JS 的 <a href="https://www.npmjs.com/"><code>npm run</code></a> 有类似功能。
-都是可以把数个操作集成到一条简单的工作流命令里。</p>
-</li>
-<li>
-<p><strong>远程ssh工具</strong>。
-<a href="https://github.com/fabric/fabric">Fabric</a>里基于<a href="https://en.wikipedia.org/wiki/Secure_Shell">ssh</a>，
-实现了一套方便的远程命令接口，
+<li><p><strong>本地命令集成</strong>。<br />
+这点大概跟 Java 的 <a href="http://ant.apache.org/"><code>ant</code></a>, <a href="https://gradle.org/"><code>gradle</code></a>,<br />
+或者是 JS 的 <a href="https://www.npmjs.com/"><code>npm run</code></a> 有类似功能。<br />
+都是可以把数个操作集成到一条简单的工作流命令里。</p></li>
+
+<li><p><strong>远程ssh工具</strong>。<br />
+<a href="https://github.com/fabric/fabric">Fabric</a>里基于<a href="https://en.wikipedia.org/wiki/Secure_Shell">ssh</a>，<br />
+实现了一套方便的远程命令接口，<br />
 比如这么一段代码就可以把配置上传到远程服务器：</p>
-</li>
-</ul>
+
 <pre><code>from fabric.api import *  # NOQA
 
 # 不用试了，这里的两个都是假的domain，对应放上ssh的host/user即可
@@ -137,29 +144,40 @@ env.hosts = ['www.kezaihui.com', 'zaihuiwebserver-814613977.cn-north-1.elb.amazo
 env.user = 'saber'
 
 def update_supervisor_config():
-    put('./supervisor/*.conf', '/etc/supervisor/conf.d/', use_sudo=True)
-    run('supervisorctl update', use_sudo=True)
-</code></pre><p>但<a href="https://github.com/fabric/fabric">Fabric</a>有个比较蛋疼的地方就是它只支持<a href="http://docs.python-guide.org/en/latest/starting/which-python/">Python2</a>，
-假如要用<a href="http://docs.python-guide.org/en/latest/starting/which-python/">Python3</a>的话，
-可以使用<a href="https://github.com/fabric/fabric">Fabric</a>的一个fork分支<a href="https://github.com/mathiasertl/fabric/">Fabric3</a>，
+put('./supervisor/*.conf', '/etc/supervisor/conf.d/', use_sudo=True)
+run('supervisorctl update', use_sudo=True)
+</code></pre></li>
+</ul>
+
+<p>但<a href="https://github.com/fabric/fabric">Fabric</a>有个比较蛋疼的地方就是它只支持<a href="http://docs.python-guide.org/en/latest/starting/which-python/">Python2</a>，<br />
+假如要用<a href="http://docs.python-guide.org/en/latest/starting/which-python/">Python3</a>的话，<br />
+可以使用<a href="https://github.com/fabric/fabric">Fabric</a>的一个fork分支<a href="https://github.com/mathiasertl/fabric/">Fabric3</a>，<br />
 <a href="https://github.com/mathiasertl/fabric/">Fabric3</a>与<a href="https://github.com/fabric/fabric">Fabric</a>大部分功能等价。</p>
-<p>只想用里面本地命令集成这部分功能的话，
-还有一个库叫<a href="http://www.pyinvoke.org/">Invoke</a>也提供了类似的功能。
-这个库主要是名字特别帅，
+
+<p>只想用里面本地命令集成这部分功能的话，<br />
+还有一个库叫<a href="http://www.pyinvoke.org/">Invoke</a>也提供了类似的功能。<br />
+这个库主要是名字特别帅，<br />
 <a href="https://dota2.gamepedia.com/Invoker">dota2里面的卡尔就叫Invoker（祈求者）</a>。</p>
-<h2 id="进程管理supervisorsupervisor">进程管理：<a href="http://supervisord.org/">Supervisor</a></h2>
-<p>在正式环境中，
-为了保证服务器进程的鲁棒性，
+
+<h2 id="进程管理-supervisor-supervisor">进程管理：<a href="http://supervisord.org/">Supervisor</a></h2>
+
+<p>在正式环境中，<br />
+为了保证服务器进程的鲁棒性，<br />
 我们使用了 <a href="http://supervisord.org/">supervisor</a> 来监控进程状态。</p>
+
 <p>一个简单的 nginx supervisor 的配置会长这样子：</p>
+
 <pre><code>[program:nginx]
 command=/usr/sbin/nginx
 autostart=true
 autorestart=true
 stdout_logfile=/var/log/supervisor/nginx.log
 stderr_logfile=/var/log/supervisor/nginx_error.log
-</code></pre><p>把配置文件放到 <code>/etc/supervisor/conf.d/nginx.conf</code> 以后，
+</code></pre>
+
+<p>把配置文件放到 <code>/etc/supervisor/conf.d/nginx.conf</code> 以后，<br />
 就可以使用一系列命令把服务起起来：</p>
+
 <pre><code>$ supervisorctl update  # supervisorctl 是 supervisor 的命令行工具，更新一波配置
 nginx    STARTING    pid 1000, uptime 0:00:00
 
@@ -170,22 +188,30 @@ $ kill -9 1000  # 模拟各种波动，干掉 nginx 进程
 
 $ supervisorctl status  # 再次查看进程状态，可以发现 supervisor 自动重启了
 nginx    STARTING    pid 1020, uptime 0:00:00
-</code></pre><h2 id="总结">总结</h2>
-<p>负责发版的工程师，
-可能只在页面上点下了 <code>Build</code> 的一个按钮，
+</code></pre>
+
+<h2 id="总结">总结</h2>
+
+<p>负责发版的工程师，<br />
+可能只在页面上点下了 <code>Build</code> 的一个按钮，<br />
 实际上的流程是这样的：</p>
+
 <ul>
-<li>Jenkins 触发了配置好的 Bash脚本。</li>
-<li>里面 Bash 脚本跑了 fab 命令。</li>
-<li>fab 命令执行了代码上传的工作，本质上是通过 ssh 执行命令。</li>
-<li>最终用 supervisor 开启/重启了进程服务。</li>
-<li>发版完成。</li>
+<li>Jenkins 触发了配置好的 Bash脚本。<br /></li>
+<li>里面 Bash 脚本跑了 fab 命令。<br /></li>
+<li>fab 命令执行了代码上传的工作，本质上是通过 ssh 执行命令。<br /></li>
+<li>最终用 supervisor 开启/重启了进程服务。<br /></li>
+<li>发版完成。<br />
+<br /></li>
 </ul>
-<p>以上大概就是我司目前自动化部署的简陋介绍。
-升级之路漫漫，
+
+<p>以上大概就是我司目前自动化部署的简陋介绍。<br />
+升级之路漫漫，<br />
 还是有很多东西要学习/实践/掌握的呀。</p>
+
 <blockquote>
 <p><a href="/python-deployment-automation-one-sample">原文链接</a>，<a href="/about/">作者 @苏子岳</a></p>
+
 <p>本文版权属于再惠研发团队，欢迎转载，转载请保留出处。</p>
 </blockquote>
         </div>

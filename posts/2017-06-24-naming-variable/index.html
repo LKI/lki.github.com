@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.63.1" />
+  <meta name="generator" content="Hugo 0.59.1" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,7 +19,7 @@
       "articleSection" : "posts",
       "name" : "写程序与取名字",
       "headline" : "写程序与取名字",
-      "description" : "\x3cp\x3e据说平均下来，\n程序员会有10%的时间花在取名字上。\x3c\/p\x3e",
+      "description" : "\x3cp\x3e据说平均下来，\x3cbr \/\x3e\n程序员会有10%的时间花在取名字上。\x3c\/p\x3e",
       "inLanguage" : "en-US",
       "author" : "Lirian Su",
       "creator" : "Lirian Su",
@@ -92,94 +92,118 @@
         </header>
 
         <div class="post-content markdown-body">
-          <p>据说平均下来，
+          <p>据说平均下来，<br />
 程序员会有10%的时间花在取名字上。</p>
-<p>今天和俊儒聊天的时候，
-讲到了在知乎上看的，
+
+<p>今天和俊儒聊天的时候，<br />
+讲到了在知乎上看的，<br />
 《扩散性百万亚瑟王》为什么停运的原因：</p>
-<p><img src="/assets/pics/ma_dead_reason.jpg" alt="ma"></p>
-<p>这种等级的中二程序员的确可以留名青史了…
-大型程序一般都是团伙作案，
-所以“写出逻辑清晰、见文知意”的程序，
+
+<p><img src="/assets/pics/ma_dead_reason.jpg" alt="ma" /></p>
+
+<p>这种等级的中二程序员的确可以留名青史了…<br />
+大型程序一般都是团伙作案，<br />
+所以“写出逻辑清晰、见文知意”的程序，<br />
 也是一个程序员的必备技能。</p>
-<p>按照正常文章的套路走，
-这里我们要介绍一下，
+
+<p>按照正常文章的套路走，<br />
+这里我们要介绍一下，<br />
 绝大多数的计算机词语是有唯一的中英对照的：</p>
+
 <pre><code>服务器 - Server
 表 - Table
 事务 - Transaction
 等等
-</code></pre><p>像这类词语一般来说都没啥异议。
-写程序的时候就直白地写就行了。
-不过有的时候程序员要写富含需求的代码，
+</code></pre>
+
+<p>像这类词语一般来说都没啥异议。<br />
+写程序的时候就直白地写就行了。<br />
+不过有的时候程序员要写富含需求的代码，<br />
 就可以玩一玩了。</p>
+
 <h1 id="代码片段">代码片段</h1>
-<p>之前有一段代码，
-要实现软文、软广相关的功能。
-于是取变量名时，
-翔神一拍大腿：
-那就是<code>advertorial</code>这个词了！
-这个词非常准确，
-就是软文的意思。
+
+<p>之前有一段代码，<br />
+要实现软文、软广相关的功能。<br />
+于是取变量名时，<br />
+翔神一拍大腿：<br />
+那就是<code>advertorial</code>这个词了！<br />
+这个词非常准确，<br />
+就是软文的意思。<br />
 吃瓜群众纷纷表示真牛逼！</p>
-<p>然后代码写好了，
-到浏览器里跑一下：
-结果后端接口调用挂了…
-定睛一看，
-原来是浏览器的防广告插件自动识别了advertorial这个词，
-把我们的接口屏蔽了…
-&hellip;
-于是后来数据库里，
-软文还是<code>advertorial</code>，
-但是url里，
-软文变成了<code>soft_article</code>…
+
+<p>然后代码写好了，<br />
+到浏览器里跑一下：<br />
+结果后端接口调用挂了…<br />
+定睛一看，<br />
+原来是浏览器的防广告插件自动识别了advertorial这个词，<br />
+把我们的接口屏蔽了…<br />
+&hellip;<br />
+于是后来数据库里，<br />
+软文还是<code>advertorial</code>，<br />
+但是url里，<br />
+软文变成了<code>soft_article</code>…<br />
 吃瓜群众纷纷表示更牛逼了…</p>
-<p>还有一段代码，
-要实现一个大礼包相关的功能。
-类似于星巴克88元的礼品卡，
-送券送积分送储值等等…
-于是问题来了，
+
+<p>还有一段代码，<br />
+要实现一个大礼包相关的功能。<br />
+类似于星巴克88元的礼品卡，<br />
+送券送积分送储值等等…<br />
+于是问题来了，<br />
 这个“大礼包”的抽象类应该叫什么名字呢？</p>
-<p>当时系统里面已有的一些英文对照有：
-<code>积分奖 reward</code>, <code>券 coupon</code>, <code>礼品卡 gift_card</code>等等……
-感觉好的名字都用完了，
-我们都停下了手里的键盘，
+
+<p>当时系统里面已有的一些英文对照有：<br />
+<code>积分奖 reward</code>, <code>券 coupon</code>, <code>礼品卡 gift_card</code>等等……<br />
+感觉好的名字都用完了，<br />
+我们都停下了手里的键盘，<br />
 开始了头脑风暴…</p>
-<p>gift_bag感觉很蠢，
+
+<p>gift_bag感觉很蠢，<br />
 尤其是有了gift_card。</p>
-<p>这种奖励是一系列产品的叠加，
-也可以叫production，
+
+<p>这种奖励是一系列产品的叠加，<br />
+也可以叫production，<br />
 但是这会跟production environment有歧义。</p>
-<p>最终我们给这个东西取名叫：
-<code>one_piece</code>。
+
+<p>最终我们给这个东西取名叫：<br />
+<code>one_piece</code>。<br />
 没错，OnePiece就是《海贼王》里面的海贼宝藏。</p>
-<p>给抽象类取一个无意义的名字，
-反而影响深刻，没有歧义。
+
+<p>给抽象类取一个无意义的名字，<br />
+反而影响深刻，没有歧义。<br />
 简直是解释一次，终生难忘…</p>
+
 <h1 id="信达雅">信达雅</h1>
-<p>其实写程序起名字，
-很多时候随便起一个也很容易，
-但是想追求一个信达雅的表达，
+
+<p>其实写程序起名字，<br />
+很多时候随便起一个也很容易，<br />
+但是想追求一个信达雅的表达，<br />
 就需要仔细想想了。</p>
-<p>最近业余时间写麻将相关代码，
-就感觉翻译真难…
-像花色和大小还能用纸牌的<code>Suit</code>和<code>Rank</code>来对应，
+
+<p>最近业余时间写麻将相关代码，<br />
+就感觉翻译真难…<br />
+像花色和大小还能用纸牌的<code>Suit</code>和<code>Rank</code>来对应，<br />
 但是一些番名我就比较懵逼了：</p>
+
 <ul>
-<li><code>十三幺/国士无双</code>，根据<a href="https://zh.wikipedia.org/wiki/%E5%8D%81%E4%B8%89%E5%B9%BA">维基百科的说法是<code>ThirteenOrphans</code></a>
+<li><code>十三幺/国士无双</code>，根据<a href="https://zh.wikipedia.org/wiki/%E5%8D%81%E4%B8%89%E5%B9%BA">维基百科的说法是<code>ThirteenOrphans</code></a><br />
+
 <ul>
-<li>那老头牌估计就是<code>OrphanTile</code>了&hellip;</li>
+<li>那老头牌估计就是<code>OrphanTile</code>了&hellip;<br /></li>
+</ul></li>
+<li><code>九莲宝灯</code>，有翻译说是<code>Nine Gates</code>，这个我先信了…<br /></li>
+<li><code>海底捞月</code>，<code>杠上开花</code>这些咋办…<br />
+<br /></li>
 </ul>
-</li>
-<li><code>九莲宝灯</code>，有翻译说是<code>Nine Gates</code>，这个我先信了…</li>
-<li><code>海底捞月</code>，<code>杠上开花</code>这些咋办…</li>
-</ul>
-<p>:) 所以看来10%时间都花在取变量名上，
+
+<p>:) 所以看来10%时间都花在取变量名上，<br />
 这个说法还是比较保守的呢。</p>
-<p>正如程序员经常说的
-<code>Talk is cheap, show me the code</code>，
-有个有个很棒的翻译：
+
+<p>正如程序员经常说的<br />
+<code>Talk is cheap, show me the code</code>，<br />
+有个有个很棒的翻译：<br />
 <code>废话少说，放码过来</code>。</p>
+
 <p>还是要继续修炼啊。</p>
         </div>
         

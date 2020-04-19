@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.63.1" />
+  <meta name="generator" content="Hugo 0.59.1" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,7 +19,7 @@
       "articleSection" : "posts",
       "name" : "GitHub上的小标签有什么好玩的",
       "headline" : "GitHub上的小标签有什么好玩的",
-      "description" : "\x3cp\x3eGitHub很多项目主页都会放上好玩的小标签（GitHub Badges），\n这次我们也来玩点表面功夫。\x3c\/p\x3e",
+      "description" : "\x3cp\x3eGitHub很多项目主页都会放上好玩的小标签（GitHub Badges），\x3cbr \/\x3e\n这次我们也来玩点表面功夫。\x3c\/p\x3e",
       "inLanguage" : "en-US",
       "author" : "Lirian Su",
       "creator" : "Lirian Su",
@@ -92,111 +92,132 @@
         </header>
 
         <div class="post-content markdown-body">
-          <p>GitHub很多项目主页都会放上好玩的小标签（GitHub Badges），
+          <p>GitHub很多项目主页都会放上好玩的小标签（GitHub Badges），<br />
 这次我们也来玩点表面功夫。</p>
-<h2 id="首先我们要有一个项目">首先，我们要有一个项目</h2>
+
+<h2 id="首先-我们要有一个项目">首先，我们要有一个项目</h2>
+
 <p>前阵子<a href="http://www.jingkaizhao.com/">靖哥哥</a>口嫌体正直地吐槽了一下<a href="https://github.com/typicode/lowdb">lowdb</a>：</p>
+
 <blockquote>
-<p>这个lowdb，
-好用是好用，
+<p>这个lowdb，<br />
+好用是好用，<br />
 但是也太low了吧&hellip;</p>
 </blockquote>
-<p>我十分好奇，
+
+<p>我十分好奇，<br />
 跑去看了看<a href="https://github.com/typicode/lowdb">lowdb</a>的介绍：</p>
+
 <blockquote>
 <p>这是一个 JSON 格式的微型数据库。</p>
 </blockquote>
-<p>诶，微型诶，感觉萌萌哒。
-那 Python 有没有对标的库呢？
+
+<p>诶，微型诶，感觉萌萌哒。<br />
+那 Python 有没有对标的库呢？<br />
 有，那就是<a href="http://tinydb.readthedocs.io/en/latest/intro.html">tinydb</a>~</p>
+
 <blockquote>
 <p>tinydb 大概只有1200行源代码，以及1000行测试。</p>
 </blockquote>
-<p>啥？！这还tiny呢？
+
+<p>啥？！这还tiny呢？<br />
 怕是18级的tiny吧？</p>
-<p>于是我们决定，
+
+<p>于是我们决定，<br />
 <strong>要有一个比tinydb还tiny的，比lowdb还要low的数据库。</strong></p>
-<p>起名字顿时是个问题。
-既然犹豫不定，
-<a href="/forgive-her-meme">那就选择原谅他吧</a>~
+
+<p>起名字顿时是个问题。<br />
+既然犹豫不定，<br />
+<a href="/forgive-her-meme">那就选择原谅他吧</a>~<br />
 于是又一个轮子诞生了：</p>
+
 <p><a href="https://github.com/hui-z/ForgiveDB">原谅数据库(hui-z/ForgiveDB)</a></p>
-<p><img src="/assets/pics/github/forgive.jpg" alt="readme"></p>
+
+<p><img src="/assets/pics/github/forgive.jpg" alt="readme" /></p>
+
 <h2 id="github-badges">GitHub Badges</h2>
-<p>忽略README里对项目本身的吹捧，
-Logo下面那一长串绿绿的小标签，
-就是Badges啦~
-<a href="/how-i-use-github">由于程序员一般都在GitHub上活动</a>，
-所以大家也习惯把这些叫做是GitHub Badges
+
+<p>忽略README里对项目本身的吹捧，<br />
+Logo下面那一长串绿绿的小标签，<br />
+就是Badges啦~<br />
+<a href="/how-i-use-github">由于程序员一般都在GitHub上活动</a>，<br />
+所以大家也习惯把这些叫做是GitHub Badges<br />
 （即使在别的地方也可以用到它们）</p>
-<p>本质上这些小标签就是能点的图片，
+
+<p>本质上这些小标签就是能点的图片，<br />
 比如用 <a href="/hrbp-and-markdown">Markdown 语法</a>可以这么写：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">[<span style="color:#f92672">![ForgiveDB</span>](<span style="color:#a6e22e">https://img.shields.io/badge/ForgiveDB-HuiZ-brightgreen.svg</span>)](https://github.com/hui-z/ForgiveDB)
 
-<span style="font-style:italic">*这么一长串实际上是 Markdown 里图片的语法，加超链接的语法组合成的*</span>
+<pre><code class="language-markdown">[![ForgiveDB](https://img.shields.io/badge/ForgiveDB-HuiZ-brightgreen.svg)](https://github.com/hui-z/ForgiveDB)
 
-![<span style="color:#f92672">图片的语法</span>](<span style="color:#a6e22e">https://img.shields.io/badge/ForgiveDB-HuiZ-brightgreen.svg</span>)
+*这么一长串实际上是 Markdown 里图片的语法，加超链接的语法组合成的*
 
-[<span style="color:#f92672">超链接的语法</span>](<span style="color:#a6e22e">https://github.com/hui-z/ForgiveDB</span>)
-</code></pre></div><p>上面一串就会变成这样子：</p>
-<p><a href="https://github.com/hui-z/ForgiveDB"><img src="https://img.shields.io/badge/ForgiveDB-HuiZ-brightgreen.svg" alt="ForgiveDB"></a></p>
+![图片的语法](https://img.shields.io/badge/ForgiveDB-HuiZ-brightgreen.svg)
+
+[超链接的语法](https://github.com/hui-z/ForgiveDB)
+</code></pre>
+
+<p>上面一串就会变成这样子：</p>
+
+<p><a href="https://github.com/hui-z/ForgiveDB"><img src="https://img.shields.io/badge/ForgiveDB-HuiZ-brightgreen.svg" alt="ForgiveDB" /></a></p>
+
 <p><em>这么一长串实际上是 Markdown 里图片的语法，加超链接的语法组合成的</em></p>
-<p><img src="https://img.shields.io/badge/ForgiveDB-HuiZ-brightgreen.svg" alt="图片的语法"></p>
+
+<p><img src="https://img.shields.io/badge/ForgiveDB-HuiZ-brightgreen.svg" alt="图片的语法" /></p>
+
 <p><a href="https://github.com/hui-z/ForgiveDB">超链接的语法</a></p>
+
 <h2 id="各种-badges">各种 Badges</h2>
-<p>具体来看，
+
+<p>具体来看，<br />
 我们在 <a href="https://github.com/hui-z/ForgiveDB">ForgiveDB</a> 里用到的标签有这些：</p>
+
 <ul>
-<li>
-<p><a href="https://shields.io/"><strong>shields.io</strong></a>.
-这个值得单独拎出来讲，
-因为他们是个专门做 Badges 的网站，
-上面图还是 SVG 矢量图，
-在任何分辨率屏幕下都不会模糊。
-假如我们想挑各种各样奇怪的 Badges,
-（比如 star 项目的数量、
-issue 关闭的数量、
-npm, pypi, nuget的版本、
-甚至是自定义任意字符）
-都可以上<a href="https://shields.io/">shields.io</a>找找看。</p>
-</li>
-<li>
-<p><a href="https://pypi.python.org/pypi/forgive"><strong>PyPI</strong></a>.
-这个是 Python 官方的包仓库，
-<a href="https://shields.io/">shields.io</a>也支持版本自动嗅探。
-低于 1.0.0 版本的好像还会变成屎黄色…</p>
-</li>
-<li>
-<p><a href="https://pyup.io/repos/github/hui-z/ForgiveDB/"><strong>pyup.io</strong></a>.
-这个服务很好玩，
-授权以后它会自动检测你的 requirements 是不是最新的。
-假如一有更新，
-<a href="https://github.com/hui-z/ForgiveDB/pull/7">pyup-bot 会直接给项目提一个 Pull Request&hellip;</a>
-简直酷炫。</p>
-</li>
-<li>
-<p><a href="https://travis-ci.org/hui-z/ForgiveDB"><strong>travis-ci.org</strong></a>.
-这个就是大众熟知的 Travis 自动化集成工具了，
-Travis 对开源项目免费，
-十分友好。
-而且功能强大，
-<a href="https://github.com/marketplace/travis-ci">和 GitHub 也有很多集成</a>，
-用着十分舒服。
-（前提是你得写点 UT 什么的）</p>
-</li>
-<li>
-<p>其它：
-还有一些 <a href="https://codecov.io/github/hui-z/ForgiveDB?branch=master">CodeCov 测试覆盖率</a>,
-<a href="https://www.appveyor.com/">AppVeyor 又一个好用的 CI</a>,
-<a href="https://circleci.com/">CircleCI 双一个好用的 CI</a>
-等等，等等……</p>
-</li>
+<li><p><a href="https://shields.io/"><strong>shields.io</strong></a>.<br />
+这个值得单独拎出来讲，<br />
+因为他们是个专门做 Badges 的网站，<br />
+上面图还是 SVG 矢量图，<br />
+在任何分辨率屏幕下都不会模糊。<br />
+假如我们想挑各种各样奇怪的 Badges,<br />
+（比如 star 项目的数量、<br />
+issue 关闭的数量、<br />
+npm, pypi, nuget的版本、<br />
+甚至是自定义任意字符）<br />
+都可以上<a href="https://shields.io/">shields.io</a>找找看。</p></li>
+
+<li><p><a href="https://pypi.python.org/pypi/forgive"><strong>PyPI</strong></a>.<br />
+这个是 Python 官方的包仓库，<br />
+<a href="https://shields.io/">shields.io</a>也支持版本自动嗅探。<br />
+低于 1.0.0 版本的好像还会变成屎黄色…</p></li>
+
+<li><p><a href="https://pyup.io/repos/github/hui-z/ForgiveDB/"><strong>pyup.io</strong></a>.<br />
+这个服务很好玩，<br />
+授权以后它会自动检测你的 requirements 是不是最新的。<br />
+假如一有更新，<br />
+<a href="https://github.com/hui-z/ForgiveDB/pull/7">pyup-bot 会直接给项目提一个 Pull Request&hellip;</a><br />
+简直酷炫。</p></li>
+
+<li><p><a href="https://travis-ci.org/hui-z/ForgiveDB"><strong>travis-ci.org</strong></a>.<br />
+这个就是大众熟知的 Travis 自动化集成工具了，<br />
+Travis 对开源项目免费，<br />
+十分友好。<br />
+而且功能强大，<br />
+<a href="https://github.com/marketplace/travis-ci">和 GitHub 也有很多集成</a>，<br />
+用着十分舒服。<br />
+（前提是你得写点 UT 什么的）</p></li>
+
+<li><p>其它：<br />
+还有一些 <a href="https://codecov.io/github/hui-z/ForgiveDB?branch=master">CodeCov 测试覆盖率</a>,<br />
+<a href="https://www.appveyor.com/">AppVeyor 又一个好用的 CI</a>,<br />
+<a href="https://circleci.com/">CircleCI 双一个好用的 CI</a><br />
+等等，等等……</p></li>
 </ul>
-<p>大概这就是给 ForgiveDB 挑好看的标签的旅程了。
-这份心情，
+
+<p>大概这就是给 ForgiveDB 挑好看的标签的旅程了。<br />
+这份心情，<br />
 就像是给心爱的键盘选好看的键帽一样美好。</p>
-<p><a href="https://github.com/hui-z/ForgiveDB">最后欢迎大家给 ForgiveDB 提 Pull Request</a>~
-就算是<a href="https://github.com/hui-z/ForgiveDB/pull/8">像靖哥哥一样只改改文档</a>，
+
+<p><a href="https://github.com/hui-z/ForgiveDB">最后欢迎大家给 ForgiveDB 提 Pull Request</a>~<br />
+就算是<a href="https://github.com/hui-z/ForgiveDB/pull/8">像靖哥哥一样只改改文档</a>，<br />
 <a href="https://github.com/hui-z/ForgiveDB/graphs/contributors">混个 contributor 也行</a>啊~</p>
         </div>
         

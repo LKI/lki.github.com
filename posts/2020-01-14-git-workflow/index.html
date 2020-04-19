@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.63.1" />
+  <meta name="generator" content="Hugo 0.59.1" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,7 +19,7 @@
       "articleSection" : "posts",
       "name" : "软件工程实践之 Git 开发流",
       "headline" : "软件工程实践之 Git 开发流",
-      "description" : "\x3cp\x3e软件工程实践系列文章，\n会着重讲述实际的工程项目中是如何协作开发软件的。\n本文主要介绍如何使用 Git 来支撑整个开发流。\x3c\/p\x3e",
+      "description" : "\x3cp\x3e软件工程实践系列文章，\x3cbr \/\x3e\n会着重讲述实际的工程项目中是如何协作开发软件的。\x3cbr \/\x3e\n本文主要介绍如何使用 Git 来支撑整个开发流。\x3c\/p\x3e",
       "inLanguage" : "en-US",
       "author" : "Lirian Su",
       "creator" : "Lirian Su",
@@ -27,8 +27,8 @@
       "accountablePerson" : "Lirian Su",
       "copyrightHolder" : "Lirian Su",
       "copyrightYear" : "2020",
-      "datePublished": "2020-01-14 21:39:31 \x2b0800 \x2b0800",
-      "dateModified" : "2020-01-14 21:39:31 \x2b0800 \x2b0800",
+      "datePublished": "2020-01-14 21:39:31 \x2b0800 CST",
+      "dateModified" : "2020-01-14 21:39:31 \x2b0800 CST",
       "url" : "https:\/\/liriansu.com\/posts\/2020-01-14-git-workflow\/",
       "keywords" : [  ]
   }
@@ -83,7 +83,7 @@
           
           <div class="row post-desc">
             
-            <time class="post-header-item" datetime="2020-01-14 21:39:31 &#43;0800">
+            <time class="post-header-item" datetime="2020-01-14 21:39:31 CST">
               Written at 2020-01-14 21:39
             </time>
             
@@ -93,167 +93,225 @@
         </header>
 
         <div class="post-content markdown-body">
-          <p>软件工程实践系列文章，
-会着重讲述实际的工程项目中是如何协作开发软件的。
+          <p>软件工程实践系列文章，<br />
+会着重讲述实际的工程项目中是如何协作开发软件的。<br />
 本文主要介绍如何使用 Git 来支撑整个开发流。</p>
+
 <h2 id="outline">outline</h2>
+
 <p>本文包括以下内容：</p>
+
 <ul>
-<li>operation: 团队保持一致的操作
+<li>operation: 团队保持一致的操作<br />
+
 <ul>
-<li>commit: 提交原子性的代码</li>
-<li>history: 保持线性干净的历史</li>
-<li>release: 遵循科学的发布规范</li>
-</ul>
-</li>
-<li>tool chain: 搭建自洽的工具链
+<li>commit: 提交原子性的代码<br /></li>
+<li>history: 保持线性干净的历史<br /></li>
+<li>release: 遵循科学的发布规范<br /></li>
+</ul></li>
+<li>tool chain: 搭建自洽的工具链<br />
+
 <ul>
-<li>gitlab/github: 使用现代的开发平台</li>
-<li>ci/cd: 让系统把控代码质量</li>
-<li>sentry/k8s: 用版本连接整个系统</li>
+<li>gitlab/github: 使用现代的开发平台<br /></li>
+<li>ci/cd: 让系统把控代码质量<br /></li>
+<li>sentry/k8s: 用版本连接整个系统<br /></li>
+</ul></li>
+<li>conclusion<br />
+<br />
+<br /></li>
 </ul>
-</li>
-<li>conclusion</li>
-</ul>
+
 <h2 id="operation-团队保持一致的操作">operation: 团队保持一致的操作</h2>
-<p>Git 提供了一套自由而又强大的 api,
-我们可以通过它以各种姿势来完成代码协作。
-但俗话说得好，
-选择越多人越懵。<del>并没有这句俗话</del>
-所以在团队协作时，
+
+<p>Git 提供了一套自由而又强大的 api,<br />
+我们可以通过它以各种姿势来完成代码协作。<br />
+但俗话说得好，<br />
+选择越多人越懵。<del>并没有这句俗话</del><br />
+所以在团队协作时，<br />
 保持一致的操作是很重要的。</p>
+
 <h3 id="commit-提交原子性的代码">commit: 提交原子性的代码</h3>
-<p>Git 的最小单元就是一个 commit。
-我们团队遵循的最佳规范是保持每个 commit 的原子性：
+
+<p>Git 的最小单元就是一个 commit。<br />
+我们团队遵循的最佳规范是保持每个 commit 的原子性：<br />
 <strong>一个 commit 只做一件事情。</strong></p>
-<p>比如一个关于缺陷修复的 commit 可以非常简单，
-它只有两行：
-一行修复了代码逻辑，
+
+<p>比如一个关于缺陷修复的 commit 可以非常简单，<br />
+它只有两行：<br />
+一行修复了代码逻辑，<br />
 一行加了单元测试。</p>
-<p>另一个关于重构的 commit 可能会修改 200+ 个文件，
-但也因为只做了一件事情，
+
+<p>另一个关于重构的 commit 可能会修改 200+ 个文件，<br />
+但也因为只做了一件事情，<br />
 所以不会给 code review 带来很大负担。</p>
-<p><img src="/assets/pics/gitlab_large_commit.jpg" alt="large-commit"></p>
-<p>原子性的 commit 不仅能很好地支持 revert/cherry-pick/bisect 等一系列 Git 的原生命令，
-而且在保持线性干净的历史这一点上，
+
+<p><img src="/assets/pics/gitlab_large_commit.jpg" alt="large-commit" /></p>
+
+<p>原子性的 commit 不仅能很好地支持 revert/cherry-pick/bisect 等一系列 Git 的原生命令，<br />
+而且在保持线性干净的历史这一点上，<br />
 也是至关重要的。</p>
+
 <h3 id="history-保持线性干净的历史">history: 保持线性干净的历史</h3>
-<p>随着时间的推移，
-Git 的每一个 commit 会成长为一个枝叶繁茂的历史树。
+
+<p>随着时间的推移，<br />
+Git 的每一个 commit 会成长为一个枝叶繁茂的历史树。<br />
 基于 <a href="https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging">fast forward</a> 的合并能让 Git 的历史树保持干净与线性。</p>
-<p><img src="/assets/pics/git_log_tree.jpg" alt="git-log-tree"></p>
+
+<p><img src="/assets/pics/git_log_tree.jpg" alt="git-log-tree" /></p>
+
 <blockquote>
-<p>这是我们项目 git log 翻到四个月以前的一张截图，
+<p>这是我们项目 git log 翻到四个月以前的一张截图，<br />
 可以看到历史依旧是线性干净的。</p>
 </blockquote>
-<p>线性的历史意味着在每个人提交代码前需要 rebase。
-一个例外是在发布分支(master)上提交 hotfix 后，
-合并回开发分支(dev)需要视情况关闭 fast forward (&ndash;no-ff)。
+
+<p>线性的历史意味着在每个人提交代码前需要 rebase。<br />
+一个例外是在发布分支(master)上提交 hotfix 后，<br />
+合并回开发分支(dev)需要视情况关闭 fast forward (&ndash;no-ff)。<br />
 而且要求大家 rebase 则对团队成员的 Git 水平以及合并习惯提出了一定要求。</p>
-<p>干净的历史则需要大家都严格遵循 commit 的原子性，
-以及要按照标准撰写 commit message。
-关于 commit message 的撰写，
-阮老师有一篇<a href="https://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html">《commit message 编写指南》</a>讲的够好。
-我们也可以在 git hook 中开启对 commit message 的校验，
+
+<p>干净的历史则需要大家都严格遵循 commit 的原子性，<br />
+以及要按照标准撰写 commit message。<br />
+关于 commit message 的撰写，<br />
+阮老师有一篇<a href="https://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html">《commit message 编写指南》</a>讲的够好。<br />
+我们也可以在 git hook 中开启对 commit message 的校验，<br />
 以确保格式的整洁统一。</p>
-<p>通过<strong>fast forward merge + 统一的 commit message</strong>，
-我们就能维护一个不断成长、但又干净线性的历史树，
+
+<p>通过<strong>fast forward merge + 统一的 commit message</strong>，<br />
+我们就能维护一个不断成长、但又干净线性的历史树，<br />
 能最大程度地给各种 git 的版本操作提供便利。</p>
+
 <h3 id="release-遵循科学的发布规范">release: 遵循科学的发布规范</h3>
+
 <p><strong>我们使用 git tag 来作为版本发布的标志。</strong></p>
-<p><img src="/assets/pics/git_log_tree.jpg" alt="git-log-tree"></p>
-<p>因为我们的项目是一个 web 服务端项目，
-我们同一时刻基本上只需要维护最新的版本，
-所以我们使用了日期型的版本号数字(<code>v2019.9.9</code>)。
-在大部分开源工具里，
+
+<p><img src="/assets/pics/git_log_tree.jpg" alt="git-log-tree" /></p>
+
+<p>因为我们的项目是一个 web 服务端项目，<br />
+我们同一时刻基本上只需要维护最新的版本，<br />
+所以我们使用了日期型的版本号数字(<code>v2019.9.9</code>)。<br />
+在大部分开源工具里，<br />
 都会使用<a href="https://semver.org/lang/zh-CN/">语义化的版本号(semver: <code>v2.0.0</code>)</a>。</p>
-<p>基于原子的 commit、线性的历史，
-在每次版本发布时，
+
+<p>基于原子的 commit、线性的历史，<br />
+在每次版本发布时，<br />
 我们都会自动化地生成 tag/changelog。</p>
-<p><img src="/assets/pics/gitlab_release.jpg" alt="gitlab-release"></p>
-<p>一个遵循了良好规范的 tag 能最大程度地利用工具链的集成功能，
+
+<p><img src="/assets/pics/gitlab_release.jpg" alt="gitlab-release" /></p>
+
+<p>一个遵循了良好规范的 tag 能最大程度地利用工具链的集成功能，<br />
 给开发、测试、上线、监控提供完备的功能。</p>
+
 <h2 id="tool-chain-搭建自洽的工具链">tool chain: 搭建自洽的工具链</h2>
-<p>在注重团队协作、开发流程、发布质量的软件工程中，
-会有一系列开发工具围绕 Git 的代码历史树，
+
+<p>在注重团队协作、开发流程、发布质量的软件工程中，<br />
+会有一系列开发工具围绕 Git 的代码历史树，<br />
 提供了自洽的工具链。</p>
-<h3 id="gitlabgithub-使用现代的开发平台">gitlab/github: 使用现代的开发平台</h3>
-<p>我们使用 <code>GitLab</code> 来管理代码项目，
-其中重度使用的是 <code>Merge Request</code> 来作为 code review 的载体。
+
+<h3 id="gitlab-github-使用现代的开发平台">gitlab/github: 使用现代的开发平台</h3>
+
+<p>我们使用 <code>GitLab</code> 来管理代码项目，<br />
+其中重度使用的是 <code>Merge Request</code> 来作为 code review 的载体。<br />
 <del>不过我们跟着 GitHub 的设定，管它叫 PR (Pull Request)</del></p>
-<p>为了维持 PR 的原子性，
-大部分情况我们遵循单个 commit 对应单个 PR，
-这样既方便 review 也方便分支管理。
-不过这样的开发流会产生非常多的 PR，
+
+<p>为了维持 PR 的原子性，<br />
+大部分情况我们遵循单个 commit 对应单个 PR，<br />
+这样既方便 review 也方便分支管理。<br />
+不过这样的开发流会产生非常多的 PR，<br />
 需要团队开发者都保持在一个更积极的开发状态下。</p>
-<p>现代的开发平台还会集成更多工作流上的功能，
+
+<p>现代的开发平台还会集成更多工作流上的功能，<br />
 我们还重度使用的是把 GitLab Runner 作为我们 ci/cd 的工具载体。</p>
-<h3 id="cicd-让系统把控代码质量">ci/cd: 让系统把控代码质量</h3>
-<p><img src="/assets/pics/gitlab_pr.jpg" alt="gitlab-pr"></p>
+
+<h3 id="ci-cd-让系统把控代码质量">ci/cd: 让系统把控代码质量</h3>
+
+<p><img src="/assets/pics/gitlab_pr.jpg" alt="gitlab-pr" /></p>
+
 <blockquote>
-<p>在提完 PR 以后，
+<p>在提完 PR 以后，<br />
 系统会自动化地启用一系列的 Python/Django 检查。</p>
 </blockquote>
-<p><img src="/assets/pics/gitlab_pipeline.jpg" alt="gitlab-pipeline"></p>
+
+<p><img src="/assets/pics/gitlab_pipeline.jpg" alt="gitlab-pipeline" /></p>
+
 <blockquote>
-<p>通过 git tag 发布版本后，
+<p>通过 git tag 发布版本后，<br />
 系统会自动化地跑构建、灰度等一系列部署任务。</p>
 </blockquote>
-<p>除了 GitLab Runner,
+
+<p>除了 GitLab Runner,<br />
 其它像 Jenkins/Travis CI/GitHub Actions 也可以类似的 ci/cd 功能。</p>
-<p>集成 ci/cd 能让整个开发流变得更加柔顺，
-让每一个改动的影响都可以即时地通过数据展示出来。
-ci/cd 加上 code review，
-能最大程度地让代码库保持活性，
+
+<p>集成 ci/cd 能让整个开发流变得更加柔顺，<br />
+让每一个改动的影响都可以即时地通过数据展示出来。<br />
+ci/cd 加上 code review，<br />
+能最大程度地让代码库保持活性，<br />
 长远地能避免“往屎山上堆屎”的发生。</p>
-<p>前面提到我们的 PR/release 频率都会比较高，
-所以 ci/cd 也需要在更短的时间内跑完，
-以避免龟速检测导致的各种心态爆炸、skip ci。
-目前我们项目平均能在 5min 内跑完包括 96% 覆盖率的单元测试的多项检查，
+
+<p>前面提到我们的 PR/release 频率都会比较高，<br />
+所以 ci/cd 也需要在更短的时间内跑完，<br />
+以避免龟速检测导致的各种心态爆炸、skip ci。<br />
+目前我们项目平均能在 5min 内跑完包括 96% 覆盖率的单元测试的多项检查，<br />
 也能在 5min 内跑完从构建、灰度到全量的整个发布流程。</p>
-<p>整个 ci/cd 的流程其实也跟写接口这样的业务类似，
+
+<p>整个 ci/cd 的流程其实也跟写接口这样的业务类似，<br />
 是需要不断迭代、不断优化、不断适应更好的开发流的。</p>
-<h3 id="sentryk8s-用版本连接整个系统">sentry/k8s: 用版本连接整个系统</h3>
-<p>在开发的流程走完以后，
+
+<h3 id="sentry-k8s-用版本连接整个系统">sentry/k8s: 用版本连接整个系统</h3>
+
+<p>在开发的流程走完以后，<br />
 软件工程还关心发布的流程、质量把控的流程。</p>
-<p>我们绑定了 docker image tag 与 git tag，
-最终发布部署在 k8s 上的每一个版本也跟 git tag 的版本强关联。
-这样的设定之下，
+
+<p>我们绑定了 docker image tag 与 git tag，<br />
+最终发布部署在 k8s 上的每一个版本也跟 git tag 的版本强关联。<br />
+这样的设定之下，<br />
 比如像 <code>kubectl rollout</code> 的一系列操作就会跟 Git 历史树关联上。</p>
-<p><img src="/assets/pics/sentry_release.jpg" alt="sentry-release"></p>
-<blockquote>
-<p>我们也使用了 sentry 来检测管理代码的线上问题。</p>
-</blockquote>
-<p>所有的外部系统都使用着统一的 tag version 来关联问题，
+
+<p><img src="/assets/pics/sentry_release.jpg" alt="sentry-release" /><br />
+&gt; 我们也使用了 sentry 来检测管理代码的线上问题。</p>
+
+<p>所有的外部系统都使用着统一的 tag version 来关联问题，<br />
 这样我们就给 debug, 历史溯源，分锅都提供了统一的工程语言。</p>
+
 <h2 id="conclusion">conclusion</h2>
-<p>基于 Git 的开发流不是一个一成不变的框架，
+
+<p>基于 Git 的开发流不是一个一成不变的框架，<br />
 它会因为项目特质、团队成员习惯、工具链的不一样而有着不同的表现形式。</p>
-<p>我们团队在软件工程的实践中，
+
+<p>我们团队在软件工程的实践中，<br />
 保持并维护着这么一套开发标准：</p>
+
 <ul>
-<li>保持 commit 的原子性，一个 commit 只做一件事情。</li>
-<li>遵循编写 commit message 的标准，并且会在 code review 时关注。</li>
-<li>统一团队成员的操作习惯，使用 rebase + fast forward merge。</li>
-<li>自动化地生成 git tag 以及 changelog，并基于此做代码发布。</li>
-<li>搭建快速全面的 ci/cd 流程，自动化地做掉所有代码检查。</li>
-<li>使开发流与社区最佳实践一致，了解并利用好各类工具的集成功能。</li>
+<li>保持 commit 的原子性，一个 commit 只做一件事情。<br /></li>
+<li>遵循编写 commit message 的标准，并且会在 code review 时关注。<br /></li>
+<li>统一团队成员的操作习惯，使用 rebase + fast forward merge。<br /></li>
+<li>自动化地生成 git tag 以及 changelog，并基于此做代码发布。<br /></li>
+<li>搭建快速全面的 ci/cd 流程，自动化地做掉所有代码检查。<br /></li>
+<li>使开发流与社区最佳实践一致，了解并利用好各类工具的集成功能。<br />
+<br /></li>
 </ul>
+
 <p>这套开发流也给我们提出了这些挑战：</p>
+
 <ul>
-<li>要对 Git 有一定了解，包括历史树操作等进阶知识。</li>
-<li>除了编码时，在协作时也要保持积极的态度，以及协作上的高标准。</li>
-<li>最重要的，对最佳实践的追求，以及不懂就学的态度。</li>
+<li>要对 Git 有一定了解，包括历史树操作等进阶知识。<br /></li>
+<li>除了编码时，在协作时也要保持积极的态度，以及协作上的高标准。<br /></li>
+<li>最重要的，对最佳实践的追求，以及不懂就学的态度。<br />
+<br /></li>
 </ul>
+
 <p>这样的 Git 开发流，最终带来了这些效果：</p>
+
 <ul>
-<li>线性的历史让 debug、追溯变更、了解项目发展过程都变得非常友好。</li>
-<li>项目一方面能保持快速活跃的开发效率，另一方面能保证长期维护的质量。</li>
-<li>最佳实践的讨论以及迭代，让团队内部一直维持着很好的工程师文化。</li>
+<li>线性的历史让 debug、追溯变更、了解项目发展过程都变得非常友好。<br /></li>
+<li>项目一方面能保持快速活跃的开发效率，另一方面能保证长期维护的质量。<br /></li>
+<li>最佳实践的讨论以及迭代，让团队内部一直维持着很好的工程师文化。<br />
+<br /></li>
 </ul>
-<p>软件工程的实践中，
-好的 Git 开发流是不可或缺的一部分。
+
+<p>软件工程的实践中，<br />
+好的 Git 开发流是不可或缺的一部分。<br />
 以后我们再以不同的视角来分享更多软件工程的实践。</p>
+
 <p>（完）</p>
         </div>
         
