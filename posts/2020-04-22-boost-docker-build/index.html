@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.59.1" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Lirian Su" />
+  <meta property="og:url" content="https://liriansu.com/posts/2020-04-22-boost-docker-build/" />
+  <link rel="canonical" href="https://liriansu.com/posts/2020-04-22-boost-docker-build/" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/liriansu.com\/"
+      },
+      "articleSection" : "posts",
+      "name" : "如何加速 Docker Build 构建过程",
+      "headline" : "如何加速 Docker Build 构建过程",
+      "description" : "",
+      "inLanguage" : "en-US",
+      "author" : "Lirian Su",
+      "creator" : "Lirian Su",
+      "publisher": "Lirian Su",
+      "accountablePerson" : "Lirian Su",
+      "copyrightHolder" : "Lirian Su",
+      "copyrightYear" : "2020",
+      "datePublished": "2020-04-22 22:28:53 \x2b0800 CST",
+      "dateModified" : "2020-04-22 22:28:53 \x2b0800 CST",
+      "url" : "https:\/\/liriansu.com\/posts\/2020-04-22-boost-docker-build\/",
+      "keywords" : [  ]
+  }
+</script>
+<title>如何加速 Docker Build 构建过程 - 浮云计算</title>
+  <meta property="og:title" content="如何加速 Docker Build 构建过程 - 浮云计算" />
+  <meta property="og:type" content="article" />
+  <meta name="description" content="" />
+
+  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet"
+    href="/css/github-markdown.min.css" />
+  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+  <link rel="stylesheet" href="/css/index.css">
+  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="浮云计算">
+  
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker" rel="stylesheet">
+  
+  
+
+  
+</head>
+
+
+<body>
+  <article class="post 中文" id="article">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <div class="site-header">
+          
+<header>
+  <div class="signatures site-title">
+    <a href="/">Lirian Su</a>
+  </div>
+</header>
+<div class="row end-xs">
+  
+  
+  <div class="lang-switch col-xs-3 col-xs-offset-9">
+    <a href="/en/">English</a>
+  </div>
+  
+  
+</div>
+<div class="header-line"></div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">如何加速 Docker Build 构建过程</h1>
+          
+          <div class="row post-desc">
+            
+            <time class="post-header-item" datetime="2020-04-22 22:28:53 CST">
+              Written at 2020-04-22 22:28
+            </time>
+            
+            <span class="post-header-item" id="busuanzi_container_page_pv"> Views <span id="busuanzi_value_page_pv" /> </span>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          <h2 id="dockerfile">Dockerfile</h2>
+
+<p>docker 已经成为现代开发的基础技术，<br />
+而在 docker 开发流中，<br />
+Dockerfile 是最基础的文件。</p>
+
+<p>一个包括了系统配置、依赖安装、业务代码的 Dockerfile 可能长这样子：</p>
+
+<pre><code>FROM python:3.8-buster
+WORKDIR /app
+
+COPY Pipfile Pipfile.lock ./
+COPY code /app/code
+RUN pip install pipenv
+RUN pipenv sync
+RUN echo &quot;Asia/Shanghai&quot; &gt; /etc/timezone
+RUN dpkg-reconfigure -f noninteractive tzdata
+RUN apt-get update
+RUN apt-get -y dist-upgrade
+RUN apt-get -y install vim tmux git
+RUN curl -sL https://sentry.io/get-cli/ | bash
+</code></pre>
+
+<p>然后很自然地，<br />
+开发者小周发现：<br />
+每次改完代码以后重新 <code>docker build</code> 都非常慢。</p>
+
+<p><img src="/assets/pics/xkcd_docker.png" alt="xkcd-docker" /><br />
+他需要加速构建过程。</p>
+
+<h2 id="改写文件">改写文件</h2>
+
+<p>最简单的加速是改写 Dockerfile,<br />
+因为 Dockerfile 中的一些命令 (<code>ADD/COPY/RUN</code>) 会产生新的 layer,<br />
+而 Docker 会自动跳过已经构建好的 layer。<br />
+所以一般优化的原则基于以下几点：</p>
+
+<ul>
+<li>变动越小的命令，越靠前，增加 cache 使用率。<br /></li>
+<li>合并目的相同的命令，减少 layer 层数。<br /></li>
+<li>使用国内源，或者内网服务加速构建。<br /></li>
+<li>少装些东西，不是代码依赖的就尽量别装了…<br /></li>
+<li>记得加上合适的注释，以便日后的维护。<br />
+<br /></li>
+</ul>
+
+<p>改写以后的 Dockerfile 可能长这样：</p>
+
+<pre><code>FROM python:3.8-buster
+WORKDIR /app
+
+# 默认使用上海时区 + 阿里源
+RUN echo &quot;Asia/Shanghai&quot; &gt; /etc/timezone &amp;&amp; dpkg-reconfigure -f noninteractive tzdata &amp;&amp; \
+    echo &quot;deb http://mirrors.aliyun.com/debian/ buster main non-free contrib&quot; &gt; /etc/apt/sources.list
+
+# 预装必须的包，sentry-cli 是预先存入内网的
+RUN apt-get update &amp;&amp; apt-get -y dist-upgrade &amp;&amp; apt-get -y install git &amp;&amp; \
+    wget http://internal-nginx-service.domain.com/sentry.sh /usr/bin/sentry-cli &amp;&amp; \
+    pip install pipenv
+
+# 装依赖，顺便祝 pipenv 早日发布新版本
+COPY Pipfile Pipfile.lock ./
+RUN pipenv sync
+
+# 代码频繁变更，放在文件底部，下面就别加更多命令了
+COPY code /app/code
+</code></pre>
+
+<p>改过以后的版本，<br />
+开发者小周发现，<br />
+每次本地改完代码 build 调试都飞快，<br />
+他很满意。</p>
+
+<p>但是用公司的分布式 gitlab runner 构建以后，<br />
+他发现：<br />
+有时镜像没用到 cache，又跑了一遍漫长的构建过程。</p>
+
+<h2 id="分布式构建">分布式构建</h2>
+
+<p>在 codebase 足够大的情况下，<br />
+CI/CD 一般都是分布式多台机器的，<br />
+默认的 docker build 只会从本地寻找 cache layer,<br />
+无法应对如此复杂的场面。</p>
+
+<p>简单的办法是使用 <code>docker build --cache-from</code> 指定镜像，<br />
+我们会在 ci 脚本中这么写：</p>
+
+<pre><code class="language-bash">docker pull LKI/code:latest || true
+docker build . -t LKI/code:latest --cache-from LKI/code:latest
+docker push LKI/code:latest
+</code></pre>
+
+<p>但是这样手写的弊端是逻辑比较臃肿，<br />
+比如要完美适配多分支构建 (dev/master/hotfix/release) 的话，<br />
+往往就要自己实现一套判断究竟 cache from 哪个版本的逻辑。</p>
+
+<p>更通用的办法是使用类似 <a href="https://github.com/GoogleContainerTools/kaniko">GoogleContainerTools/kaniko</a> 这样的工具来构建。<br />
+最适合 kaniko 的场景是 kaniko + kubernetes,<br />
+但这个我们留到最后一章再讲，<br />
+我们顺着我们的工作流往下看。</p>
+
+<p>使用 kaniko + docker 的构建，<br />
+我们可以把上面的 pull/build/push 三连改写为以下这样：</p>
+
+<pre><code class="language-bash"># 这个命令包括了 cache/build/push
+docker run \
+  -v &quot;$CODE&quot;/LKI/code:/workspace \
+  gcr.io/kaniko-project/executor:latest \
+  --cache=true \
+  --context dir:///workspace/ \
+  --destination LKI/code:latest
+</code></pre>
+
+<h2 id="and-kubernetes">and Kubernetes?</h2>
+
+<p>上面提到，kaniko 可以直接丢到 kubernetes 集群中构建：</p>
+
+<pre><code>apiVersion: v1
+kind: Pod
+metadata:
+  name: kaniko
+spec:
+  containers:
+  - name: kaniko
+    image: gcr.io/kaniko-project/executor:latest
+    args: [&quot;--dockerfile=Dockerfile&quot;,
+           # 没错，可以直接从 s3 里捞代码构建
+           &quot;--context=s3:///bucket/code/&quot;,
+           &quot;--destination=LKI/code:latest&quot;]
+    volumeMounts:
+      - name: kaniko-secret
+        mountPath: /secret
+  restartPolicy: Never
+  volumes:
+    - name: kaniko-secret
+      secret:
+        secretName: kaniko-secret
+</code></pre>
+
+<p>随着研究的进一步深入，<br />
+很容易想到，<br />
+其实 docker 开发流跟 kubernetes 的开发流理应有更好的集成。</p>
+
+<p>这就是 <a href="https://github.com/GoogleContainerTools/skaffold/">GoogleContainerTools/skaffold</a> 在做的事情了。<br />
+skaffold 不仅支持前面讲到的 kaniko 构建，<br />
+还囊括了 port-forwarding/test/helm-deploy 等一系列常用工作流。</p>
+
+<p>有兴趣的同学可以自行了解，<br />
+关于 skaffold 的故事我们以后有机会，<br />
+再慢慢讲 :)</p>
+        </div>
+        
+
+        
+
+
+        
+        <div style="height: 20px;"></div>
+        
+        <div class="post-comments">
+          <script src="https://utteranc.es/client.js"
+                  repo="LKI/lki.github.io"
+                  issue-term="title"
+                  label="comment"
+                  theme="github-light"
+                  crossorigin="anonymous"
+                  async>
+          </script>
+        </div>
+
+        <div class="site-footer">
+  <div class="site-footer-left">
+    <div class="site-footer-item">
+      <span id="busuanzi_container_site_pv" style="display:none"> PV: <span id="busuanzi_value_site_pv"/> </span>
+    </div>
+    <div class="site-footer-item">
+      <span id="busuanzi_container_site_uv" style="display:none"> UV: <span id="busuanzi_value_site_uv"/> </span>
+    </div>
+  </div>
+
+  <div class="site-footer-right">
+    
+    <div class="site-footer-item">
+      <a href="/about" target="_blank">about</a>
+    </div>
+    
+    <div class="site-footer-item">
+      <a href="https://github.com/LKI/LKI" target="_blank">github</a>
+    </div>
+    
+    <div class="site-footer-item">
+      <a href="/index.xml" target="_blank">rss</a>
+    </div>
+    
+  </div>
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+</body>
+
+</html>
