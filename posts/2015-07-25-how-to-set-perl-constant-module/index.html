@@ -10,7 +10,7 @@
   <meta property="og:url" content="https://liriansu.com/posts/2015-07-25-how-to-set-perl-constant-module/" />
   <link rel="canonical" href="https://liriansu.com/posts/2015-07-25-how-to-set-perl-constant-module/" /><script type="application/ld+json">
   {
-      "@context" : "http://schema.org",
+      "@context" : "https://schema.org",
       "@type" : "BlogPosting",
       "mainEntityOfPage": {
            "@type": "WebPage",
@@ -167,7 +167,7 @@
 
 <p>上面这段代码简单粗暴地展示了Perl中的常量模块。</p>
 
-<p>其中的<code>our @ISA = qw(Exporter);</code>是表示本模块继承了<a href="http://perldoc.perl.org/Exporter.html">Exporter</a>这个模块。</p>
+<p>其中的<code>our @ISA = qw(Exporter);</code>是表示本模块继承了<a href="https://perldoc.perl.org/Exporter.html">Exporter</a>这个模块。</p>
 
 <p>通过这样的定义，我们便有了一个常量的“中心仓库”了。</p>
 
@@ -234,7 +234,7 @@
     my $parm_tags = $tags-&gt;{parm}; # ['PARM_DB_NAME', 'PARM_DB_HOST', 'PARM_GIT_USER'];
 </code></pre>
 
-<p>这样就可以拿到常量的名字了，此时我们便需要<a href="http://stackoverflow.com/questions/2187682/how-do-i-access-a-constant-in-perl-whose-name-is-contained-in-a-variable">在Perl中根据变量名获取变量值</a></p>
+<p>这样就可以拿到常量的名字了，此时我们便需要<a href="https://stackoverflow.com/questions/2187682/how-do-i-access-a-constant-in-perl-whose-name-is-contained-in-a-variable">在Perl中根据变量名获取变量值</a></p>
 
 <pre><code class="language-perl">    my $name  = 'CONST_PI';
     my $value = Lirian::Constants-&gt;$name; # 3.1416
@@ -256,7 +256,7 @@
 
 <p>大功告成！从此以后在加常量的同时，validate_config会自动地检验新增的配置选项啦~</p>
 
-<p>此时便可以使用<a href="http://whatthecommit.com/">一个酷炫的Git Commit Message</a>来提交工作啦！</p>
+<p>此时便可以使用<a href="https://whatthecommit.com/">一个酷炫的Git Commit Message</a>来提交工作啦！</p>
         </div>
 
         

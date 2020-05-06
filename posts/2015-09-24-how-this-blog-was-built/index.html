@@ -10,7 +10,7 @@
   <meta property="og:url" content="https://liriansu.com/posts/2015-09-24-how-this-blog-was-built/" />
   <link rel="canonical" href="https://liriansu.com/posts/2015-09-24-how-this-blog-was-built/" /><script type="application/ld+json">
   {
-      "@context" : "http://schema.org",
+      "@context" : "https://schema.org",
       "@type" : "BlogPosting",
       "mainEntityOfPage": {
            "@type": "WebPage",
@@ -104,7 +104,7 @@
 
 <ul>
 <li>晚上11点断网，早上6点才恢复网络，所以这个“个人博客”会断网<br /></li>
-<li>学校把对外的80端口给封了，而域名访问默认就是80，所以校外访问博客要变成 <code>http://cloudisdream:8080</code>这种奇怪的模式<br /></li>
+<li>学校把对外的80端口给封了，而域名访问默认就是80，所以校外访问博客要变成 <code>https://cloudisdream:8080</code>这种奇怪的模式<br /></li>
 <li>由于是自己的电脑做服务器，还得保证一直开着，这样始终不太好<br />
 <br /></li>
 </ul>
@@ -126,7 +126,7 @@
 
 <p>在前台HTML CSS JS到后台JAVA SQL都写过一遍以后，我开始意识到全栈工程师虽然听起来很美好，但是写起来实在是心太累了</p>
 
-<p>那个时候和ED聊天，刚好聊到<a href="http://edward-mj.com/">他的博客</a>是用WordPress搭的，于是我就在自己的电脑上搭了一个服务器</p>
+<p>那个时候和ED聊天，刚好聊到<a href="https://edward-mj.com/">他的博客</a>是用WordPress搭的，于是我就在自己的电脑上搭了一个服务器</p>
 
 <p>虽然文章开头说了这么搭建服务器的缺点，但是其实学校还是给我们提供了一个便利：<strong>固定IP</strong></p>
 
@@ -136,7 +136,7 @@
 
 <h2 id="github-pages-jekyll">Github Pages + Jekyll</h2>
 
-<p>现在的博客就是最简单的<a href="https://pages.github.com/">GitHub Pages</a> + <a href="http://jekyllrb.com/">Jekyll</a></p>
+<p>现在的博客就是最简单的<a href="https://pages.github.com/">GitHub Pages</a> + <a href="https://jekyllrb.com/">Jekyll</a></p>
 
 <p>网页放在GitHub上可以享受版本控制这个得天独厚的优势，Jekyll用的是Ruby，简单易用好上手。</p>
 
@@ -152,7 +152,7 @@
 
 <h2 id="comments">Comments</h2>
 
-<p>博客少了评论总感觉哪里不对，因为是GitHub上的静态页面，基本上解决方案有：用<a href="http://duoshuo.com/">多说评论</a>，<a href="https://disqus.com/">Disqus</a>，或者是用GitHub issue来定制化评论<br />
+<p>博客少了评论总感觉哪里不对，因为是GitHub上的静态页面，基本上解决方案有：用<a href="https://duoshuo.com/">多说评论</a>，<a href="https://disqus.com/">Disqus</a>，或者是用GitHub issue来定制化评论<br />
 （我一开始还以为disqus == disquz）</p>
 
 <p>综合各方面，我采用了Disqus，根据<a href="https://help.disqus.com/customer/portal/articles/472138-jekyll-installation-instructions">官方的说明文档</a></p>

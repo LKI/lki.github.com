@@ -10,7 +10,7 @@
   <meta property="og:url" content="https://liriansu.com/posts/2017-11-23-python-deployment-automation-one-sample/" />
   <link rel="canonical" href="https://liriansu.com/posts/2017-11-23-python-deployment-automation-one-sample/" /><script type="application/ld+json">
   {
-      "@context" : "http://schema.org",
+      "@context" : "https://schema.org",
       "@type" : "BlogPosting",
       "mainEntityOfPage": {
            "@type": "WebPage",
@@ -137,7 +137,7 @@
 
 <ul>
 <li><p><strong>本地命令集成</strong>。<br />
-这点大概跟 Java 的 <a href="http://ant.apache.org/"><code>ant</code></a>, <a href="https://gradle.org/"><code>gradle</code></a>,<br />
+这点大概跟 Java 的 <a href="https://ant.apache.org/"><code>ant</code></a>, <a href="https://gradle.org/"><code>gradle</code></a>,<br />
 或者是 JS 的 <a href="https://www.npmjs.com/"><code>npm run</code></a> 有类似功能。<br />
 都是可以把数个操作集成到一条简单的工作流命令里。</p></li>
 
@@ -158,21 +158,21 @@ run('supervisorctl update', use_sudo=True)
 </code></pre></li>
 </ul>
 
-<p>但<a href="https://github.com/fabric/fabric">Fabric</a>有个比较蛋疼的地方就是它只支持<a href="http://docs.python-guide.org/en/latest/starting/which-python/">Python2</a>，<br />
-假如要用<a href="http://docs.python-guide.org/en/latest/starting/which-python/">Python3</a>的话，<br />
+<p>但<a href="https://github.com/fabric/fabric">Fabric</a>有个比较蛋疼的地方就是它只支持<a href="https://docs.python-guide.org/en/latest/starting/which-python/">Python2</a>，<br />
+假如要用<a href="https://docs.python-guide.org/en/latest/starting/which-python/">Python3</a>的话，<br />
 可以使用<a href="https://github.com/fabric/fabric">Fabric</a>的一个fork分支<a href="https://github.com/mathiasertl/fabric/">Fabric3</a>，<br />
 <a href="https://github.com/mathiasertl/fabric/">Fabric3</a>与<a href="https://github.com/fabric/fabric">Fabric</a>大部分功能等价。</p>
 
 <p>只想用里面本地命令集成这部分功能的话，<br />
-还有一个库叫<a href="http://www.pyinvoke.org/">Invoke</a>也提供了类似的功能。<br />
+还有一个库叫<a href="https://www.pyinvoke.org/">Invoke</a>也提供了类似的功能。<br />
 这个库主要是名字特别帅，<br />
 <a href="https://dota2.gamepedia.com/Invoker">dota2里面的卡尔就叫Invoker（祈求者）</a>。</p>
 
-<h2 id="进程管理-supervisor-supervisor">进程管理：<a href="http://supervisord.org/">Supervisor</a></h2>
+<h2 id="进程管理-supervisor-supervisor">进程管理：<a href="https://supervisord.org/">Supervisor</a></h2>
 
 <p>在正式环境中，<br />
 为了保证服务器进程的鲁棒性，<br />
-我们使用了 <a href="http://supervisord.org/">supervisor</a> 来监控进程状态。</p>
+我们使用了 <a href="https://supervisord.org/">supervisor</a> 来监控进程状态。</p>
 
 <p>一个简单的 nginx supervisor 的配置会长这样子：</p>
 

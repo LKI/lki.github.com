@@ -10,7 +10,7 @@
   <meta property="og:url" content="https://liriansu.com/posts/2017-03-18-hawk-authentication/" />
   <link rel="canonical" href="https://liriansu.com/posts/2017-03-18-hawk-authentication/" /><script type="application/ld+json">
   {
-      "@context" : "http://schema.org",
+      "@context" : "https://schema.org",
       "@type" : "BlogPosting",
       "mainEntityOfPage": {
            "@type": "WebPage",
@@ -134,7 +134,7 @@
 
 <p>这是一个样例的HTTP GET请求：</p>
 
-<pre><code class="language-http">GET http://example.com:8000/resource/1?b=1&amp;a=2
+<pre><code class="language-http">GET https://example.com:8000/resource/1?b=1&amp;a=2
 </code></pre>
 
 <p>要通过Hawk验证，<br />
@@ -168,7 +168,7 @@ some-app-ext-data
 <p>最后我们把基本信息加入Http Header里，<br />
 请求就会变成这样子：</p>
 
-<pre><code class="language-http">GET http://example.com:8000/resource/1?b=1&amp;a=2
+<pre><code class="language-http">GET https://example.com:8000/resource/1?b=1&amp;a=2
 Authorization: Hawk id=&quot;dh37fgj492je&quot;, ts=&quot;1353832234&quot;, nonce=&quot;j4h3g2&quot;, ext=&quot;some-app-ext-data&quot;, mac=&quot;6R4rV5iE+NPoym+WwjeHzjAGXUtLNIxmo1vpMofpLAE=&quot;
 </code></pre>
 

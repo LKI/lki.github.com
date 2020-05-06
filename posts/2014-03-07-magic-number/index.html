@@ -10,7 +10,7 @@
   <meta property="og:url" content="https://liriansu.com/posts/2014-03-07-magic-number/" />
   <link rel="canonical" href="https://liriansu.com/posts/2014-03-07-magic-number/" /><script type="application/ld+json">
   {
-      "@context" : "http://schema.org",
+      "@context" : "https://schema.org",
       "@type" : "BlogPosting",
       "mainEntityOfPage": {
            "@type": "WebPage",
@@ -121,7 +121,7 @@
     long i;
     float x2, y;
     const float threehalfs = 1.5F;
-     
+
     x2 = number * 0.5F;
     y = number;
     i = * ( long * ) &amp;y;         // evil floating point bit level hacking
@@ -129,7 +129,7 @@
     y = * ( float * ) &amp;i;
     y = y * ( threehalfs - ( x2 * y * y ) );       // 1st iteration
     // y = y * ( threehalfs - ( x2 * y * y ) );    // 2nd iteration, this can be removed
-     
+
 #ifndef Q3_VM
 #ifdef __linux__
     assert( !isnan(y) ); // bk010122 - FPE?
@@ -149,7 +149,7 @@
 
 <p>普渡大学的数学家Chris Lomont了解到了这个数字以后很感兴趣，他打算研究一下这个数字的奥秘。这个Lomont也是一个牛人，精心研究以后他从理论上推导出了一个最佳猜测值：0x5f37642f，跟程序中的0x5f3759df十分接近。Lomont得出这个结果以后很满意，他拿自己这个数跟卡马克的神奇数字做速度比赛，结果卡马克赢了……谁也不知道卡马克是怎么求出这个数的……</p>
 
-<p>自己精心推导出的理论最佳值居然输给了卡马克，Lomont也是很不甘心，他用类似穷举的方法一个个地试过来，终于被他找到一个比卡马克的0x5f3759df要好一丁点的数字：0x5f375a86。于是Lomont很高兴地把这个结果写成了论文公之于世……（论文地址：<a href="http://www.matrix67.com/data/InvSqrt.pdf）">http://www.matrix67.com/data/InvSqrt.pdf）</a></p>
+<p>自己精心推导出的理论最佳值居然输给了卡马克，Lomont也是很不甘心，他用类似穷举的方法一个个地试过来，终于被他找到一个比卡马克的0x5f3759df要好一丁点的数字：0x5f375a86。于是Lomont很高兴地把这个结果写成了论文公之于世……（论文地址：<a href="https://www.matrix67.com/data/InvSqrt.pdf）">https://www.matrix67.com/data/InvSqrt.pdf）</a></p>
 
 <p>这个算法也有了自己的名字：平方根倒数速算算法（Fast Inverse Square Root）</p>
 
@@ -161,12 +161,12 @@
 
 <blockquote>
 <p>参考资料：<br />
-<a href="http://www.guokr.com/post/90718/">http://www.guokr.com/post/90718/</a><br />
-<a href="http://www.matrix67.com/data/InvSqrt.pdf">http://www.matrix67.com/data/InvSqrt.pdf</a><br />
-<a href="http://www.matrix67.com/blog/archives/362">http://www.matrix67.com/blog/archives/362</a><br />
-<a href="http://en.wikipedia.org/wiki/Fast_inverse_square_root">http://en.wikipedia.org/wiki/Fast_inverse_square_root</a><br />
-<a href="http://en.wikipedia.org/wiki/John_Carmack">http://en.wikipedia.org/wiki/John_Carmack</a><br />
-<a href="http://zh.wikipedia.org/wiki/%E5%B9%B3%E6%96%B9%E6%A0%B9%E5%80%92%E6%95%B0%E9%80%9F%E7%AE%97%E6%B3%95">http://zh.wikipedia.org/wiki/%E5%B9%B3%E6%96%B9%E6%A0%B9%E5%80%92%E6%95%B0%E9%80%9F%E7%AE%97%E6%B3%95</a></p>
+<a href="https://www.guokr.com/post/90718/">https://www.guokr.com/post/90718/</a><br />
+<a href="https://www.matrix67.com/data/InvSqrt.pdf">https://www.matrix67.com/data/InvSqrt.pdf</a><br />
+<a href="https://www.matrix67.com/blog/archives/362">https://www.matrix67.com/blog/archives/362</a><br />
+<a href="https://en.wikipedia.org/wiki/Fast_inverse_square_root">https://en.wikipedia.org/wiki/Fast_inverse_square_root</a><br />
+<a href="https://en.wikipedia.org/wiki/John_Carmack">https://en.wikipedia.org/wiki/John_Carmack</a><br />
+<a href="https://zh.wikipedia.org/wiki/%E5%B9%B3%E6%96%B9%E6%A0%B9%E5%80%92%E6%95%B0%E9%80%9F%E7%AE%97%E6%B3%95">https://zh.wikipedia.org/wiki/%E5%B9%B3%E6%96%B9%E6%A0%B9%E5%80%92%E6%95%B0%E9%80%9F%E7%AE%97%E6%B3%95</a></p>
 </blockquote>
         </div>
 

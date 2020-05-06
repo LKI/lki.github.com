@@ -10,7 +10,7 @@
   <meta property="og:url" content="https://liriansu.com/posts/2020-04-22-boost-docker-build/" />
   <link rel="canonical" href="https://liriansu.com/posts/2020-04-22-boost-docker-build/" /><script type="application/ld+json">
   {
-      "@context" : "http://schema.org",
+      "@context" : "https://schema.org",
       "@type" : "BlogPosting",
       "mainEntityOfPage": {
            "@type": "WebPage",
@@ -153,11 +153,11 @@ WORKDIR /app
 
 # 默认使用上海时区 + 阿里源
 RUN echo &quot;Asia/Shanghai&quot; &gt; /etc/timezone &amp;&amp; dpkg-reconfigure -f noninteractive tzdata &amp;&amp; \
-    echo &quot;deb http://mirrors.aliyun.com/debian/ buster main non-free contrib&quot; &gt; /etc/apt/sources.list
+    echo &quot;deb https://mirrors.aliyun.com/debian/ buster main non-free contrib&quot; &gt; /etc/apt/sources.list
 
 # 预装必须的包，sentry-cli 是预先存入内网的
 RUN apt-get update &amp;&amp; apt-get -y dist-upgrade &amp;&amp; apt-get -y install git &amp;&amp; \
-    wget http://internal-nginx-service.domain.com/sentry.sh /usr/bin/sentry-cli &amp;&amp; \
+    wget https://internal-nginx-service.domain.com/sentry.sh /usr/bin/sentry-cli &amp;&amp; \
     pip install pipenv
 
 # 装依赖，顺便祝 pipenv 早日发布新版本

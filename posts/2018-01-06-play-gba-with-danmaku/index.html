@@ -10,7 +10,7 @@
   <meta property="og:url" content="https://liriansu.com/posts/2018-01-06-play-gba-with-danmaku/" />
   <link rel="canonical" href="https://liriansu.com/posts/2018-01-06-play-gba-with-danmaku/" /><script type="application/ld+json">
   {
-      "@context" : "http://schema.org",
+      "@context" : "https://schema.org",
       "@type" : "BlogPosting",
       "mainEntityOfPage": {
            "@type": "WebPage",
@@ -223,7 +223,7 @@ fork了这个项目，<br />
 
 <pre><code>import danmu
 
-client = danmu.DanMuClient('http://www.douyu.com/lisp')
+client = danmu.DanMuClient('https://www.douyu.com/lisp')
 
 @client.danmu
 def receive(message):
@@ -296,7 +296,7 @@ client.start()
 import keyboard
 import constants
 
-client = danmu.DanMuClient('http://www.douyu.com/lisp')
+client = danmu.DanMuClient('https://www.douyu.com/lisp')
 
 @client.danmu
 def receive(message):
