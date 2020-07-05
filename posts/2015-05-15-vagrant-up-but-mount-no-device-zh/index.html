@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.73.0" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,7 +19,7 @@
       "articleSection" : "posts",
       "name" : "Vagrant-up遇到mount no device的解决方案",
       "headline" : "Vagrant-up遇到mount no device的解决方案",
-      "description" : "\x3cp\x3e今天跑\x3ccode\x3evagrant up\x3c\/code\x3e的时候遇到了这个问题：\x3c\/p\x3e",
+      "description" : "\u003cp\u003e今天跑\u003ccode\u003evagrant up\u003c\/code\u003e的时候遇到了这个问题：\u003c\/p\u003e",
       "inLanguage" : "en-US",
       "author" : "Lirian Su",
       "creator" : "Lirian Su",
@@ -27,8 +27,8 @@
       "accountablePerson" : "Lirian Su",
       "copyrightHolder" : "Lirian Su",
       "copyrightYear" : "2015",
-      "datePublished": "2015-05-15 10:29:05 \x2b0000 UTC",
-      "dateModified" : "2015-05-15 10:29:05 \x2b0000 UTC",
+      "datePublished": "2015-05-15 10:29:05 \u002b0000 UTC",
+      "dateModified" : "2015-05-15 10:29:05 \u002b0000 UTC",
       "url" : "https:\/\/liriansu.com\/posts\/2015-05-15-vagrant-up-but-mount-no-device-zh\/",
       "keywords" : [  ]
   }
@@ -101,7 +101,6 @@
 
         <div class="post-content markdown-body">
           <p>今天跑<code>vagrant up</code>的时候遇到了这个问题：</p>
-
 <pre><code>==&gt; cvc-tools: Machine booted and ready!
 ==&gt; cvc-tools: Checking for guest additions in VM...
 ==&gt; cvc-tools: Configuring and enabling network interfaces...
@@ -119,13 +118,9 @@ mount -t vboxsf -o uid=`id -u devel`,gid=`id -g devel` work /work
 The error output from the last command was:
 
 /sbin/mount.vboxsf: mounting failed with the error: No such device
-</code></pre>
-
-<p>查看了 <a href="https://github.com/mitchellh/vagrant/issues/1657">https://github.com/mitchellh/vagrant/issues/1657</a><br />
+</code></pre><p>查看了 <a href="https://github.com/mitchellh/vagrant/issues/1657">https://github.com/mitchellh/vagrant/issues/1657</a>
 以后，明白这是<code>yum update</code>更新了内核，但是没有更新VirtualBox的连接的问题。</p>
-
 <p>于是重新添加一下VBox：</p>
-
 <pre><code>[lirian@localhost ~]$ sudo /etc/init.d/vboxadd setup
 Removing existing VirtualBox non-DKMS kernel modules       [  OK  ]
 Building the VirtualBox Guest Additions kernel modules
@@ -138,21 +133,14 @@ yum install kernel-devel-2.6.18-404.el5
 Building the main Guest Additions module                   [FAILED]
 (Look at /var/log/vboxadd-install.log to find out what went wrong)
 Doing non-kernel setup of the Guest Additions              [  OK  ]
+</code></pre><p>根据以上信息，得知现在在跑的内核开发包缺失，于是再跑一下：</p>
+<p><code>yum install kernel-devel-2.6.18-404.el5</code></p>
+<p>之后再vagrant up或者手动mount就可以解决问题了。</p>
+<p>总结：vagrant up遇到mount error: no such device可以通过以下脚本解决：</p>
+<pre><code>yum install kernel-devel-2.6.18-404.el5
+/etc/init.d/vboxadd setup
+mount -t vboxsf -o uid=`id -u devel`,gid=`id -g devel` work /work
 </code></pre>
-
-<p>根据以上信息，得知现在在跑的内核开发包缺失，于是再跑一下：</p>
-
-<pre><code class="language-yum">
-之后再vagrant up或者手动mount就可以解决问题了。
-
-总结：vagrant up遇到mount error: no such device可以通过以下脚本解决：
-
-</code></pre>
-
-<p>yum install kernel-devel-2.6.18-404.el5<br />
-/etc/init.d/vboxadd setup<br />
-mount -t vboxsf -o uid=<code>id -u devel</code>,gid=<code>id -g devel</code> work /work<br />
-```</p>
         </div>
 
         

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.73.0" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,7 +19,7 @@
       "articleSection" : "posts",
       "name" : "Git的理念",
       "headline" : "Git的理念",
-      "description" : "\x3cp\x3e本文尝试介绍一下Git的过人之处。\x3cbr \/\x3e\n目标读者是想了解Git，\x3cbr \/\x3e\n或者对软件设计有兴趣的人。\x3c\/p\x3e",
+      "description" : "\u003cp\u003e本文尝试介绍一下Git的过人之处。\n目标读者是想了解Git，\n或者对软件设计有兴趣的人。\u003c\/p\u003e",
       "inLanguage" : "en-US",
       "author" : "Lirian Su",
       "creator" : "Lirian Su",
@@ -27,8 +27,8 @@
       "accountablePerson" : "Lirian Su",
       "copyrightHolder" : "Lirian Su",
       "copyrightYear" : "2018",
-      "datePublished": "2018-02-10 16:01:31 \x2b0000 UTC",
-      "dateModified" : "2018-02-10 16:01:31 \x2b0000 UTC",
+      "datePublished": "2018-02-10 16:01:31 \u002b0000 UTC",
+      "dateModified" : "2018-02-10 16:01:31 \u002b0000 UTC",
       "url" : "https:\/\/liriansu.com\/posts\/2018-02-10-philosophy-of-git\/",
       "keywords" : [  ]
   }
@@ -102,113 +102,93 @@
         </header>
 
         <div class="post-content markdown-body">
-          <p>本文尝试介绍一下Git的过人之处。<br />
-目标读者是想了解Git，<br />
+          <p>本文尝试介绍一下Git的过人之处。
+目标读者是想了解Git，
 或者对软件设计有兴趣的人。</p>
-
-<p>Git作为一个极其灵活的工具，<br />
-从修改单机游戏数据文件的版本管理，<br />
-到多人协作一起堆屎的协作开发，<br />
+<p>Git作为一个极其灵活的工具，
+从修改单机游戏数据文件的版本管理，
+到多人协作一起堆屎的协作开发，
 使用起来都是十分趁手。</p>
-
-<p>那么Git灵活的奥秘在哪呢？<br />
+<p>那么Git灵活的奥秘在哪呢？
 大概是因为Git设计正交、实现扎实吧。</p>
-
 <h2 id="总览">总览</h2>
-
-<p>Git里面的术语/命令很多，<br />
-但是它们可以归并成几个大类，<br />
-每个大类的概念都是正交的，<br />
-也就是说交叉概念很少，<br />
-不会有模糊的概念定义。<br />
-基于这样的设计，<br />
+<p>Git里面的术语/命令很多，
+但是它们可以归并成几个大类，
+每个大类的概念都是正交的，
+也就是说交叉概念很少，
+不会有模糊的概念定义。
+基于这样的设计，
 Git与之对应地实现了一套扎实的命令系统。</p>
-
 <blockquote>
-<p>Git里的概念有些难以准确翻译，<br />
+<p>Git里的概念有些难以准确翻译，
 本文涉及概念词的地方尽量用术语表达 。</p>
 </blockquote>
-
 <p>比如经常用到的概念会有这些：</p>
-
 <ul>
-<li>Line Diff<br /></li>
-<li>Commit<br /></li>
-<li>Branch<br /></li>
-<li>Repository<br /></li>
-<li>Remote<br />
-<br />
-<br /></li>
+<li>Line Diff</li>
+<li>Commit</li>
+<li>Branch</li>
+<li>Repository</li>
+<li>Remote</li>
 </ul>
-
 <h2 id="line-diff">Line Diff</h2>
-
-<p>Git实现版本控制的方法是根据Line Diff，<br />
-推算出每个Commit具体改了哪些东西，<br />
+<p>Git实现版本控制的方法是根据Line Diff，
+推算出每个Commit具体改了哪些东西，
 然后用多个Commit（实则是多份Line Diff）构建出所有历史。</p>
-
 <p>这个基于Line Diff的先天设计决定了Git的一些特性：</p>
-
 <ol>
-<li><p>可以存储所有历史。<br />
-我们常听到“Git是一个分布式的版本控制系统”，<br />
-这个指的就是Git不需要中心化的服务器，<br />
-你就可以做完所有操作。<br />
-因为本地存着所有的Line Diff，<br />
-所以“查看昨天被改过的文件名列表”这个操作完全可以离线完成。</p></li>
-
-<li><p>对二进制文件不友善。<br />
-二进制文件是没法强行比Line Diff的。<br />
-所以假如用Git管理二进制文件，<br />
-Git只会显示一个<code>Binary File Differ</code>。<br />
-再把上面一条“存储所有历史”给叠加上，<br />
-就会出现今天提交了一个200M的文件，<br />
-明天后天我都修改覆盖了这个文件，<br />
-最后整个目录就有600M大了…<br />
-（也就是说一般不用Git来管理二进制大文件）</p></li>
-
-<li><p>能检测文件重命名。<br />
-假如在一个Commit中，<br />
-从Line Diff的视角看，<br />
-删除的文件和增加的文件相似度很高，<br />
-Git就会判定这是一个重命名的操作。</p></li>
+<li>
+<p>可以存储所有历史。
+我们常听到“Git是一个分布式的版本控制系统”，
+这个指的就是Git不需要中心化的服务器，
+你就可以做完所有操作。
+因为本地存着所有的Line Diff，
+所以“查看昨天被改过的文件名列表”这个操作完全可以离线完成。</p>
+</li>
+<li>
+<p>对二进制文件不友善。
+二进制文件是没法强行比Line Diff的。
+所以假如用Git管理二进制文件，
+Git只会显示一个<code>Binary File Differ</code>。
+再把上面一条“存储所有历史”给叠加上，
+就会出现今天提交了一个200M的文件，
+明天后天我都修改覆盖了这个文件，
+最后整个目录就有600M大了…
+（也就是说一般不用Git来管理二进制大文件）</p>
+</li>
+<li>
+<p>能检测文件重命名。
+假如在一个Commit中，
+从Line Diff的视角看，
+删除的文件和增加的文件相似度很高，
+Git就会判定这是一个重命名的操作。</p>
+</li>
 </ol>
-
 <h2 id="commit">Commit</h2>
-
-<p>Line Diff组成了Commit，<br />
-Commit是大部分Git操作的最小单位。<br />
+<p>Line Diff组成了Commit，
+Commit是大部分Git操作的最小单位。
 这个词既是动词，也是名词。</p>
-
 <p>一个Commit包含了多种信息：</p>
-
 <ul>
-<li>SHA hash：是根据line diff + 精确到秒的时间戳生成的一串唯一标识符<br /></li>
-<li>Author：写Line Diff的人<br /></li>
-<li>Committer：一个隐藏的属性，代表Commit的人<br /></li>
-<li>Date：包括AuthorDate和CommitDate<br /></li>
-<li>Message：Commit文本描述，Git会取Message第一行作为Subject，所以一般会遵循<a href="https://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html">一定规范</a><br /></li>
-<li>Line Diffs：改动了哪些内容<br />
-<br /></li>
+<li>SHA hash：是根据line diff + 精确到秒的时间戳生成的一串唯一标识符</li>
+<li>Author：写Line Diff的人</li>
+<li>Committer：一个隐藏的属性，代表Commit的人</li>
+<li>Date：包括AuthorDate和CommitDate</li>
+<li>Message：Commit文本描述，Git会取Message第一行作为Subject，所以一般会遵循<a href="https://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html">一定规范</a></li>
+<li>Line Diffs：改动了哪些内容</li>
 </ul>
-
-<p>这里还可以说的概念包括RootCommit、MergeCommit，<br />
-不过它们特殊之处不影响实际使用，<br />
+<p>这里还可以说的概念包括RootCommit、MergeCommit，
+不过它们特殊之处不影响实际使用，
 所以跳过它们，继续往下说。</p>
-
 <h2 id="branch">Branch</h2>
-
-<p>多个Commit会组成一个Branch，<br />
+<p>多个Commit会组成一个Branch，
 最初的Branch默认叫master（主干分支）。</p>
-
-<p>Branch和Commit在很多命令里都是可以作为等价的操作对象的。<br />
+<p>Branch和Commit在很多命令里都是可以作为等价的操作对象的。
 举个例子：</p>
-
-<p>小成写了一天代码，<br />
-他在wechat这个分支上commit了很多次，<br />
-快下班了，小成想回顾一下今天的改动。<br />
+<p>小成写了一天代码，
+他在wechat这个分支上commit了很多次，
+快下班了，小成想回顾一下今天的改动。
 假设他的log长这样子：</p>
-
 <pre><code>&gt; git log --oneline --graph
 * f01c8d1 (HEAD -&gt; wechat) refactor: improve project layout
 * 2f9c867 feat: add rest api to create card
@@ -219,10 +199,7 @@ Commit是大部分Git操作的最小单位。<br />
 * 176b4f0 feat: implement membership level
 * 2727226 migration: add Settings.enable_level
 ...
-</code></pre>
-
-<p>那么以下命令是完全等价的：</p>
-
+</code></pre><p>那么以下命令是完全等价的：</p>
 <pre><code># 查看从master到wechat的diff
 &gt; git diff master..wechat
 
@@ -237,24 +214,17 @@ Commit是大部分Git操作的最小单位。<br />
 
 # 查看五个Commit以前倒当前的diff（master分支在五个Commit以前）
 &gt; git diff HEAD~5
-</code></pre>
-
-<p>所以也可以说“Branch是特殊的Commit”。<br />
-理解了这一点以后，<br />
-再去看大部分的Git命令，<br />
+</code></pre><p>所以也可以说“Branch是特殊的Commit”。
+理解了这一点以后，
+再去看大部分的Git命令，
 发现它们都是<code>git &lt;operation&gt; &lt;range&gt; -- &lt;files&gt;...</code>这样的形式。</p>
-
-<p>比如查看今天发布哪些内容就是<code>git diff master..release</code>，<br />
-把某个文件回滚到200个Commit以前就是<code>git checkout HEAD~200 -- some/path/some/file.txt</code>，<br />
+<p>比如查看今天发布哪些内容就是<code>git diff master..release</code>，
+把某个文件回滚到200个Commit以前就是<code>git checkout HEAD~200 -- some/path/some/file.txt</code>，
 查看单个文件的改动历史就是<code>git log -- some/path/some/file.txt</code></p>
-
 <h2 id="repository">Repository</h2>
-
-<p>Repository包含了所有的操作历史。<br />
+<p>Repository包含了所有的操作历史。
 <code>git init</code>命令可以初始化一个Repository。</p>
-
 <p>一个Git Repository结构可能是这样的：</p>
-
 <pre><code>- .git/
   - hooks/
   - objects/
@@ -264,23 +234,16 @@ Commit是大部分Git操作的最小单位。<br />
 - ForgiveDB/
 - README.md
 - requirements.txt
-</code></pre>
-
-<p>这里的<code>.git</code>目录就存储着上面讲的Line Diff、Commit、Branch的所有历史，<br />
-就像上面二进制大文件的那个例子，<br />
+</code></pre><p>这里的<code>.git</code>目录就存储着上面讲的Line Diff、Commit、Branch的所有历史，
+就像上面二进制大文件的那个例子，
 这里可能存了几百M的文件历史。</p>
-
 <h2 id="remote">Remote</h2>
-
-<p>Remote就是放在别的地方的Repository。<br />
+<p>Remote就是放在别的地方的Repository。
 同一个Repository可以添加多个Remote。</p>
-
-<p>除了<code>push/pull/fetch</code>这些基本操作以外，<br />
-关于Remote还有一个很骚的设定：<br />
+<p>除了<code>push/pull/fetch</code>这些基本操作以外，
+关于Remote还有一个很骚的设定：
 Git支持本地Remote。</p>
-
 <p>比如样例的命令如下：</p>
-
 <pre><code># 假设在服务器上的 /home/lirian/chinese-calendar 路径下有一个 Repository
 &gt; cd /home/lirian
 
@@ -291,40 +254,29 @@ Git支持本地Remote。</p>
 &gt; cd /home/ldsink &amp;&amp; git clone file:///opt/git/repo/chinese-calendar &amp;&amp; git remote -v
 origin       file:///opt/git/repo/chinese-calendar (fetch)
 origin       file:///opt/git/repo/chinese-calendar (push)
-</code></pre>
-
-<p>这样的设计之下，<br />
-Remote/Repository是完全分离的，<br />
-不会因为断网就修改不了历史。<br />
-我们甚至可以把Remote当成一种特殊的Branch，<br />
+</code></pre><p>这样的设计之下，
+Remote/Repository是完全分离的，
+不会因为断网就修改不了历史。
+我们甚至可以把Remote当成一种特殊的Branch，
 比如<code>fork - pull request</code>就是这种模式的一种应用。</p>
-
 <h2 id="尾言">尾言</h2>
-
-<p>文中讲到的不少例子有一些浅尝辄止，<br />
+<p>文中讲到的不少例子有一些浅尝辄止，
 读者有兴趣的话可以尝试思考实现一下这几个拓展问题：</p>
-
 <ul>
-<li>关于Line Diff：改动的两个文件相似度多高，Git才会识别为重命名呢？<br /></li>
-<li>关于Commit：如何修改Commit的Author？GitHub上能看出来Committer么？<br /></li>
-<li>关于Branch：如何删除远程分支？<code>git stash</code>产生的Commit可以像Branch一样操作么？<br /></li>
-<li>关于Repository：删除分支以后，Git目录会变小吗？<br /></li>
-<li>关于Remote：文中用到的<code>--bare</code>参数是什么意思？<br />
-<br /></li>
+<li>关于Line Diff：改动的两个文件相似度多高，Git才会识别为重命名呢？</li>
+<li>关于Commit：如何修改Commit的Author？GitHub上能看出来Committer么？</li>
+<li>关于Branch：如何删除远程分支？<code>git stash</code>产生的Commit可以像Branch一样操作么？</li>
+<li>关于Repository：删除分支以后，Git目录会变小吗？</li>
+<li>关于Remote：文中用到的<code>--bare</code>参数是什么意思？</li>
 </ul>
-
-<p>Git的设计理念中还有很强大的一部分是它关于历史（History）的管理，<br />
+<p>Git的设计理念中还有很强大的一部分是它关于历史（History）的管理，
 那又是一个值得细说的话题。</p>
-
-<p>总的来说，笔者眼中Git是一个科学且强大的工具。<br />
+<p>总的来说，笔者眼中Git是一个科学且强大的工具。
 Git优秀的原因在于它：</p>
-
 <ul>
-<li>正交的设计：术语定义清晰，重叠概念少，表现张力强大。<br /></li>
-<li>扎实的实现：二级术语丰富，命令参数完善，贴合实际应用场景。<br />
-<br /></li>
+<li>正交的设计：术语定义清晰，重叠概念少，表现张力强大。</li>
+<li>扎实的实现：二级术语丰富，命令参数完善，贴合实际应用场景。</li>
 </ul>
-
 <p>（完）</p>
         </div>
 
