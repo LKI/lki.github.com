@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.73.0" />
+  <meta name="generator" content="Hugo 0.59.1" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,7 +19,7 @@
       "articleSection" : "posts",
       "name" : "用GitHub托管静态HTML页面",
       "headline" : "用GitHub托管静态HTML页面",
-      "description" : "\u003cp\u003e这是一篇入门级的技术文章，\n教你怎么在GitHub上托管静态的HTML页面。\u003c\/p\u003e",
+      "description" : "\x3cp\x3e这是一篇入门级的技术文章，\x3cbr \/\x3e\n教你怎么在GitHub上托管静态的HTML页面。\x3c\/p\x3e",
       "inLanguage" : "en-US",
       "author" : "Lirian Su",
       "creator" : "Lirian Su",
@@ -27,8 +27,8 @@
       "accountablePerson" : "Lirian Su",
       "copyrightHolder" : "Lirian Su",
       "copyrightYear" : "2017",
-      "datePublished": "2017-02-03 21:59:54 \u002b0000 UTC",
-      "dateModified" : "2017-02-03 21:59:54 \u002b0000 UTC",
+      "datePublished": "2017-02-03 21:59:54 \x2b0000 UTC",
+      "dateModified" : "2017-02-03 21:59:54 \x2b0000 UTC",
       "url" : "https:\/\/liriansu.com\/posts\/2017-02-03-hold-static-html-on-github\/",
       "keywords" : [  ]
   }
@@ -101,23 +101,33 @@
         </header>
 
         <div class="post-content markdown-body">
-          <p>这是一篇入门级的技术文章，
+          <p>这是一篇入门级的技术文章，<br />
 教你怎么在GitHub上托管静态的HTML页面。</p>
+
 <h2 id="github项目主页">GitHub项目主页</h2>
-<p>GitHub有个设定，
+
+<p>GitHub有个设定，<br />
 就是<strong>每个项目的gh-pages分支可以通过<code>user-domain/项目名</code>来访问</strong>。</p>
-<p>比如以前我把一些常用的js/css库放到<a href="https://github.com/LKI/static">我的static项目下(LKI/static)</a>，
+
+<p>比如以前我把一些常用的js/css库放到<a href="https://github.com/LKI/static">我的static项目下(LKI/static)</a>，<br />
 该项目下<code>gh-pages</code>分支的index.html就可以直接通过<a href="/static/">lki.github.io/static</a>访问。</p>
-<p>GitHub的这个设定本意是<a href="https://pages.github.com/">让每个项目都有自己的主页来展示</a>，
+
+<p>GitHub的这个设定本意是<a href="https://pages.github.com/">让每个项目都有自己的主页来展示</a>，<br />
 不过我们也可以借用这个设定来托管静态HTML页面。</p>
+
 <h2 id="托管静态页面">托管静态页面</h2>
+
 <p>托管页面的大概步骤如下：</p>
+
 <ol>
-<li>拥有自己的GitHub账号</li>
-<li>在GitHub上建立一个目录<a href="https://github.com/new">(Create new repository)</a></li>
-<li>用git创造该项目下建立<code>gh-pages</code>分支，提交一个index.html文件</li>
+<li>拥有自己的GitHub账号<br /></li>
+<li>在GitHub上建立一个目录<a href="https://github.com/new">(Create new repository)</a><br /></li>
+<li>用git创造该项目下建立<code>gh-pages</code>分支，提交一个index.html文件<br />
+<br /></li>
 </ol>
+
 <p>第3步的命令行版本大概如下：</p>
+
 <pre><code>$ cd /Users/liriansu/new-repo
 $ git init                        # 初始化git目录
 $ git checkout -b gh-pages        # 新建gh-pages分支，并切换过去
@@ -126,8 +136,10 @@ $ git add index.html              # 告诉git说index.html要提交了
 $ git commit -m &quot;add index.html&quot;  # 提交index.html
 $ git remote add origin https://github.com/&lt;username&gt;/&lt;repository&gt;
 $ git push -u origin gh-pages     # 推到GitHub服务器上
-</code></pre><p>然后我们就可以在<code>https://&lt;username&gt;.github.io/&lt;repository&gt;</code>上看到刚提交上去的index.html了。
-最后假如你希望在GitHub上搭建个人博客，
+</code></pre>
+
+<p>然后我们就可以在<code>https://&lt;username&gt;.github.io/&lt;repository&gt;</code>上看到刚提交上去的index.html了。<br />
+最后假如你希望在GitHub上搭建个人博客，<br />
 可以参照<a href="/how-this-blog-was-built">我的搭建方案</a></p>
         </div>
 

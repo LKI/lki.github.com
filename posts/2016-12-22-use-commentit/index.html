@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.73.0" />
+  <meta name="generator" content="Hugo 0.59.1" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,7 +19,7 @@
       "articleSection" : "posts",
       "name" : "disqus不稳定，于是我开始用commentit了",
       "headline" : "disqus不稳定，于是我开始用commentit了",
-      "description" : "\u003cp\u003e挂在GitHub Pages上的静态博客的评论总是个蛋疼的问题，\n我以前一直都是用\u003ca href=\u0022https:\/\/disqus.com\/\u0022\u003edisqus\u003c\/a\u003e的，\n但是它总是处于墙于被墙的边缘…\u003c\/p\u003e",
+      "description" : "\x3cp\x3e挂在GitHub Pages上的静态博客的评论总是个蛋疼的问题，\x3cbr \/\x3e\n我以前一直都是用\x3ca href=\x22https:\/\/disqus.com\/\x22\x3edisqus\x3c\/a\x3e的，\x3cbr \/\x3e\n但是它总是处于墙于被墙的边缘…\x3c\/p\x3e",
       "inLanguage" : "en-US",
       "author" : "Lirian Su",
       "creator" : "Lirian Su",
@@ -27,8 +27,8 @@
       "accountablePerson" : "Lirian Su",
       "copyrightHolder" : "Lirian Su",
       "copyrightYear" : "2016",
-      "datePublished": "2016-12-22 20:20:07 \u002b0000 UTC",
-      "dateModified" : "2016-12-22 20:20:07 \u002b0000 UTC",
+      "datePublished": "2016-12-22 20:20:07 \x2b0000 UTC",
+      "dateModified" : "2016-12-22 20:20:07 \x2b0000 UTC",
       "url" : "https:\/\/liriansu.com\/posts\/2016-12-22-use-commentit\/",
       "keywords" : [  ]
   }
@@ -102,23 +102,37 @@
         </header>
 
         <div class="post-content markdown-body">
-          <p>挂在GitHub Pages上的静态博客的评论总是个蛋疼的问题，
-我以前一直都是用<a href="https://disqus.com/">disqus</a>的，
+          <p>挂在GitHub Pages上的静态博客的评论总是个蛋疼的问题，<br />
+我以前一直都是用<a href="https://disqus.com/">disqus</a>的，<br />
 但是它总是处于墙于被墙的边缘…</p>
-<p><a href="/how-this-blog-was-built">因为<del>自己感觉没那个必要从头搭建博客服务器</del>懒，于是我直接采用了GitHub Pages。</a>
-但是由于GitHub Pages是静态页面，所以评论系统就成了问题。
+
+<p><a href="/how-this-blog-was-built">因为<del>自己感觉没那个必要从头搭建博客服务器</del>懒，于是我直接采用了GitHub Pages。</a><br />
+但是由于GitHub Pages是静态页面，所以评论系统就成了问题。<br />
 于是研究了一番以后我用了<a href="https://disqus.com/">disqus</a>的第三方评论。</p>
-<p>disqus的便利之处在于构建简单，
-我只要去注册一下，加一个<a href="https://github.com/LKI/lki.github.io/blob/b1c59b15a83fe0e0c9c2af55b15e1d3fa107c551/_includes/comments.html">comments.template</a>就可以自动展开成评论页面了。
+
+<p>disqus的便利之处在于构建简单，<br />
+我只要去注册一下，加一个<a href="https://github.com/LKI/lki.github.io/blob/b1c59b15a83fe0e0c9c2af55b15e1d3fa107c551/_includes/comments.html">comments.template</a>就可以自动展开成评论页面了。<br />
 但是出于种种原因<a href="https://disqus.com/">disqus</a>对墙内用户支持的不好。</p>
+
 <p>而且我又不想用<a href="https://duoshuo.com/">多说</a>，那个看起来无比蠢……</p>
-<p>直到我最近发现了一款黑科技：<a href="https://commentit.io/getting-started">Comm(ent|it)</a>。
+
+<p>直到我最近发现了一款黑科技：<a href="https://commentit.io/getting-started">Comm(ent|it)</a>。<br />
 一句话概括它静态评论的原理是：<code>所有的评论会变成Git Commit，push到你的Repository里面去</code>。</p>
-<p>雾草！
+
+<p>雾草！<br />
 感觉很爽！</p>
-<p>而且其实<a href="https://github.com/LKI/lki.github.io/blob/eb8e55e54fafc4effeeed8ed24ddae142829372b/_includes/comments.html">它的template配置和disqus的一样简单</a>。
-补充：我们还要在<a href="https://commentit.io/settings?master=true&amp;group=true">commentit的配置页面</a>配一下允许直接提交到master :)</p>
-<p>:) 所以是时候在本页面下面评论，
+
+<dl>
+<dt>补充：我们还要在<a href="https://commentit.io/settings?master=true&amp;group=true">commentit的配置页面</a>配一下允许直接提交到master :)<br />
+<br /></dt>
+</dl>
+
+<dl>
+<dt>mmentit的配置页面]<a href="https://commentit.io/settings?master=true&amp;group=true">commentit-config</a>配一下允许直接提交到master :)<br />
+<br /></dt>
+</dl>
+
+<p>:) 所以是时候在本页面下面评论，<br />
 以成为<a href="https://github.com/LKI/lki.github.io/graphs/contributors">本博客GitHub项目的Contributor啦~</a></p>
         </div>
 

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.73.0" />
+  <meta name="generator" content="Hugo 0.59.1" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,7 +19,7 @@
       "articleSection" : "posts",
       "name" : "Jekyll build fail的解决办法",
       "headline" : "Jekyll build fail的解决办法",
-      "description" : "\u003cp\u003e我一直觉得笔记本和台式机\u003ccode\u003ejekyll build\u003c\/code\u003e出来的结果不一样，\n我猜想是Jekyll的版本不一致。\n结果后来\u003ccode\u003egem update\u003c\/code\u003e以后，\n反而\u003ccode\u003ejekyll build\u003c\/code\u003e还失败了…\u003c\/p\u003e",
+      "description" : "\x3cp\x3e我一直觉得笔记本和台式机\x3ccode\x3ejekyll build\x3c\/code\x3e出来的结果不一样，\x3cbr \/\x3e\n我猜想是Jekyll的版本不一致。\x3cbr \/\x3e\n结果后来\x3ccode\x3egem update\x3c\/code\x3e以后，\x3cbr \/\x3e\n反而\x3ccode\x3ejekyll build\x3c\/code\x3e还失败了…\x3c\/p\x3e",
       "inLanguage" : "en-US",
       "author" : "Lirian Su",
       "creator" : "Lirian Su",
@@ -27,8 +27,8 @@
       "accountablePerson" : "Lirian Su",
       "copyrightHolder" : "Lirian Su",
       "copyrightYear" : "2016",
-      "datePublished": "2016-01-29 23:24:45 \u002b0000 UTC",
-      "dateModified" : "2016-01-29 23:24:45 \u002b0000 UTC",
+      "datePublished": "2016-01-29 23:24:45 \x2b0000 UTC",
+      "dateModified" : "2016-01-29 23:24:45 \x2b0000 UTC",
       "url" : "https:\/\/liriansu.com\/posts\/2016-01-29-jekyll-build-fail-solution\/",
       "keywords" : [  ]
   }
@@ -103,27 +103,38 @@
         </header>
 
         <div class="post-content markdown-body">
-          <p>我一直觉得笔记本和台式机<code>jekyll build</code>出来的结果不一样，
-我猜想是Jekyll的版本不一致。
-结果后来<code>gem update</code>以后，
+          <p>我一直觉得笔记本和台式机<code>jekyll build</code>出来的结果不一样，<br />
+我猜想是Jekyll的版本不一致。<br />
+结果后来<code>gem update</code>以后，<br />
 反而<code>jekyll build</code>还失败了…</p>
+
 <h2 id="jekyll-build">Jekyll build</h2>
-<p><code>jekyll build</code>的结果不稳定是很难受的，
-尤其每次build完以后<code>git status</code>看到的一大堆红色文件名。
+
+<p><code>jekyll build</code>的结果不稳定是很难受的，<br />
+尤其每次build完以后<code>git status</code>看到的一大堆红色文件名。<br />
 而其实大部分都是各种HTML tag位置的差别。</p>
-<p>我怀疑这有可能是两台机器上Jekyll的版本不同导致的，
+
+<p>我怀疑这有可能是两台机器上Jekyll的版本不同导致的，<br />
 于是我就跑了<code>gem update</code>以同步到最新版本。</p>
-<p>等这个命令跑完以后，我跑<code>jekyll build</code>遇到的都是
+
+<p>等这个命令跑完以后，我跑<code>jekyll build</code>遇到的都是<br />
 <code>jekyll build fail</code>这样的ruby错误了。</p>
+
 <h2 id="solution">Solution</h2>
-<p>搜了一下其实很简单，这是因为机子内同时装了多个版本的jekyll，
+
+<p>搜了一下其实很简单，这是因为机子内同时装了多个版本的jekyll，<br />
 而他们又互相冲突所导致的错误。</p>
+
 <p>（我不禁想问<code>gem update</code>为什么不会自动卸载旧版本？）</p>
-<p>没错，解决方案就是我们跑一条<code>gem cleanup</code>卸载旧版本就可以了。
+
+<p>没错，解决方案就是我们跑一条<code>gem cleanup</code>卸载旧版本就可以了。<br />
 至少这个解决方案对我的问题是起效的。</p>
+
 <h2 id="gem-sources">Gem sources</h2>
-<p>另：有的时候gem官方源很慢，可以选择用<code>gem sources</code>命令更换淘宝源。
+
+<p>另：有的时候gem官方源很慢，可以选择用<code>gem sources</code>命令更换淘宝源。<br />
 （不过淘宝源未必更新那么频繁）</p>
+
 <pre><code>$ gem sources -l
 *** CURRENT SOURCES ***
 
