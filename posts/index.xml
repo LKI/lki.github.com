@@ -6,10 +6,22 @@
     <description>Recent content in Posts on 浮云计算</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 06 Jul 2020 23:45:13 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 12 Jul 2020 23:45:58 +0800</lastBuildDate>
     
 	<atom:link href="https://liriansu.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>毕业五年的报告之技术</title>
+      <link>https://liriansu.com/posts/2020-07-12-adult-life-code/</link>
+      <pubDate>Sun, 12 Jul 2020 23:45:58 +0800</pubDate>
+      
+      <guid>https://liriansu.com/posts/2020-07-12-adult-life-code/</guid>
+      <description>&lt;p&gt;16年接触了 Web 整套技术栈的我，&lt;br /&gt;
+决定在这条路上不断攀爬，&lt;br /&gt;
+直到找到我技术上的天花板。&lt;br /&gt;
+当时我写了一篇&lt;a href=&#34;https://liriansu.com/backend-skill-tree&#34;&gt;《后端工程师技能树》&lt;/a&gt;。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>毕业五年的报告之团队</title>
