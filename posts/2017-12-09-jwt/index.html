@@ -101,15 +101,19 @@
 
         <div class="post-content markdown-body">
           <p>这是一篇关于 <a href="https://jwt.io/">JWT(JSON Web Token)</a> 的简短介绍。</p>
+
 <h2 id="什么是jwt">什么是JWT</h2>
-<p>JWT, 全称是JSON Web Token，
-是一种易于使用、无状态的鉴权(<a href="https://en.wikipedia.org/wiki/Authorization">Authorization</a>)方式。
-简单的来说，就是
+
+<p>JWT, 全称是JSON Web Token，<br />
+是一种易于使用、无状态的鉴权(<a href="https://en.wikipedia.org/wiki/Authorization">Authorization</a>)方式。<br />
+简单的来说，就是<br />
 <strong>Server端把JSON数据经过加密做成token，以授权给Client端</strong>。</p>
+
 <p>多说无益，上代码，举个栗子。</p>
-<p>当Client端登录完成以后，
-Server端要返回一个7天有效的token，
-那么对应的Python的样例代码会是这样的：
+
+<p>当Client端登录完成以后，<br />
+Server端要返回一个7天有效的token，<br />
+那么对应的Python的样例代码会是这样的：<br />
 （<a href="https://github.com/jpadilla/pyjwt">使用了PyJWT包：<code>pip install pyjwt</code></a>）</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> time
 
@@ -123,180 +127,164 @@ token <span style="color:#f92672">=</span> jwt<span style="color:#f92672">.</spa
 
 <span style="color:#66d9ef">print</span>(token)
 <span style="color:#75715e"># token可能会长这样子</span>
-<span style="color:#75715e"># eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.e30.EoKoMCjq_zGqUg5HDfqw4EN7EiG6gMjkUZle0uGJDGU</span>
-</code></pre></div><blockquote>
+<span style="color:#75715e"># eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.e30.EoKoMCjq_zGqUg5HDfqw4EN7EiG6gMjkUZle0uGJDGU</span></code></pre></div>
+<blockquote>
 <p><a href="/hunter2-meme">关于hunter2也有个梗：弱密码hunter2</a></p>
 </blockquote>
-<p>然后Client端每次在authorization header或者是query string里带上token。
-Server端收到请求的时候，
-用<code>payload = jwt.decode(token, key)</code>验证权限就行了。
-验证通过以后，payload中就是整个JSON数据。
+
+<p>然后Client端每次在authorization header或者是query string里带上token。<br />
+Server端收到请求的时候，<br />
+用<code>payload = jwt.decode(token, key)</code>验证权限就行了。<br />
+验证通过以后，payload中就是整个JSON数据。<br />
 理论上你可以往token payload里塞任何_非敏感_数据。</p>
-<p>所以综合来说，
-假如使用JWT作为鉴权方式，
+
+<p>所以综合来说，<br />
+假如使用JWT作为鉴权方式，<br />
 有以下几个特性：</p>
+
 <ol>
-<li>Client端不用管任何加密/解密，只用存token，在请求里面带上就行了。</li>
-<li>Server端可以实现不依赖外部存储鉴权，所有的数据都丢在token里。</li>
-<li>也就是说鉴权这一步不需要File/MySQL/Redis之类的数据库，也能知道用户身份。</li>
-<li>因为token带失效时间，所以需要在失效前/后再刷新token。</li>
+<li>Client端不用管任何加密/解密，只用存token，在请求里面带上就行了。<br /></li>
+<li>Server端可以实现不依赖外部存储鉴权，所有的数据都丢在token里。<br /></li>
+<li>也就是说鉴权这一步不需要File/MySQL/Redis之类的数据库，也能知道用户身份。<br /></li>
+<li>因为token带失效时间，所以需要在失效前/后再刷新token。<br />
+<br /></li>
 </ol>
-<p>好了，以上就是关于JWT的所有描述了。
-本次的简单介绍就到此结束。（雾）
+
+<p>好了，以上就是关于JWT的所有描述了。<br />
+本次的简单介绍就到此结束。（雾）<br />
 （不过<a href="/hawk-authentication">上次关于Hawk的介绍</a>大概就是这样的）</p>
+
 <h2 id="关于jwt的更多说明">关于JWT的更多说明</h2>
+
 <blockquote>
-<p>讲了这么多，实质上就是用个JSON数据当token，
+<p>讲了这么多，实质上就是用个JSON数据当token，<br />
 这破token真的安全吗？能伪造吗？</p>
 </blockquote>
-<p>emmmmmm, 好问题（表示这个问题很尖锐，难以正面回答，准备迂回）
+
+<p>emmmmmm, 好问题（表示这个问题很尖锐，难以正面回答，准备迂回）<br />
 JWT使用很广泛，久经考验，大家都在用（表现了我也不懂，应该不会有问题吧？的一种从众心理）</p>
-<p>认真地发表一下个人意见：
-首先token/key泄漏了，
-后果基本是跟其它鉴权方式一样严重。
-其次JWT可以选择合适的加密方式，
-加上合适的key是基本伪造不了的。
-还有就是在JWT之外，
-一定要用HTTPS！
-不用JWT相当于没有门禁，
+
+<p>认真地发表一下个人意见：<br />
+首先token/key泄漏了，<br />
+后果基本是跟其它鉴权方式一样严重。<br />
+其次JWT可以选择合适的加密方式，<br />
+加上合适的key是基本伪造不了的。<br />
+还有就是在JWT之外，<br />
+一定要用HTTPS！<br />
+不用JWT相当于没有门禁，<br />
 <a href="https://www.zhihu.com/question/52790301/answer/173452126">不用HTTPS基本是不穿内裤了</a>。。。</p>
+
 <blockquote>
 <p>我想了解更详细的JWT生成/验证过程</p>
 </blockquote>
+
 <p>具体说明请参照来源 <a href="https://tools.ietf.org/html/rfc7519">RFC7519 - JSON Web Token (JWT)</a></p>
+
 <p>简单的来说，JWT是由以下三部分组成的：</p>
+
 <ol>
-<li>第一部分指定了加密算法(alg)和token类型(typ)。</li>
-<li>第二部分就是我们定义的payload。</li>
-<li>第三部分是由加密算法产生的签名。</li>
+<li>第一部分指定了加密算法(alg)和token类型(typ)。<br /></li>
+<li>第二部分就是我们定义的payload。<br /></li>
+<li>第三部分是由加密算法产生的签名。<br />
+<br /></li>
 </ol>
-<p>获取了三部分数据以后，
-分别用base64加密，
-把最末的等号去掉，
-再用小数点连在一起，
-就是一个token了。
+
+<p>获取了三部分数据以后，<br />
+分别用base64加密，<br />
+把最末的等号去掉，<br />
+再用小数点连在一起，<br />
+就是一个token了。<br />
 验证的话，基本就是把这个过程反过来。</p>
+
 <blockquote>
 <p>我去，那token里的信息就是明文的啊？</p>
 </blockquote>
-<p>是的。
+
+<p>是的。<br />
 所以token里不要带任何敏感信息。</p>
-<p><a href="https://tools.ietf.org/html/rfc7519">文档上把payload里带的信息叫<code>Claim</code></a>，
+
+<p><a href="https://tools.ietf.org/html/rfc7519">文档上把payload里带的信息叫<code>Claim</code></a>，<br />
 有这么几个可选的<code>Claim</code>：</p>
+
 <ul>
-<li>
-<p><strong>iss</strong>: Issuer, 签发方。
-比如这个token是微信签发的，
-那么可以是<code>{'iss': 'wechat'}</code></p>
-</li>
-<li>
-<p><strong>aud</strong>: Audience, 接收方。
-比如王者荣耀想用微信登录，
-那么可以是<code>{'aud': 'king-of-glory'}</code></p>
-</li>
-<li>
-<p><strong>exp</strong>: Expiration Time, 失效时间。
-使用的是整形Unix时间戳，
-关于时间戳可以看看<a href="https://zhuanlan.zhihu.com/p/31829454">《互联网上的日期和时间》</a></p>
-</li>
+<li><p><strong>iss</strong>: Issuer, 签发方。<br />
+比如这个token是微信签发的，<br />
+那么可以是<code>{'iss': 'wechat'}</code></p></li>
+
+<li><p><strong>aud</strong>: Audience, 接收方。<br />
+比如王者荣耀想用微信登录，<br />
+那么可以是<code>{'aud': 'king-of-glory'}</code></p></li>
+
+<li><p><strong>exp</strong>: Expiration Time, 失效时间。<br />
+使用的是整形Unix时间戳，<br />
+关于时间戳可以看看<a href="https://zhuanlan.zhihu.com/p/31829454">《互联网上的日期和时间》</a></p></li>
 </ul>
-<p><a href="https://tools.ietf.org/html/rfc7519">RFC7519</a>里面还有一点很好玩，
-就是上面每一个<code>Claim</code>最后都加了一句<code>Use of this claim is OPTIONAL</code>
+
+<p><a href="https://tools.ietf.org/html/rfc7519">RFC7519</a>里面还有一点很好玩，<br />
+就是上面每一个<code>Claim</code>最后都加了一句<code>Use of this claim is OPTIONAL</code><br />
 （<a href="https://tools.ietf.org/html/rfc2119">RFC2119还定义过啥叫OPTIONAL</a>）</p>
-<p>也就是说我们可以往payload里丢任何东西。
-只要符合这种加密/解密/鉴权的方式，
+
+<p>也就是说我们可以往payload里丢任何东西。<br />
+只要符合这种加密/解密/鉴权的方式，<br />
 我们都可以说“我们用了JWT”。</p>
+
 <blockquote>
 <p>那token会不会很大？</p>
 </blockquote>
+
 <p>有可能会。</p>
-<p>所以payload里的东西能少则少，
+
+<p>所以payload里的东西能少则少，<br />
 看文档里，连<code>issuer -&gt; iss</code>, <code>audience -&gt; aud</code>这种地方都给省了好几个字符。</p>
-<p>还有就是传输JWT的时候，
-相较于放query string里，
+
+<p>还有就是传输JWT的时候，<br />
+相较于放query string里，<br />
 更推荐放在Request Headers里面。</p>
+
 <h2 id="与其他鉴权方式的对比">与其他鉴权方式的对比</h2>
-<p>详尽的比较超越了本文的范畴，
-<em>（写这句话好爽，可以少查一万个资料）</em>
-下面就用个简单的表格来对比一下_我了解的_几种鉴权方式吧：
+
+<p>详尽的比较超越了本文的范畴，<br />
+<em>（写这句话好爽，可以少查一万个资料）</em><br />
+下面就用个简单的表格来对比一下_我了解的_几种鉴权方式吧：<br />
 <a href="https://tools.ietf.org/html/rfc7519">JWT</a>, <a href="https://tools.ietf.org/html/rfc6749">OAuth</a>, <a href="https://tools.ietf.org/html/rfc6265">Session</a>, <a href="/hawk-authentication">Hawk</a></p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>JWT</th>
-<th>OAuth</th>
-<th>Session</th>
-<th>Hawk</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>易用性</td>
-<td>容易，就一个token</td>
-<td>麻烦，要用Refresh Token刷Access Token</td>
-<td>容易，用Cookie就行</td>
-<td>麻烦，每个请求都要单独计算header</td>
-</tr>
-<tr>
-<td>泛用性</td>
-<td>各种场合都适用</td>
-<td>带三方授权的场合特别适用</td>
-<td>还行吧&hellip;</td>
-<td>能用header的都适用</td>
-</tr>
-<tr>
-<td>安全性</td>
-<td>跟别的方案差不多，key泄漏了就完蛋了</td>
-<td>Auth Server安全就行，<del>我才不管Client</del>其它的跟别的方案差不多</td>
-<td>还行吧&hellip;</td>
-<td><a href="/hawk-authentication">我！能！防！中间人攻击！</a></td>
-</tr>
-<tr>
-<td>接受度</td>
-<td>有一定安全度，client端很喜欢，用的还是很多的</td>
-<td>繁琐和安全的折中方案，很多大厂都用</td>
-<td>真的广&hellip;</td>
-<td>目前只听说了我司在用Hawk</td>
-</tr>
-</tbody>
-</table>
+
+<p>| | JWT | OAuth | Session | Hawk |<br />
+|-|&mdash;&ndash;|&mdash;&mdash;-|&mdash;&mdash;&mdash;|&mdash;&mdash;|<br />
+| 易用性 | 容易，就一个token | 麻烦，要用Refresh Token刷Access Token | 容易，用Cookie就行 | 麻烦，每个请求都要单独计算header |<br />
+| 泛用性 | 各种场合都适用 | 带三方授权的场合特别适用 | 还行吧&hellip; | 能用header的都适用 |<br />
+| 安全性 | 跟别的方案差不多，key泄漏了就完蛋了 | Auth Server安全就行，<del>我才不管Client</del>其它的跟别的方案差不多 | 还行吧&hellip; | <a href="/hawk-authentication">我！能！防！中间人攻击！</a> |<br />
+| 接受度 | 有一定安全度，client端很喜欢，用的还是很多的 | 繁琐和安全的折中方案，很多大厂都用 | 真的广&hellip; | 目前只听说了我司在用Hawk |</p>
+
 <h2 id="其它感受">其它感受</h2>
+
 <ul>
-<li>
-<p>JWT全称叫JSON Web Token,
-小心别写了类似<code>jwt_token</code>这样的变量名了（语义重复）。</p>
-</li>
-<li>
-<p><a href="https://tools.ietf.org/html/rfc7519">RFC7519还定义了JWT读起来是类似于jot的发音</a>。
-然而实际中交流都会说JWT（怕听不懂）。</p>
-</li>
-<li>
-<p>JWT说是说用同一个key就行了，
-不过我们在项目实际中还是根据不一样的user用了不一样的key。
-（同时也用了数据库）</p>
-</li>
-<li>
-<p>假如payload里带了失效时间，
-理论上JWT签发后是不会失效的，
-也就是Server端管理不了这些token。
-（所以可以加个数据库来管）
-（好像变复杂了）</p>
-</li>
-<li>
-<p>用JWT想做“记住登录状态”这个功能的话，
-可以设定token失效期比如是7天，
-然后用户每天登录的时候刷一次token。
-这样除非用户一周内都没登录，
-才会请求重新登录。</p>
-</li>
-<li>
-<p>我对互联网安全的认知是真的有限，
-经常看文档，
-一句话学到三四个新的词。
-还是要多学习一个啊。
-所谓<code>苟日新，日日新，又日新</code>是也。</p>
-</li>
+<li><p>JWT全称叫JSON Web Token,<br />
+小心别写了类似<code>jwt_token</code>这样的变量名了（语义重复）。</p></li>
+
+<li><p><a href="https://tools.ietf.org/html/rfc7519">RFC7519还定义了JWT读起来是类似于jot的发音</a>。<br />
+然而实际中交流都会说JWT（怕听不懂）。</p></li>
+
+<li><p>JWT说是说用同一个key就行了，<br />
+不过我们在项目实际中还是根据不一样的user用了不一样的key。<br />
+（同时也用了数据库）</p></li>
+
+<li><p>假如payload里带了失效时间，<br />
+理论上JWT签发后是不会失效的，<br />
+也就是Server端管理不了这些token。<br />
+（所以可以加个数据库来管）<br />
+（好像变复杂了）</p></li>
+
+<li><p>用JWT想做“记住登录状态”这个功能的话，<br />
+可以设定token失效期比如是7天，<br />
+然后用户每天登录的时候刷一次token。<br />
+这样除非用户一周内都没登录，<br />
+才会请求重新登录。</p></li>
+
+<li><p>我对互联网安全的认知是真的有限，<br />
+经常看文档，<br />
+一句话学到三四个新的词。<br />
+还是要多学习一个啊。<br />
+所谓<code>苟日新，日日新，又日新</code>是也。</p></li>
 </ul>
         </div>
 

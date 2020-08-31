@@ -19,7 +19,7 @@
       "articleSection" : "posts",
       "name" : "数据仓库解决方案 RedShift 入坑指南",
       "headline" : "数据仓库解决方案 RedShift 入坑指南",
-      "description" : "\u003cp\u003e最近工程师小谢遇到了一个难题，\n就是手头上有千万级别的数据，\n但是没有一个快糙猛的解决方案。\u003c\/p\u003e",
+      "description" : "\u003cp\u003e最近工程师小谢遇到了一个难题，\u003cbr \/\u003e\n就是手头上有千万级别的数据，\u003cbr \/\u003e\n但是没有一个快糙猛的解决方案。\u003c\/p\u003e",
       "inLanguage" : "en-US",
       "author" : "Lirian Su",
       "creator" : "Lirian Su",
@@ -102,190 +102,215 @@
         </header>
 
         <div class="post-content markdown-body">
-          <p>最近工程师小谢遇到了一个难题，
-就是手头上有千万级别的数据，
+          <p>最近工程师小谢遇到了一个难题，<br />
+就是手头上有千万级别的数据，<br />
 但是没有一个快糙猛的解决方案。</p>
+
 <h2 id="提出问题">提出问题</h2>
+
 <blockquote>
-<p>想直接看 RedShift 相关的，
-请跳过前两节瞎扯淡。
+<p>想直接看 RedShift 相关的，<br />
+请跳过前两节瞎扯淡。<br />
 直接到第三节观看。</p>
 </blockquote>
-<p>不像少部分优秀的可以活在彼岸的人，
-可以醉心于写出完美的数据库，
-在须臾间学会所有的程序语言；
-世上大部分程序员都活在此岸，
+
+<p>不像少部分优秀的可以活在彼岸的人，<br />
+可以醉心于写出完美的数据库，<br />
+在须臾间学会所有的程序语言；<br />
+世上大部分程序员都活在此岸，<br />
 他们要解决一个个特定的业务问题。</p>
-<p>工程师小谢就很烦恼，
-<a href="/what-is-cash-cow"> 上次产品经理小刘提了个老酷炫的IDEA： </a>
-“现金牛”。
-观众们很过瘾，
-但作为要实现功能的人，
+
+<p>工程师小谢就很烦恼，<br />
+<a href="/what-is-cash-cow"> 上次产品经理小刘提了个老酷炫的IDEA： </a><br />
+“现金牛”。<br />
+观众们很过瘾，<br />
+但作为要实现功能的人，<br />
 小谢有点郁闷。</p>
+
 <p>具体来说，难点在下面几个：</p>
+
 <ol>
-<li>
-<p>数据量很大。
-公司是做菜品相关的，每天记录的菜品数据非常多。
-而且随着公司业务发展，菜品增速增长率也很高。
-（也就是“指数级上升”）</p>
-</li>
-<li>
-<p>时间比较紧。
-不像学校里的大作业，可以有一整个学期来实现到交付。
-真正的需求是事情要尽可能早的完成，即使一开始不一定是完美的，
-但是会更早得到外部反馈，正面/负面的评价有助于大家调整前进方向。</p>
-</li>
-<li>
-<p>质量有要求。
-基于“现金牛”的这个需求交付完成以后，又会有新的需求降临到小谢的肩上。
-所以这个此时的解决方案，也要解决彼时的问题。
-随着业务/数据量的增大，短时间内（比如说一年），解决方案得稳定靠谱。
-长时间内（比如说三年），解决方案要能拓展，至少是便于重构的。</p>
-</li>
+<li><p>数据量很大。<br />
+公司是做菜品相关的，每天记录的菜品数据非常多。<br />
+而且随着公司业务发展，菜品增速增长率也很高。<br />
+（也就是“指数级上升”）</p></li>
+
+<li><p>时间比较紧。<br />
+不像学校里的大作业，可以有一整个学期来实现到交付。<br />
+真正的需求是事情要尽可能早的完成，即使一开始不一定是完美的，<br />
+但是会更早得到外部反馈，正面/负面的评价有助于大家调整前进方向。</p></li>
+
+<li><p>质量有要求。<br />
+基于“现金牛”的这个需求交付完成以后，又会有新的需求降临到小谢的肩上。<br />
+所以这个此时的解决方案，也要解决彼时的问题。<br />
+随着业务/数据量的增大，短时间内（比如说一年），解决方案得稳定靠谱。<br />
+长时间内（比如说三年），解决方案要能拓展，至少是便于重构的。</p></li>
 </ol>
+
 <h2 id="解决方案">解决方案</h2>
-<p>上面的几个现世问题，
-其实跟万千现世问题一样，
-都是一个问题：<code>如何在有限的资源下，完成既定的目标？</code>
+
+<p>上面的几个现世问题，<br />
+其实跟万千现世问题一样，<br />
+都是一个问题：<code>如何在有限的资源下，完成既定的目标？</code><br />
 解决方案也都是通用的：<code>转换资源、付出时间、更换目标</code>。</p>
-<p>当然，小谢明白，脱离实际例子的方法论都没有意义。
+
+<p>当然，小谢明白，脱离实际例子的方法论都没有意义。<br />
 所以小谢打算整一个数据仓库 (Data Warehouse)</p>
-<p>数据仓库，跟数据库 (DataBase) 很像，
-就像军械库是放军械的地方，
-车库是放车的地方，
-数据仓库/数据库就是放数据的地方。
+
+<p>数据仓库，跟数据库 (DataBase) 很像，<br />
+就像军械库是放军械的地方，<br />
+车库是放车的地方，<br />
+数据仓库/数据库就是放数据的地方。<br />
 <del>多了个仓是因为还放仓鼠</del></p>
-<p>二者不同之处详细来说，
-就是因为要解决的问题不一样：
-数据库是要给业务提供基础保证，
-数据仓库则是给面向决策的数据分析提供便利；
-所以二者的设计思想也不一样：
-数据库遵守范式设计，强调数据约束、一致性，读写操作都有涉及，
+
+<p>二者不同之处详细来说，<br />
+就是因为要解决的问题不一样：<br />
+数据库是要给业务提供基础保证，<br />
+数据仓库则是给面向决策的数据分析提供便利；<br />
+所以二者的设计思想也不一样：<br />
+数据库遵守范式设计，强调数据约束、一致性，读写操作都有涉及，<br />
 数据仓库则是存储大量冗余数据、统计数据，对读的优化更多。</p>
-<p><strong>举个栗子</strong>就是今天中午小谢去吃了四斤烤鱼（真能吃），
-“四斤烤鱼”的数据存在了数据库里，是用来买单算钱的。
-但“今天中午，四斤，烤鱼”这样的统计数据就存在了数据仓库里，
+
+<p><strong>举个栗子</strong>就是今天中午小谢去吃了四斤烤鱼（真能吃），<br />
+“四斤烤鱼”的数据存在了数据库里，是用来买单算钱的。<br />
+但“今天中午，四斤，烤鱼”这样的统计数据就存在了数据仓库里，<br />
 以用来之后的统计分析。</p>
-<p>业界很多的数据仓库都是基于 <code>Hadoop/Spark/Storm</code> 的一套 <code>Java</code> 系技术栈的。
-比如拼多多，用的就是 <code>Hadoop/Hive/HBase/Kafka</code> 一套技术栈。
+
+<p>业界很多的数据仓库都是基于 <code>Hadoop/Spark/Storm</code> 的一套 <code>Java</code> 系技术栈的。<br />
+比如拼多多，用的就是 <code>Hadoop/Hive/HBase/Kafka</code> 一套技术栈。<br />
 比如小红书，用的也是 <code>Hadoop/Hive/Spark/Kafka</code> 一套技术栈。</p>
-<p>但是问题来了：
-这些小谢都不懂啊，很尴尬。
-不过还好，小谢有钱，
-他可以去招几个懂的。
-很可惜，招聘是个玄学问题，
-他看上的看不上他，
+
+<p>但是问题来了：<br />
+这些小谢都不懂啊，很尴尬。<br />
+不过还好，小谢有钱，<br />
+他可以去招几个懂的。<br />
+很可惜，招聘是个玄学问题，<br />
+他看上的看不上他，<br />
 看上他的他看不上。</p>
-<p>于是小谢想来想去，
-也只能自己动手，
+
+<p>于是小谢想来想去，<br />
+也只能自己动手，<br />
 最终选择了：</p>
+
 <h2 id="redshift-亚马逊云服务全家桶-之-数据仓库-管理助手">RedShift, 亚马逊云服务全家桶 之 数据仓库 管理助手</h2>
+
 <h3 id="特点">特点</h3>
-<p>作为一种数据仓库的解决方案，
+
+<p>作为一种数据仓库的解决方案，<br />
 RedShift 有几个特点：</p>
+
 <ul>
-<li>
-<p>省事，假如你也用了 AWS 的其它服务。
-自带监控，需要定制化的话还可以跟 AWS CloudWatch 结合；
-往里面插入数据推荐用的 <code>COPY</code> 命令是和 AWS S3 联动的；
-高可用、拓展性、备份等都是 AWS 保证的。</p>
-</li>
-<li>
-<p>提供全套 <code>PostgreSQL</code> 语法。
-基本上兼容 <code>PostgreSQL</code> 的地方，换一下 <code>DBDriver</code> 就可以无痛使用了。
-但是 RedShift 也只提供了一套 <code>SQL</code> 的标准，
-假如要做 <code>SQL</code> 之外的（比如文件）数据存放，
-就很吃力了。<del>by design. wontfix</del></p>
-</li>
-<li>
-<p>贵，相对而言。
-定价大概最便宜的实例类型 (dc1.large, 15GB Mem, 0.16TB SSD) 是一年一万多人民币，
-不算人力价格的话，比自建数据仓库肯定要贵。
-不过算上人力价格的话……就另说了。</p>
-</li>
+<li><p>省事，假如你也用了 AWS 的其它服务。<br />
+自带监控，需要定制化的话还可以跟 AWS CloudWatch 结合；<br />
+往里面插入数据推荐用的 <code>COPY</code> 命令是和 AWS S3 联动的；<br />
+高可用、拓展性、备份等都是 AWS 保证的。</p></li>
+
+<li><p>提供全套 <code>PostgreSQL</code> 语法。<br />
+基本上兼容 <code>PostgreSQL</code> 的地方，换一下 <code>DBDriver</code> 就可以无痛使用了。<br />
+但是 RedShift 也只提供了一套 <code>SQL</code> 的标准，<br />
+假如要做 <code>SQL</code> 之外的（比如文件）数据存放，<br />
+就很吃力了。<del>by design. wontfix</del></p></li>
+
+<li><p>贵，相对而言。<br />
+定价大概最便宜的实例类型 (dc1.large, 15GB Mem, 0.16TB SSD) 是一年一万多人民币，<br />
+不算人力价格的话，比自建数据仓库肯定要贵。<br />
+不过算上人力价格的话……就另说了。</p></li>
 </ul>
+
 <h3 id="部署">部署</h3>
+
 <p>部署使用 RedShift 的主要步骤如下：</p>
+
 <ol>
-<li>
-<p>先别急着创建实例，先按照 AWS 的教程走一遍，
-会对 COPY/Encoding/Cluster 有初步了解。
-<del>不喜欢读英文文档的同学，可以右上角切换成中文</del></p>
-</li>
-<li>
-<p>创建合适的 AWS RedShift 实例。
-恭喜你完成了_从无到有搭建数据仓库_这个成就。</p>
-</li>
-<li>
-<p>对接业务，比如选择合适的 Driver。
-我们用的是 django, 直接用 <code>psycopg2</code> 就可以连接了。
-然后就是ETL、缓存、图表等通用的业务操作了。</p>
-</li>
+<li><p>先别急着创建实例，先按照 AWS 的教程走一遍，<br />
+会对 COPY/Encoding/Cluster 有初步了解。<br />
+<del>不喜欢读英文文档的同学，可以右上角切换成中文</del></p></li>
+
+<li><p>创建合适的 AWS RedShift 实例。<br />
+恭喜你完成了_从无到有搭建数据仓库_这个成就。</p></li>
+
+<li><p>对接业务，比如选择合适的 Driver。<br />
+我们用的是 django, 直接用 <code>psycopg2</code> 就可以连接了。<br />
+然后就是ETL、缓存、图表等通用的业务操作了。</p></li>
 </ol>
+
 <h3 id="心得">心得</h3>
-<p>用了 RedShift 一阵子，
+
+<p>用了 RedShift 一阵子，<br />
 有几点学到的地方：</p>
+
 <ul>
-<li><strong>SQL 语句不是直接执行，而是编译后分发执行</strong>。</li>
+<li><strong>SQL 语句不是直接执行，而是编译后分发执行</strong>。<br />
+<br /></li>
 </ul>
-<p>不论我们执行任何语句，即使是 <code>INSERT INTO</code> 这种单条操作，
-RedShift 都要编译后执行，耗时 500ms 起步_所以要用COPY来做数据导入_。
-又比如我们部署了四个 RedShift 节点，那在
-<code>SELECT * FROM orders WHERE business_id = 100</code> 编译完成以后，
-RedShift 会把操作根据建表时选定的分区键 <code>DISTKEY</code> 把命令分发到各个节点操作。
-所以合理的表结构也是查询速度的关键_通用的~~废话~~真理_。</p>
+
+<p>不论我们执行任何语句，即使是 <code>INSERT INTO</code> 这种单条操作，<br />
+RedShift 都要编译后执行，耗时 500ms 起步_所以要用COPY来做数据导入_。<br />
+又比如我们部署了四个 RedShift 节点，那在<br />
+<code>SELECT * FROM orders WHERE business_id = 100</code> 编译完成以后，<br />
+RedShift 会把操作根据建表时选定的分区键 <code>DISTKEY</code> 把命令分发到各个节点操作。<br />
+所以合理的表结构也是查询速度的关键_通用的<del>废话</del>真理_。</p>
+
 <ul>
-<li><strong>插入数据用 COPY 命令；更新数据 COPY 到临时表以后，用 DELETE USING + INSERT INTO 来更新数据</strong></li>
+<li><strong>插入数据用 COPY 命令；更新数据 COPY 到临时表以后，用 DELETE USING + INSERT INTO 来更新数据</strong><br />
+<br /></li>
 </ul>
-<p>因为每条 SQL 都要编译，所以尽量做批量操作，单条操作是非常愚蠢的。
-（就像我们最开始那么愚蠢一样=_=）
-RedShift COPY 命令支持 GZIP, JSON, From S3 等多种操作，
-大部分情况下，加载速度和存储效率都会比普通的 INSERT 要好。
+
+<p>因为每条 SQL 都要编译，所以尽量做批量操作，单条操作是非常愚蠢的。<br />
+（就像我们最开始那么愚蠢一样=_=）<br />
+RedShift COPY 命令支持 GZIP, JSON, From S3 等多种操作，<br />
+大部分情况下，加载速度和存储效率都会比普通的 INSERT 要好。<br />
 同理，更新单条数据采用了先删再增的方式。</p>
+
 <ul>
-<li><strong>定时维护数据仓库</strong></li>
+<li><strong>定时维护数据仓库</strong><br />
+<br /></li>
 </ul>
-<p>RedShift 不会自动回收 DELETE/UPDATE 所释放的空间，
-需要用户手动运行 <code>VACUUM</code> 命令来清理表。
-<code>VACUUM</code> 本身也是IO密集型操作，
+
+<p>RedShift 不会自动回收 DELETE/UPDATE 所释放的空间，<br />
+需要用户手动运行 <code>VACUUM</code> 命令来清理表。<br />
+<code>VACUUM</code> 本身也是IO密集型操作，<br />
 所以最好是在空闲的时间（比如早上四点）定时跑。</p>
+
 <ul>
-<li><strong>注意表的限制</strong></li>
+<li><strong>注意表的限制</strong><br />
+<br /></li>
 </ul>
-<p>在 RedShift 里，
-<code>unique / primary key / foreign key</code>都是展示信息，
+
+<p>在 RedShift 里，<br />
+<code>unique / primary key / foreign key</code>都是展示信息，<br />
 没有实质约束力。</p>
-<p>还有 RedShift.varchar 存储的是单字节字符，
-像 MySQL 的 <code>utf8</code> 默认是三字节字符，
-假如用了 <code>utf8mb4</code> 就是四字节字符。
-所以 MySQL 里的 varchar(50) 换算到 RedShift 里就应该是 varchar(200)。
+
+<p>还有 RedShift.varchar 存储的是单字节字符，<br />
+像 MySQL 的 <code>utf8</code> 默认是三字节字符，<br />
+假如用了 <code>utf8mb4</code> 就是四字节字符。<br />
+所以 MySQL 里的 varchar(50) 换算到 RedShift 里就应该是 varchar(200)。<br />
 <em>被Emoji坑了的人留</em></p>
+
 <h2 id="总结">总结</h2>
-<p>总的来说，
-RedShift 的最大的好处在于用钱换取生产力，
-简单易用，是 AWS 全家桶用户对数据仓库的一种解决方案。
+
+<p>总的来说，<br />
+RedShift 的最大的好处在于用钱换取生产力，<br />
+简单易用，是 AWS 全家桶用户对数据仓库的一种解决方案。<br />
 具体用法多加注意，也没有什么特别之处。</p>
-<p>不过最近好像是给亚马逊交了不少钱，
+
+<p>不过最近好像是给亚马逊交了不少钱，<br />
 他们都派工程师上门免费 support 了。</p>
+
 <p>小谢心想。</p>
+
 <h2 id="课外阅读">课外阅读</h2>
+
 <ul>
-<li>
-<p><a href="https://docs.aws.amazon.com/zh_cn/redshift/latest/dg/tutorial-tuning-tables.html">AWS - RedShift 官方教程 - https://docs.aws.amazon.com/zh_cn/redshift/latest/dg/tutorial-tuning-tables.html</a></p>
-</li>
-<li>
-<p><a href="https://coolshell.cn/articles/6470.html">酷壳 - 由12306.CN谈谈网站性能技术 - https://coolshell.cn/articles/6470.html</a></p>
-</li>
-<li>
-<p><a href="https://en.wikipedia.org/wiki/Data_warehouse">维基百科 - 数据仓库 - https://en.wikipedia.org/wiki/Data_warehouse</a></p>
-</li>
-<li>
-<p><a href="https://my.oschina.net/xsh1208/blog/1052781">全面了解mysql中utf8和utf8mb4的区别 - https://my.oschina.net/xsh1208/blog/1052781</a></p>
-</li>
-<li>
-<p><a href="https://blog.xiqiao.info/2013/01/14/1366">西乔 - 历史悲剧 - https://blog.xiqiao.info/2013/01/14/1366</a></p>
-</li>
+<li><p><a href="https://docs.aws.amazon.com/zh_cn/redshift/latest/dg/tutorial-tuning-tables.html">AWS - RedShift 官方教程 - https://docs.aws.amazon.com/zh_cn/redshift/latest/dg/tutorial-tuning-tables.html</a></p></li>
+
+<li><p><a href="https://coolshell.cn/articles/6470.html">酷壳 - 由12306.CN谈谈网站性能技术 - https://coolshell.cn/articles/6470.html</a></p></li>
+
+<li><p><a href="https://en.wikipedia.org/wiki/Data_warehouse">维基百科 - 数据仓库 - https://en.wikipedia.org/wiki/Data_warehouse</a></p></li>
+
+<li><p><a href="https://my.oschina.net/xsh1208/blog/1052781">全面了解mysql中utf8和utf8mb4的区别 - https://my.oschina.net/xsh1208/blog/1052781</a></p></li>
+
+<li><p><a href="https://blog.xiqiao.info/2013/01/14/1366">西乔 - 历史悲剧 - https://blog.xiqiao.info/2013/01/14/1366</a></p></li>
 </ul>
         </div>
 

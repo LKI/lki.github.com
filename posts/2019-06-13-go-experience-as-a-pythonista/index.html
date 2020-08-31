@@ -101,24 +101,32 @@
 
         <div class="post-content markdown-body">
           <h1 id="背景">背景</h1>
-<p>我们团队后端主要技术栈是 Python,
-具体的软工实践在前文 <a href="/software-engineering-django">django/python</a> 里有详细的介绍。
-由于平时做公司业务主要写的是 Python,
-自己做的项目也是 Python 工具，
+
+<p>我们团队后端主要技术栈是 Python,<br />
+具体的软工实践在前文 <a href="/software-engineering-django">django/python</a> 里有详细的介绍。<br />
+由于平时做公司业务主要写的是 Python,<br />
+自己做的项目也是 Python 工具，<br />
 所以其实一直想尝试体验一下 Go。</p>
-<p>正好上周有空，
-于是体验了一下 Go 的基础设定，
+
+<p>正好上周有空，<br />
+于是体验了一下 Go 的基础设定，<br />
 用 Go 写了一个小服务（微信消息推送）。</p>
-<p>这篇文章讲的就是一个 Pythonista 的 Go 萌新之路。
-有理解谬误、操作不当的地方，
+
+<p>这篇文章讲的就是一个 Pythonista 的 Go 萌新之路。<br />
+有理解谬误、操作不当的地方，<br />
 请各位多指教了。</p>
+
 <h1 id="语法">语法</h1>
-<p>上手一个语言，
+
+<p>上手一个语言，<br />
 总是习惯性打开 <a href="https://learnxinyminutes.com/docs/go/">learn x in y minutes</a> 先过一遍语法。</p>
-<p><img src="/slides/golang-experience/reserved_words.png" alt="go keyword"></p>
-<p>Go 的特别之处是它的关键字非常少，
-这让 Go 的语法很容易被记下来。
+
+<p><img src="/slides/golang-experience/reserved_words.png" alt="go keyword" /></p>
+
+<p>Go 的特别之处是它的关键字非常少，<br />
+这让 Go 的语法很容易被记下来。<br />
 总的来说我觉得这几个语法很好玩。</p>
+
 <h2 id="循环">循环</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// 直接 for 就可以写死循环
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span> {
@@ -131,8 +139,8 @@
 }
 <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">key</span>, <span style="color:#a6e22e">value</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">data</span> {
     <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;while true...&#34;</span>)
-}
-</code></pre></div><h2 id="枚举">枚举</h2>
+}</code></pre></div>
+<h2 id="枚举">枚举</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// iota 居然被做成了关键字
 </span><span style="color:#75715e">// 这里后面的俩 iota 是可以省略的
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> {
@@ -147,8 +155,8 @@
     <span style="color:#a6e22e">Unknown</span> = <span style="color:#66d9ef">iota</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">10</span>  <span style="color:#75715e">// 0
 </span><span style="color:#75715e"></span>    <span style="color:#a6e22e">Male</span>    = <span style="color:#66d9ef">iota</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">10</span>  <span style="color:#75715e">// 10
 </span><span style="color:#75715e"></span>    <span style="color:#a6e22e">Female</span>  = <span style="color:#66d9ef">iota</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">10</span>  <span style="color:#75715e">// 20
-</span><span style="color:#75715e"></span>}
-</code></pre></div><h2 id="多表达式判断">多表达式判断</h2>
+</span><span style="color:#75715e"></span>}</code></pre></div>
+<h2 id="多表达式判断">多表达式判断</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// if 语句会取最后的表达式值，所以这么判断是很常见的
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> <span style="color:#a6e22e">f</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">file</span>.<span style="color:#a6e22e">Open</span>(<span style="color:#a6e22e">path</span>); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
     <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">Response</span>(<span style="color:#ae81ff">400</span>, <span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">Error</span>())
@@ -157,8 +165,8 @@
 <span style="color:#75715e">// 这样判断布尔值也是常见的操作
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> <span style="color:#a6e22e">data</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">Unmarshal</span>(<span style="color:#a6e22e">body</span>); !<span style="color:#a6e22e">ok</span> {
     <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">Response</span>(<span style="color:#ae81ff">400</span>, <span style="color:#e6db74">&#34;invalid json body&#34;</span>)
-}
-</code></pre></div><h2 id="goroutine">goroutine</h2>
+}</code></pre></div>
+<h2 id="goroutine">goroutine</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// go 的天生并发也是非常优雅的地方
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">sendTemplate</span>() {
     <span style="color:#75715e">// 这里是耗时很久的网络请求
@@ -169,186 +177,235 @@
     <span style="color:#75715e">// sendTemplate()
 </span><span style="color:#75715e"></span>    <span style="color:#75715e">// ↑ 假如为了速度，我们不能同步发送模板，那么我们用 `go` 这个关键字就可以一键异步 ↓
 </span><span style="color:#75715e"></span>    <span style="color:#66d9ef">go</span> <span style="color:#a6e22e">sendTemplate</span>()
-}
-</code></pre></div><h1 id="项目">项目</h1>
-<p>第一章的语法过了以后，
-很快就到了第二章：
+}</code></pre></div>
+<h1 id="项目">项目</h1>
+
+<p>第一章的语法过了以后，<br />
+很快就到了第二章：<br />
 《如何用 go 起一个项目》</p>
-<p>要写代码，首先就得把文档给翻出来看看。
+
+<p>要写代码，首先就得把文档给翻出来看看。<br />
 于是第一站便是<a href="https://golang.org/">官网 golang.org</a></p>
-<p>Go 的官网其实非常友好，
-从最基础的<a href="https://golang.org/doc/code.html">教你怎么配环境、写初始的项目</a>，
+
+<p>Go 的官网其实非常友好，<br />
+从最基础的<a href="https://golang.org/doc/code.html">教你怎么配环境、写初始的项目</a>，<br />
 到 <a href="https://golang.org/doc/effective_go.html">Effective Go</a> 这种全面长文都浅显到点。</p>
-<p>上手装好语言环境以后，
-首先跟 <code>GOPATH</code> 这个环境变量玩了一下。
-不过后来发现 Go 1.12 以后自带 go mod,
-只要简单了解一下这个概念就行了。
-那我们先放一下，
+
+<p>上手装好语言环境以后，<br />
+首先跟 <code>GOPATH</code> 这个环境变量玩了一下。<br />
+不过后来发现 Go 1.12 以后自带 go mod,<br />
+只要简单了解一下这个概念就行了。<br />
+那我们先放一下，<br />
 直接上手感受 Go 的工具链吧。</p>
+
 <h2 id="工具链">工具链</h2>
-<p>Python 装好以后主要自带的是个 REPL 跟 pip 这个包管理器。
+
+<p>Python 装好以后主要自带的是个 REPL 跟 pip 这个包管理器。<br />
 Go 装好以后，会自带包括 fmt/test/vet/mod 等一系列的工具。</p>
+
 <ul>
-<li><code>go fmt</code>
+<li><code>go fmt</code><br />
+
 <ul>
-<li>这个是上手 Go 第一印象最大的工具</li>
-<li>它是一个不支持配置的代码格式化工具，非常严格</li>
-<li><del>prefer tab over space</del></li>
-</ul>
-</li>
-<li><code>go test</code>
+<li>这个是上手 Go 第一印象最大的工具<br /></li>
+<li>它是一个不支持配置的代码格式化工具，非常严格<br /></li>
+<li><del>prefer tab over space</del><br /></li>
+</ul></li>
+<li><code>go test</code><br />
+
 <ul>
-<li>自带 coverage, 很好用</li>
-</ul>
-</li>
-<li><code>go vet</code>
+<li>自带 coverage, 很好用<br /></li>
+</ul></li>
+<li><code>go vet</code><br />
+
 <ul>
-<li>似乎是自带的 linter</li>
+<li>似乎是自带的 linter<br />
+<br /></li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<p>玩 <code>go test</code> 的时候发现它是针对 <code>package</code> 来做测试的，
-而 Go 里面，
-<code>package</code> 的概念也是非常突出。
-比如调用包方法的时候是要加包名的，
-所以最佳实践里也有“命名不重叠”的规则。
+
+<p>玩 <code>go test</code> 的时候发现它是针对 <code>package</code> 来做测试的，<br />
+而 Go 里面，<br />
+<code>package</code> 的概念也是非常突出。<br />
+比如调用包方法的时候是要加包名的，<br />
+所以最佳实践里也有“命名不重叠”的规则。<br />
 （举个栗子，比如方法应该叫 <code>xml.Parser</code> 而不是 <code>xml.XMLParser</code>）</p>
+
 <h2 id="写业务">写业务</h2>
-<p>由于我们写的是一个对内网以 RESTful 风格提供接口，
-然后调用微信发送消息通知用户的这么一个小服务，
-按照 Python 的惯性就想找个 <code>django</code> + <code>wechatpy</code> 的组合在一周内来完成业务。
+
+<p>由于我们写的是一个对内网以 RESTful 风格提供接口，<br />
+然后调用微信发送消息通知用户的这么一个小服务，<br />
+按照 Python 的惯性就想找个 <code>django</code> + <code>wechatpy</code> 的组合在一周内来完成业务。<br />
 简单调研了一圈，选了 <code>gin</code> + <code>gorm</code> 两个大的工具。</p>
-<p>Go 的第三方库给我的感觉是非常直白。
-因为引入第三方库的方式是 <code>go get -u github.com/gin-gonic/gin</code>，
-直接拉的就是 GitHub master 分支的最新代码，
-所以感觉整个第三方的社区是基于分布式共识的，
-只有大家都遵守社区规范，
+
+<p>Go 的第三方库给我的感觉是非常直白。<br />
+因为引入第三方库的方式是 <code>go get -u github.com/gin-gonic/gin</code>，<br />
+直接拉的就是 GitHub master 分支的最新代码，<br />
+所以感觉整个第三方的社区是基于分布式共识的，<br />
+只有大家都遵守社区规范，<br />
 才不会有挖矿代码的出现…（虽然中心化也会有挖矿代码）</p>
-<p>文档的话，调研阶段读的其实都是 GitHub README，
-GitHub 是经常逛的网站，
-各个库的 README 风格也都是 markdown 风格，
-读起来也很轻松。
-真正要看 godoc 的地方不多。
-因为拉的是源代码，
-所以基本上都是直接读源代码，
+
+<p>文档的话，调研阶段读的其实都是 GitHub README，<br />
+GitHub 是经常逛的网站，<br />
+各个库的 README 风格也都是 markdown 风格，<br />
+读起来也很轻松。<br />
+真正要看 godoc 的地方不多。<br />
+因为拉的是源代码，<br />
+所以基本上都是直接读源代码，<br />
 体验跟 Python 非常像。</p>
-<p>具体业务代码就先略过了，
+
+<p>具体业务代码就先略过了，<br />
 没有什么特别的。</p>
+
 <h2 id="部署">部署</h2>
-<p>开始准备部署的时候又有不少好玩的话题。
+
+<p>开始准备部署的时候又有不少好玩的话题。<br />
 比如 Go 的多环境配置。</p>
-<p>Python (Django) 的多环境我一直用的是环境变量 + 多配置文件，
-Go 的话去看了一下社区，
-基本也是类似的原理。
-可以用环境变量，
-也可以用多配置文件（比如 yaml），
-还有一个就是用命令参数（flag 库）。
-Go 社区里其实比较推崇用 flag，
-因为这样可以把配置跟代码（执行文件）融为一体，
-更加利于维护。
+
+<p>Python (Django) 的多环境我一直用的是环境变量 + 多配置文件，<br />
+Go 的话去看了一下社区，<br />
+基本也是类似的原理。<br />
+可以用环境变量，<br />
+也可以用多配置文件（比如 yaml），<br />
+还有一个就是用命令参数（flag 库）。<br />
+Go 社区里其实比较推崇用 flag，<br />
+因为这样可以把配置跟代码（执行文件）融为一体，<br />
+更加利于维护。<br />
 不过我最终还是选择了环境变量 + 多配置文件…</p>
-<p>项目的编译、部署我们用的是 GitLab CI/Docker。
-也是 ci-build/test/compile/docker-build/deploy 五个套路阶段。
-Go 里比较特别的是会大量引用 GitHub 以及 Google 官方提供的代码，
-在国内拉的速度比较慢，
-所以为了加速构建，
-我们也自己搭了相应的加速通道去提升速度。
-目前来说，从代码进主干分支，
+
+<p>项目的编译、部署我们用的是 GitLab CI/Docker。<br />
+也是 ci-build/test/compile/docker-build/deploy 五个套路阶段。<br />
+Go 里比较特别的是会大量引用 GitHub 以及 Google 官方提供的代码，<br />
+在国内拉的速度比较慢，<br />
+所以为了加速构建，<br />
+我们也自己搭了相应的加速通道去提升速度。<br />
+目前来说，从代码进主干分支，<br />
 到自动发版大概耗时不超过 3min。</p>
+
 <h2 id="性能">性能</h2>
-<p>自己写的小服务上去了，
+
+<p>自己写的小服务上去了，<br />
 那首先就要 wrk 一下测一下 QPS 啦。</p>
-<p>Python(Django) 默认的其实是同步模式，
-基础支持的 QPS 很低，
-我们用 gevent + uwsgi 协程模式特意调优过，
-一个获取服务器当前时间的简单接口，
-在 1CPU+4G Memory 的小破机器上，
-Python(gevent) 的 QPS 大概能到 1000，
-而未经调优的 Go(gin) QPS 能到 10000。
+
+<p>Python(Django) 默认的其实是同步模式，<br />
+基础支持的 QPS 很低，<br />
+我们用 gevent + uwsgi 协程模式特意调优过，<br />
+一个获取服务器当前时间的简单接口，<br />
+在 1CPU+4G Memory 的小破机器上，<br />
+Python(gevent) 的 QPS 大概能到 1000，<br />
+而未经调优的 Go(gin) QPS 能到 10000。<br />
 真有你的啊，Go。</p>
+
 <h2 id="社区">社区</h2>
-<p>在玩 Go 的一周中，
-其实我真正的有效编码时间不是很长，
+
+<p>在玩 Go 的一周中，<br />
+其实我真正的有效编码时间不是很长，<br />
 大部分时间都徜徉在 Go 的各种社区最佳实践文档里。</p>
-<p>在我眼中，
-除去 Go 语言本身的很多闪光点，
-Go 的整个语言社区运营也是值得其他语言学习的。
-比如上面讲到的官方推的工具链，
-这能有效提升所有项目的下限。
-Python 去年也刚出了<a href="https://github.com/python/black">一个格式化工具 black</a>，
-自己宣称是 <strong>the uncompromising code formatter</strong>。
+
+<p>在我眼中，<br />
+除去 Go 语言本身的很多闪光点，<br />
+Go 的整个语言社区运营也是值得其他语言学习的。<br />
+比如上面讲到的官方推的工具链，<br />
+这能有效提升所有项目的下限。<br />
+Python 去年也刚出了<a href="https://github.com/python/black">一个格式化工具 black</a>，<br />
+自己宣称是 <strong>the uncompromising code formatter</strong>。<br />
 （Python: 别催，在学了在学了）</p>
+
 <h1 id="感受">感受</h1>
-<p>讲了这么多看似中立，
-实际都是感受的发言，
+
+<p>讲了这么多看似中立，<br />
+实际都是感受的发言，<br />
 我来集中总结一下我的感受。</p>
+
 <h2 id="我很菜">我很菜</h2>
-<p>写 Go 的时候我是能直白地感受到自己很菜的。
-一块是很多地方我能感知到有语法简化的可能性，
-但我的语言表达能力还没达到优化的水瓶。
-比如 <a href="https://go.googlesource.com/proposal/+/master/design/go2draft-error-handling-overview.md">Go 2 Draft 里的 check 关键字</a>，
-我隐约感觉好像基于 <code>panic + recover</code> 也能实现类似的机制，
-但真要写又写不出。
+
+<p>写 Go 的时候我是能直白地感受到自己很菜的。<br />
+一块是很多地方我能感知到有语法简化的可能性，<br />
+但我的语言表达能力还没达到优化的水瓶。<br />
+比如 <a href="https://go.googlesource.com/proposal/+/master/design/go2draft-error-handling-overview.md">Go 2 Draft 里的 check 关键字</a>，<br />
+我隐约感觉好像基于 <code>panic + recover</code> 也能实现类似的机制，<br />
+但真要写又写不出。<br />
 而 Python 我就感觉能完全写成 Lisp。</p>
-<p>另一块是库的使用，或者叫“语言生态”。
-不论是平时用到的标准库，
-还是后端业务要用的各类三方库，
-或是工程化用到的单元测试、质量把控的库，
+
+<p>另一块是库的使用，或者叫“语言生态”。<br />
+不论是平时用到的标准库，<br />
+还是后端业务要用的各类三方库，<br />
+或是工程化用到的单元测试、质量把控的库，<br />
 我都只能在用到的时候做现场调研。</p>
-<p>总之因为基础知识缺乏，
-加上熟练度不够，
+
+<p>总之因为基础知识缺乏，<br />
+加上熟练度不够，<br />
 写 Go 的过程就总有一种“我好菜啊，这个都不懂”的奇妙感觉。</p>
+
 <h2 id="我喜欢-go">我喜欢 Go</h2>
+
 <p>菜并没阻止我表达喜欢 :)</p>
-<p>Go 身上透露出了非常老派的 KISS 原则，
-它甚至很多时候给我的感觉是比 Python 还要简约。
-比如最佳实践会跟你说：
-“不要过早拆文件，
+
+<p>Go 身上透露出了非常老派的 KISS 原则，<br />
+它甚至很多时候给我的感觉是比 Python 还要简约。<br />
+比如最佳实践会跟你说：<br />
+“不要过早拆文件，<br />
 一个目录十个文件能解决的问题不需要分层。”</p>
-<p>相比 Python 而言，
-Go 的执行速度透露着一种不讲道理的快。
-Python 深入了解并发模型，
-调优 CPU 跟语言参数以后的结果，
-还是跟 Go 差了一个量级…
+
+<p>相比 Python 而言，<br />
+Go 的执行速度透露着一种不讲道理的快。<br />
+Python 深入了解并发模型，<br />
+调优 CPU 跟语言参数以后的结果，<br />
+还是跟 Go 差了一个量级…<br />
 （不过开发速度上 Python 还是巨快…）</p>
-<p>而且，
+
+<p>而且，<br />
 Go 还有可爱的 <a href="https://github.com/egonelbre/gophers">Gopher</a> 呀~</p>
-<p><img src="https://github.com/egonelbre/gophers/raw/master/.thumb/icon/emoji-3x.png" alt="gopher-emoji"></p>
+
+<p><img src="https://github.com/egonelbre/gophers/raw/master/.thumb/icon/emoji-3x.png" alt="gopher-emoji" /></p>
+
 <h2 id="go-的实践">Go 的实践</h2>
-<p>目前我司后端的主技术栈是 Java 跟 Python，
+
+<p>目前我司后端的主技术栈是 Java 跟 Python，<br />
 我主要写的是 Python。</p>
-<p>以我短暂的体验而言，
-Go 在关键的高性能服务上会有很好的表现，
-但在新业务的原型、Web 层的多业务上，
+
+<p>以我短暂的体验而言，<br />
+Go 在关键的高性能服务上会有很好的表现，<br />
+但在新业务的原型、Web 层的多业务上，<br />
 Python 魔法般的开发速度还是无人能比的（叉腰）</p>
-<p>目前后端的各种流行框架基本都是语言无关的，
+
+<p>目前后端的各种流行框架基本都是语言无关的，<br />
 我们可以根据不同业务的适用场景来选择合适的技术栈。</p>
-<p>企业在选择技术栈中，
-其实也会考虑其它更现实的因素，
-比如开发人员的招聘难度，
-代码库、技术栈的统一，
-大型团队的解耦管理。
+
+<p>企业在选择技术栈中，<br />
+其实也会考虑其它更现实的因素，<br />
+比如开发人员的招聘难度，<br />
+代码库、技术栈的统一，<br />
+大型团队的解耦管理。<br />
 这些其实也都是非常有深度的、值得探讨的话题。</p>
-<p>写了一周 Go,
-我更坚信自己的理念了：
-“工程师是解决问题的人，
-技术是解决问题的工具。
-软件工程没做好说工具难用，
-是何异于：
+
+<p>写了一周 Go,<br />
+我更坚信自己的理念了：<br />
+“工程师是解决问题的人，<br />
+技术是解决问题的工具。<br />
+软件工程没做好说工具难用，<br />
+是何异于：<br />
 刺人而杀之曰，非我也，兵也？”</p>
+
 <h1 id="后续">后续</h1>
-<p>一周的体验卡有点太短了，
+
+<p>一周的体验卡有点太短了，<br />
 非常意犹未尽。</p>
-<p>后续有时间的话，
+
+<p>后续有时间的话，<br />
 关于 Go 的这些话题我会继续研究：</p>
+
 <ul>
-<li>产线环境上的服务部署姿势。</li>
-<li>Go 的服务可视化（监控、日志、追踪）</li>
-<li>用黑魔法让语言表达力更高的基础库</li>
-<li>跨语言服务间的交互实践</li>
+<li>产线环境上的服务部署姿势。<br /></li>
+<li>Go 的服务可视化（监控、日志、追踪）<br /></li>
+<li>用黑魔法让语言表达力更高的基础库<br /></li>
+<li>跨语言服务间的交互实践<br />
+<br /></li>
 </ul>
-<p>欢迎交流，
+
+<p>欢迎交流，<br />
 也对文章里的不当之处作出指正批评。</p>
+
 <p>（完）</p>
         </div>
 
