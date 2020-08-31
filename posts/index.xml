@@ -6,10 +6,23 @@
     <description>Recent content in Posts on 浮云计算</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 12 Jul 2020 23:45:58 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 31 Aug 2020 19:45:02 +0800</lastBuildDate>
     
 	<atom:link href="https://liriansu.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>神通中学二三事</title>
+      <link>https://liriansu.com/posts/2020-08-31-work-as-schoolmate/</link>
+      <pubDate>Mon, 31 Aug 2020 19:45:02 +0800</pubDate>
+      
+      <guid>https://liriansu.com/posts/2020-08-31-work-as-schoolmate/</guid>
+      <description>&lt;p&gt;我的几个好友里，
+灰灰当了语文老师，
+佳佳当了英语老师，
+而我成为了饭堂阿姨，
+我们都有美好的未来。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>毕业五年的报告之技术</title>
@@ -17,9 +30,9 @@
       <pubDate>Sun, 12 Jul 2020 23:45:58 +0800</pubDate>
       
       <guid>https://liriansu.com/posts/2020-07-12-adult-life-code/</guid>
-      <description>&lt;p&gt;16年接触了 Web 整套技术栈的我，&lt;br /&gt;
-决定在这条路上不断攀爬，&lt;br /&gt;
-直到找到我技术上的天花板。&lt;br /&gt;
+      <description>&lt;p&gt;16年接触了 Web 整套技术栈的我，
+决定在这条路上不断攀爬，
+直到找到我技术上的天花板。
 当时我写了一篇&lt;a href=&#34;https://liriansu.com/backend-skill-tree&#34;&gt;《后端工程师技能树》&lt;/a&gt;。&lt;/p&gt;</description>
     </item>
     
@@ -29,8 +42,8 @@
       <pubDate>Mon, 06 Jul 2020 23:45:13 +0800</pubDate>
       
       <guid>https://liriansu.com/posts/2020-07-06-adult-life-teamwork/</guid>
-      <description>&lt;p&gt;从17年底负责一整个团队开始，&lt;br /&gt;
-一直到今天，&lt;br /&gt;
+      <description>&lt;p&gt;从17年底负责一整个团队开始，
+一直到今天，
 我都保持着 Dev + Leader 的双重角色。&lt;/p&gt;</description>
     </item>
     
@@ -40,9 +53,9 @@
       <pubDate>Sun, 05 Jul 2020 21:46:03 +0800</pubDate>
       
       <guid>https://liriansu.com/posts/2020-07-05-adult-life-memories/</guid>
-      <description>&lt;p&gt;这周末去安吉吃了烧烤。&lt;br /&gt;
-里脊肉需要反复被刷油，&lt;br /&gt;
-最终它才会散发出迷人的香味。&lt;br /&gt;
+      <description>&lt;p&gt;这周末去安吉吃了烧烤。
+里脊肉需要反复被刷油，
+最终它才会散发出迷人的香味。
 人的记忆也是如此。&lt;/p&gt;</description>
     </item>
     
@@ -52,8 +65,8 @@
       <pubDate>Sun, 24 May 2020 22:02:34 +0800</pubDate>
       
       <guid>https://liriansu.com/posts/2020-05-24-principle-infinite-game/</guid>
-      <description>&lt;p&gt;这天，坐在显示器前的我，&lt;br /&gt;
-用键盘写下了我的这条原则：&lt;br /&gt;
+      <description>&lt;p&gt;这天，坐在显示器前的我，
+用键盘写下了我的这条原则：
 &lt;strong&gt;永远在路上&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
     
@@ -81,8 +94,8 @@
       <pubDate>Sat, 08 Feb 2020 21:48:32 +0100</pubDate>
       
       <guid>https://liriansu.com/posts/2020-02-08-honeymoon-part-2/</guid>
-      <description>&lt;p&gt;蜜月旅行第二站，&lt;br /&gt;
-从德国的慕尼黑到科隆，&lt;br /&gt;
+      <description>&lt;p&gt;蜜月旅行第二站，
+从德国的慕尼黑到科隆，
 再到西班牙的巴塞罗那、格拉纳达。&lt;/p&gt;</description>
     </item>
     
@@ -92,7 +105,7 @@
       <pubDate>Fri, 31 Jan 2020 06:38:22 +0100</pubDate>
       
       <guid>https://liriansu.com/posts/2020-01-31-honeymoon-part-1/</guid>
-      <description>&lt;p&gt;蜜月旅行第一站，&lt;br /&gt;
+      <description>&lt;p&gt;蜜月旅行第一站，
 从上海到多哈再到慕尼黑的城市中心。&lt;/p&gt;</description>
     </item>
     
@@ -102,8 +115,8 @@
       <pubDate>Tue, 14 Jan 2020 21:39:31 +0800</pubDate>
       
       <guid>https://liriansu.com/posts/2020-01-14-git-workflow/</guid>
-      <description>&lt;p&gt;软件工程实践系列文章，&lt;br /&gt;
-会着重讲述实际的工程项目中是如何协作开发软件的。&lt;br /&gt;
+      <description>&lt;p&gt;软件工程实践系列文章，
+会着重讲述实际的工程项目中是如何协作开发软件的。
 本文主要介绍如何使用 Git 来支撑整个开发流。&lt;/p&gt;</description>
     </item>
     
@@ -113,8 +126,8 @@
       <pubDate>Mon, 09 Dec 2019 23:39:28 +0800</pubDate>
       
       <guid>https://liriansu.com/posts/2019-12-09-gracefully-upgrade/</guid>
-      <description>&lt;p&gt;软件工程实践系列文章，&lt;br /&gt;
-会着重讲述实际的工程项目中是如何协作开发软件的。&lt;br /&gt;
+      <description>&lt;p&gt;软件工程实践系列文章，
+会着重讲述实际的工程项目中是如何协作开发软件的。
 本文主要介绍了如何无中断地发布版本。&lt;/p&gt;</description>
     </item>
     
@@ -133,9 +146,9 @@
       <pubDate>Wed, 30 Oct 2019 22:32:20 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2019-10-30-anecdote-why-requests-not-standard/</guid>
-      <description>&lt;p&gt;前几年一次跟耗子哥聊天，&lt;br /&gt;
-他说：“你终有一天会从 stackoverflow 上找 bugfix,&lt;br /&gt;
-进化到从 github issue 里找 bugfix.”&lt;br /&gt;
+      <description>&lt;p&gt;前几年一次跟耗子哥聊天，
+他说：“你终有一天会从 stackoverflow 上找 bugfix,
+进化到从 github issue 里找 bugfix.”
 一语成谶。&lt;/p&gt;</description>
     </item>
     
@@ -146,8 +159,8 @@
       
       <guid>https://liriansu.com/posts/2019-10-29-stupid-dns-ttl/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;By design,&lt;br /&gt;
-the Internet core is stupid,&lt;br /&gt;
+&lt;p&gt;By design,
+the Internet core is stupid,
 and the edge is smart.&lt;/p&gt;
 &lt;/blockquote&gt;</description>
     </item>
@@ -167,9 +180,9 @@ and the edge is smart.&lt;/p&gt;
       <pubDate>Tue, 11 Jun 2019 22:50:03 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2019-06-11-fuzzy-days/</guid>
-      <description>&lt;p&gt;好久没记录思考了。&lt;br /&gt;
-虽然陶菲格一直在催我在思想逝去前记下来，&lt;br /&gt;
-但我总有种感觉：&lt;br /&gt;
+      <description>&lt;p&gt;好久没记录思考了。
+虽然陶菲格一直在催我在思想逝去前记下来，
+但我总有种感觉：
 最近的人生密度不是很大。&lt;/p&gt;</description>
     </item>
     
@@ -179,11 +192,11 @@ and the edge is smart.&lt;/p&gt;
       <pubDate>Sun, 14 Apr 2019 15:16:24 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2019-04-14-meta-996/</guid>
-      <description>&lt;p&gt;很多人会喜欢 Lisp 里的宏 (Macro)。&lt;br /&gt;
-语言里的宏提供了一种元编程 (Meta-Progamming) 的能力。&lt;br /&gt;
-假如你用过魔兽世界里的宏，&lt;br /&gt;
-你也可以想象这里的“元游戏”是什么意思：&lt;br /&gt;
-它注重的不是游戏本身，&lt;br /&gt;
+      <description>&lt;p&gt;很多人会喜欢 Lisp 里的宏 (Macro)。
+语言里的宏提供了一种元编程 (Meta-Progamming) 的能力。
+假如你用过魔兽世界里的宏，
+你也可以想象这里的“元游戏”是什么意思：
+它注重的不是游戏本身，
 而是对游戏求导所得出的“游戏的本质”。&lt;/p&gt;</description>
     </item>
     
@@ -193,8 +206,8 @@ and the edge is smart.&lt;/p&gt;
       <pubDate>Wed, 10 Apr 2019 22:09:55 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2019-04-10-software-engineering-django/</guid>
-      <description>&lt;p&gt;软件工程实践系列文章，&lt;br /&gt;
-会着重讲述实际的工程项目中是如何协作开发软件的。&lt;br /&gt;
+      <description>&lt;p&gt;软件工程实践系列文章，
+会着重讲述实际的工程项目中是如何协作开发软件的。
 本文主要介绍了 django/python 系列的工具链。&lt;/p&gt;</description>
     </item>
     
@@ -204,8 +217,8 @@ and the edge is smart.&lt;/p&gt;
       <pubDate>Wed, 06 Feb 2019 13:45:34 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2019-02-06-wandering-earth/</guid>
-      <description>&lt;p&gt;假如你想跟家人在春节去看场电影的话，&lt;br /&gt;
-非常推荐去看看《流浪地球》。&lt;br /&gt;
+      <description>&lt;p&gt;假如你想跟家人在春节去看场电影的话，
+非常推荐去看看《流浪地球》。
 （本文可能只有轻微剧透。）&lt;/p&gt;</description>
     </item>
     
@@ -215,9 +228,9 @@ and the edge is smart.&lt;/p&gt;
       <pubDate>Mon, 28 Jan 2019 23:46:45 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2019-01-28-developer-team/</guid>
-      <description>&lt;p&gt;“工程师团队”这个话题我一直非常好奇，&lt;br /&gt;
-我经常会问我的朋友们：&lt;br /&gt;
-“你们公司这个是怎么样的？”&lt;br /&gt;
+      <description>&lt;p&gt;“工程师团队”这个话题我一直非常好奇，
+我经常会问我的朋友们：
+“你们公司这个是怎么样的？”
 这篇文章讲的就是我自己对于这个话题的思考。&lt;/p&gt;</description>
     </item>
     
@@ -227,8 +240,8 @@ and the edge is smart.&lt;/p&gt;
       <pubDate>Wed, 23 Jan 2019 23:25:20 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2019-01-23-about-active-thinking/</guid>
-      <description>&lt;p&gt;最近半年对方法论的思考比较多，&lt;br /&gt;
-所以可能写的都跟“术”关系不大，&lt;br /&gt;
+      <description>&lt;p&gt;最近半年对方法论的思考比较多，
+所以可能写的都跟“术”关系不大，
 而更加偏向于“道”一些。&lt;/p&gt;</description>
     </item>
     
@@ -238,7 +251,7 @@ and the edge is smart.&lt;/p&gt;
       <pubDate>Tue, 22 Jan 2019 22:07:02 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2019-01-22-my-2018-okr-review/</guid>
-      <description>&lt;p&gt;去年默默践行了一年的个人 OKR,&lt;br /&gt;
+      <description>&lt;p&gt;去年默默践行了一年的个人 OKR,
 今年年初也是到了回顾的时候了。&lt;/p&gt;</description>
     </item>
     
@@ -248,7 +261,7 @@ and the edge is smart.&lt;/p&gt;
       <pubDate>Tue, 04 Dec 2018 23:16:29 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2018-12-04-dev-env/</guid>
-      <description>&lt;p&gt;首先感谢 Mia 在预算见底的年底，&lt;br /&gt;
+      <description>&lt;p&gt;首先感谢 Mia 在预算见底的年底，
 卖掉了 iPhone 给我补上了款项…&lt;/p&gt;</description>
     </item>
     
@@ -269,7 +282,7 @@ and the edge is smart.&lt;/p&gt;
       <pubDate>Thu, 18 Oct 2018 18:54:24 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2018-10-18-qcon-2018-shanghai/</guid>
-      <description>&lt;p&gt;其实这次的 QCon 一共有三天，&lt;br /&gt;
+      <description>&lt;p&gt;其实这次的 QCon 一共有三天，
 但是我只去了半天。&lt;/p&gt;</description>
     </item>
     
@@ -279,9 +292,9 @@ and the edge is smart.&lt;/p&gt;
       <pubDate>Fri, 21 Sep 2018 20:57:46 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2018-09-21-api-design-in-python/</guid>
-      <description>&lt;p&gt;今天跟&lt;a href=&#34;https://github.com/hulucc&#34;&gt;@hulucc&lt;/a&gt; 日常写码吹比，&lt;br /&gt;
-讲到了选第三方库的原则说：&lt;br /&gt;
-“我其实发现我现在选库不太 care 他源码是怎么实现的，&lt;br /&gt;
+      <description>&lt;p&gt;今天跟&lt;a href=&#34;https://github.com/hulucc&#34;&gt;@hulucc&lt;/a&gt; 日常写码吹比，
+讲到了选第三方库的原则说：
+“我其实发现我现在选库不太 care 他源码是怎么实现的，
 但是我非常喜欢那些 api 设计得巨科学的库。”&lt;/p&gt;</description>
     </item>
     
@@ -291,9 +304,9 @@ and the edge is smart.&lt;/p&gt;
       <pubDate>Sun, 09 Sep 2018 19:46:37 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2018-09-09-adult-life/</guid>
-      <description>&lt;p&gt;前阵子在知乎上看到一个问题，&lt;br /&gt;
-叫&lt;a href=&#34;https://www.zhihu.com/question/31907973&#34;&gt;《读研三年与工作三年的人有哪些差别》&lt;/a&gt;。&lt;br /&gt;
-我的思绪突然被唤醒了：&lt;br /&gt;
+      <description>&lt;p&gt;前阵子在知乎上看到一个问题，
+叫&lt;a href=&#34;https://www.zhihu.com/question/31907973&#34;&gt;《读研三年与工作三年的人有哪些差别》&lt;/a&gt;。
+我的思绪突然被唤醒了：
 对哦，原来我已经毕业了三年了。&lt;/p&gt;</description>
     </item>
     
@@ -303,9 +316,9 @@ and the edge is smart.&lt;/p&gt;
       <pubDate>Sat, 11 Aug 2018 23:55:50 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2018-08-11-a-chat-with-schoolmates/</guid>
-      <description>&lt;p&gt;我有一群中学时学计算机奥赛的最好的朋友，&lt;br /&gt;
-毕业以后我们散落在各个公司写码，&lt;br /&gt;
-大家心照不宣地约定着“分开打钱，有事TP”，&lt;br /&gt;
+      <description>&lt;p&gt;我有一群中学时学计算机奥赛的最好的朋友，
+毕业以后我们散落在各个公司写码，
+大家心照不宣地约定着“分开打钱，有事TP”，
 时不时地就会聚在一起吃个饭。&lt;/p&gt;</description>
     </item>
     
@@ -324,8 +337,8 @@ and the edge is smart.&lt;/p&gt;
       <pubDate>Tue, 05 Jun 2018 00:22:48 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2018-06-05-weekly-wander/</guid>
-      <description>&lt;p&gt;最近因为加班有点多，&lt;br /&gt;
-经常打断二人世界，&lt;br /&gt;
+      <description>&lt;p&gt;最近因为加班有点多，
+经常打断二人世界，
 导致女朋友有点不开心。&lt;/p&gt;</description>
     </item>
     
@@ -335,8 +348,8 @@ and the edge is smart.&lt;/p&gt;
       <pubDate>Mon, 07 May 2018 22:07:44 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2018-05-07-my-coding-ocd/</guid>
-      <description>&lt;p&gt;每个程序员都有他自己的强迫症。&lt;br /&gt;
-一旦被戳中了，&lt;br /&gt;
+      <description>&lt;p&gt;每个程序员都有他自己的强迫症。
+一旦被戳中了，
 就不禁心里暗暗会喊一声“舒服”。&lt;/p&gt;</description>
     </item>
     
@@ -346,13 +359,12 @@ and the edge is smart.&lt;/p&gt;
       <pubDate>Fri, 13 Apr 2018 22:44:45 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2018-04-13-make-your-impact/</guid>
-      <description>&lt;p&gt;3月份我司周常分享轮到我的时候，&lt;br /&gt;
-我讲了这个话题。&lt;br /&gt;
-就像学好了“meta编程”就可以编的一手好程序，&lt;br /&gt;
-我想着假如大家能掌握“meta分享”的技巧，&lt;br /&gt;
+      <description>&lt;p&gt;3月份我司周常分享轮到我的时候，
+我讲了这个话题。
+就像学好了“meta编程”就可以编的一手好程序，
+我想着假如大家能掌握“meta分享”的技巧，
 那日后我们的内部分享便会是盛宴不断了。&lt;/p&gt;
-
-&lt;p&gt;本文语气更贴近 presentation,&lt;br /&gt;
+&lt;p&gt;本文语气更贴近 presentation,
 文学性会欠缺一些。&lt;/p&gt;</description>
     </item>
     
@@ -362,9 +374,9 @@ and the edge is smart.&lt;/p&gt;
       <pubDate>Thu, 22 Mar 2018 20:14:08 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2018-03-22-solve-a-sentry-case/</guid>
-      <description>&lt;p&gt;作为程序员，&lt;br /&gt;
-日常开发中经常会出现一些“不科学”的事情，&lt;br /&gt;
-这种时候也是“破案”的好时机：&lt;br /&gt;
+      <description>&lt;p&gt;作为程序员，
+日常开发中经常会出现一些“不科学”的事情，
+这种时候也是“破案”的好时机：
 让我们来用科学，解释不科学。&lt;/p&gt;</description>
     </item>
     
@@ -374,8 +386,8 @@ and the edge is smart.&lt;/p&gt;
       <pubDate>Mon, 12 Mar 2018 23:22:10 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2018-03-12-is-it-possible-to-be-rich-easily-by-programming/</guid>
-      <description>&lt;p&gt;我想了想，&lt;br /&gt;
-说：&lt;br /&gt;
+      <description>&lt;p&gt;我想了想，
+说：
 是的。&lt;/p&gt;</description>
     </item>
     
@@ -385,9 +397,9 @@ and the edge is smart.&lt;/p&gt;
       <pubDate>Sat, 03 Mar 2018 20:39:48 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2018-03-03-my-friend-ldsink/</guid>
-      <description>&lt;p&gt;柳宁宁真名其实不叫柳宁宁，&lt;br /&gt;
-我帮他解释真名都是某个朝代的某个职位。&lt;br /&gt;
-但柳宁宁的快递名都叫“柳宁宁”，&lt;br /&gt;
+      <description>&lt;p&gt;柳宁宁真名其实不叫柳宁宁，
+我帮他解释真名都是某个朝代的某个职位。
+但柳宁宁的快递名都叫“柳宁宁”，
 以致于我的快递名叫“柳宁宁的同桌”。&lt;/p&gt;</description>
     </item>
     
@@ -397,8 +409,8 @@ and the edge is smart.&lt;/p&gt;
       <pubDate>Sat, 10 Feb 2018 16:01:31 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2018-02-10-philosophy-of-git/</guid>
-      <description>&lt;p&gt;本文尝试介绍一下Git的过人之处。&lt;br /&gt;
-目标读者是想了解Git，&lt;br /&gt;
+      <description>&lt;p&gt;本文尝试介绍一下Git的过人之处。
+目标读者是想了解Git，
 或者对软件设计有兴趣的人。&lt;/p&gt;</description>
     </item>
     
@@ -408,7 +420,7 @@ and the edge is smart.&lt;/p&gt;
       <pubDate>Thu, 25 Jan 2018 23:27:28 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2018-01-25-my-2018-okr/</guid>
-      <description>&lt;p&gt;前阵子听了一位老师关于OKR很详尽的讲解，&lt;br /&gt;
+      <description>&lt;p&gt;前阵子听了一位老师关于OKR很详尽的讲解，
 受益匪浅。&lt;/p&gt;</description>
     </item>
     
@@ -418,11 +430,11 @@ and the edge is smart.&lt;/p&gt;
       <pubDate>Sat, 13 Jan 2018 08:06:16 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2018-01-13-my-little-mia/</guid>
-      <description>&lt;p&gt;小米娅本名叫吴莹莹，&lt;br /&gt;
-不过她很喜欢Mia这个英文名和对应的中文名米娅。&lt;br /&gt;
-不过注册微信公众号的时候，&lt;br /&gt;
-“小米娅”已经被注册了，&lt;br /&gt;
-于是最后纠结了好一会儿，&lt;br /&gt;
+      <description>&lt;p&gt;小米娅本名叫吴莹莹，
+不过她很喜欢Mia这个英文名和对应的中文名米娅。
+不过注册微信公众号的时候，
+“小米娅”已经被注册了，
+于是最后纠结了好一会儿，
 她选择了“一只米娅”这个听起来很精灵的名字。&lt;/p&gt;</description>
     </item>
     
@@ -432,7 +444,7 @@ and the edge is smart.&lt;/p&gt;
       <pubDate>Sat, 06 Jan 2018 18:58:33 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2018-01-06-play-gba-with-danmaku/</guid>
-      <description>&lt;p&gt;大概是大二的时候，&lt;br /&gt;
+      <description>&lt;p&gt;大概是大二的时候，
 我在TwitchTV上看到了一个极其精彩的Idea。&lt;/p&gt;</description>
     </item>
     
@@ -451,11 +463,10 @@ and the edge is smart.&lt;/p&gt;
       <pubDate>Mon, 04 Dec 2017 22:29:14 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2017-12-04-your-own-sight/</guid>
-      <description>&lt;p&gt;蚍蜉和大树是很好的朋友，&lt;br /&gt;
+      <description>&lt;p&gt;蚍蜉和大树是很好的朋友，
 蚍蜉常常站在大树头上跟大树聊天。&lt;/p&gt;
-
-&lt;p&gt;两只生物从诗词歌赋谈到人生理想，&lt;br /&gt;
-无话不谈，谈了又谈，&lt;br /&gt;
+&lt;p&gt;两只生物从诗词歌赋谈到人生理想，
+无话不谈，谈了又谈，
 所有的观点都无比契合。&lt;/p&gt;</description>
     </item>
     
@@ -465,8 +476,8 @@ and the edge is smart.&lt;/p&gt;
       <pubDate>Thu, 23 Nov 2017 16:49:57 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2017-11-23-python-deployment-automation-one-sample/</guid>
-      <description>&lt;p&gt;本文主要讲述一下我司&lt;br /&gt;
-（&lt;a href=&#34;https://www.zhihu.com/question/19596230/answer/152193862&#34;&gt;一个成长中的创业公司&lt;/a&gt;）&lt;br /&gt;
+      <description>&lt;p&gt;本文主要讲述一下我司
+（&lt;a href=&#34;https://www.zhihu.com/question/19596230/answer/152193862&#34;&gt;一个成长中的创业公司&lt;/a&gt;）
 目前的代码发布流程用到了哪些工具。&lt;/p&gt;</description>
     </item>
     
@@ -485,7 +496,7 @@ and the edge is smart.&lt;/p&gt;
       <pubDate>Tue, 31 Oct 2017 22:05:35 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2017-10-31-programmers-logic/</guid>
-      <description>&lt;p&gt;我有时会突然意识过来，&lt;br /&gt;
+      <description>&lt;p&gt;我有时会突然意识过来，
 写程序这件事情给我带来了深远的影响。&lt;/p&gt;</description>
     </item>
     
@@ -495,16 +506,13 @@ and the edge is smart.&lt;/p&gt;
       <pubDate>Thu, 26 Oct 2017 17:48:42 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2017-10-26-carpe-diem/</guid>
-      <description>&lt;p&gt;前几天 Reddit 上有个赞的很多的&lt;br /&gt;
+      <description>&lt;p&gt;前几天 Reddit 上有个赞的很多的
 Shower Thought:&lt;/p&gt;
-
 &lt;blockquote&gt;
-&lt;p&gt;One of the most bittersweet feelings has to be&lt;br /&gt;
+&lt;p&gt;One of the most bittersweet feelings has to be
 when you realise how much you&amp;rsquo;re going to miss a moment,&lt;/p&gt;
-
 &lt;p&gt;while you&amp;rsquo;re still living it.&lt;/p&gt;
 &lt;/blockquote&gt;
-
 &lt;p&gt;我很喜欢这个说法。&lt;/p&gt;</description>
     </item>
     
@@ -514,9 +522,9 @@ when you realise how much you&amp;rsquo;re going to miss a moment,&lt;/p&gt;
       <pubDate>Wed, 20 Sep 2017 19:49:38 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2017-09-20-how-to-write-bugs/</guid>
-      <description>&lt;p&gt;时至今日，&lt;br /&gt;
-笔者已经有十年以上的写Bug经验了。&lt;br /&gt;
-是时候给各位想写Bug但还不够熟练的同学们，&lt;br /&gt;
+      <description>&lt;p&gt;时至今日，
+笔者已经有十年以上的写Bug经验了。
+是时候给各位想写Bug但还不够熟练的同学们，
 分享一些写Bug的心得了。&lt;/p&gt;</description>
     </item>
     
@@ -526,8 +534,8 @@ when you realise how much you&amp;rsquo;re going to miss a moment,&lt;/p&gt;
       <pubDate>Sat, 16 Sep 2017 16:07:46 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2017-09-16-interesting-humans/</guid>
-      <description>&lt;p&gt;近期有一个表情“给大佬递茶”用的蛮多的，&lt;br /&gt;
-我理解的“大佬”的含义，&lt;br /&gt;
+      <description>&lt;p&gt;近期有一个表情“给大佬递茶”用的蛮多的，
+我理解的“大佬”的含义，
 就是“三人行，必有我师焉”里的“师”一样的含义。&lt;/p&gt;</description>
     </item>
     
@@ -537,8 +545,8 @@ when you realise how much you&amp;rsquo;re going to miss a moment,&lt;/p&gt;
       <pubDate>Wed, 13 Sep 2017 22:45:39 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2017-09-13-what-is-ligature/</guid>
-      <description>&lt;p&gt;或者叫“为什么PDF里拷出来的有些字会消失”，&lt;br /&gt;
-“为什么有些字体里fi可以连在一起”，&lt;br /&gt;
+      <description>&lt;p&gt;或者叫“为什么PDF里拷出来的有些字会消失”，
+“为什么有些字体里fi可以连在一起”，
 “Fira Code是怎么做到连体符号的”&lt;/p&gt;</description>
     </item>
     
@@ -548,8 +556,8 @@ when you realise how much you&amp;rsquo;re going to miss a moment,&lt;/p&gt;
       <pubDate>Fri, 08 Sep 2017 22:59:08 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2017-09-08-redshift-as-data-warehouse/</guid>
-      <description>&lt;p&gt;最近工程师小谢遇到了一个难题，&lt;br /&gt;
-就是手头上有千万级别的数据，&lt;br /&gt;
+      <description>&lt;p&gt;最近工程师小谢遇到了一个难题，
+就是手头上有千万级别的数据，
 但是没有一个快糙猛的解决方案。&lt;/p&gt;</description>
     </item>
     
@@ -559,8 +567,8 @@ when you realise how much you&amp;rsquo;re going to miss a moment,&lt;/p&gt;
       <pubDate>Thu, 31 Aug 2017 20:25:12 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2017-08-31-lazy-coding-practice/</guid>
-      <description>&lt;p&gt;相比于“一门语言”，&lt;br /&gt;
-“一门程序语言”更多时候是“一门规范”。&lt;br /&gt;
+      <description>&lt;p&gt;相比于“一门语言”，
+“一门程序语言”更多时候是“一门规范”。
 （当然，“语言”本身就是“规范”。）&lt;/p&gt;</description>
     </item>
     
@@ -579,9 +587,9 @@ when you realise how much you&amp;rsquo;re going to miss a moment,&lt;/p&gt;
       <pubDate>Sun, 13 Aug 2017 22:17:55 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2017-08-13-okr/</guid>
-      <description>&lt;p&gt;TI 输了，&lt;br /&gt;
-熬夜看比赛的 Lirian 感觉心很痛。&lt;br /&gt;
-于是他打算换个心情，&lt;br /&gt;
+      <description>&lt;p&gt;TI 输了，
+熬夜看比赛的 Lirian 感觉心很痛。
+于是他打算换个心情，
 看看 Mia 最近的学习任务是啥。&lt;/p&gt;</description>
     </item>
     
@@ -591,7 +599,7 @@ when you realise how much you&amp;rsquo;re going to miss a moment,&lt;/p&gt;
       <pubDate>Tue, 08 Aug 2017 23:10:01 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2017-08-08-github-badges/</guid>
-      <description>&lt;p&gt;GitHub很多项目主页都会放上好玩的小标签（GitHub Badges），&lt;br /&gt;
+      <description>&lt;p&gt;GitHub很多项目主页都会放上好玩的小标签（GitHub Badges），
 这次我们也来玩点表面功夫。&lt;/p&gt;</description>
     </item>
     
@@ -601,7 +609,7 @@ when you realise how much you&amp;rsquo;re going to miss a moment,&lt;/p&gt;
       <pubDate>Sun, 06 Aug 2017 12:07:32 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2017-08-06-py2-to-py3/</guid>
-      <description>&lt;p&gt;最近我们从Python2.7,&lt;br /&gt;
+      <description>&lt;p&gt;最近我们从Python2.7,
 全线升级到了Python3.5。&lt;/p&gt;</description>
     </item>
     
@@ -620,8 +628,8 @@ when you realise how much you&amp;rsquo;re going to miss a moment,&lt;/p&gt;
       <pubDate>Sun, 30 Jul 2017 18:24:30 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2017-07-30-girls-stockings/</guid>
-      <description>&lt;p&gt;以前一直觉得穿黑色丝袜的小姐姐们好好看啊，&lt;br /&gt;
-后来才知道，&lt;br /&gt;
+      <description>&lt;p&gt;以前一直觉得穿黑色丝袜的小姐姐们好好看啊，
+后来才知道，
 我以为好看的那些都是打底裤。&lt;/p&gt;</description>
     </item>
     
@@ -631,9 +639,9 @@ when you realise how much you&amp;rsquo;re going to miss a moment,&lt;/p&gt;
       <pubDate>Thu, 27 Jul 2017 22:31:18 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2017-07-27-what-is-cash-cow/</guid>
-      <description>&lt;p&gt;最近产品经理小刘很苦恼，&lt;br /&gt;
-因为别人一直问他，&lt;br /&gt;
-PPT上面的*现金流*是不是写错了？&lt;br /&gt;
+      <description>&lt;p&gt;最近产品经理小刘很苦恼，
+因为别人一直问他，
+PPT上面的&lt;em&gt;现金流&lt;/em&gt;是不是写错了？
 写成了&lt;em&gt;现金牛&lt;/em&gt;?&lt;/p&gt;</description>
     </item>
     
@@ -643,12 +651,11 @@ PPT上面的*现金流*是不是写错了？&lt;br /&gt;
       <pubDate>Tue, 25 Jul 2017 23:15:51 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2017-07-25-pareto-rule-of-programmers/</guid>
-      <description>&lt;p&gt;二八定律 (Pareto Principle),&lt;br /&gt;
-泛指在各种事情中，&lt;br /&gt;
-80%的结果是由20%的原因决定的，&lt;br /&gt;
+      <description>&lt;p&gt;二八定律 (Pareto Principle),
+泛指在各种事情中，
+80%的结果是由20%的原因决定的，
 这个定律一般用来定性而不是定量。&lt;/p&gt;
-
-&lt;p&gt;很有趣的是，&lt;br /&gt;
+&lt;p&gt;很有趣的是，
 程序员们就很吃这个定律。&lt;/p&gt;</description>
     </item>
     
@@ -659,10 +666,8 @@ PPT上面的*现金流*是不是写错了？&lt;br /&gt;
       
       <guid>https://liriansu.com/posts/2017-07-18-how-i-use-github/</guid>
       <description>&lt;p&gt;经常会听到其它程序员说：&lt;/p&gt;
-
 &lt;p&gt;哎呀，又在 GitHub 上发现了个好玩的项目。&lt;/p&gt;
-
-&lt;p&gt;那么问题来了，&lt;br /&gt;
+&lt;p&gt;那么问题来了，
 他们怎么发现的呢？&lt;/p&gt;</description>
     </item>
     
@@ -672,7 +677,7 @@ PPT上面的*现金流*是不是写错了？&lt;br /&gt;
       <pubDate>Sun, 02 Jul 2017 23:05:08 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2017-07-02-forgive-her-meme/</guid>
-      <description>&lt;p&gt;“她做了对不起我的事情，该怎么办？”&lt;br /&gt;
+      <description>&lt;p&gt;“她做了对不起我的事情，该怎么办？”
 “那当然是选择原谅她啦！”&lt;/p&gt;</description>
     </item>
     
@@ -691,7 +696,7 @@ PPT上面的*现金流*是不是写错了？&lt;br /&gt;
       <pubDate>Sat, 24 Jun 2017 19:36:17 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2017-06-24-naming-variable/</guid>
-      <description>&lt;p&gt;据说平均下来，&lt;br /&gt;
+      <description>&lt;p&gt;据说平均下来，
 程序员会有10%的时间花在取名字上。&lt;/p&gt;</description>
     </item>
     
@@ -701,10 +706,10 @@ PPT上面的*现金流*是不是写错了？&lt;br /&gt;
       <pubDate>Sun, 11 Jun 2017 13:49:36 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2017-06-11-my-work/</guid>
-      <description>&lt;p&gt;前两天和家里打电话，&lt;br /&gt;
-聊到了工作上的事情，&lt;br /&gt;
-我多讲了几句，&lt;br /&gt;
-虽然爸妈听不懂，&lt;br /&gt;
+      <description>&lt;p&gt;前两天和家里打电话，
+聊到了工作上的事情，
+我多讲了几句，
+虽然爸妈听不懂，
 但他们听的很开心。&lt;/p&gt;</description>
     </item>
     
@@ -714,7 +719,7 @@ PPT上面的*现金流*是不是写错了？&lt;br /&gt;
       <pubDate>Sun, 21 May 2017 00:18:14 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2017-05-21-so-many-pm/</guid>
-      <description>&lt;p&gt;最近把很有话题性的《人人都是产品经理》看完了，&lt;br /&gt;
+      <description>&lt;p&gt;最近把很有话题性的《人人都是产品经理》看完了，
 看的是2.0版本，这大概是个读后感吧。&lt;/p&gt;</description>
     </item>
     
@@ -735,8 +740,8 @@ PPT上面的*现金流*是不是写错了？&lt;br /&gt;
       <pubDate>Sat, 22 Apr 2017 01:48:05 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2017-04-22-how-google-works-note/</guid>
-      <description>&lt;p&gt;清明节的时候在火车上把 &lt;code&gt;How Google Works&lt;/code&gt; 给读完了，&lt;br /&gt;
-我原以为读这本书会提升技术，&lt;br /&gt;
+      <description>&lt;p&gt;清明节的时候在火车上把 &lt;code&gt;How Google Works&lt;/code&gt; 给读完了，
+我原以为读这本书会提升技术，
 没想到提升了 HR 的知识（懵逼&lt;/p&gt;</description>
     </item>
     
@@ -746,7 +751,7 @@ PPT上面的*现金流*是不是写错了？&lt;br /&gt;
       <pubDate>Sun, 26 Mar 2017 23:58:26 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2017-03-26-hunter2-meme/</guid>
-      <description>&lt;p&gt;简单来说：&lt;br /&gt;
+      <description>&lt;p&gt;简单来说：
 这是一个弱密码。&lt;/p&gt;</description>
     </item>
     
@@ -756,7 +761,7 @@ PPT上面的*现金流*是不是写错了？&lt;br /&gt;
       <pubDate>Fri, 24 Mar 2017 02:00:55 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2017-03-24-windows-dev-env/</guid>
-      <description>&lt;p&gt;假如你也不介意身处&lt;a href=&#34;https://www.zhihu.com/question/24270600&#34;&gt;鄙视链&lt;/a&gt;的最底端，&lt;br /&gt;
+      <description>&lt;p&gt;假如你也不介意身处&lt;a href=&#34;https://www.zhihu.com/question/24270600&#34;&gt;鄙视链&lt;/a&gt;的最底端，
 那来交流一下&lt;code&gt;怎么样搭建Windows的开发环境&lt;/code&gt;吧&lt;/p&gt;</description>
     </item>
     
@@ -766,8 +771,8 @@ PPT上面的*现金流*是不是写错了？&lt;br /&gt;
       <pubDate>Mon, 20 Mar 2017 01:49:00 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2017-03-20-hrbp-and-markdown/</guid>
-      <description>&lt;p&gt;简单来说，&lt;br /&gt;
-HRBP是一种角色，&lt;br /&gt;
+      <description>&lt;p&gt;简单来说，
+HRBP是一种角色，
 Markdown是一种语法。&lt;/p&gt;</description>
     </item>
     
@@ -795,8 +800,8 @@ Markdown是一种语法。&lt;/p&gt;</description>
       <pubDate>Wed, 22 Feb 2017 22:22:16 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2017-02-22-x-y-z-question/</guid>
-      <description>&lt;p&gt;有的时候我们想解决的是X问题，&lt;br /&gt;
-但是我们却纠结于Y问题，&lt;br /&gt;
+      <description>&lt;p&gt;有的时候我们想解决的是X问题，
+但是我们却纠结于Y问题，
 最后却陷入了Z问题的陷阱里。&lt;/p&gt;</description>
     </item>
     
@@ -806,7 +811,7 @@ Markdown是一种语法。&lt;/p&gt;</description>
       <pubDate>Fri, 03 Feb 2017 21:59:54 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2017-02-03-hold-static-html-on-github/</guid>
-      <description>&lt;p&gt;这是一篇入门级的技术文章，&lt;br /&gt;
+      <description>&lt;p&gt;这是一篇入门级的技术文章，
 教你怎么在GitHub上托管静态的HTML页面。&lt;/p&gt;</description>
     </item>
     
@@ -825,7 +830,7 @@ Markdown是一种语法。&lt;/p&gt;</description>
       <pubDate>Mon, 26 Dec 2016 17:01:38 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2016-12-26-go-to-path-in-osx/</guid>
-      <description>&lt;p&gt;今天终于学到了这个很有用的知识，&lt;br /&gt;
+      <description>&lt;p&gt;今天终于学到了这个很有用的知识，
 感觉有必要记下来…&lt;/p&gt;</description>
     </item>
     
@@ -835,8 +840,8 @@ Markdown是一种语法。&lt;/p&gt;</description>
       <pubDate>Thu, 22 Dec 2016 20:20:07 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2016-12-22-use-commentit/</guid>
-      <description>&lt;p&gt;挂在GitHub Pages上的静态博客的评论总是个蛋疼的问题，&lt;br /&gt;
-我以前一直都是用&lt;a href=&#34;https://disqus.com/&#34;&gt;disqus&lt;/a&gt;的，&lt;br /&gt;
+      <description>&lt;p&gt;挂在GitHub Pages上的静态博客的评论总是个蛋疼的问题，
+我以前一直都是用&lt;a href=&#34;https://disqus.com/&#34;&gt;disqus&lt;/a&gt;的，
 但是它总是处于墙于被墙的边缘…&lt;/p&gt;</description>
     </item>
     
@@ -846,7 +851,7 @@ Markdown是一种语法。&lt;/p&gt;</description>
       <pubDate>Sun, 18 Dec 2016 02:22:16 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2016-12-18-use-vundle-for-dotvim/</guid>
-      <description>&lt;p&gt;今天把vim插件管理器换成了&lt;a href=&#34;https://github.com/VundleVim/Vundle.vim&#34;&gt;Vundle&lt;/a&gt;，&lt;br /&gt;
+      <description>&lt;p&gt;今天把vim插件管理器换成了&lt;a href=&#34;https://github.com/VundleVim/Vundle.vim&#34;&gt;Vundle&lt;/a&gt;，
 之前我一直用的是&lt;a href=&#34;https://github.com/tpope/vim-pathogen&#34;&gt;pathogen&lt;/a&gt;。&lt;/p&gt;</description>
     </item>
     
@@ -856,8 +861,8 @@ Markdown是一种语法。&lt;/p&gt;</description>
       <pubDate>Fri, 16 Dec 2016 23:33:08 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2016-12-16-backend-skill-tree/</guid>
-      <description>&lt;p&gt;我最近打算点专精天赋&lt;code&gt;后端工程师&lt;/code&gt;，&lt;br /&gt;
-于是先整理一份后端的技能树，&lt;br /&gt;
+      <description>&lt;p&gt;我最近打算点专精天赋&lt;code&gt;后端工程师&lt;/code&gt;，
+于是先整理一份后端的技能树，
 然后努力攒天赋点把它给点满。&lt;/p&gt;</description>
     </item>
     
@@ -867,8 +872,8 @@ Markdown是一种语法。&lt;/p&gt;</description>
       <pubDate>Mon, 19 Sep 2016 16:04:00 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2016-09-19-git-first-lesson/</guid>
-      <description>&lt;p&gt;这是一篇针对技术小白们的Git科普文章。&lt;br /&gt;
-本文主要介绍版本控制工具Git的基本概念，&lt;br /&gt;
+      <description>&lt;p&gt;这是一篇针对技术小白们的Git科普文章。
+本文主要介绍版本控制工具Git的基本概念，
 以及init,status,add,commit,reset,log几个基本命令。&lt;/p&gt;</description>
     </item>
     
@@ -896,7 +901,7 @@ Markdown是一种语法。&lt;/p&gt;</description>
       <pubDate>Wed, 18 May 2016 21:39:29 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2016-05-18-install-pip-on-windows/</guid>
-      <description>&lt;p&gt;pip是python的包管理工具，在Linux上安装比较简单，&lt;br /&gt;
+      <description>&lt;p&gt;pip是python的包管理工具，在Linux上安装比较简单，
 但是在Windows上安装就稍微麻烦些。&lt;/p&gt;</description>
     </item>
     
@@ -942,7 +947,7 @@ Markdown是一种语法。&lt;/p&gt;</description>
       <pubDate>Wed, 02 Mar 2016 13:41:04 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2016-03-02-this-is-why-i-dont-give-you-a-job-zh-cn/</guid>
-      <description>&lt;p&gt;匈牙利有一个叫Andor Jakab的人写了一篇很犀利的文章，&lt;br /&gt;
+      <description>&lt;p&gt;匈牙利有一个叫Andor Jakab的人写了一篇很犀利的文章，
 然后匈牙利网络评论就炸了。&lt;/p&gt;</description>
     </item>
     
@@ -961,8 +966,8 @@ Markdown是一种语法。&lt;/p&gt;</description>
       <pubDate>Sat, 27 Feb 2016 21:08:19 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2016-02-27-my-first-vr-experience/</guid>
-      <description>&lt;p&gt;前阵子手机更新成了Android 6.0，&lt;br /&gt;
-我照常到Gplay上看看有什么新App，&lt;br /&gt;
+      <description>&lt;p&gt;前阵子手机更新成了Android 6.0，
+我照常到Gplay上看看有什么新App，
 于是看到了一个Google Cardboard。&lt;/p&gt;</description>
     </item>
     
@@ -990,9 +995,9 @@ Markdown是一种语法。&lt;/p&gt;</description>
       <pubDate>Fri, 29 Jan 2016 23:24:45 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2016-01-29-jekyll-build-fail-solution/</guid>
-      <description>&lt;p&gt;我一直觉得笔记本和台式机&lt;code&gt;jekyll build&lt;/code&gt;出来的结果不一样，&lt;br /&gt;
-我猜想是Jekyll的版本不一致。&lt;br /&gt;
-结果后来&lt;code&gt;gem update&lt;/code&gt;以后，&lt;br /&gt;
+      <description>&lt;p&gt;我一直觉得笔记本和台式机&lt;code&gt;jekyll build&lt;/code&gt;出来的结果不一样，
+我猜想是Jekyll的版本不一致。
+结果后来&lt;code&gt;gem update&lt;/code&gt;以后，
 反而&lt;code&gt;jekyll build&lt;/code&gt;还失败了…&lt;/p&gt;</description>
     </item>
     
@@ -1011,9 +1016,9 @@ Markdown是一种语法。&lt;/p&gt;</description>
       <pubDate>Mon, 21 Dec 2015 17:26:52 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2015-12-21-learning-javascript/</guid>
-      <description>&lt;p&gt;上大学的时候，有一门课是教各种Java的。&lt;br /&gt;
-到了布置期末大作业的时候，老师大手一挥：“你们写个电商交易网站就可以了。”&lt;br /&gt;
-我们满怀期待地问：“只要写后端？”&lt;br /&gt;
+      <description>&lt;p&gt;上大学的时候，有一门课是教各种Java的。
+到了布置期末大作业的时候，老师大手一挥：“你们写个电商交易网站就可以了。”
+我们满怀期待地问：“只要写后端？”
 老师说道：“没有前端怎么叫网站？HTML, CSS, JS是每个程序员的基本素养。”&lt;/p&gt;</description>
     </item>
     
@@ -1023,7 +1028,7 @@ Markdown是一种语法。&lt;/p&gt;</description>
       <pubDate>Sun, 08 Nov 2015 21:01:28 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2015-11-08-how-to-lose-in-rock-papar-scissors/</guid>
-      <description>&lt;p&gt;小时候七八岁，那时候还在看《读者》。&lt;br /&gt;
+      <description>&lt;p&gt;小时候七八岁，那时候还在看《读者》。
 里面有篇文章讲了一下石头剪刀布中的求胜策略。&lt;/p&gt;</description>
     </item>
     
@@ -1033,7 +1038,7 @@ Markdown是一种语法。&lt;/p&gt;</description>
       <pubDate>Wed, 21 Oct 2015 14:55:24 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2015-10-21-build-seperate-env-using-aufs-and-docker/</guid>
-      <description>&lt;p&gt;文章的开头先提个问题：&lt;br /&gt;
+      <description>&lt;p&gt;文章的开头先提个问题：
 我们平常的工作中，一般都是怎样让每个人都拿到独立开发环境的呢？&lt;/p&gt;</description>
     </item>
     
@@ -1043,8 +1048,8 @@ Markdown是一种语法。&lt;/p&gt;</description>
       <pubDate>Mon, 12 Oct 2015 12:49:55 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2015-10-12-virtual-machine-vs-vagrant-vs-docker/</guid>
-      <description>&lt;p&gt;Virtualization——虚拟化技术一直是计算机世界里面很重要的东西。&lt;br /&gt;
-一般程序员听到这个词首先浮现出的就是Windows下面开着装着Linux系统的VMware。&lt;br /&gt;
+      <description>&lt;p&gt;Virtualization——虚拟化技术一直是计算机世界里面很重要的东西。
+一般程序员听到这个词首先浮现出的就是Windows下面开着装着Linux系统的VMware。
 而这个“装着Linux系统的VMware”就是我们口中的虚拟机（Virtual Machine）&lt;/p&gt;</description>
     </item>
     
@@ -1055,9 +1060,7 @@ Markdown是一种语法。&lt;/p&gt;</description>
       
       <guid>https://liriansu.com/posts/2015-10-09-use-keypad-with-vim-and-putty/</guid>
       <description>&lt;p&gt;我目前的开发环境是用&lt;a href=&#34;https://www.vagrantup.com/&#34;&gt;Vagrant&lt;/a&gt;起一个虚拟机，然后用&lt;a href=&#34;https://www.putty.org/&#34;&gt;Putty&lt;/a&gt;连上去，用VIM做日常的开发工作。&lt;/p&gt;
-
 &lt;p&gt;但某一天更新了一些配置以后，我在VIM里用小键盘输入1的时候，VIM就会在前一行加了一个q字符，让我很是困惑。&lt;/p&gt;
-
 &lt;p&gt;后来&lt;a href=&#34;https://vim.wikia.com/wiki/PuTTY_numeric_keypad_mappings&#34;&gt;谷歌了一下这个问题&lt;/a&gt;，得知只要把Putty的Application keypad mode给关了就行了。&lt;/p&gt;</description>
     </item>
     
@@ -1077,15 +1080,11 @@ Markdown是一种语法。&lt;/p&gt;</description>
       
       <guid>https://liriansu.com/posts/2015-09-23-why-im-blogging/</guid>
       <description>&lt;p&gt;我其实很喜欢看别人写的东西，&lt;a href=&#34;https://coolshell.cn/articles/4758.html&#34;&gt;技术类的&lt;/a&gt;、&lt;a href=&#34;https://joshworth.com/dev/pixelspace/pixelspace_solarsystem.html&#34;&gt;非技术类的&lt;/a&gt;，&lt;a href=&#34;https://blog.csdn.net/redguardtoo/article/details/7222501&#34;&gt;中文的&lt;/a&gt;、&lt;a href=&#34;https://blog.codinghorror.com/show-dont-tell/&#34;&gt;英文的&lt;/a&gt;。&lt;/p&gt;
-
 &lt;p&gt;很多人写文章的时候总喜欢说一句&lt;/p&gt;
-
 &lt;blockquote&gt;
 &lt;p&gt;我先抛砖引玉&lt;/p&gt;
 &lt;/blockquote&gt;
-
 &lt;p&gt;但是往往&lt;a href=&#34;https://coolshell.cn/articles/11312.html&#34;&gt;他们写的都非常好&lt;/a&gt;&lt;/p&gt;
-
 &lt;p&gt;这样的文章看的我特手痒，想也写博客，但是问题就来了&lt;/p&gt;</description>
     </item>
     
@@ -1095,8 +1094,8 @@ Markdown是一种语法。&lt;/p&gt;</description>
       <pubDate>Thu, 27 Aug 2015 20:28:00 +0000</pubDate>
       
       <guid>https://liriansu.com/posts/2015-08-27-fight-with-the-feminist-me/</guid>
-      <description>&lt;p&gt;一直以来我都自以为是一个大男子主义的人，&lt;br /&gt;
-但我和女权的我相处的都比较和谐。&lt;br /&gt;
+      <description>&lt;p&gt;一直以来我都自以为是一个大男子主义的人，
+但我和女权的我相处的都比较和谐。
 但是今晚我和女权的我打起来了。&lt;/p&gt;</description>
     </item>
     
@@ -1107,9 +1106,7 @@ Markdown是一种语法。&lt;/p&gt;</description>
       
       <guid>https://liriansu.com/posts/2015-07-25-how-to-set-perl-constant-module/</guid>
       <description>&lt;p&gt;最近的Perl Coding遇到了一个问题：需要对一系列常量进行合法性检测。&lt;/p&gt;
-
 &lt;p&gt;在Research&amp;amp;Develop后，有一些心得。&lt;/p&gt;
-
 &lt;p&gt;本文从Perl的常量定义上，给出一个_自认为_优雅的解决方案。&lt;/p&gt;</description>
     </item>
     
@@ -1120,11 +1117,9 @@ Markdown是一种语法。&lt;/p&gt;</description>
       
       <guid>https://liriansu.com/posts/2015-06-12-a-chat-with-roommates/</guid>
       <description>&lt;p&gt;（一）引言&lt;/p&gt;
-
-&lt;p&gt;我经历了一场绝妙的装B&lt;br /&gt;
-可是这个地方太小写不下&lt;br /&gt;
+&lt;p&gt;我经历了一场绝妙的装B
+可是这个地方太小写不下
 ——&lt;a href=&#34;https://weibo.com/n/ooCast&#34;&gt;@ooCast&lt;/a&gt;&lt;/p&gt;
-
 &lt;p&gt;（可能内含各种广告）&lt;/p&gt;</description>
     </item>
     
@@ -1144,9 +1139,8 @@ Markdown是一种语法。&lt;/p&gt;</description>
       
       <guid>https://liriansu.com/posts/2014-08-28-compare-excel-with-openpyxl/</guid>
       <description>&lt;h2 id=&#34;起因&#34;&gt;起因&lt;/h2&gt;
-
-&lt;p&gt;最近老是要做比对Excel报表的工作，于是想写一个Python的小脚本来做这个工作。&lt;br /&gt;
-关于Python的Excel处理，以前只用过xlrd库，处理的是Office03的.xls文件。&lt;br /&gt;
+&lt;p&gt;最近老是要做比对Excel报表的工作，于是想写一个Python的小脚本来做这个工作。
+关于Python的Excel处理，以前只用过xlrd库，处理的是Office03的.xls文件。
 这次写小工具的同时也是学习一下新的东西。&lt;/p&gt;</description>
     </item>
     

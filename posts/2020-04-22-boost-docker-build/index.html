@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.74.3" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -27,8 +27,8 @@
       "accountablePerson" : "Lirian Su",
       "copyrightHolder" : "Lirian Su",
       "copyrightYear" : "2020",
-      "datePublished": "2020-04-22 22:28:53 \x2b0800 CST",
-      "dateModified" : "2020-04-22 22:28:53 \x2b0800 CST",
+      "datePublished": "2020-04-22 22:28:53 \u002b0800 CST",
+      "dateModified" : "2020-04-22 22:28:53 \u002b0800 CST",
       "url" : "https:\/\/liriansu.com\/posts\/2020-04-22-boost-docker-build\/",
       "keywords" : [  ]
   }
@@ -101,13 +101,10 @@
 
         <div class="post-content markdown-body">
           <h2 id="dockerfile">Dockerfile</h2>
-
-<p>docker 已经成为现代开发的基础技术，<br />
-而在 docker 开发流中，<br />
+<p>docker 已经成为现代开发的基础技术，
+而在 docker 开发流中，
 Dockerfile 是最基础的文件。</p>
-
 <p>一个包括了系统配置、依赖安装、业务代码的 Dockerfile 可能长这样子：</p>
-
 <pre><code>FROM python:3.8-buster
 WORKDIR /app
 
@@ -121,33 +118,24 @@ RUN apt-get update
 RUN apt-get -y dist-upgrade
 RUN apt-get -y install vim tmux git
 RUN curl -sL https://sentry.io/get-cli/ | bash
-</code></pre>
-
-<p>然后很自然地，<br />
-开发者小周发现：<br />
+</code></pre><p>然后很自然地，
+开发者小周发现：
 每次改完代码以后重新 <code>docker build</code> 都非常慢。</p>
-
-<p><img src="/assets/pics/xkcd_docker.png" alt="xkcd-docker" /><br />
+<p><img src="/assets/pics/xkcd_docker.png" alt="xkcd-docker">
 他需要加速构建过程。</p>
-
 <h2 id="改写文件">改写文件</h2>
-
-<p>最简单的加速是改写 Dockerfile,<br />
-因为 Dockerfile 中的一些命令 (<code>ADD/COPY/RUN</code>) 会产生新的 layer,<br />
-而 Docker 会自动跳过已经构建好的 layer。<br />
+<p>最简单的加速是改写 Dockerfile,
+因为 Dockerfile 中的一些命令 (<code>ADD/COPY/RUN</code>) 会产生新的 layer,
+而 Docker 会自动跳过已经构建好的 layer。
 所以一般优化的原则基于以下几点：</p>
-
 <ul>
-<li>变动越小的命令，越靠前，增加 cache 使用率。<br /></li>
-<li>合并目的相同的命令，减少 layer 层数。<br /></li>
-<li>使用国内源，或者内网服务加速构建。<br /></li>
-<li>少装些东西，不是代码依赖的就尽量别装了…<br /></li>
-<li>记得加上合适的注释，以便日后的维护。<br />
-<br /></li>
+<li>变动越小的命令，越靠前，增加 cache 使用率。</li>
+<li>合并目的相同的命令，减少 layer 层数。</li>
+<li>使用国内源，或者内网服务加速构建。</li>
+<li>少装些东西，不是代码依赖的就尽量别装了…</li>
+<li>记得加上合适的注释，以便日后的维护。</li>
 </ul>
-
 <p>改写以后的 Dockerfile 可能长这样：</p>
-
 <pre><code>FROM python:3.8-buster
 WORKDIR /app
 
@@ -166,57 +154,41 @@ RUN pipenv sync
 
 # 代码频繁变更，放在文件底部，下面就别加更多命令了
 COPY code /app/code
-</code></pre>
-
-<p>改过以后的版本，<br />
-开发者小周发现，<br />
-每次本地改完代码 build 调试都飞快，<br />
+</code></pre><p>改过以后的版本，
+开发者小周发现，
+每次本地改完代码 build 调试都飞快，
 他很满意。</p>
-
-<p>但是用公司的分布式 gitlab runner 构建以后，<br />
-他发现：<br />
+<p>但是用公司的分布式 gitlab runner 构建以后，
+他发现：
 有时镜像没用到 cache，又跑了一遍漫长的构建过程。</p>
-
 <h2 id="分布式构建">分布式构建</h2>
-
-<p>在 codebase 足够大的情况下，<br />
-CI/CD 一般都是分布式多台机器的，<br />
-默认的 docker build 只会从本地寻找 cache layer,<br />
+<p>在 codebase 足够大的情况下，
+CI/CD 一般都是分布式多台机器的，
+默认的 docker build 只会从本地寻找 cache layer,
 无法应对如此复杂的场面。</p>
-
-<p>简单的办法是使用 <code>docker build --cache-from</code> 指定镜像，<br />
+<p>简单的办法是使用 <code>docker build --cache-from</code> 指定镜像，
 我们会在 ci 脚本中这么写：</p>
-
-<pre><code class="language-bash">docker pull LKI/code:latest || true
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker pull LKI/code:latest <span style="color:#f92672">||</span> true
 docker build . -t LKI/code:latest --cache-from LKI/code:latest
 docker push LKI/code:latest
-</code></pre>
-
-<p>但是这样手写的弊端是逻辑比较臃肿，<br />
-比如要完美适配多分支构建 (dev/master/hotfix/release) 的话，<br />
+</code></pre></div><p>但是这样手写的弊端是逻辑比较臃肿，
+比如要完美适配多分支构建 (dev/master/hotfix/release) 的话，
 往往就要自己实现一套判断究竟 cache from 哪个版本的逻辑。</p>
-
-<p>更通用的办法是使用类似 <a href="https://github.com/GoogleContainerTools/kaniko">GoogleContainerTools/kaniko</a> 这样的工具来构建。<br />
-最适合 kaniko 的场景是 kaniko + kubernetes,<br />
-但这个我们留到最后一章再讲，<br />
+<p>更通用的办法是使用类似 <a href="https://github.com/GoogleContainerTools/kaniko">GoogleContainerTools/kaniko</a> 这样的工具来构建。
+最适合 kaniko 的场景是 kaniko + kubernetes,
+但这个我们留到最后一章再讲，
 我们顺着我们的工作流往下看。</p>
-
-<p>使用 kaniko + docker 的构建，<br />
+<p>使用 kaniko + docker 的构建，
 我们可以把上面的 pull/build/push 三连改写为以下这样：</p>
-
-<pre><code class="language-bash"># 这个命令包括了 cache/build/push
-docker run \
-  -v &quot;$CODE&quot;/LKI/code:/workspace \
-  gcr.io/kaniko-project/executor:latest \
-  --cache=true \
-  --context dir:///workspace/ \
-  --destination LKI/code:latest
-</code></pre>
-
-<h2 id="and-kubernetes">and Kubernetes?</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 这个命令包括了 cache/build/push</span>
+docker run <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  -v <span style="color:#e6db74">&#34;</span>$CODE<span style="color:#e6db74">&#34;</span>/LKI/code:/workspace <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  gcr.io/kaniko-project/executor:latest <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --cache<span style="color:#f92672">=</span>true <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --context dir:///workspace/ <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --destination LKI/code:latest
+</code></pre></div><h2 id="and-kubernetes">and Kubernetes?</h2>
 <p>上面提到，kaniko 可以直接丢到 kubernetes 集群中构建：</p>
-
 <pre><code>apiVersion: v1
 kind: Pod
 metadata:
@@ -237,18 +209,14 @@ spec:
     - name: kaniko-secret
       secret:
         secretName: kaniko-secret
-</code></pre>
-
-<p>随着研究的进一步深入，<br />
-很容易想到，<br />
+</code></pre><p>随着研究的进一步深入，
+很容易想到，
 其实 docker 开发流跟 kubernetes 的开发流理应有更好的集成。</p>
-
-<p>这就是 <a href="https://github.com/GoogleContainerTools/skaffold/">GoogleContainerTools/skaffold</a> 在做的事情了。<br />
-skaffold 不仅支持前面讲到的 kaniko 构建，<br />
+<p>这就是 <a href="https://github.com/GoogleContainerTools/skaffold/">GoogleContainerTools/skaffold</a> 在做的事情了。
+skaffold 不仅支持前面讲到的 kaniko 构建，
 还囊括了 port-forwarding/test/helm-deploy 等一系列常用工作流。</p>
-
-<p>有兴趣的同学可以自行了解，<br />
-关于 skaffold 的故事我们以后有机会，<br />
+<p>有兴趣的同学可以自行了解，
+关于 skaffold 的故事我们以后有机会，
 再慢慢讲 :)</p>
         </div>
 

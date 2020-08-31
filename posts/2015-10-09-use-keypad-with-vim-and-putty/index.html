@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.74.3" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,7 +19,7 @@
       "articleSection" : "posts",
       "name" : "VIM中小键盘失灵的解决方案(Putty)",
       "headline" : "VIM中小键盘失灵的解决方案(Putty)",
-      "description" : "\x3cp\x3e我目前的开发环境是用\x3ca href=\x22https:\/\/www.vagrantup.com\/\x22\x3eVagrant\x3c\/a\x3e起一个虚拟机，然后用\x3ca href=\x22https:\/\/www.putty.org\/\x22\x3ePutty\x3c\/a\x3e连上去，用VIM做日常的开发工作。\x3c\/p\x3e\n\n\x3cp\x3e但某一天更新了一些配置以后，我在VIM里用小键盘输入1的时候，VIM就会在前一行加了一个q字符，让我很是困惑。\x3c\/p\x3e\n\n\x3cp\x3e后来\x3ca href=\x22https:\/\/vim.wikia.com\/wiki\/PuTTY_numeric_keypad_mappings\x22\x3e谷歌了一下这个问题\x3c\/a\x3e，得知只要把Putty的Application keypad mode给关了就行了。\x3c\/p\x3e",
+      "description" : "\u003cp\u003e我目前的开发环境是用\u003ca href=\u0022https:\/\/www.vagrantup.com\/\u0022\u003eVagrant\u003c\/a\u003e起一个虚拟机，然后用\u003ca href=\u0022https:\/\/www.putty.org\/\u0022\u003ePutty\u003c\/a\u003e连上去，用VIM做日常的开发工作。\u003c\/p\u003e\n\u003cp\u003e但某一天更新了一些配置以后，我在VIM里用小键盘输入1的时候，VIM就会在前一行加了一个q字符，让我很是困惑。\u003c\/p\u003e\n\u003cp\u003e后来\u003ca href=\u0022https:\/\/vim.wikia.com\/wiki\/PuTTY_numeric_keypad_mappings\u0022\u003e谷歌了一下这个问题\u003c\/a\u003e，得知只要把Putty的Application keypad mode给关了就行了。\u003c\/p\u003e",
       "inLanguage" : "en-US",
       "author" : "Lirian Su",
       "creator" : "Lirian Su",
@@ -27,8 +27,8 @@
       "accountablePerson" : "Lirian Su",
       "copyrightHolder" : "Lirian Su",
       "copyrightYear" : "2015",
-      "datePublished": "2015-10-09 15:34:16 \x2b0000 UTC",
-      "dateModified" : "2015-10-09 15:34:16 \x2b0000 UTC",
+      "datePublished": "2015-10-09 15:34:16 \u002b0000 UTC",
+      "dateModified" : "2015-10-09 15:34:16 \u002b0000 UTC",
       "url" : "https:\/\/liriansu.com\/posts\/2015-10-09-use-keypad-with-vim-and-putty\/",
       "keywords" : [  ]
   }
@@ -37,9 +37,7 @@
   <meta property="og:title" content="VIM中小键盘失灵的解决方案(Putty) - 浮云计算" />
   <meta property="og:type" content="article" />
   <meta name="description" content="我目前的开发环境是用Vagrant起一个虚拟机，然后用Putty连上去，用VIM做日常的开发工作。
-
 但某一天更新了一些配置以后，我在VIM里用小键盘输入1的时候，VIM就会在前一行加了一个q字符，让我很是困惑。
-
 后来谷歌了一下这个问题，得知只要把Putty的Application keypad mode给关了就行了。" />
 
   <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
@@ -105,77 +103,111 @@
 
         <div class="post-content markdown-body">
           <p>我目前的开发环境是用<a href="https://www.vagrantup.com/">Vagrant</a>起一个虚拟机，然后用<a href="https://www.putty.org/">Putty</a>连上去，用VIM做日常的开发工作。</p>
-
 <p>但某一天更新了一些配置以后，我在VIM里用小键盘输入1的时候，VIM就会在前一行加了一个q字符，让我很是困惑。</p>
-
 <p>后来<a href="https://vim.wikia.com/wiki/PuTTY_numeric_keypad_mappings">谷歌了一下这个问题</a>，得知只要把Putty的Application keypad mode给关了就行了。</p>
-
 <h2 id="奇怪的错误">奇怪的错误</h2>
-
 <p>当刚开始小键盘的输入和预期有差别的时候，其实我是很困惑的。</p>
-
 <p>首先我在Bash里面小键盘一切正常，这说明我键盘没问题，应该是VIM哪里不对。</p>
-
-<p>其次我按的是1，结果出来的是前一行的q，我再按一下2，出来的是前一行的r。<br />
-假如键盘没有问题，要自己在VIM里面实现一个这种“功能”，那也要加一行配置：<br />
+<p>其次我按的是1，结果出来的是前一行的q，我再按一下2，出来的是前一行的r。
+假如键盘没有问题，要自己在VIM里面实现一个这种“功能”，那也要加一行配置：
 <code>inoremap &lt;Num1&gt; &lt;Esc&gt;Oq</code></p>
-
 <p>但是这也太奇怪了吧，VIM里面怎么可能把<code>&lt;Num1&gt;</code>给替换成<code>&lt;Esc&gt;Oq</code>这么奇怪的东西？</p>
-
 <h2 id="寻求答案">寻求答案</h2>
-
 <p>于是我找到了<a href="https://vim.wikia.com/wiki/PuTTY_numeric_keypad_mappings">VIM wiki上的一篇解答</a></p>
-
-<p>根据这篇解答，问题是出在Putty上。<br />
-Putty会默认启用“Application Keypad Mode”，这个选项被启用以后<br />
-所有小键盘上的按键（包括<NumLock>）都会输出一串按键序列：</p>
-
-<p>| 原按键    | 生成序列  |<br />
-|&mdash;&mdash;&mdash;&ndash;|&mdash;&mdash;&mdash;&ndash;|<br />
-| <code>&lt;Num1&gt;</code>  | <code>&lt;Esc&gt;Oq</code> |<br />
-| <code>&lt;Num2&gt;</code>  | <code>&lt;Esc&gt;Or</code> |<br />
-| <code>&lt;Num3&gt;</code>  | <code>&lt;Esc&gt;Os</code> |<br />
-| <code>&lt;Num4&gt;</code>  | <code>&lt;Esc&gt;Ot</code> |<br />
-| <code>&lt;Num5&gt;</code>  | <code>&lt;Esc&gt;Ou</code> |<br />
-| <code>&lt;Num6&gt;</code>  | <code>&lt;Esc&gt;Ov</code> |<br />
-| <code>&lt;Num7&gt;</code>  | <code>&lt;Esc&gt;Ow</code> |<br />
-| <code>&lt;Num8&gt;</code>  | <code>&lt;Esc&gt;Ox</code> |<br />
-| <code>&lt;Num9&gt;</code>  | <code>&lt;Esc&gt;Oy</code> |<br />
-| <code>&lt;Num0&gt;</code>  | <code>&lt;Esc&gt;Op</code> |<br />
-| <code>.</code>       | <code>&lt;Esc&gt;On</code> |<br />
-| <code>/</code>       | <code>&lt;Esc&gt;OQ</code> |<br />
-| <code>*</code>       | <code>&lt;Esc&gt;OR</code> |<br />
-| <code>+</code>       | <code>&lt;Esc&gt;Ol</code> |<br />
-| <code>-</code>       | <code>&lt;Esc&gt;OS</code> |<br />
-| <code>&lt;Enter&gt;</code> | <code>&lt;Esc&gt;OM</code> |</p>
-
+<p>根据这篇解答，问题是出在Putty上。
+Putty会默认启用“Application Keypad Mode”，这个选项被启用以后
+所有小键盘上的按键（包括<!-- raw HTML omitted -->）都会输出一串按键序列：</p>
+<table>
+<thead>
+<tr>
+<th>原按键</th>
+<th>生成序列</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;Num1&gt;</code></td>
+<td><code>&lt;Esc&gt;Oq</code></td>
+</tr>
+<tr>
+<td><code>&lt;Num2&gt;</code></td>
+<td><code>&lt;Esc&gt;Or</code></td>
+</tr>
+<tr>
+<td><code>&lt;Num3&gt;</code></td>
+<td><code>&lt;Esc&gt;Os</code></td>
+</tr>
+<tr>
+<td><code>&lt;Num4&gt;</code></td>
+<td><code>&lt;Esc&gt;Ot</code></td>
+</tr>
+<tr>
+<td><code>&lt;Num5&gt;</code></td>
+<td><code>&lt;Esc&gt;Ou</code></td>
+</tr>
+<tr>
+<td><code>&lt;Num6&gt;</code></td>
+<td><code>&lt;Esc&gt;Ov</code></td>
+</tr>
+<tr>
+<td><code>&lt;Num7&gt;</code></td>
+<td><code>&lt;Esc&gt;Ow</code></td>
+</tr>
+<tr>
+<td><code>&lt;Num8&gt;</code></td>
+<td><code>&lt;Esc&gt;Ox</code></td>
+</tr>
+<tr>
+<td><code>&lt;Num9&gt;</code></td>
+<td><code>&lt;Esc&gt;Oy</code></td>
+</tr>
+<tr>
+<td><code>&lt;Num0&gt;</code></td>
+<td><code>&lt;Esc&gt;Op</code></td>
+</tr>
+<tr>
+<td><code>.</code></td>
+<td><code>&lt;Esc&gt;On</code></td>
+</tr>
+<tr>
+<td><code>/</code></td>
+<td><code>&lt;Esc&gt;OQ</code></td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td><code>&lt;Esc&gt;OR</code></td>
+</tr>
+<tr>
+<td><code>+</code></td>
+<td><code>&lt;Esc&gt;Ol</code></td>
+</tr>
+<tr>
+<td><code>-</code></td>
+<td><code>&lt;Esc&gt;OS</code></td>
+</tr>
+<tr>
+<td><code>&lt;Enter&gt;</code></td>
+<td><code>&lt;Esc&gt;OM</code></td>
+</tr>
+</tbody>
+</table>
 <p>居然<code>&lt;Num1&gt;</code>真的变成了<code>&lt;Esc&gt;Oq</code>！</p>
-
 <p>再去翻<a href="https://the.earth.li/~sgtatham/putty/0.60/htmldoc/Chapter4.html#config-appkeypad">Putty关于Application keypad mode的说明</a>:</p>
-
 <blockquote>
 <p>Application Keypad mode is a way for the server to change the behaviour of the numeric keypad</p>
 </blockquote>
-
 <p>唔，好吧，是服务器端决定的配置。</p>
-
 <p>所以在Putty下简单的解决方案就是关掉这个模式了：</p>
-
 <ul>
-<li>打开Putty配置<br /></li>
-<li>选中左边的Terminal -&gt; Features<br /></li>
-<li>在&rdquo;Disable application keypad mode&rdquo;处打钩<br /></li>
-<li>选中左边的Session<br /></li>
-<li>保存Putty配置<br />
-<br /></li>
+<li>打开Putty配置</li>
+<li>选中左边的Terminal -&gt; Features</li>
+<li>在&quot;Disable application keypad mode&quot;处打钩</li>
+<li>选中左边的Session</li>
+<li>保存Putty配置</li>
 </ul>
-
-<p><img src="/assets/putty_application_keypad_mode.jpg" alt="关闭application keypad mode" /></p>
-
+<p><img src="/assets/putty_application_keypad_mode.jpg" alt="关闭application keypad mode"></p>
 <h2 id="更多奇怪的答案">更多奇怪的答案</h2>
-
 <p>在<a href="https://vim.wikia.com/wiki/PuTTY_numeric_keypad_mappings#Comments">VIM wiki页面的讨论板块</a>，有人给出了一个看起来很蠢的解决方案：</p>
-
 <pre><code>:inoremap &lt;Esc&gt;Oq 1
 :inoremap &lt;Esc&gt;Or 2
 :inoremap &lt;Esc&gt;Os 3
@@ -192,21 +224,14 @@ Putty会默认启用“Application Keypad Mode”，这个选项被启用以后<
 :inoremap &lt;Esc&gt;Ol +
 :inoremap &lt;Esc&gt;OS -
 :inoremap &lt;Esc&gt;OM &lt;Enter&gt;
-</code></pre>
-
-<p>刚开始看到这个答案我立刻想到了这张XKCD</p>
-
-<p><img src="https://imgs.xkcd.com/comics/workflow.png" alt="workflow" /></p>
-
+</code></pre><p>刚开始看到这个答案我立刻想到了这张XKCD</p>
+<p><img src="https://imgs.xkcd.com/comics/workflow.png" alt="workflow"></p>
 <p>我认为mapping不应该是一个合适的解决方案，但是下面又有人讲了他自己苦逼的故事：</p>
-
 <blockquote>
 <p>After a while struggling with this very problem with vnc viewer 4.1.3 under XP with a Debian lenny vnc4server 4.1.1+X4.3.0-31, this vim remapping is the only solution which work.</p>
 </blockquote>
-
 <p>好吧，至少他找到了解决方案。</p>
-
-<p><img src="https://imgs.xkcd.com/comics/wisdom_of_the_ancients.png" alt="solution" /></p>
+<p><img src="https://imgs.xkcd.com/comics/wisdom_of_the_ancients.png" alt="solution"></p>
         </div>
 
         

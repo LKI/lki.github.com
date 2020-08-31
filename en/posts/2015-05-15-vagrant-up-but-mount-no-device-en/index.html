@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.74.3" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,7 +19,7 @@
       "articleSection" : "posts",
       "name" : "Solution for vagrant-up error: mount no device",
       "headline" : "Solution for vagrant-up error: mount no device",
-      "description" : "\x3cp\x3eToday I encounter a problem running \x3ccode\x3evagrant up\x3c\/code\x3e：\x3c\/p\x3e",
+      "description" : "\u003cp\u003eToday I encounter a problem running \u003ccode\u003evagrant up\u003c\/code\u003e：\u003c\/p\u003e",
       "inLanguage" : "en-US",
       "author" : "Lirian Su",
       "creator" : "Lirian Su",
@@ -27,8 +27,8 @@
       "accountablePerson" : "Lirian Su",
       "copyrightHolder" : "Lirian Su",
       "copyrightYear" : "2015",
-      "datePublished": "2015-05-15 10:29:05 \x2b0000 UTC",
-      "dateModified" : "2015-05-15 10:29:05 \x2b0000 UTC",
+      "datePublished": "2015-05-15 10:29:05 \u002b0000 UTC",
+      "dateModified" : "2015-05-15 10:29:05 \u002b0000 UTC",
       "url" : "https:\/\/liriansu.com\/en\/posts\/2015-05-15-vagrant-up-but-mount-no-device-en\/",
       "keywords" : [  ]
   }
@@ -101,7 +101,6 @@
 
         <div class="post-content markdown-body">
           <p>Today I encounter a problem running <code>vagrant up</code>：</p>
-
 <pre><code>==&gt; cvc-tools: Machine booted and ready!
 ==&gt; cvc-tools: Checking for guest additions in VM...
 ==&gt; cvc-tools: Configuring and enabling network interfaces...
@@ -119,15 +118,10 @@ mount -t vboxsf -o uid=`id -u devel`,gid=`id -g devel` work /work
 The error output from the last command was:
 
 /sbin/mount.vboxsf: mounting failed with the error: No such device
-</code></pre>
-
-<p>Refer to <a href="https://github.com/mitchellh/vagrant/issues/1657">https://github.com/mitchellh/vagrant/issues/1657</a></p>
-
+</code></pre><p>Refer to <a href="https://github.com/mitchellh/vagrant/issues/1657">https://github.com/mitchellh/vagrant/issues/1657</a></p>
 <p>_This is usually a result of the guest’s package manager upgrading the</p>
-
-<p>kernel without rebuilding the VirtualBox Guest Additions_ by lenciel. So<br />
+<p>kernel without rebuilding the VirtualBox Guest Additions_ by lenciel. So
 we run vboxadd accordingly:</p>
-
 <pre><code>    [lirian@localhost ~]$ sudo /etc/init.d/vboxadd setup
     Removing existing VirtualBox non-DKMS kernel modules       [  OK  ]
     Building the VirtualBox Guest Additions kernel modules
@@ -140,11 +134,8 @@ we run vboxadd accordingly:</p>
     Building the main Guest Additions module                   [FAILED]
     (Look at /var/log/vboxadd-install.log to find out what went wrong)
     Doing non-kernel setup of the Guest Additions              [  OK  ]
-</code></pre>
-
-<p>From the message we can know current running kernel were not found. So<br />
+</code></pre><p>From the message we can know current running kernel were not found. So
 we run:<code>yum install kernel-devel-2.6.18-404.el5</code></p>
-
 <p>After all, we can run <code>vagrant up</code> or mount the directory manually.</p>
         </div>
 
