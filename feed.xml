@@ -6,7 +6,124 @@
     <description>Recent content on 浮云计算</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 31 Aug 2020 19:45:02 +0800</lastBuildDate><atom:link href="https://liriansu.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 11 Nov 2020 20:53:43 +0800</lastBuildDate><atom:link href="https://liriansu.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>一厘米的权力</title>
+      <link>https://liriansu.com/posts/2020-11-11-ownership/</link>
+      <pubDate>Wed, 11 Nov 2020 20:53:43 +0800</pubDate>
+      
+      <guid>https://liriansu.com/posts/2020-11-11-ownership/</guid>
+      <description>&lt;p&gt;前阵子跟基友们聊到 S1 发的一张图，&lt;br /&gt;
+hulucc 感慨：“讲道理这个作者至少占一半锅。”&lt;br /&gt;
+eagzzycsl 附：“像是一厘米原则，开发有义务保证最终完整性。”&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://liriansu.com/assets/pics/bad_ownership.jpg&#34; alt=&#34;bad-ownership&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;一厘米主权&#34;&gt;一厘米主权&lt;/h2&gt;
+
+&lt;p&gt;有一个流传很久的故事，&lt;br /&gt;
+说还在柏林墙时期的德国，&lt;br /&gt;
+有一个士兵射杀了一名翻墙逃亡的青年。&lt;br /&gt;
+因此他被告上了法庭，&lt;br /&gt;
+虽然他跟律师都辩称“这不过是执行命令”，&lt;br /&gt;
+但法官指出：&lt;br /&gt;
+“你确实要执行命令，但你完全可以没打准。”&lt;br /&gt;
+最终，这个士兵被判了刑。&lt;/p&gt;
+
+&lt;p&gt;这个故事虽然听起来很鸡汤，&lt;br /&gt;
+而且也有一些人质疑故事的真实性，&lt;br /&gt;
+但是故事里的道理是真切的：&lt;br /&gt;
+良知是人类普世的原则，&lt;br /&gt;
+不能因为有借口而降低伦理底线。&lt;/p&gt;
+
+&lt;p&gt;这个故事总让我想到《孟子》里的一节，&lt;br /&gt;
+说梁惠王觉得自己当国王当的尽心尽力了，&lt;br /&gt;
+能做的都做了。&lt;br /&gt;
+但孟子直接地指出了当时社会上存在的一系列问题，&lt;br /&gt;
+并且作下了一个振聋发聩的比喻：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;狗彘食人食而不知检，涂有饿莩而不知发；&lt;br /&gt;
+人死，则曰：“非我也，岁也。”&lt;/p&gt;
+
+&lt;p&gt;是何异于刺人而杀之，曰：“非我也，兵也！”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;梁惠王在执政过程中，&lt;br /&gt;
+因为自己的借口能很好地给自己妥协，&lt;br /&gt;
+但是世道却离他的期望值越来越远。&lt;/p&gt;
+
+&lt;p&gt;生活中许多时候是可以依靠着借口得过且过的，&lt;br /&gt;
+但是到了最终结果时，&lt;br /&gt;
+还是得看我们具体做了什么。&lt;/p&gt;
+
+&lt;p&gt;这就是我所认为的：&lt;br /&gt;
+可以唯心地思考，&lt;br /&gt;
+但要唯物地生活。&lt;/p&gt;
+
+&lt;h2 id=&#34;技术服务业&#34;&gt;技术服务业&lt;/h2&gt;
+
+&lt;p&gt;一厘米主权似乎是一个很遥远的故事，&lt;br /&gt;
+我再讲一个我记了好一阵的回忆。&lt;/p&gt;
+
+&lt;p&gt;大学时候在学校网管部，&lt;br /&gt;
+每周都要值班报修。&lt;br /&gt;
+我印象最深的，&lt;br /&gt;
+是一个因为没选上课而上门吵闹了半小时的同学。&lt;/p&gt;
+
+&lt;p&gt;确实，没选上课跟我们负责修网口的网管部同学们有什么关系呢？&lt;br /&gt;
+但从他本人的角度来说，&lt;br /&gt;
+除去发泄情绪的因素外，&lt;br /&gt;
+难用的选课系统跟蹩脚的网络，&lt;br /&gt;
+大概也是需要解决的。&lt;/p&gt;
+
+&lt;p&gt;做技术也是如此。&lt;br /&gt;
+我见过不少人在合作中，&lt;br /&gt;
+都会以“我不管这个”的道理来解决他的问题。&lt;br /&gt;
+而这样的人一多，&lt;br /&gt;
+就会自然地形成足球场的感觉，&lt;br /&gt;
+假如每天只在追逐这不能被解决的足球般的问题，&lt;br /&gt;
+那人的热情就会被很快地耗光。&lt;/p&gt;
+
+&lt;p&gt;技术工作里，&lt;br /&gt;
+在被定义好的工作范畴中间，&lt;br /&gt;
+就会有这么一些灰色的、偏向于服务的事情，&lt;br /&gt;
+需要被完成。&lt;/p&gt;
+
+&lt;h2 id=&#34;我没错&#34;&gt;我没错&lt;/h2&gt;
+
+&lt;p&gt;一厘米主权故事里，&lt;br /&gt;
+还有一个隐藏的信念，&lt;br /&gt;
+叫“我没错”。&lt;/p&gt;
+
+&lt;p&gt;就像头图里的那位开发，&lt;br /&gt;
+讲道理，他是可以认为自己没有错。&lt;br /&gt;
+不过假如是我，&lt;br /&gt;
+我不会这么做。&lt;/p&gt;
+
+&lt;p&gt;技术工作因为它的专业性，&lt;br /&gt;
+所以讲出来的话很难被外行质疑。&lt;br /&gt;
+就比如我告诉产品：&lt;br /&gt;
+“这个功能历史实现逻辑就是这样的。”&lt;br /&gt;
+他很难能亲自读代码来验证我说的话。&lt;br /&gt;
+但假如我是厨师，我说：“这道菜就是这么做的。”&lt;br /&gt;
+显然就有被质疑的空间。&lt;/p&gt;
+
+&lt;p&gt;技术工作里，&lt;br /&gt;
+随着工作范畴的固化，&lt;br /&gt;
+每个人能获得的借口也越多。&lt;br /&gt;
+但正是这种时候，&lt;br /&gt;
+才显示出一厘米主权这样，&lt;br /&gt;
+谦逊、自省这种品质的宝贵了。&lt;/p&gt;
+
+&lt;p&gt;所以不论任何时候，都要记住：&lt;br /&gt;
+人的边界，并不是被划定的，&lt;br /&gt;
+我永远拥有多一厘米的权力。&lt;br /&gt;
+（冬泳大叔语气）&lt;/p&gt;
+
+&lt;p&gt;（完）&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>神通中学二三事</title>
       <link>https://liriansu.com/posts/2020-08-31-work-as-schoolmate/</link>
@@ -2801,7 +2918,8 @@ and the edge is smart.&lt;/p&gt;
 }
 &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;key&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;value&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt; {
     &lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;while true...&amp;#34;&lt;/span&gt;)
-}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id=&#34;枚举&#34;&gt;枚举&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// iota 居然被做成了关键字
 &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// 这里后面的俩 iota 是可以省略的
@@ -2817,7 +2935,8 @@ and the edge is smart.&lt;/p&gt;
     &lt;span style=&#34;color:#a6e22e&#34;&gt;Unknown&lt;/span&gt; = &lt;span style=&#34;color:#66d9ef&#34;&gt;iota&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;  &lt;span style=&#34;color:#75715e&#34;&gt;// 0
 &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;Male&lt;/span&gt;    = &lt;span style=&#34;color:#66d9ef&#34;&gt;iota&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;  &lt;span style=&#34;color:#75715e&#34;&gt;// 10
 &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;Female&lt;/span&gt;  = &lt;span style=&#34;color:#66d9ef&#34;&gt;iota&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;  &lt;span style=&#34;color:#75715e&#34;&gt;// 20
-&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id=&#34;多表达式判断&#34;&gt;多表达式判断&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// if 语句会取最后的表达式值，所以这么判断是很常见的
 &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;f&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;file&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Open&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;path&lt;/span&gt;); &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt; {
@@ -2827,7 +2946,8 @@ and the edge is smart.&lt;/p&gt;
 &lt;span style=&#34;color:#75715e&#34;&gt;// 这样判断布尔值也是常见的操作
 &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;ok&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;json&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Unmarshal&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;body&lt;/span&gt;); !&lt;span style=&#34;color:#a6e22e&#34;&gt;ok&lt;/span&gt; {
     &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Response&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;400&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;invalid json body&amp;#34;&lt;/span&gt;)
-}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id=&#34;goroutine&#34;&gt;goroutine&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// go 的天生并发也是非常优雅的地方
 &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;sendTemplate&lt;/span&gt;() {
@@ -2839,7 +2959,8 @@ and the edge is smart.&lt;/p&gt;
     &lt;span style=&#34;color:#75715e&#34;&gt;// sendTemplate()
 &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;// ↑ 假如为了速度，我们不能同步发送模板，那么我们用 `go` 这个关键字就可以一键异步 ↓
 &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;go&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;sendTemplate&lt;/span&gt;()
-}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h1 id=&#34;项目&#34;&gt;项目&lt;/h1&gt;
 
 &lt;p&gt;第一章的语法过了以后，&lt;br /&gt;

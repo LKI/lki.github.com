@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.78.1" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Lirian Su" />
+  <meta property="og:url" content="https://liriansu.com/posts/2020-11-11-ownership/" />
+  <link rel="canonical" href="https://liriansu.com/posts/2020-11-11-ownership/" /><script type="application/ld+json">
+  {
+      "@context" : "https://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/liriansu.com\/"
+      },
+      "articleSection" : "posts",
+      "name" : "一厘米的权力",
+      "headline" : "一厘米的权力",
+      "description" : "\u003cp\u003e前阵子跟基友们聊到 S1 发的一张图，\u003cbr \/\u003e\nhulucc 感慨：“讲道理这个作者至少占一半锅。”\u003cbr \/\u003e\neagzzycsl 附：“像是一厘米原则，开发有义务保证最终完整性。”\u003c\/p\u003e",
+      "inLanguage" : "en-US",
+      "author" : "Lirian Su",
+      "creator" : "Lirian Su",
+      "publisher": "Lirian Su",
+      "accountablePerson" : "Lirian Su",
+      "copyrightHolder" : "Lirian Su",
+      "copyrightYear" : "2020",
+      "datePublished": "2020-11-11 20:53:43 \u002b0800 CST",
+      "dateModified" : "2020-11-11 20:53:43 \u002b0800 CST",
+      "url" : "https:\/\/liriansu.com\/posts\/2020-11-11-ownership\/",
+      "keywords" : [  ]
+  }
+</script>
+<title>一厘米的权力 - 浮云计算</title>
+  <meta property="og:title" content="一厘米的权力 - 浮云计算" />
+  <meta property="og:type" content="article" />
+  <meta name="description" content="前阵子跟基友们聊到 S1 发的一张图，
+hulucc 感慨：“讲道理这个作者至少占一半锅。”
+eagzzycsl 附：“像是一厘米原则，开发有义务保证最终完整性。”" />
+
+  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet"
+    href="/css/github-markdown.min.css" />
+  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+  <link rel="stylesheet" href="/css/index.css">
+  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="浮云计算">
+  
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker" rel="stylesheet">
+  
+  
+
+  
+</head>
+
+
+<body>
+  <article class="post 中文" id="article">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <div class="site-header">
+          <header>
+  <div class="signatures site-title">
+    <a href="/">Lirian Su</a>
+  </div>
+</header>
+<div class="row end-xs site-header-right">
+  
+  <div class="site-header-item">
+    <a href="/about" target="_blank">about</a>
+  </div>
+  
+  <div class="site-header-item">
+    <a href="https://github.com/LKI" target="_blank">github</a>
+  </div>
+  
+  <div class="site-header-item">
+    <a href="https://www.zhihu.com/people/liriansu" target="_blank">zhihu</a>
+  </div>
+  
+  <div class="site-header-item">
+    <a href="/index.xml" target="_blank">rss</a>
+  </div>
+  
+</div>
+<div class="header-line"></div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">一厘米的权力</h1>
+          
+          <div class="row post-desc">
+            
+            <time class="post-header-item" datetime="2020-11-11 20:53:43 CST">
+              Written at 2020-11-11 20:53
+            </time>
+            
+            <span class="post-header-item" id="busuanzi_container_page_pv"> Views <span id="busuanzi_value_page_pv" /> </span>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          <p>前阵子跟基友们聊到 S1 发的一张图，<br />
+hulucc 感慨：“讲道理这个作者至少占一半锅。”<br />
+eagzzycsl 附：“像是一厘米原则，开发有义务保证最终完整性。”</p>
+
+<p><img src="/assets/pics/bad_ownership.jpg" alt="bad-ownership" /></p>
+
+<h2 id="一厘米主权">一厘米主权</h2>
+
+<p>有一个流传很久的故事，<br />
+说还在柏林墙时期的德国，<br />
+有一个士兵射杀了一名翻墙逃亡的青年。<br />
+因此他被告上了法庭，<br />
+虽然他跟律师都辩称“这不过是执行命令”，<br />
+但法官指出：<br />
+“你确实要执行命令，但你完全可以没打准。”<br />
+最终，这个士兵被判了刑。</p>
+
+<p>这个故事虽然听起来很鸡汤，<br />
+而且也有一些人质疑故事的真实性，<br />
+但是故事里的道理是真切的：<br />
+良知是人类普世的原则，<br />
+不能因为有借口而降低伦理底线。</p>
+
+<p>这个故事总让我想到《孟子》里的一节，<br />
+说梁惠王觉得自己当国王当的尽心尽力了，<br />
+能做的都做了。<br />
+但孟子直接地指出了当时社会上存在的一系列问题，<br />
+并且作下了一个振聋发聩的比喻：</p>
+
+<blockquote>
+<p>狗彘食人食而不知检，涂有饿莩而不知发；<br />
+人死，则曰：“非我也，岁也。”</p>
+
+<p>是何异于刺人而杀之，曰：“非我也，兵也！”</p>
+</blockquote>
+
+<p>梁惠王在执政过程中，<br />
+因为自己的借口能很好地给自己妥协，<br />
+但是世道却离他的期望值越来越远。</p>
+
+<p>生活中许多时候是可以依靠着借口得过且过的，<br />
+但是到了最终结果时，<br />
+还是得看我们具体做了什么。</p>
+
+<p>这就是我所认为的：<br />
+可以唯心地思考，<br />
+但要唯物地生活。</p>
+
+<h2 id="技术服务业">技术服务业</h2>
+
+<p>一厘米主权似乎是一个很遥远的故事，<br />
+我再讲一个我记了好一阵的回忆。</p>
+
+<p>大学时候在学校网管部，<br />
+每周都要值班报修。<br />
+我印象最深的，<br />
+是一个因为没选上课而上门吵闹了半小时的同学。</p>
+
+<p>确实，没选上课跟我们负责修网口的网管部同学们有什么关系呢？<br />
+但从他本人的角度来说，<br />
+除去发泄情绪的因素外，<br />
+难用的选课系统跟蹩脚的网络，<br />
+大概也是需要解决的。</p>
+
+<p>做技术也是如此。<br />
+我见过不少人在合作中，<br />
+都会以“我不管这个”的道理来解决他的问题。<br />
+而这样的人一多，<br />
+就会自然地形成足球场的感觉，<br />
+假如每天只在追逐这不能被解决的足球般的问题，<br />
+那人的热情就会被很快地耗光。</p>
+
+<p>技术工作里，<br />
+在被定义好的工作范畴中间，<br />
+就会有这么一些灰色的、偏向于服务的事情，<br />
+需要被完成。</p>
+
+<h2 id="我没错">我没错</h2>
+
+<p>一厘米主权故事里，<br />
+还有一个隐藏的信念，<br />
+叫“我没错”。</p>
+
+<p>就像头图里的那位开发，<br />
+讲道理，他是可以认为自己没有错。<br />
+不过假如是我，<br />
+我不会这么做。</p>
+
+<p>技术工作因为它的专业性，<br />
+所以讲出来的话很难被外行质疑。<br />
+就比如我告诉产品：<br />
+“这个功能历史实现逻辑就是这样的。”<br />
+他很难能亲自读代码来验证我说的话。<br />
+但假如我是厨师，我说：“这道菜就是这么做的。”<br />
+显然就有被质疑的空间。</p>
+
+<p>技术工作里，<br />
+随着工作范畴的固化，<br />
+每个人能获得的借口也越多。<br />
+但正是这种时候，<br />
+才显示出一厘米主权这样，<br />
+谦逊、自省这种品质的宝贵了。</p>
+
+<p>所以不论任何时候，都要记住：<br />
+人的边界，并不是被划定的，<br />
+我永远拥有多一厘米的权力。<br />
+（冬泳大叔语气）</p>
+
+<p>（完）</p>
+        </div>
+
+        
+          
+
+          
+          <div style="height: 20px;"></div>
+        
+
+        
+
+
+
+<div class="post-comments">
+  <script src="https://utteranc.es/client.js"
+          repo="LKI/lki.github.io"
+          issue-term="title"
+          label="comment"
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+  </script>
+</div>
+
+
+        
+
+<div class="site-footer">
+  <div class="site-footer-left">
+    <div class="site-footer-item">
+      <span id="busuanzi_container_site_pv" style="display:none"> PV: <span id="busuanzi_value_site_pv"/> </span>
+    </div>
+    <div class="site-footer-item">
+      <span id="busuanzi_container_site_uv" style="display:none"> UV: <span id="busuanzi_value_site_uv"/> </span>
+    </div>
+  </div>
+
+  <div class="site-footer-right">
+    
+    
+    <div class="site-footer-item">
+      <a href="/en/">English</a>
+    </div>
+    
+    
+  </div>
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+</body>
+
+</html>
