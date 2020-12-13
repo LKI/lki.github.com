@@ -59,8 +59,11 @@
 &lt;p&gt;现代网络中，&lt;br /&gt;
 IP 是服务的点，而 CIDR 就是描述它的面。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://liriansu.com/assets/pics/ip_types.jpg&#34; alt=&#34;ip&#34; /&gt;&lt;br /&gt;
-&amp;gt; IPv4 的类别分类&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://liriansu.com/assets/pics/ip_types.jpg&#34; alt=&#34;ip&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;IPv4 的类别分类&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;列举一些能想到的 IP，会包括：&lt;br /&gt;
 &lt;code&gt;127.0.0.1&lt;/code&gt; 这个约定的本地地址；&lt;br /&gt;
@@ -145,15 +148,25 @@ subnet 需要有更加具体的 CIDR，&lt;br /&gt;
 IPsec 的本质是起两台能外网互通的服务器，&lt;br /&gt;
 互相转发流量。&lt;/p&gt;
 
-&lt;p&gt;比如要配置阿里云与亚马逊云互通的步骤大概会包括：&lt;br /&gt;
-- 两边搭建 VPC/subnet (CIDR 不重复)&lt;br /&gt;
-- 两边各起一台有公网访问地址的机器，装好 ipsec&lt;br /&gt;
-  - 配置 ipsec 证书、密钥等&lt;br /&gt;
-  - 打开 ip forwarding, 配置好 iptables 防火墙规则&lt;br /&gt;
-  - AWS 注意关掉机器的 source/dest check&lt;br /&gt;
-- subnet 路由表配置跳转至 ipsec 机器&lt;br /&gt;
-- 打开两边的安全组，即可互通访问&lt;br /&gt;
-  - &lt;code&gt;traceroute&lt;/code&gt; 命令可用于检测跳转&lt;/p&gt;
+&lt;p&gt;比如要配置阿里云与亚马逊云互通的步骤大概会包括：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;两边搭建 VPC/subnet (CIDR 不重复)&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;两边各起一台有公网访问地址的机器，装好 ipsec&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;配置 ipsec 证书、密钥等&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;打开 ip forwarding, 配置好 iptables 防火墙规则&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;AWS 注意关掉机器的 source/dest check&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;subnet 路由表配置跳转至 ipsec 机器&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;打开两边的安全组，即可互通访问&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;traceroute&lt;/code&gt; 命令可用于检测跳转&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2 id=&#34;openvpn&#34;&gt;OpenVPN&lt;/h2&gt;
 
