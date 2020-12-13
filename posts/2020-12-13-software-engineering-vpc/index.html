@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.79.0" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Lirian Su" />
+  <meta property="og:url" content="https://liriansu.com/posts/2020-12-13-software-engineering-vpc/" />
+  <link rel="canonical" href="https://liriansu.com/posts/2020-12-13-software-engineering-vpc/" /><script type="application/ld+json">
+  {
+      "@context" : "https://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/liriansu.com\/"
+      },
+      "articleSection" : "posts",
+      "name" : "软件工程实践之网段管理",
+      "headline" : "软件工程实践之网段管理",
+      "description" : "\u003cp\u003e软件工程实践系列文章，\u003cbr \/\u003e\n会着重讲述实际的工程项目中是如何协作开发软件的。\u003cbr \/\u003e\n本文主要介绍了如何规划、搭建、管理网段。\u003c\/p\u003e",
+      "inLanguage" : "en-US",
+      "author" : "Lirian Su",
+      "creator" : "Lirian Su",
+      "publisher": "Lirian Su",
+      "accountablePerson" : "Lirian Su",
+      "copyrightHolder" : "Lirian Su",
+      "copyrightYear" : "2020",
+      "datePublished": "2020-12-13 21:48:22 \u002b0800 CST",
+      "dateModified" : "2020-12-13 21:48:22 \u002b0800 CST",
+      "url" : "https:\/\/liriansu.com\/posts\/2020-12-13-software-engineering-vpc\/",
+      "keywords" : [  ]
+  }
+</script>
+<title>软件工程实践之网段管理 - 浮云计算</title>
+  <meta property="og:title" content="软件工程实践之网段管理 - 浮云计算" />
+  <meta property="og:type" content="article" />
+  <meta name="description" content="软件工程实践系列文章，
+会着重讲述实际的工程项目中是如何协作开发软件的。
+本文主要介绍了如何规划、搭建、管理网段。" />
+
+  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet"
+    href="/css/github-markdown.min.css" />
+  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+  <link rel="stylesheet" href="/css/index.css">
+  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="浮云计算">
+  
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker" rel="stylesheet">
+  
+  
+
+  
+</head>
+
+
+<body>
+  <article class="post 中文" id="article">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <div class="site-header">
+          <header>
+  <div class="signatures site-title">
+    <a href="/">Lirian Su</a>
+  </div>
+</header>
+<div class="row end-xs site-header-right">
+  
+  <div class="site-header-item">
+    <a href="/about" target="_blank">about</a>
+  </div>
+  
+  <div class="site-header-item">
+    <a href="https://github.com/LKI" target="_blank">github</a>
+  </div>
+  
+  <div class="site-header-item">
+    <a href="https://www.zhihu.com/people/liriansu" target="_blank">zhihu</a>
+  </div>
+  
+  <div class="site-header-item">
+    <a href="/index.xml" target="_blank">rss</a>
+  </div>
+  
+</div>
+<div class="header-line"></div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">软件工程实践之网段管理</h1>
+          
+          <div class="row post-desc">
+            
+            <time class="post-header-item" datetime="2020-12-13 21:48:22 CST">
+              Written at 2020-12-13 21:48
+            </time>
+            
+            <span class="post-header-item" id="busuanzi_container_page_pv"> Views <span id="busuanzi_value_page_pv" /> </span>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          <p>软件工程实践系列文章，<br />
+会着重讲述实际的工程项目中是如何协作开发软件的。<br />
+本文主要介绍了如何规划、搭建、管理网段。</p>
+
+<h1 id="outline">outline</h1>
+
+<p>本文包括以下内容：</p>
+
+<ul>
+<li>concepts: 网段中的概念都很基础<br />
+
+<ul>
+<li>ip/cidr: IP 是服务的点，而 CIDR 就是描述它的面<br /></li>
+<li>vpc/subnet: VPC 就是云服务提供划分网段的工具<br /></li>
+</ul></li>
+<li>boundary: 网段的设计核心是边界划分<br />
+
+<ul>
+<li>scene: 利用场景维度来划分，以区别开发、测试、生产环境<br /></li>
+<li>network: 利用网络维度来划分，以区分外网、内网<br /></li>
+</ul></li>
+<li>example: 实际开发中的例子<br />
+
+<ul>
+<li>ipsec: 用作 VPC 打通的常用工具<br /></li>
+<li>openvpn: 用作连接内网的常用工具<br /></li>
+</ul></li>
+<li>conclusion<br />
+<br />
+<br /></li>
+</ul>
+
+<h1 id="concepts">Concepts</h1>
+
+<p>在我们日常开发中，<br />
+只要用到网络就一定会跟各类网段打交道。<br />
+很多时候网段作为一种稳定的基础设施，<br />
+我们并不会注意到它。<br />
+但是关于网段、网络的一些知识，<br />
+是确实在软件工程过程中需要考虑的。</p>
+
+<h2 id="ip-and-cidr">IP and CIDR</h2>
+
+<p>现代网络中，<br />
+IP 是服务的点，而 CIDR 就是描述它的面。</p>
+
+<p><img src="/assets/pics/ip_types.jpg" alt="ip" /><br />
+&gt; IPv4 的类别分类</p>
+
+<p>列举一些能想到的 IP，会包括：<br />
+<code>127.0.0.1</code> 这个约定的本地地址；<br />
+<code>8.8.8.8</code>/<code>8.8.4.4</code> 这个谷歌提供的 DNS 地址；<br />
+<code>59.78.3.25</code> 这个上海交大东三楼的 IP 地址…</p>
+
+<p>而 CIDR 则是描述一系列 IP 地址的修饰符。</p>
+
+<p>比如 <code>59.78.3.25/32</code> 代表二进制前 32 位都严格与 <code>59.78.3.25</code> 相等的 IP 地址段（也就是特指这个地址）。<br />
+类似地，<code>10.0.0.0/16</code> 就是以 <code>10.0.</code> 开头的 IP 地址段。</p>
+
+<h2 id="vpc-and-subnet">VPC and subnet</h2>
+
+<p>AWS 作为云服务的始祖，<br />
+它开创了 VPC 服务让用户配置自己的网段，<br />
+后来 VPC 也逐渐成为了云服务的标配。</p>
+
+<p>VPC 之间可以相互隔离，也可以打通。<br />
+（这里的隔离与打通，指的都是软件上的）<br />
+一般 VPC 会用作区分生产、开发环境。</p>
+
+<p>比如我们可以在云服务上开两个 VPC，<br />
+生产环境的 CIDR 是 <code>10.0.0.0/16</code>，<br />
+开发环境的 CIDR 是 <code>10.1.0.0/16</code>。</p>
+
+<p>而 VPC 下面可以拆分 subnet (子网)，<br />
+subnet 需要有更加具体的 CIDR，<br />
+比如生产环境的子网可能会是 <code>10.0.0.0/24</code>,<code>10.0.10.0/24</code> 这样的。</p>
+
+<h1 id="boundary">Boundary</h1>
+
+<p>网段的核心是边界的划分。<br />
+而划分好网段的目的，<br />
+既有安全性的考量，<br />
+也会利用异地达到高可用容灾的目的。</p>
+
+<h2 id="scene">Scene</h2>
+
+<p>云服务一般在全球各大城市会设立数据中心，<br />
+每个数据中心会有多个机房，<br />
+我们网段的边界至少得以这个为界。</p>
+
+<p>比如线上服务会跨机房部署，<br />
+分布在多个 subnet 中，<br />
+当某个机房发生清洁工拔电插吸尘器之类的事故时（一般不会发生）<br />
+服务能做到高可用。</p>
+
+<p>subnet 级别还能配置网络流量的进出权限，<br />
+这点特性可以用来规划内部网络权限。</p>
+
+<p>比如我们可以划分“外网可进可出”、“外网只出不能进”、“外网不可访问（仅可内网访问）”三类 subnet，<br />
+以部署不同特性的服务（负载均衡、普通业务、数据库）。</p>
+
+<h2 id="network">Network</h2>
+
+<p>网络流量走的是内网还是外网也是值得考量的因素。</p>
+
+<p>除了安全性因素以外，<br />
+一般的云服务商给外网流量定价 1元/GB，<br />
+价格因素也是一个需要考虑的点。</p>
+
+<p>大部分时候，开发可以严格遵循分层的原则，<br />
+所有前端走的肯定是外网 API，<br />
+所有后端走的肯定是内网 API，<br />
+只有负载均衡、网关层考虑内外网转换的问题。</p>
+
+<p>还有一些时候，可以通过 DNS 自动配置流量网络。<br />
+比如默认 <code>api.liriansu.com</code> 指向负载均衡的外网地址，<br />
+但是修改内网的 DNS 使其指向负载均衡的内网地址。</p>
+
+<h1 id="example">Example</h1>
+
+<p>最后再附加一些实际开发中的例子。</p>
+
+<h2 id="ipsec">IPsec</h2>
+
+<p>在业务庞杂了以后，<br />
+就会遇到跨云服务商的开发场景。<br />
+跨云服务商的内网打通，<br />
+一般会用 IPsec 这个工具，<br />
+云服务自己提供的 VPN 服务也是基于此的。<br />
+IPsec 的本质是起两台能外网互通的服务器，<br />
+互相转发流量。</p>
+
+<p>比如要配置阿里云与亚马逊云互通的步骤大概会包括：<br />
+- 两边搭建 VPC/subnet (CIDR 不重复)<br />
+- 两边各起一台有公网访问地址的机器，装好 ipsec<br />
+  - 配置 ipsec 证书、密钥等<br />
+  - 打开 ip forwarding, 配置好 iptables 防火墙规则<br />
+  - AWS 注意关掉机器的 source/dest check<br />
+- subnet 路由表配置跳转至 ipsec 机器<br />
+- 打开两边的安全组，即可互通访问<br />
+  - <code>traceroute</code> 命令可用于检测跳转</p>
+
+<h2 id="openvpn">OpenVPN</h2>
+
+<p>我们还会遇到的一种场景，<br />
+是开发环境接入内网开发。</p>
+
+<p>这个一般可以用 OpenVPN 之类的工具打通，<br />
+但鉴于目前我们还是用的手动流量转发的路子去搞的，<br />
+等涉及这部分了再在之后的文章里分享吧 :)</p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<ul>
+<li>网段管理是跟开发息息相关的基建，最好能尽早规划好<br /></li>
+<li>网段规划的核心是边界划分，主要考虑安全性与高可用<br /></li>
+<li>云服务的基础概念是类似的，需要考虑好跨云服务、开发测试生产等多维度网段<br /></li>
+<li>内外网流量的复杂因素，可以通过分层或者 DNS 的方式屏蔽掉<br />
+<br /></li>
+</ul>
+
+<p>（完）</p>
+        </div>
+
+        
+          
+
+          
+          <div style="height: 20px;"></div>
+        
+
+        
+
+
+
+<div class="post-comments">
+  <script src="https://utteranc.es/client.js"
+          repo="LKI/lki.github.io"
+          issue-term="title"
+          label="comment"
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+  </script>
+</div>
+
+
+        
+
+<div class="site-footer">
+  <div class="site-footer-left">
+    <div class="site-footer-item">
+      <span id="busuanzi_container_site_pv" style="display:none"> PV: <span id="busuanzi_value_site_pv"/> </span>
+    </div>
+    <div class="site-footer-item">
+      <span id="busuanzi_container_site_uv" style="display:none"> UV: <span id="busuanzi_value_site_uv"/> </span>
+    </div>
+  </div>
+
+  <div class="site-footer-right">
+    
+    
+    <div class="site-footer-item">
+      <a href="/en/">English</a>
+    </div>
+    
+    
+  </div>
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+</body>
+
+</html>
