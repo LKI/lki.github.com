@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://liriansu.com/posts/</loc>
-    <lastmod>2021-01-20T22:31:35+08:00</lastmod>
+    <lastmod>2021-03-15T23:03:39+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -15,16 +14,12 @@
                 hreflang="cn"
                 href="https://liriansu.com/posts/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://liriansu.com/posts/2021-01-20-my-worldview/</loc>
-    <lastmod>2021-01-20T22:31:35+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://liriansu.com/posts/2021-03-15-say-think-behave/</loc>
+    <lastmod>2021-03-15T23:03:39+08:00</lastmod>
+  </url><url>
     <loc>https://liriansu.com/</loc>
-    <lastmod>2021-01-20T22:31:35+08:00</lastmod>
+    <lastmod>2021-03-15T23:03:39+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -35,574 +30,349 @@
                 hreflang="cn"
                 href="https://liriansu.com/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://liriansu.com/posts/2021-01-20-my-worldview/</loc>
+    <lastmod>2021-01-20T22:31:35+08:00</lastmod>
+  </url><url>
     <loc>https://liriansu.com/posts/2021-01-05-no-more-dying-for-pinduoduo/</loc>
     <lastmod>2021-01-05T20:21:20+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2020-12-13-software-engineering-vpc/</loc>
     <lastmod>2020-12-13T21:48:22+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2020-11-15-adult-life-future/</loc>
     <lastmod>2020-11-15T21:00:54+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2020-11-12-speedupism/</loc>
     <lastmod>2020-11-12T21:44:34+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2020-11-11-ownership/</loc>
     <lastmod>2020-11-11T20:53:43+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2020-08-31-work-as-schoolmate/</loc>
     <lastmod>2020-08-31T19:45:02+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2020-07-12-adult-life-code/</loc>
     <lastmod>2020-07-12T23:45:58+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2020-07-06-adult-life-teamwork/</loc>
     <lastmod>2020-07-06T23:45:13+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2020-07-05-adult-life-memories/</loc>
     <lastmod>2020-07-05T21:46:03+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2020-05-24-principle-infinite-game/</loc>
     <lastmod>2020-05-24T22:02:34+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2020-04-22-boost-docker-build/</loc>
     <lastmod>2020-04-22T22:28:53+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2020-04-21-ruochujian/</loc>
     <lastmod>2020-04-21T21:37:59+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2020-02-08-honeymoon-part-2/</loc>
     <lastmod>2020-02-08T21:48:32+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2020-01-31-honeymoon-part-1/</loc>
     <lastmod>2020-01-31T06:38:22+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2020-01-14-git-workflow/</loc>
     <lastmod>2020-01-14T21:39:31+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2019-12-09-gracefully-upgrade/</loc>
     <lastmod>2019-12-09T23:39:28+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2019-11-19-build-a-staic-blog/</loc>
     <lastmod>2019-11-19T01:00:07+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2019-10-30-anecdote-why-requests-not-standard/</loc>
     <lastmod>2019-10-30T22:32:20+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2019-10-29-stupid-dns-ttl/</loc>
     <lastmod>2019-10-29T21:49:42+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2019-06-13-go-experience-as-a-pythonista/</loc>
     <lastmod>2019-06-13T01:10:49+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2019-06-11-fuzzy-days/</loc>
     <lastmod>2019-06-11T22:50:03+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2019-04-14-meta-996/</loc>
     <lastmod>2019-04-14T15:16:24+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2019-04-10-software-engineering-django/</loc>
     <lastmod>2019-04-10T22:09:55+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2019-02-06-wandering-earth/</loc>
     <lastmod>2019-02-06T13:45:34+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2019-01-28-developer-team/</loc>
     <lastmod>2019-01-28T23:46:45+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2019-01-23-about-active-thinking/</loc>
     <lastmod>2019-01-23T23:25:20+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2019-01-22-my-2018-okr-review/</loc>
     <lastmod>2019-01-22T22:07:02+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2018-12-04-dev-env/</loc>
     <lastmod>2018-12-04T23:16:29+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2018-10-25-company-stategy/</loc>
     <lastmod>2018-10-25T23:35:26+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2018-10-18-qcon-2018-shanghai/</loc>
     <lastmod>2018-10-18T18:54:24+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2018-09-21-api-design-in-python/</loc>
     <lastmod>2018-09-21T20:57:46+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2018-09-09-adult-life/</loc>
     <lastmod>2018-09-09T19:46:37+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2018-08-11-a-chat-with-schoolmates/</loc>
     <lastmod>2018-08-11T23:55:50+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2018-07-26-engineer-culture/</loc>
     <lastmod>2018-07-26T22:38:44+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2018-06-05-weekly-wander/</loc>
     <lastmod>2018-06-05T00:22:48+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2018-05-07-my-coding-ocd/</loc>
     <lastmod>2018-05-07T22:07:44+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2018-04-13-make-your-impact/</loc>
     <lastmod>2018-04-13T22:44:45+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2018-03-22-solve-a-sentry-case/</loc>
     <lastmod>2018-03-22T20:14:08+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2018-03-12-is-it-possible-to-be-rich-easily-by-programming/</loc>
     <lastmod>2018-03-12T23:22:10+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2018-03-03-my-friend-ldsink/</loc>
     <lastmod>2018-03-03T20:39:48+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2018-02-10-philosophy-of-git/</loc>
     <lastmod>2018-02-10T16:01:31+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2018-01-25-my-2018-okr/</loc>
     <lastmod>2018-01-25T23:27:28+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2018-01-13-my-little-mia/</loc>
     <lastmod>2018-01-13T08:06:16+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2018-01-06-play-gba-with-danmaku/</loc>
     <lastmod>2018-01-06T18:58:33+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2017-12-09-jwt/</loc>
     <lastmod>2017-12-09T20:07:17+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2017-12-04-your-own-sight/</loc>
     <lastmod>2017-12-04T22:29:14+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2017-11-23-python-deployment-automation-one-sample/</loc>
     <lastmod>2017-11-23T16:49:57+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2017-11-19-how-to-google/</loc>
     <lastmod>2017-11-19T21:52:07+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2017-10-31-programmers-logic/</loc>
     <lastmod>2017-10-31T22:05:35+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2017-10-26-carpe-diem/</loc>
     <lastmod>2017-10-26T17:48:42+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2017-09-20-how-to-write-bugs/</loc>
     <lastmod>2017-09-20T19:49:38+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2017-09-16-interesting-humans/</loc>
     <lastmod>2017-09-16T16:07:46+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2017-09-13-what-is-ligature/</loc>
     <lastmod>2017-09-13T22:45:39+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2017-09-08-redshift-as-data-warehouse/</loc>
     <lastmod>2017-09-08T22:59:08+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2017-08-31-lazy-coding-practice/</loc>
     <lastmod>2017-08-31T20:25:12+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2017-08-30-lazy-coding-thinking/</loc>
     <lastmod>2017-08-30T23:10:52+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2017-08-13-okr/</loc>
     <lastmod>2017-08-13T22:17:55+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2017-08-08-github-badges/</loc>
     <lastmod>2017-08-08T23:10:01+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2017-08-06-py2-to-py3/</loc>
     <lastmod>2017-08-06T12:07:32+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2017-08-05-south-park-intro/</loc>
     <lastmod>2017-08-05T19:29:14+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2017-07-30-girls-stockings/</loc>
     <lastmod>2017-07-30T18:24:30+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2017-07-27-what-is-cash-cow/</loc>
     <lastmod>2017-07-27T22:31:18+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2017-07-25-pareto-rule-of-programmers/</loc>
     <lastmod>2017-07-25T23:15:51+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2017-07-18-how-i-use-github/</loc>
     <lastmod>2017-07-18T23:15:49+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2017-07-02-forgive-her-meme/</loc>
     <lastmod>2017-07-02T23:05:08+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2017-07-01-my-programmer-habits/</loc>
     <lastmod>2017-07-02T00:20:23+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2017-06-24-naming-variable/</loc>
     <lastmod>2017-06-24T19:36:17+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2017-06-11-my-work/</loc>
     <lastmod>2017-06-11T13:49:36+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2017-05-21-so-many-pm/</loc>
     <lastmod>2017-05-21T00:18:14+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2017-05-12-pronunciations/</loc>
     <lastmod>2017-05-12T22:41:02+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2017-04-22-how-google-works-note/</loc>
     <lastmod>2017-04-22T01:48:05+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2017-03-26-hunter2-meme/</loc>
     <lastmod>2017-03-26T23:58:26+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2017-03-24-windows-dev-env/</loc>
     <lastmod>2017-03-24T02:00:55+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2017-03-20-hrbp-and-markdown/</loc>
     <lastmod>2017-03-20T01:49:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2017-03-18-hawk-authentication/</loc>
     <lastmod>2017-03-18T23:55:18+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2017-03-08-what-a-hard-backend-interview/</loc>
     <lastmod>2017-03-08T20:44:40+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2017-02-22-x-y-z-question/</loc>
     <lastmod>2017-02-22T22:22:16+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2017-02-03-hold-static-html-on-github/</loc>
     <lastmod>2017-02-03T21:59:54+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2017-01-24-iota-language/</loc>
     <lastmod>2017-01-24T13:07:50+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2016-12-26-go-to-path-in-osx/</loc>
     <lastmod>2016-12-26T17:01:38+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2016-12-22-use-commentit/</loc>
     <lastmod>2016-12-22T20:20:07+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2016-12-18-use-vundle-for-dotvim/</loc>
     <lastmod>2016-12-18T02:22:16+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2016-12-16-backend-skill-tree/</loc>
     <lastmod>2016-12-16T23:33:08+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2016-09-19-git-first-lesson/</loc>
     <lastmod>2016-09-19T16:04:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2016-06-27-you-can-live-your-dream/</loc>
     <lastmod>2016-06-27T23:06:13+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2016-06-07-encoding-in-url/</loc>
     <lastmod>2016-06-07T21:29:39+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2016-05-18-install-pip-on-windows/</loc>
     <lastmod>2016-05-18T21:39:29+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2016-04-15-how-to-calculate-file-lines-in-windows/</loc>
     <lastmod>2016-04-15T22:13:15+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2016-03-31-why-i-hate-smoking/</loc>
     <lastmod>2016-03-31T16:27:34+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2016-03-16-ubuntu-package-can-be-updated-solution/</loc>
     <lastmod>2016-03-16T16:14:19+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2016-03-15-create-github-repository-page/</loc>
     <lastmod>2016-03-15T21:19:53+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2016-03-02-this-is-why-i-dont-give-you-a-job-zh-cn/</loc>
     <lastmod>2016-03-02T13:41:04+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2016-02-29-read-blogs-to-write-blogs/</loc>
     <lastmod>2016-02-29T13:27:52+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2016-02-27-my-first-vr-experience/</loc>
     <lastmod>2016-02-27T21:08:19+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2016-02-18-thoughts-on-1984/</loc>
     <lastmod>2016-02-18T22:12:54+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2016-02-15-my-reading-list-2016/</loc>
     <lastmod>2016-02-15T11:07:57+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2016-01-29-jekyll-build-fail-solution/</loc>
     <lastmod>2016-01-29T23:24:45+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2016-01-28-jekyll-assume-demo/</loc>
     <lastmod>2016-01-28T11:06:56+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2015-12-21-learning-javascript/</loc>
     <lastmod>2015-12-21T17:26:52+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2015-11-08-how-to-lose-in-rock-papar-scissors/</loc>
     <lastmod>2015-11-08T21:01:28+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2015-10-21-build-seperate-env-using-aufs-and-docker/</loc>
     <lastmod>2015-10-21T14:55:24+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2015-10-12-virtual-machine-vs-vagrant-vs-docker/</loc>
     <lastmod>2015-10-12T12:49:55+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2015-10-09-use-keypad-with-vim-and-putty/</loc>
     <lastmod>2015-10-09T15:34:16+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2015-09-24-how-this-blog-was-built/</loc>
     <lastmod>2015-09-24T20:26:17+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2015-09-23-why-im-blogging/</loc>
     <lastmod>2015-09-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2015-08-27-fight-with-the-feminist-me/</loc>
     <lastmod>2015-08-27T20:28:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2015-07-25-how-to-set-perl-constant-module/</loc>
     <lastmod>2015-07-25T20:56:06+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2015-06-12-a-chat-with-roommates/</loc>
     <lastmod>2015-06-12T22:06:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2015-05-15-vagrant-up-but-mount-no-device-zh/</loc>
     <lastmod>2015-05-15T10:29:05+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2014-08-28-compare-excel-with-openpyxl/</loc>
     <lastmod>2014-08-28T10:31:08+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2014-07-20-my-friend-edward/</loc>
     <lastmod>2014-07-20T22:55:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2014-03-07-magic-number/</loc>
     <lastmod>2014-03-07T14:11:31+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/posts/2010-05-27-death-of-jack/</loc>
     <lastmod>2010-05-27T12:00:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/categories/</loc>
     <xhtml:link
                 rel="alternate"
@@ -614,9 +384,7 @@
                 hreflang="cn"
                 href="https://liriansu.com/categories/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/tags/</loc>
     <xhtml:link
                 rel="alternate"
@@ -628,10 +396,7 @@
                 hreflang="cn"
                 href="https://liriansu.com/tags/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://liriansu.com/about/</loc>
   </url>
-  
 </urlset>
