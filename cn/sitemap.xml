@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://liriansu.com/posts/</loc>
-    <lastmod>2021-03-15T23:03:39+08:00</lastmod>
+    <lastmod>2021-03-18T20:41:35+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -15,11 +15,11 @@
                 href="https://liriansu.com/posts/"
                 />
   </url><url>
-    <loc>https://liriansu.com/posts/2021-03-15-say-think-behave/</loc>
-    <lastmod>2021-03-15T23:03:39+08:00</lastmod>
+    <loc>https://liriansu.com/posts/2021-03-18-my-concept-of-money/</loc>
+    <lastmod>2021-03-18T20:41:35+08:00</lastmod>
   </url><url>
     <loc>https://liriansu.com/</loc>
-    <lastmod>2021-03-15T23:03:39+08:00</lastmod>
+    <lastmod>2021-03-18T20:41:35+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -30,6 +30,9 @@
                 hreflang="cn"
                 href="https://liriansu.com/"
                 />
+  </url><url>
+    <loc>https://liriansu.com/posts/2021-03-15-say-think-behave/</loc>
+    <lastmod>2021-03-15T23:03:39+08:00</lastmod>
   </url><url>
     <loc>https://liriansu.com/posts/2021-01-20-my-worldview/</loc>
     <lastmod>2021-01-20T22:31:35+08:00</lastmod>
