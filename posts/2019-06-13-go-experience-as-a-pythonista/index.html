@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.82.0" />
+  <meta name="generator" content="Hugo 0.83.1" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -139,8 +139,7 @@
 }
 <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">key</span>, <span style="color:#a6e22e">value</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">data</span> {
     <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;while true...&#34;</span>)
-}
-</code></pre></div>
+}</code></pre></div>
 <h2 id="枚举">枚举</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// iota 居然被做成了关键字
 </span><span style="color:#75715e">// 这里后面的俩 iota 是可以省略的
@@ -156,8 +155,7 @@
     <span style="color:#a6e22e">Unknown</span> = <span style="color:#66d9ef">iota</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">10</span>  <span style="color:#75715e">// 0
 </span><span style="color:#75715e"></span>    <span style="color:#a6e22e">Male</span>    = <span style="color:#66d9ef">iota</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">10</span>  <span style="color:#75715e">// 10
 </span><span style="color:#75715e"></span>    <span style="color:#a6e22e">Female</span>  = <span style="color:#66d9ef">iota</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">10</span>  <span style="color:#75715e">// 20
-</span><span style="color:#75715e"></span>}
-</code></pre></div>
+</span><span style="color:#75715e"></span>}</code></pre></div>
 <h2 id="多表达式判断">多表达式判断</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// if 语句会取最后的表达式值，所以这么判断是很常见的
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> <span style="color:#a6e22e">f</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">file</span>.<span style="color:#a6e22e">Open</span>(<span style="color:#a6e22e">path</span>); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
@@ -167,8 +165,7 @@
 <span style="color:#75715e">// 这样判断布尔值也是常见的操作
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> <span style="color:#a6e22e">data</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">Unmarshal</span>(<span style="color:#a6e22e">body</span>); !<span style="color:#a6e22e">ok</span> {
     <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">Response</span>(<span style="color:#ae81ff">400</span>, <span style="color:#e6db74">&#34;invalid json body&#34;</span>)
-}
-</code></pre></div>
+}</code></pre></div>
 <h2 id="goroutine">goroutine</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// go 的天生并发也是非常优雅的地方
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">sendTemplate</span>() {
@@ -180,8 +177,7 @@
     <span style="color:#75715e">// sendTemplate()
 </span><span style="color:#75715e"></span>    <span style="color:#75715e">// ↑ 假如为了速度，我们不能同步发送模板，那么我们用 `go` 这个关键字就可以一键异步 ↓
 </span><span style="color:#75715e"></span>    <span style="color:#66d9ef">go</span> <span style="color:#a6e22e">sendTemplate</span>()
-}
-</code></pre></div>
+}</code></pre></div>
 <h1 id="项目">项目</h1>
 
 <p>第一章的语法过了以后，<br />
